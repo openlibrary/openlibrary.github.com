@@ -1,0 +1,6 @@
+openlibrary.core.ia
+===================
+
+.. automodule:: openlibrary.core.ia
+    :members:
+

@@ -1,0 +1,22 @@
+Dev Instance
+============
+
+Installing Dependencies
+------------------------
+
+Installing CouchDB
+^^^^^^^^^^^^^^^^^^
+
+Installing CouchDB involves installing so many dependencies, some of them are incompatible with ubuntu/debian installations. Fortunately, a binary distribution with all the binaries is provided by CouchOne.
+
+http://www.couchone.com/get
+
+The problem with that distribution is that it is interactive and it won't be possible to automate the installation of that. To overcome this problem, the binaries after running the interactive installation are taken and bundled. The ol install script, takes the bundle, unpacks it and runs a script to updates the path in some scripts and config files.
+
+The created bundle is uploaded to http://www.archive.org/details/ol_vendor.
+
+
+
+
+
+

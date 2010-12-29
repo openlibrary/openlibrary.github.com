@@ -1,0 +1,213 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Setting up a dev instance &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="index.html" />
+    <link rel="next" title="Getting Started with OL Development" href="dev.html" />
+    <link rel="prev" title="Open Library: Developer Documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dev.html" title="Getting Started with OL Development"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Open Library: Developer Documentation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="setting-up-a-dev-instance">
+<h1>Setting up a dev instance<a class="headerlink" href="#setting-up-a-dev-instance" title="Permalink to this headline">¶</a></h1>
+<p>Setting up OL dev instance requires installing third-party software, running many services.</p>
+<div class="section" id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>PostgreSQL 8.2 or later (psql)</li>
+<li>Python 2.5 or later (python)</li>
+<li>Git (git)</li>
+<li>Java Runtime (tested with openjdk-6-jre)</li>
+<li>At least 1GB of RAM on your dev machine or virtual machine</li>
+<li>Python virtualenv</li>
+</ul>
+<p>To install them on Ubuntu/Debian:</p>
+<div class="highlight-python"><pre>$ sudo apt-get install postgresql libpq-dev git-core openjdk-6-jre-headless python-virtualenv
+
+
+$ sudo apt-get install python-psycopg2 libxslt-dev</pre>
+</div>
+<p>To install them on Mac OS X:</p>
+<div class="highlight-python"><pre>$ brew install postgresql git
+$ sudo easy_install virtualenv</pre>
+</div>
+<p>Open Library depends also on the following packages, but they are installed by the install script.</p>
+<ul class="simple">
+<li>Apache Solr</li>
+<li>Apache CouchDB</li>
+<li>CouchDB Lucene</li>
+<li>Python Packages:<ul>
+<li>argparse</li>
+<li>Babel</li>
+<li>couchdb</li>
+<li>genshi</li>
+<li>lxml</li>
+<li>PIL</li>
+<li>psycopg2</li>
+<li>pymarc</li>
+<li>python-memcached</li>
+<li>pyyaml</li>
+<li>simplejson</li>
+<li>web.py==0.33</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>The installation is driven by install config file <tt class="docutils literal"><span class="pre">conf/install.ini</span></tt>. Edit that file if you need customize installation.</p>
+<p>The installation script is part of the Open Library repository. You need to get the repository to run the script.</p>
+<div class="highlight-python"><pre>$ git clone git://github.com/openlibrary/openlibrary.git
+$ cd openlibrary</pre>
+</div>
+<p>Now run the install script.</p>
+<blockquote>
+$ ./scripts/setup_dev_instance.py</blockquote>
+<p>The install script creates a virtualenv, installs all dependent python packages, installs vendor software and initializes OL databases. Detailed log is written to <tt class="docutils literal"><span class="pre">var/log/install.log</span></tt> and errors and info are reported to stdout and stderr.</p>
+<p>Setup a virtual env:</p>
+<div class="highlight-python"><pre>$ mkdir ~/pyenvs
+$ virtualenv ~/pyenv/ol
+$ . ~/pyenvs/ol/bin/activate</pre>
+</div>
+<p>Checkout submodules:</p>
+<div class="highlight-python"><pre>$ ./setup.sh</pre>
+</div>
+<p>Install third-party modules:</p>
+<div class="highlight-python"><pre>$ ./scripts/vendor-install.sh</pre>
+</div>
+<p>Setup databases:</p>
+<div class="highlight-python"><pre>$ ./scripts/initialize.sh</pre>
+</div>
+</div>
+<div class="section" id="run">
+<h2>Run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h2>
+<p>Once in the installation is done, running dev instance is very simple.</p>
+<div class="highlight-python"><pre>$ ./scripts/start.sh
+...</pre>
+</div>
+<p>This script starts all the OL services using supervisord.</p>
+<p>Open Library webserver is now running at:</p>
+<div class="highlight-python"><pre>http://0.0.0.0:8080/</pre>
+</div>
+</div>
+<div class="section" id="sample-data">
+<h2>Sample Data<a class="headerlink" href="#sample-data" title="Permalink to this headline">¶</a></h2>
+<p>Load sample data by running:</p>
+<div class="highlight-python"><pre>$ ./scripts/import_sample_data.py</pre>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Setting up a dev instance</a><ul>
+<li><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#run">Run</a></li>
+<li><a class="reference internal" href="#sample-data">Sample Data</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Open Library: Developer Documentation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="dev.html"
+                        title="next chapter">Getting Started with OL Development</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/setup.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dev.html" title="Getting Started with OL Development"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Open Library: Developer Documentation"
+             >previous</a> |</li>
+        <li><a href="index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2004-2010, Internet Archive.
+      Last updated on Dec 29, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
+    </div>
+  </body>
+</html>
