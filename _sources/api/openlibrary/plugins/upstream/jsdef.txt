@@ -1,0 +1,6 @@
+
+jsdef
+=====
+
+.. automodule:: openlibrary.plugins.upstream.jsdef
+    :members:

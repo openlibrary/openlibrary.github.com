@@ -1,0 +1,6 @@
+
+imagecache
+==========
+
+.. automodule:: openlibrary.coverstore.imagecache
+    :members:

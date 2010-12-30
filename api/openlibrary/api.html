@@ -1,0 +1,258 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>api &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../index.html" />
+    <link rel="up" title="openlibrary" href="index.html" />
+    <link rel="next" title="config" href="config.html" />
+    <link rel="prev" title="openlibrary" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="config.html" title="config"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="openlibrary"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">openlibrary</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.api">
+<span id="api"></span><h1>api<a class="headerlink" href="#module-openlibrary.api" title="Permalink to this headline">¶</a></h1>
+<p>Open Library API Client.</p>
+<p>ol = OpenLibrary(&#8220;<a class="reference external" href="http://0.0.0.0:8080">http://0.0.0.0:8080</a>&#8221;)
+ol.login(&#8216;joe&#8217;, &#8216;secret&#8217;)</p>
+<p>page = ol.get(&#8220;/sandbox&#8221;)
+print page[&#8220;body&#8221;]</p>
+<p>page[&#8220;body&#8221;] += &#8220;nnTest from API&#8221;
+ol.save(&#8220;/sandbox&#8221;, page, &#8220;test from api&#8221;)</p>
+<dl class="exception">
+<dt id="openlibrary.api.OLError">
+<em class="property">exception </em><tt class="descclassname">openlibrary.api.</tt><tt class="descname">OLError</tt><big>(</big><em>http_error</em><big>)</big><a class="headerlink" href="#openlibrary.api.OLError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></tt></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.api.OpenLibrary">
+<em class="property">class </em><tt class="descclassname">openlibrary.api.</tt><tt class="descname">OpenLibrary</tt><big>(</big><em>base_url='http://openlibrary.org'</em><big>)</big><a class="headerlink" href="#openlibrary.api.OpenLibrary" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.api.OpenLibrary.autologin">
+<tt class="descname">autologin</tt><big>(</big><em>section=None</em><big>)</big><a class="headerlink" href="#openlibrary.api.OpenLibrary.autologin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Login to Open Library with credentials taken from ~/.olrc file.</p>
+<p>The ~/.olrc file must be in ini format (format readable by
+ConfigParser module) and there should be a section with the
+server name. A sample configuration file may look like this:</p>
+<blockquote>
+<p>[openlibrary.org]
+username = joe
+password = secret</p>
+<p>[0.0.0.0:8080]
+username = joe
+password = joe123</p>
+</blockquote>
+<p>Optionally section name can be passed as argument to force using a different section name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.api.OpenLibrary.get">
+<tt class="descname">get</tt><big>(</big><em>key</em>, <em>v=None</em><big>)</big><a class="headerlink" href="#openlibrary.api.OpenLibrary.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.api.OpenLibrary.get_many">
+<tt class="descname">get_many</tt><big>(</big><em>keys</em><big>)</big><a class="headerlink" href="#openlibrary.api.OpenLibrary.get_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get multiple documents in a single request as a dictionary.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.api.OpenLibrary.login">
+<tt class="descname">login</tt><big>(</big><em>username</em>, <em>password</em><big>)</big><a class="headerlink" href="#openlibrary.api.OpenLibrary.login" title="Permalink to this definition">¶</a></dt>
+<dd><p>Login to Open Library with given credentials.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.api.OpenLibrary.new">
+<tt class="descname">new</tt><big>(</big><em>query</em>, <em>comment=None</em>, <em>action=None</em><big>)</big><a class="headerlink" href="#openlibrary.api.OpenLibrary.new" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.api.OpenLibrary.query">
+<tt class="descname">query</tt><big>(</big><em>q=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.api.OpenLibrary.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query Open Library.</p>
+<p>Open Library always limits the result to 1000 items due to
+performance issues. Pass limit=False to fetch all matching
+results by making multiple requests to the server. Please note
+the an iterator is returned insted of list when limit=False is
+passed.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ol</span><span class="o">.</span><span class="n">query</span><span class="p">({</span><span class="s">&#39;type&#39;</span><span class="p">:</span> <span class="s">&#39;/type/type&#39;</span><span class="p">,</span> <span class="s">&#39;limit&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span> 
+<span class="go">[{&#39;key&#39;: &#39;/type/property&#39;}, {&#39;key&#39;: &#39;/type/type&#39;}]</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ol</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s">&#39;/type/type&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> 
+<span class="go">[{&#39;key&#39;: &#39;/type/property&#39;}, {&#39;key&#39;: &#39;/type/type&#39;}]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.api.OpenLibrary.save">
+<tt class="descname">save</tt><big>(</big><em>key</em>, <em>data</em>, <em>comment=None</em><big>)</big><a class="headerlink" href="#openlibrary.api.OpenLibrary.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.api.OpenLibrary.save_many">
+<tt class="descname">save_many</tt><big>(</big><em>query</em>, <em>comment=None</em>, <em>action=None</em><big>)</big><a class="headerlink" href="#openlibrary.api.OpenLibrary.save_many" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.api.OpenLibrary.write">
+<tt class="descname">write</tt><big>(</big><em>query</em>, <em>comment=''</em>, <em>action=''</em><big>)</big><a class="headerlink" href="#openlibrary.api.OpenLibrary.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal write API.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.api.Reference">
+<em class="property">class </em><tt class="descclassname">openlibrary.api.</tt><tt class="descname">Reference</tt><a class="headerlink" href="#openlibrary.api.Reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">unicode</span></tt></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.api.Text">
+<em class="property">class </em><tt class="descclassname">openlibrary.api.</tt><tt class="descname">Text</tt><a class="headerlink" href="#openlibrary.api.Text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">unicode</span></tt></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.api.marshal">
+<tt class="descclassname">openlibrary.api.</tt><tt class="descname">marshal</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#openlibrary.api.marshal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serializes the specified data in the format required by OL.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">marshal</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2009</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6789</span><span class="p">))</span>
+<span class="go">{&#39;type&#39;: &#39;/type/datetime&#39;, &#39;value&#39;: &#39;2009-01-02T03:04:05.006789&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.api.parse_datetime">
+<tt class="descclassname">openlibrary.api.</tt><tt class="descname">parse_datetime</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#openlibrary.api.parse_datetime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses ISO datetime formatted strinb.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">parse_datetime</span><span class="p">(</span><span class="s">&quot;2009-01-02T03:04:05.006789&quot;</span><span class="p">)</span>
+<span class="go">datetime.datetime(2009, 1, 2, 3, 4, 5, 6789)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.api.unmarshal">
+<tt class="descclassname">openlibrary.api.</tt><tt class="descname">unmarshal</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#openlibrary.api.unmarshal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts OL serialized objects to python.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">unmarshal</span><span class="p">({</span><span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;/type/text&quot;</span><span class="p">,</span> <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="s">&quot;hello, world&quot;</span><span class="p">})</span>
+<span class="go">&lt;text: u&#39;hello, world&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">unmarshal</span><span class="p">({</span><span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;/type/datetime&quot;</span><span class="p">,</span> <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="s">&quot;2009-01-02T03:04:05.006789&quot;</span><span class="p">})</span>
+<span class="go">datetime.datetime(2009, 1, 2, 3, 4, 5, 6789)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">openlibrary</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="config.html"
+                        title="next chapter">config</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/api/openlibrary/api.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="config.html" title="config"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="openlibrary"
+             >previous</a> |</li>
+        <li><a href="../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="index.html" >openlibrary</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

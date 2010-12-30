@@ -1,0 +1,503 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>server &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="infobase" href="index.html" />
+    <link rel="next" title="utils" href="utils.html" />
+    <link rel="prev" title="readquery" href="readquery.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="utils.html" title="utils"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="readquery.html" title="readquery"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">infobase</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-infogami.infobase.server">
+<span id="server"></span><h1>server<a class="headerlink" href="#module-infogami.infobase.server" title="Permalink to this headline">¶</a></h1>
+<p>Infobase server to expose the API.</p>
+<dl class="class">
+<dt id="infogami.infobase.server.JSON">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">JSON</tt><big>(</big><em>json</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.JSON" title="Permalink to this definition">¶</a></dt>
+<dd><p>JSON marker. instances of this class not escaped by jsonify.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.server.account">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">account</tt><a class="headerlink" href="#infogami.infobase.server.account" title="Permalink to this definition">¶</a></dt>
+<dd><p>Code for handling /account/.*</p>
+<dl class="method">
+<dt id="infogami.infobase.server.account.GET">
+<tt class="descname">GET</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.account.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.server.account.GET_check_reset_code">
+<tt class="descname">GET_check_reset_code</tt><big>(</big><em>site</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.account.GET_check_reset_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.server.account.GET_find_user_by_email">
+<tt class="descname">GET_find_user_by_email</tt><big>(</big><em>site</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.account.GET_find_user_by_email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.server.account.GET_get_reset_code">
+<tt class="descname">GET_get_reset_code</tt><big>(</big><em>site</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.account.GET_get_reset_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.server.account.GET_get_user">
+<tt class="descname">GET_get_user</tt><big>(</big><em>site</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.account.GET_get_user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.server.account.GET_get_user_email">
+<tt class="descname">GET_get_user_email</tt><big>(</big><em>site</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.account.GET_get_user_email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.server.account.POST">
+<tt class="descname">POST</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.account.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.server.account.POST_login">
+<tt class="descname">POST_login</tt><big>(</big><em>site</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.account.POST_login" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.server.account.POST_register">
+<tt class="descname">POST_register</tt><big>(</big><em>site</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.account.POST_register" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.server.account.POST_reset_password">
+<tt class="descname">POST_reset_password</tt><big>(</big><em>site</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.account.POST_reset_password" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.server.account.POST_update_user">
+<tt class="descname">POST_update_user</tt><big>(</big><em>site</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.account.POST_update_user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.server.account.POST_update_user_details">
+<tt class="descname">POST_update_user_details</tt><big>(</big><em>site</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.account.POST_update_user_details" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.server.account.delegate">
+<tt class="descname">delegate</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.account.delegate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.server.account.get_method">
+<tt class="descname">get_method</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.server.account.get_method" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.server.change">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">change</tt><a class="headerlink" href="#infogami.infobase.server.change" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.server.change.GET">
+<tt class="descname">GET</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.change.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.server.db">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">db</tt><a class="headerlink" href="#infogami.infobase.server.db" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.server.db.DELETE">
+<tt class="descname">DELETE</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.db.DELETE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.server.db.GET">
+<tt class="descname">GET</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.db.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.server.db.PUT">
+<tt class="descname">PUT</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.db.PUT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.server.echo">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">echo</tt><a class="headerlink" href="#infogami.infobase.server.echo" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.server.echo.POST">
+<tt class="descname">POST</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.echo.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.server.from_json">
+<tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">from_json</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.from_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.server.get_data">
+<tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">get_data</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.server.get_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.server.get_many">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">get_many</tt><a class="headerlink" href="#infogami.infobase.server.get_many" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.server.get_many.GET">
+<tt class="descname">GET</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.get_many.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.server.get_site">
+<tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">get_site</tt><big>(</big><em>sitename</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.get_site" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.server.input">
+<tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">input</tt><big>(</big><em>*required</em>, <em>**defaults</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.input" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.server.jsonify">
+<tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">jsonify</tt><big>(</big><em>f</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.jsonify" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.server.new_key">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">new_key</tt><a class="headerlink" href="#infogami.infobase.server.new_key" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.server.new_key.GET">
+<tt class="descname">GET</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.new_key.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.server.parse_db_parameters">
+<tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">parse_db_parameters</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.parse_db_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.server.permission">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">permission</tt><a class="headerlink" href="#infogami.infobase.server.permission" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.server.permission.GET">
+<tt class="descname">GET</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.permission.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.server.process_exception">
+<tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">process_exception</tt><big>(</big><em>e</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.process_exception" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.server.readlog">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">readlog</tt><a class="headerlink" href="#infogami.infobase.server.readlog" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.server.readlog.GET">
+<tt class="descname">GET</tt><big>(</big><em>sitename</em>, <em>offset</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.readlog.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.server.readlog.assert_valid_json">
+<tt class="descname">assert_valid_json</tt><big>(</big><em>line</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.readlog.assert_valid_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.server.readlog.get_log">
+<tt class="descname">get_log</tt><big>(</big><em>offset</em>, <em>i</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.readlog.get_log" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.server.readlog.valid_json">
+<tt class="descname">valid_json</tt><big>(</big><em>line</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.readlog.valid_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.server.recentchanges">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">recentchanges</tt><a class="headerlink" href="#infogami.infobase.server.recentchanges" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.server.recentchanges.GET">
+<tt class="descname">GET</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.recentchanges.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.server.reindex">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">reindex</tt><a class="headerlink" href="#infogami.infobase.server.reindex" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.server.reindex.POST">
+<tt class="descname">POST</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.reindex.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.server.request">
+<tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">request</tt><big>(</big><em>path</em>, <em>method</em>, <em>data</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fakes the web request.
+Useful when infobase is not run as a separate process.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.server.run">
+<tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">run</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.server.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.server.save">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">save</tt><a class="headerlink" href="#infogami.infobase.server.save" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.server.save.POST">
+<tt class="descname">POST</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.save.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.server.save_many">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">save_many</tt><a class="headerlink" href="#infogami.infobase.server.save_many" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.server.save_many.POST">
+<tt class="descname">POST</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.save_many.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.server.seq">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">seq</tt><a class="headerlink" href="#infogami.infobase.server.seq" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.server.seq.GET">
+<tt class="descname">GET</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.seq.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.server.seq.POST">
+<tt class="descname">POST</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.seq.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.server.server">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">server</tt><a class="headerlink" href="#infogami.infobase.server.server" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.server.server.GET">
+<tt class="descname">GET</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.server.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.server.setup_remoteip">
+<tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">setup_remoteip</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.server.setup_remoteip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.server.start">
+<tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">start</tt><big>(</big><em>config_file</em>, <em>*args</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.server.store">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">store</tt><a class="headerlink" href="#infogami.infobase.server.store" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.server.store.DELETE">
+<tt class="descname">DELETE</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.store.DELETE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.server.store.GET">
+<tt class="descname">GET</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.store.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.server.store.PUT">
+<tt class="descname">PUT</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.store.PUT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.server.store_special">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">store_special</tt><a class="headerlink" href="#infogami.infobase.server.store_special" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.server.store_special.GET">
+<tt class="descname">GET</tt><big>(</big><em>sitename</em>, <em>path</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.store_special.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.server.store_special.GET_query">
+<tt class="descname">GET_query</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.store_special.GET_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.server.things">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">things</tt><a class="headerlink" href="#infogami.infobase.server.things" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.server.things.GET">
+<tt class="descname">GET</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.things.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.server.to_int">
+<tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">to_int</tt><big>(</big><em>value</em>, <em>key</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.to_int" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.server.versions">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">versions</tt><a class="headerlink" href="#infogami.infobase.server.versions" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.server.versions.GET">
+<tt class="descname">GET</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.versions.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.server.withkey">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">withkey</tt><a class="headerlink" href="#infogami.infobase.server.withkey" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.server.withkey.GET">
+<tt class="descname">GET</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.withkey.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.server.write">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.server.</tt><tt class="descname">write</tt><a class="headerlink" href="#infogami.infobase.server.write" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.server.write.POST">
+<tt class="descname">POST</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.server.write.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="readquery.html"
+                        title="previous chapter">readquery</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="utils.html"
+                        title="next chapter">utils</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/infogami/infobase/server.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="utils.html" title="utils"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="readquery.html" title="readquery"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" >infobase</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

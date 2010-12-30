@@ -15,15 +15,19 @@ Dependencies
 
 To install them on Ubuntu/Debian::
 
-	$ sudo apt-get install postgresql libpq-dev git-core openjdk-6-jre-headless python-virtualenv 
-
-	
-	$ sudo apt-get install python-psycopg2 libxslt-dev		
+	$ sudo apt-get install postgresql libpq-dev git-core openjdk-6-jre-headless python-virtualenv python-dev
+	$ sudo apt-get install libxslt1-dev
 
 To install them on Mac OS X: ::
 
 	$ brew install postgresql git
 	$ sudo easy_install virtualenv
+	
+Make sure you create a postgres user account for you.::
+
+	$ sudo -u postgres createuser anand
+	[sudo] password for anand: 
+	Shall the new role be a superuser? (y/n) y
 
 Open Library depends also on the following packages, but they are installed by the install script.
 

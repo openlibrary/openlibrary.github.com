@@ -1,0 +1,208 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>invalidation &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="processors" href="index.html" />
+    <link rel="next" title="readableurls" href="readableurls.html" />
+    <link rel="prev" title="processors" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="readableurls.html" title="readableurls"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="processors"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >core</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">processors</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.core.processors.invalidation">
+<span id="invalidation"></span><h1>invalidation<a class="headerlink" href="#module-openlibrary.core.processors.invalidation" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="openlibrary.core.processors.invalidation.InvalidationProcessor">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.processors.invalidation.</tt><tt class="descname">InvalidationProcessor</tt><big>(</big><em>prefixes</em>, <em>timeout=60</em>, <em>cookie_name='lastupdate'</em><big>)</big><a class="headerlink" href="#openlibrary.core.processors.invalidation.InvalidationProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Application processor to invalidate/update locally cached documents.</p>
+<p>The openlibrary application caches some documents like templates, macros,
+javascripts etc. locally for variety of reasons. This class implements a
+way to make sure those documents are kept up-to-date with the db within
+some allowed constraints.</p>
+<p>This implements a kind of lazy consistancy, which guaranties the following:</p>
+<ul class="simple">
+<li>If a client makes an update, he will continue to see that update on
+subsequent requests.</li>
+<li>If a client sees an update made by somebody else, he will continue to
+see that update on subsequent requests.</li>
+<li>A client sees older version of a doucment no longer than the specified
+timeout (in seconds) after the document is updated.</li>
+</ul>
+<p>It means that the following conditions will never happen:</p>
+<ul class="simple">
+<li>A client edits a page and reloading the same page shows an older
+version.</li>
+<li>A client loads a page and reloading the same page shows an older version.</li>
+<li>A client continue to see an older version of a document for very long time.</li>
+</ul>
+<p>It is implemented as follows:</p>
+<ul class="simple">
+<li>If there is an update, set a cookie with time of the update as value.</li>
+<li>If the cookie timestamp is more than the last_poll_time, trigger reload.</li>
+<li>If the cookie timestamp is less than the last_update_time, set the
+cookie with last_update_time.</li>
+<li>If the current time is more than timeout seconds since last_poll_time,
+trigger reload.</li>
+</ul>
+<p>When the reload is triggered:</p>
+<ul class="simple">
+<li>A request to the datebase is made to find list of documents modified after the last_poll_time.</li>
+<li>Trigger on_new_version event for each modified document. The application
+code that is handling the caching must listen to that event and
+invalidate/update its cached copy.</li>
+</ul>
+<p>How to use:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">infogami.utils</span> <span class="kn">import</span> <span class="n">delegate</span>
+<span class="kn">from</span> <span class="nn">infogami.infobase</span> <span class="kn">import</span> <span class="n">client</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">InvalidationProcessor</span><span class="p">([</span><span class="s">&quot;/templates/&quot;</span><span class="p">,</span> <span class="s">&quot;/macros/&quot;</span><span class="p">])</span>
+
+<span class="c"># install the application processor</span>
+<span class="n">delegate</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">add_processor</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+<span class="c"># add the hook to get notifications when a document is modified</span>
+<span class="n">client</span><span class="o">.</span><span class="n">hooks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">hook</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Glossary:</p>
+<ul class="simple">
+<li>cookie_timestamp: value of the invalidation cookie.</li>
+<li>last_poll_time: timestamp of the latest reload</li>
+<li>last_update_time: timestamp of the most recent update known to this
+process.</li>
+</ul>
+<dl class="method">
+<dt id="openlibrary.core.processors.invalidation.InvalidationProcessor.get_cookie_time">
+<tt class="descname">get_cookie_time</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.processors.invalidation.InvalidationProcessor.get_cookie_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.processors.invalidation.InvalidationProcessor.is_timeout">
+<tt class="descname">is_timeout</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.processors.invalidation.InvalidationProcessor.is_timeout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.processors.invalidation.InvalidationProcessor.parse_datetime">
+<tt class="descname">parse_datetime</tt><big>(</big><em>datestr</em><big>)</big><a class="headerlink" href="#openlibrary.core.processors.invalidation.InvalidationProcessor.parse_datetime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.processors.invalidation.InvalidationProcessor.reload">
+<tt class="descname">reload</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.processors.invalidation.InvalidationProcessor.reload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Triggers on_new_version event for all the documents modified since last_poll_time.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">processors</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="readableurls.html"
+                        title="next chapter">readableurls</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/api/openlibrary/core/processors/invalidation.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="readableurls.html" title="readableurls"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="processors"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >core</a> &raquo;</li>
+          <li><a href="index.html" >processors</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+
+sitemap
+=======
+
+.. automodule:: openlibrary.data.sitemap
+    :members:

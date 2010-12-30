@@ -1,0 +1,25 @@
+
+openlibrary
+===========
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   api.rst
+   config.rst
+   conftest.rst
+   core/index.rst
+   coverstore/index.rst
+   data/index.rst
+   i18n/index.rst
+   plugins/index.rst
+   utils/index.rst
+
+Documentation
+-------------
+
+.. automodule:: openlibrary
+    :members:

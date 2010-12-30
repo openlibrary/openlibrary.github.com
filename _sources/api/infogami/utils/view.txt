@@ -1,0 +1,6 @@
+
+view
+====
+
+.. automodule:: infogami.utils.view
+    :members:

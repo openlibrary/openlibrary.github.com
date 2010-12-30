@@ -1,0 +1,214 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>template &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="utils" href="index.html" />
+    <link rel="next" title="types" href="types.html" />
+    <link rel="prev" title="storage" href="storage.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="types.html" title="types"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="storage.html" title="storage"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">utils</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-infogami.utils.template">
+<span id="template"></span><h1>template<a class="headerlink" href="#module-infogami.utils.template" title="Permalink to this headline">¶</a></h1>
+<p>Template Management.</p>
+<p>In Infogami, templates are provided by multiple plugins. This module takes 
+templates from each module and makes them available under single namespace.</p>
+<p>There could also be multiple sources of templates. For example, from plugins 
+and from the wiki. The <cite>Render</cite> class takes care of providing the correct 
+template from multiple template sources and error handling.</p>
+<dl class="class">
+<dt id="infogami.utils.template.DiskTemplateSource">
+<em class="property">class </em><tt class="descclassname">infogami.utils.template.</tt><tt class="descname">DiskTemplateSource</tt><a class="headerlink" href="#infogami.utils.template.DiskTemplateSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">web.utils.Storage</span></tt></p>
+<p>Template source of templates on disk.
+Supports loading of templates from a search path instead of single dir.</p>
+<dl class="method">
+<dt id="infogami.utils.template.DiskTemplateSource.load_templates">
+<tt class="descname">load_templates</tt><big>(</big><em>path</em>, <em>lazy=False</em><big>)</big><a class="headerlink" href="#infogami.utils.template.DiskTemplateSource.load_templates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.utils.template.LazyTemplate">
+<em class="property">class </em><tt class="descclassname">infogami.utils.template.</tt><tt class="descname">LazyTemplate</tt><big>(</big><em>func</em>, <em>name=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.utils.template.LazyTemplate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="infogami.utils.template.Render">
+<em class="property">class </em><tt class="descclassname">infogami.utils.template.</tt><tt class="descname">Render</tt><big>(</big><em>dicts=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#infogami.utils.template.Render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="storage.html#infogami.utils.storage.DictPile" title="infogami.utils.storage.DictPile"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.storage.DictPile</span></tt></a></p>
+<dl class="method">
+<dt id="infogami.utils.template.Render.add_source">
+<tt class="descname">add_source</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#infogami.utils.template.Render.add_source" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds d to the pile of dicts at the top.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.utils.template.Stowage">
+<em class="property">class </em><tt class="descclassname">infogami.utils.template.</tt><tt class="descname">Stowage</tt><a class="headerlink" href="#infogami.utils.template.Stowage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">web.utils.Storage</span></tt></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.utils.template.TemplateRender">
+<em class="property">class </em><tt class="descclassname">infogami.utils.template.</tt><tt class="descname">TemplateRender</tt><big>(</big><em>loc='templates'</em>, <em>cache=None</em>, <em>base=None</em>, <em>**keywords</em><big>)</big><a class="headerlink" href="#infogami.utils.template.TemplateRender" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">web.template.Render</span></tt></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.template.find">
+<tt class="descclassname">infogami.utils.template.</tt><tt class="descname">find</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#infogami.utils.template.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find all files in the file hierarchy rooted at path.
+&gt;&gt; find(&#8216;..../web&#8217;)
+[&#8216;db.py&#8217;, &#8216;http.py&#8217;, &#8216;wsgiserver/__init__.py&#8217;, ....]</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.template.get_template">
+<tt class="descclassname">infogami.utils.template.</tt><tt class="descname">get_template</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#infogami.utils.template.get_template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.template.load_templates">
+<tt class="descclassname">infogami.utils.template.</tt><tt class="descname">load_templates</tt><big>(</big><em>plugin_root</em>, <em>lazy=True</em><big>)</big><a class="headerlink" href="#infogami.utils.template.load_templates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds $plugin_root/templates to template search path</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.template.render_template">
+<tt class="descclassname">infogami.utils.template.</tt><tt class="descname">render_template</tt><big>(</big><em>name</em>, <em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.utils.template.render_template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.template.saferender">
+<tt class="descclassname">infogami.utils.template.</tt><tt class="descname">saferender</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.utils.template.saferender" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.template.typetemplate">
+<tt class="descclassname">infogami.utils.template.</tt><tt class="descname">typetemplate</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#infogami.utils.template.typetemplate" title="Permalink to this definition">¶</a></dt>
+<dd><p>explain later</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.template.usermode">
+<tt class="descclassname">infogami.utils.template.</tt><tt class="descname">usermode</tt><big>(</big><em>f</em><big>)</big><a class="headerlink" href="#infogami.utils.template.usermode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a function that calls f after switching to user mode of tdb.
+In user mode, saving of things will be disabled to protect user written 
+templates from modifying things.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="storage.html"
+                        title="previous chapter">storage</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="types.html"
+                        title="next chapter">types</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/infogami/utils/template.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="types.html" title="types"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="storage.html" title="storage"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" >utils</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

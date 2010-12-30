@@ -1,0 +1,6 @@
+
+readableurls
+============
+
+.. automodule:: openlibrary.core.processors.readableurls
+    :members:

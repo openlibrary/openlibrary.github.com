@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="openlibrary v2.0 documentation" href="../index.html" />
     <link rel="up" title="Design Notes" href="index.html" />
-    <link rel="next" title="API documentation" href="../api/index.html" />
+    <link rel="next" title="API Documentation" href="../api/index.html" />
     <link rel="prev" title="Lists" href="lists.html" /> 
   </head>
   <body>
@@ -38,7 +38,7 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../api/index.html" title="API documentation"
+          <a href="../api/index.html" title="API Documentation"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="lists.html" title="Lists"
@@ -59,10 +59,26 @@
 <h2>Installing Dependencies<a class="headerlink" href="#installing-dependencies" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="installing-couchdb">
 <h3>Installing CouchDB<a class="headerlink" href="#installing-couchdb" title="Permalink to this headline">¶</a></h3>
-<p>Installing CouchDB involves installing so many dependencies, some of them are incompatible with ubuntu/debian installations. Fortunately, a binary distribution with all the binaries is provided by CouchOne.</p>
+<p>On Linux, installing CouchDB involves installing so many dependencies, some of
+them are incompatible with ubuntu/debian installations. Fortunately, a binary
+distribution with all the binaries is provided by CouchOne.</p>
 <p><a class="reference external" href="http://www.couchone.com/get">http://www.couchone.com/get</a></p>
-<p>The problem with that distribution is that it is interactive and it won&#8217;t be possible to automate the installation of that. To overcome this problem, the binaries after running the interactive installation are taken and bundled. The ol install script, takes the bundle, unpacks it and runs a script to updates the path in some scripts and config files.</p>
-<p>The created bundle is uploaded to <a class="reference external" href="http://www.archive.org/details/ol_vendor">http://www.archive.org/details/ol_vendor</a>.</p>
+<p>The problem with that distribution is that it is interactive and it won&#8217;t be
+possible to automate the installation of that. To overcome this problem, the
+binaries after running the interactive installation are taken and bundled. The
+ol install script, downloads the bundle, unpacks it and runs a script to
+updates the path in some scripts and config files.</p>
+<p>The created bundle <tt class="docutils literal"><span class="pre">couchdb-1.0.1-linux-binaries.tgz</span></tt> is uploaded to
+<a class="reference external" href="http://www.archive.org/details/ol_vendor">http://www.archive.org/details/ol_vendor</a>.</p>
+<p>On Max OS X, installing couchdb is somewhat easier than installing on Linux.
+However to make the installations on both mac and linux similar, binaries are taken from
+<a class="reference external" href="http://dl.couchone.com/dl/26f246a0fe23d6a53d532671330bf06d/CouchDBX-1.0.1.1.zip">CouchDBX</a> app.</p>
+<p>Unlike Linux, where <tt class="docutils literal"><span class="pre">bin</span></tt> and <tt class="docutils literal"><span class="pre">etc</span></tt> are available in the top-level, mac
+binaries have them at 2 level deep. To make both distributions identical, a
+<tt class="docutils literal"><span class="pre">bin/couchdb</span></tt> script is added and <tt class="docutils literal"><span class="pre">etc</span></tt> is symlinked from
+<tt class="docutils literal"><span class="pre">couchdb_1.0.1/etc</span></tt>. Also the mac couchdb script expects the base directory
+should be the working directory. The above <tt class="docutils literal"><span class="pre">bin/couchdb</span></tt> script, takes of
+this too.</p>
 </div>
 </div>
 </div>
@@ -89,7 +105,7 @@
                         title="previous chapter">Lists</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="../api/index.html"
-                        title="next chapter">API documentation</a></p>
+                        title="next chapter">API Documentation</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/design/dev-instance.txt"
@@ -122,7 +138,7 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../api/index.html" title="API documentation"
+          <a href="../api/index.html" title="API Documentation"
              >next</a> |</li>
         <li class="right" >
           <a href="lists.html" title="Lists"
@@ -132,9 +148,9 @@
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2004-2010, Internet Archive.
-      Last updated on Dec 29, 2010.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
     </div>
   </body>
 </html>

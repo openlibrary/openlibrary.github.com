@@ -1,0 +1,165 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>dateutil &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="utils" href="index.html" />
+    <link rel="next" title="form" href="form.html" />
+    <link rel="prev" title="compress" href="compress.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="form.html" title="form"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="compress.html" title="compress"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">utils</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.utils.dateutil">
+<span id="dateutil"></span><h1>dateutil<a class="headerlink" href="#module-openlibrary.utils.dateutil" title="Permalink to this headline">¶</a></h1>
+<p>Generic date utilities.</p>
+<dl class="function">
+<dt id="openlibrary.utils.dateutil.nextday">
+<tt class="descclassname">openlibrary.utils.dateutil.</tt><tt class="descname">nextday</tt><big>(</big><em>date</em><big>)</big><a class="headerlink" href="#openlibrary.utils.dateutil.nextday" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.utils.dateutil.nextmonth">
+<tt class="descclassname">openlibrary.utils.dateutil.</tt><tt class="descname">nextmonth</tt><big>(</big><em>date</em><big>)</big><a class="headerlink" href="#openlibrary.utils.dateutil.nextmonth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a new date object with first day of the next month.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.utils.dateutil.nextyear">
+<tt class="descclassname">openlibrary.utils.dateutil.</tt><tt class="descname">nextyear</tt><big>(</big><em>date</em><big>)</big><a class="headerlink" href="#openlibrary.utils.dateutil.nextyear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a new date object with first day of the next year.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.utils.dateutil.parse_date">
+<tt class="descclassname">openlibrary.utils.dateutil.</tt><tt class="descname">parse_date</tt><big>(</big><em>datestr</em><big>)</big><a class="headerlink" href="#openlibrary.utils.dateutil.parse_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses date string.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">parse_date</span><span class="p">(</span><span class="s">&quot;2010&quot;</span><span class="p">)</span>
+<span class="go">datetime.date(2010, 01, 01)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parse_date</span><span class="p">(</span><span class="s">&quot;2010-02&quot;</span><span class="p">)</span>
+<span class="go">datetime.date(2010, 02, 01)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parse_date</span><span class="p">(</span><span class="s">&quot;2010-02-04&quot;</span><span class="p">)</span>
+<span class="go">datetime.date(2010, 02, 04)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.utils.dateutil.parse_daterange">
+<tt class="descclassname">openlibrary.utils.dateutil.</tt><tt class="descname">parse_daterange</tt><big>(</big><em>datestr</em><big>)</big><a class="headerlink" href="#openlibrary.utils.dateutil.parse_daterange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses date range.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">parse_daterange</span><span class="p">(</span><span class="s">&quot;2010-02&quot;</span><span class="p">)</span>
+<span class="go">(datetime.date(2010, 02, 01), datetime.date(2010, 03, 01))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="compress.html"
+                        title="previous chapter">compress</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="form.html"
+                        title="next chapter">form</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/openlibrary/utils/dateutil.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="form.html" title="form"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="compress.html" title="compress"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >utils</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

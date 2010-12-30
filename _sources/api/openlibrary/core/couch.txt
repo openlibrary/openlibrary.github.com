@@ -1,0 +1,6 @@
+
+couch
+=====
+
+.. automodule:: openlibrary.core.couch
+    :members:

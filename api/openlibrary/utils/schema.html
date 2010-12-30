@@ -1,0 +1,198 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>schema &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="utils" href="index.html" />
+    <link rel="next" title="solr" href="solr.html" />
+    <link rel="prev" title="processors" href="processors.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="solr.html" title="solr"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="processors.html" title="processors"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">utils</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.utils.schema">
+<span id="schema"></span><h1>schema<a class="headerlink" href="#module-openlibrary.utils.schema" title="Permalink to this headline">¶</a></h1>
+<p>utility to generate db schema for any database engine.
+(should go to web.py)</p>
+<dl class="class">
+<dt id="openlibrary.utils.schema.Schema">
+<em class="property">class </em><tt class="descclassname">openlibrary.utils.schema.</tt><tt class="descname">Schema</tt><a class="headerlink" href="#openlibrary.utils.schema.Schema" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.utils.schema.Schema.add_index">
+<tt class="descname">add_index</tt><big>(</big><em>table</em>, <em>columns</em>, <em>**options</em><big>)</big><a class="headerlink" href="#openlibrary.utils.schema.Schema.add_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.schema.Schema.add_table">
+<tt class="descname">add_table</tt><big>(</big><em>name</em>, <em>*columns</em>, <em>**options</em><big>)</big><a class="headerlink" href="#openlibrary.utils.schema.Schema.add_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.schema.Schema.column">
+<tt class="descname">column</tt><big>(</big><em>name</em>, <em>type</em>, <em>**options</em><big>)</big><a class="headerlink" href="#openlibrary.utils.schema.Schema.column" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.schema.Schema.sql">
+<tt class="descname">sql</tt><big>(</big><em>engine</em><big>)</big><a class="headerlink" href="#openlibrary.utils.schema.Schema.sql" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.utils.schema.Table">
+<em class="property">class </em><tt class="descclassname">openlibrary.utils.schema.</tt><tt class="descname">Table</tt><big>(</big><em>name</em>, <em>*columns</em>, <em>**options</em><big>)</big><a class="headerlink" href="#openlibrary.utils.schema.Table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Database table.
+&gt;&gt;&gt; t = Table(&#8216;user&#8217;, Column(&#8216;name&#8217;, &#8216;string&#8217;))
+&gt;&gt;&gt; print t.sql(&#8216;postgres&#8217;)
+create table user (</p>
+<blockquote>
+name character varying(255)</blockquote>
+<p>);</p>
+<dl class="method">
+<dt id="openlibrary.utils.schema.Table.sql">
+<tt class="descname">sql</tt><big>(</big><em>engine</em><big>)</big><a class="headerlink" href="#openlibrary.utils.schema.Table.sql" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.utils.schema.Column">
+<em class="property">class </em><tt class="descclassname">openlibrary.utils.schema.</tt><tt class="descname">Column</tt><big>(</big><em>name</em>, <em>type</em>, <em>**options</em><big>)</big><a class="headerlink" href="#openlibrary.utils.schema.Column" title="Permalink to this definition">¶</a></dt>
+<dd><p>Column in a database table.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Column</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;text&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">&#39;mock&#39;</span><span class="p">)</span>
+<span class="go">&#39;name text&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Column</span><span class="p">(</span><span class="s">&#39;id&#39;</span><span class="p">,</span> <span class="s">&#39;serial&#39;</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">&#39;mock&#39;</span><span class="p">)</span>
+<span class="go">&#39;id serial primary key&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Column</span><span class="p">(</span><span class="s">&#39;revision&#39;</span><span class="p">,</span> <span class="s">&#39;integer&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">&#39;mock&#39;</span><span class="p">)</span>
+<span class="go">&#39;revision integer default 1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Column</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;string&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&#39;joe&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">&#39;mock&#39;</span><span class="p">)</span>
+<span class="go">&quot;name string(255) default &#39;joe&#39;&quot;</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="openlibrary.utils.schema.Column.sql">
+<tt class="descname">sql</tt><big>(</big><em>engine</em><big>)</big><a class="headerlink" href="#openlibrary.utils.schema.Column.sql" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.utils.schema.register_datatype">
+<tt class="descclassname">openlibrary.utils.schema.</tt><tt class="descname">register_datatype</tt><big>(</big><em>name</em>, <em>datatype</em><big>)</big><a class="headerlink" href="#openlibrary.utils.schema.register_datatype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.utils.schema.register_constant">
+<tt class="descclassname">openlibrary.utils.schema.</tt><tt class="descname">register_constant</tt><big>(</big><em>name</em>, <em>constant</em><big>)</big><a class="headerlink" href="#openlibrary.utils.schema.register_constant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="processors.html"
+                        title="previous chapter">processors</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="solr.html"
+                        title="next chapter">solr</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/openlibrary/utils/schema.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="solr.html" title="solr"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="processors.html" title="processors"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >utils</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

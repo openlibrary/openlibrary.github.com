@@ -1,0 +1,6 @@
+
+config
+======
+
+.. automodule:: openlibrary.coverstore.config
+    :members:

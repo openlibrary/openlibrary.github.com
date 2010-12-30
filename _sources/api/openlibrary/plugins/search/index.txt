@@ -1,0 +1,21 @@
+
+search
+======
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   code.rst
+   collapse.rst
+   facet_hash.rst
+   solr_client.rst
+   stopword.rst
+
+Documentation
+-------------
+
+.. automodule:: openlibrary.plugins.search
+    :members:

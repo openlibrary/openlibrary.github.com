@@ -1,0 +1,302 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>warc &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="coverstore" href="index.html" />
+    <link rel="next" title="data" href="../data/index.html" />
+    <link rel="prev" title="utils" href="utils.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../data/index.html" title="data"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="utils.html" title="utils"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">coverstore</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.coverstore.warc">
+<span id="warc"></span><h1>warc<a class="headerlink" href="#module-openlibrary.coverstore.warc" title="Permalink to this headline">¶</a></h1>
+<p>Reader and writer for WARC file format version 0.10.</p>
+<p><a class="reference external" href="http://archive-access.sourceforge.net/warc/warc_file_format-0.10.html">http://archive-access.sourceforge.net/warc/warc_file_format-0.10.html</a></p>
+<dl class="class">
+<dt id="openlibrary.coverstore.warc.HTTPFile">
+<em class="property">class </em><tt class="descclassname">openlibrary.coverstore.warc.</tt><tt class="descname">HTTPFile</tt><big>(</big><em>url</em>, <em>chunk_size=1024</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.warc.HTTPFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>File like interface to HTTP url.</p>
+<dl class="method">
+<dt id="openlibrary.coverstore.warc.HTTPFile.read">
+<tt class="descname">read</tt><big>(</big><em>size</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.warc.HTTPFile.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.warc.HTTPFile.readline">
+<tt class="descname">readline</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.coverstore.warc.HTTPFile.readline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads a line from file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.warc.HTTPFile.seek">
+<tt class="descname">seek</tt><big>(</big><em>offset</em>, <em>whence=0</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.warc.HTTPFile.seek" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.warc.HTTPFile.tell">
+<tt class="descname">tell</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.coverstore.warc.HTTPFile.tell" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.warc.HTTPFile.urlsplit">
+<tt class="descname">urlsplit</tt><big>(</big><em>url</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.warc.HTTPFile.urlsplit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Splits url into protocol, host, port and path.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">HTTPFile</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">urlsplit</span><span class="p">(</span><span class="s">&quot;http://www.google.com/search?q=hello&quot;</span><span class="p">)</span>
+<span class="go">(&#39;http&#39;, &#39;www.google.com&#39;, None, &#39;/search?q=hello&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.coverstore.warc.LazyWARCRecord">
+<em class="property">class </em><tt class="descclassname">openlibrary.coverstore.warc.</tt><tt class="descname">LazyWARCRecord</tt><big>(</big><em>file</em>, <em>offset</em>, <em>header</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.warc.LazyWARCRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.coverstore.warc.WARCRecord" title="openlibrary.coverstore.warc.WARCRecord"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.coverstore.warc.WARCRecord</span></tt></a></p>
+<p>Class to create WARCRecord lazily.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">StringIO</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r1</span> <span class="o">=</span> <span class="n">WARCRecord</span><span class="p">(</span><span class="s">&quot;resource&quot;</span><span class="p">,</span> <span class="s">&quot;subject_uri&quot;</span><span class="p">,</span> <span class="s">&quot;image/jpeg&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s">&quot;hello&quot;</span><span class="p">:</span> <span class="s">&quot;world&quot;</span><span class="p">},</span> <span class="s">&quot;foo bar&quot;</span><span class="p">,</span> <span class="n">creation_date</span><span class="o">=</span><span class="s">&quot;20080808080808&quot;</span><span class="p">,</span> <span class="n">record_id</span><span class="o">=</span><span class="s">&quot;record_42&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">StringIO</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">r1</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">offset</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">r1</span><span class="o">.</span><span class="n">get_header</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r2</span> <span class="o">=</span> <span class="n">LazyWARCRecord</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">r1</span><span class="o">.</span><span class="n">get_header</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r1</span> <span class="o">==</span> <span class="n">r2</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="openlibrary.coverstore.warc.LazyWARCRecord.get_data">
+<tt class="descname">get_data</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.coverstore.warc.LazyWARCRecord.get_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.warc.LazyWARCRecord.get_header">
+<tt class="descname">get_header</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.coverstore.warc.LazyWARCRecord.get_header" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.coverstore.warc.WARCHeader">
+<em class="property">class </em><tt class="descclassname">openlibrary.coverstore.warc.</tt><tt class="descname">WARCHeader</tt><big>(</big><em>warc_id</em>, <em>data_length</em>, <em>record_type</em>, <em>subject_uri</em>, <em>creation_date</em>, <em>record_id</em>, <em>content_type</em>, <em>headers</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.warc.WARCHeader" title="Permalink to this definition">¶</a></dt>
+<dd><p>WARCHeader class represents the header in the WARC file format.</p>
+<p>header      = header-line CRLF <a href="#id1"><span class="problematic" id="id2">*</span></a>anvl-field CRLF
+header-line = warc-id tsp data-length tsp record-type tsp</p>
+<blockquote>
+subject-uri tsp creation-date tsp
+record-id tsp content-type</blockquote>
+<p>anvl-field  =  field-name &#8221;:&#8221; [ field-body ] CRLF</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">WARCHeader</span><span class="p">(</span><span class="s">&quot;WARC/0.10&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s">&quot;resource&quot;</span><span class="p">,</span> <span class="s">&quot;subject_uri&quot;</span><span class="p">,</span> <span class="s">&quot;20080808080808&quot;</span><span class="p">,</span> <span class="s">&quot;record_42&quot;</span><span class="p">,</span> <span class="s">&quot;image/jpeg&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;hello&#39;</span><span class="p">:</span> <span class="s">&#39;world&#39;</span><span class="p">})</span>
+<span class="go">&lt;header: &#39;WARC/0.10 10 resource subject_uri 20080808080808 record_42 image/jpeg\r\nhello: world\r\n\r\n&#39;&gt;</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="openlibrary.coverstore.warc.WARCHeader.dict">
+<tt class="descname">dict</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.coverstore.warc.WARCHeader.dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.coverstore.warc.WARCReader">
+<em class="property">class </em><tt class="descclassname">openlibrary.coverstore.warc.</tt><tt class="descname">WARCReader</tt><big>(</big><em>file</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.warc.WARCReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reader to read records from a warc file.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">StringIO</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">StringIO</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r1</span> <span class="o">=</span> <span class="n">WARCRecord</span><span class="p">(</span><span class="s">&quot;resource&quot;</span><span class="p">,</span> <span class="s">&quot;subject_uri&quot;</span><span class="p">,</span> <span class="s">&quot;image/jpeg&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s">&quot;hello&quot;</span><span class="p">:</span> <span class="s">&quot;world&quot;</span><span class="p">},</span> <span class="s">&quot;foo&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r2</span> <span class="o">=</span> <span class="n">WARCRecord</span><span class="p">(</span><span class="s">&quot;resource&quot;</span><span class="p">,</span> <span class="s">&quot;subject_uri&quot;</span><span class="p">,</span> <span class="s">&quot;image/jpeg&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s">&quot;hello&quot;</span><span class="p">:</span> <span class="s">&quot;world&quot;</span><span class="p">},</span> <span class="s">&quot;bar&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">WARCWriter</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reader</span> <span class="o">=</span> <span class="n">WARCReader</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">records</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">reader</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">records</span> <span class="o">==</span> <span class="p">[</span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">]</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="openlibrary.coverstore.warc.WARCReader.read">
+<tt class="descname">read</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.coverstore.warc.WARCReader.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an iterator over all the records in the WARC file.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.coverstore.warc.WARCRecord">
+<em class="property">class </em><tt class="descclassname">openlibrary.coverstore.warc.</tt><tt class="descname">WARCRecord</tt><big>(</big><em>record_type</em>, <em>subject_uri</em>, <em>content_type</em>, <em>headers</em>, <em>data</em>, <em>creation_date=None</em>, <em>record_id=None</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.warc.WARCRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>A record in a WARC file.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">WARCRecord</span><span class="p">(</span><span class="s">&quot;resource&quot;</span><span class="p">,</span> <span class="s">&quot;subject_uri&quot;</span><span class="p">,</span> <span class="s">&quot;image/jpeg&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s">&quot;hello&quot;</span><span class="p">:</span> <span class="s">&quot;world&quot;</span><span class="p">},</span> <span class="s">&quot;foo bar&quot;</span><span class="p">,</span> <span class="n">creation_date</span><span class="o">=</span><span class="s">&quot;20080808080808&quot;</span><span class="p">,</span> <span class="n">record_id</span><span class="o">=</span><span class="s">&quot;record_42&quot;</span><span class="p">)</span>
+<span class="go">&lt;record: &#39;WARC/0.10 7 resource subject_uri 20080808080808 record_42 image/jpeg\r\nhello: world\r\n\r\nfoo bar&#39;&gt;</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="openlibrary.coverstore.warc.WARCRecord.create_uuid">
+<tt class="descname">create_uuid</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.coverstore.warc.WARCRecord.create_uuid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.warc.WARCRecord.get_data">
+<tt class="descname">get_data</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.coverstore.warc.WARCRecord.get_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.warc.WARCRecord.get_header">
+<tt class="descname">get_header</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.coverstore.warc.WARCRecord.get_header" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.coverstore.warc.WARCWriter">
+<em class="property">class </em><tt class="descclassname">openlibrary.coverstore.warc.</tt><tt class="descname">WARCWriter</tt><big>(</big><em>file</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.warc.WARCWriter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes to write warc records to file.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">re</span><span class="o">,</span> <span class="nn">StringIO</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">StringIO</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r1</span> <span class="o">=</span> <span class="n">WARCRecord</span><span class="p">(</span><span class="s">&quot;resource&quot;</span><span class="p">,</span> <span class="s">&quot;subject_uri&quot;</span><span class="p">,</span> <span class="s">&quot;image/jpeg&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s">&quot;hello&quot;</span><span class="p">:</span> <span class="s">&quot;world&quot;</span><span class="p">},</span> <span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="n">creation_date</span><span class="o">=</span><span class="s">&quot;20080808080808&quot;</span><span class="p">,</span> <span class="n">record_id</span><span class="o">=</span><span class="s">&quot;record_42&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r2</span> <span class="o">=</span> <span class="n">WARCRecord</span><span class="p">(</span><span class="s">&quot;resource&quot;</span><span class="p">,</span> <span class="s">&quot;subject_uri&quot;</span><span class="p">,</span> <span class="s">&quot;image/jpeg&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s">&quot;hello&quot;</span><span class="p">:</span> <span class="s">&quot;world&quot;</span><span class="p">},</span> <span class="s">&quot;bar&quot;</span><span class="p">,</span> <span class="n">creation_date</span><span class="o">=</span><span class="s">&quot;20080808090909&quot;</span><span class="p">,</span> <span class="n">record_id</span><span class="o">=</span><span class="s">&quot;record_43&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">WARCWriter</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
+<span class="go">86</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r2</span><span class="p">)</span>
+<span class="go">179</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lines</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">&#39;[^</span><span class="se">\r\n</span><span class="s">]*</span><span class="se">\r\n</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span> <span class="c"># break at \r\n to print in a readable way</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span> <span class="k">print</span> <span class="nb">repr</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+<span class="go">&#39;WARC/0.10 3 resource subject_uri 20080808080808 record_42 image/jpeg\r\n&#39;</span>
+<span class="go">&#39;hello: world\r\n&#39;</span>
+<span class="go">&#39;\r\n&#39;</span>
+<span class="go">&#39;foo\r\n&#39;</span>
+<span class="go">&#39;\r\n&#39;</span>
+<span class="go">&#39;WARC/0.10 3 resource subject_uri 20080808090909 record_43 image/jpeg\r\n&#39;</span>
+<span class="go">&#39;hello: world\r\n&#39;</span>
+<span class="go">&#39;\r\n&#39;</span>
+<span class="go">&#39;bar\r\n&#39;</span>
+<span class="go">&#39;\r\n&#39;</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="openlibrary.coverstore.warc.WARCWriter.close">
+<tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.coverstore.warc.WARCWriter.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.warc.WARCWriter.write">
+<tt class="descname">write</tt><big>(</big><em>record</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.warc.WARCWriter.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes a record into the WARC file. 
+Assumes that data_length and other attributes are correctly set in record.header.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="utils.html"
+                        title="previous chapter">utils</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../data/index.html"
+                        title="next chapter">data</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/openlibrary/coverstore/warc.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../data/index.html" title="data"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="utils.html" title="utils"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >coverstore</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

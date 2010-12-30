@@ -1,0 +1,239 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>utils &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="infobase" href="index.html" />
+    <link rel="next" title="writequery" href="writequery.html" />
+    <link rel="prev" title="server" href="server.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="writequery.html" title="writequery"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="server.html" title="server"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">infobase</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-infogami.infobase.utils">
+<span id="utils"></span><h1>utils<a class="headerlink" href="#module-infogami.infobase.utils" title="Permalink to this headline">¶</a></h1>
+<p>Generic utilities.</p>
+<dl class="function">
+<dt id="infogami.infobase.utils.dict_diff">
+<tt class="descclassname">infogami.infobase.utils.</tt><tt class="descname">dict_diff</tt><big>(</big><em>d1</em>, <em>d2</em><big>)</big><a class="headerlink" href="#infogami.infobase.utils.dict_diff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compares 2 dictionaries and returns the following.</p>
+<ul class="simple">
+<li>all keys in d1 whose values are changed in d2</li>
+<li>all keys in d1 which have same values in d2</li>
+<li>all keys in d2 whose values are changed in d1</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">dict_diff</span><span class="p">({</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;z&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span> <span class="p">{</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="s">&#39;z&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">:</span> <span class="mi">23</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="go">([&#39;x&#39;, &#39;y&#39;], [&#39;z&#39;], [&#39;w&#39;, &#39;x&#39;])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.utils.flatten">
+<tt class="descclassname">infogami.infobase.utils.</tt><tt class="descname">flatten</tt><big>(</big><em>nested_list</em>, <em>result=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.utils.flatten" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flattens a nested list.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">flatten</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]])</span>
+<span class="go">[1, 2, 3, 4, 5, 6]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.utils.flatten_dict">
+<tt class="descclassname">infogami.infobase.utils.</tt><tt class="descname">flatten_dict</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#infogami.infobase.utils.flatten_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flattens a dictionary.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">flatten_dict</span><span class="p">({</span><span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;/books/foo&quot;</span><span class="p">,</span> <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;/type/book&quot;</span><span class="p">},</span> <span class="s">&quot;authors&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;/authors/a1&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;/authors/a2&quot;</span><span class="p">}]})</span>
+<span class="go">[(&#39;type.key&#39;, &#39;/type/book&#39;), (&#39;key&#39;, &#39;/books/foo&#39;), (&#39;authors.key&#39;, &#39;/authors/a1&#39;), (&#39;authors.key&#39;, &#39;/authors/a2&#39;)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.utils.parse_boolean">
+<tt class="descclassname">infogami.infobase.utils.</tt><tt class="descname">parse_boolean</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#infogami.infobase.utils.parse_boolean" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.utils.parse_datetime">
+<tt class="descclassname">infogami.infobase.utils.</tt><tt class="descname">parse_datetime</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#infogami.infobase.utils.parse_datetime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates datetime object from isoformat.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="s">&#39;2008-01-01T01:01:01.010101&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parse_datetime</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+<span class="go">&#39;2008-01-01T01:01:01.010101&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.utils.pprint">
+<tt class="descclassname">infogami.infobase.utils.</tt><tt class="descname">pprint</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#infogami.infobase.utils.pprint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pretty prints given object.
+&gt;&gt;&gt; pprint(1)
+1
+&gt;&gt;&gt; pprint(&#8220;hello&#8221;)
+&#8216;hello&#8217;
+&gt;&gt;&gt; pprint([1, 2, 3])
+[1, 2, 3]
+&gt;&gt;&gt; pprint({&#8216;x&#8217;: 1, &#8216;y&#8217;: 2})
+{</p>
+<blockquote>
+&#8216;x&#8217;: 1,
+&#8216;y&#8217;: 2</blockquote>
+<p>}
+&gt;&gt;&gt; pprint([dict(x=1, y=2), dict(c=1, a=2)])
+[{</p>
+<blockquote>
+&#8216;x&#8217;: 1,
+&#8216;y&#8217;: 2</blockquote>
+<dl class="docutils">
+<dt>}, {</dt>
+<dd>&#8216;a&#8217;: 2,
+&#8216;c&#8217;: 1</dd>
+</dl>
+<p>}]
+&gt;&gt;&gt; pprint({&#8216;x&#8217;: 1, &#8216;y&#8217;: {&#8216;a&#8217;: 1, &#8216;b&#8217;: 2}, &#8216;z&#8217;: 3})
+{</p>
+<blockquote>
+<p>&#8216;x&#8217;: 1,
+&#8216;y&#8217;: {</p>
+<blockquote>
+&#8216;a&#8217;: 1,
+&#8216;b&#8217;: 2</blockquote>
+<p>},
+&#8216;z&#8217;: 3</p>
+</blockquote>
+<p>}
+&gt;&gt;&gt; pprint({})
+{
+}</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.utils.prepr">
+<tt class="descclassname">infogami.infobase.utils.</tt><tt class="descname">prepr</tt><big>(</big><em>obj</em>, <em>indent=''</em><big>)</big><a class="headerlink" href="#infogami.infobase.utils.prepr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pretty representaion.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.utils.safeint">
+<tt class="descclassname">infogami.infobase.utils.</tt><tt class="descname">safeint</tt><big>(</big><em>value</em>, <em>default</em><big>)</big><a class="headerlink" href="#infogami.infobase.utils.safeint" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">safeint</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">safeint</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">safeint</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="server.html"
+                        title="previous chapter">server</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="writequery.html"
+                        title="next chapter">writequery</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/infogami/infobase/utils.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="writequery.html" title="writequery"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="server.html" title="server"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" >infobase</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

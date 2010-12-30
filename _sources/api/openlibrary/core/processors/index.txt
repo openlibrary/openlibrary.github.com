@@ -1,0 +1,18 @@
+
+processors
+==========
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   invalidation.rst
+   readableurls.rst
+
+Documentation
+-------------
+
+.. automodule:: openlibrary.core.processors
+    :members:

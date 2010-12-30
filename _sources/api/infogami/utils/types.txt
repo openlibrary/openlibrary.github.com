@@ -1,0 +1,6 @@
+
+types
+=====
+
+.. automodule:: infogami.utils.types
+    :members:

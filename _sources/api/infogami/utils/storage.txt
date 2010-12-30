@@ -1,0 +1,6 @@
+
+storage
+=======
+
+.. automodule:: infogami.utils.storage
+    :members:

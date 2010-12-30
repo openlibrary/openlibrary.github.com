@@ -1,0 +1,18 @@
+
+oltemplates
+===========
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   code.rst
+   olmanage.rst
+
+Documentation
+-------------
+
+.. automodule:: openlibrary.plugins.oltemplates
+    :members:

@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>solr_client &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="search" href="index.html" />
+    <link rel="next" title="stopword" href="stopword.html" />
+    <link rel="prev" title="facet_hash" href="facet_hash.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stopword.html" title="stopword"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="facet_hash.html" title="facet_hash"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">search</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.plugins.search.solr_client">
+<span id="solr-client"></span><h1>solr_client<a class="headerlink" href="#module-openlibrary.plugins.search.solr_client" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="openlibrary.plugins.search.solr_client.PetaboxQueryProcessor">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.search.solr_client.</tt><tt class="descname">PetaboxQueryProcessor</tt><a class="headerlink" href="#openlibrary.plugins.search.solr_client.PetaboxQueryProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility to expand search query using petabox php script.</p>
+<dl class="method">
+<dt id="openlibrary.plugins.search.solr_client.PetaboxQueryProcessor.process">
+<tt class="descname">process</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.PetaboxQueryProcessor.process" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.search.solr_client.SR2">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.search.solr_client.</tt><tt class="descname">SR2</tt><big>(</big><em>result_json</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.SR2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.search.solr_client.Solr_result" title="openlibrary.plugins.search.solr_client.Solr_result"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.search.solr_client.Solr_result</span></tt></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.search.solr_client.SimpleQueryProcessor">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.search.solr_client.</tt><tt class="descname">SimpleQueryProcessor</tt><a class="headerlink" href="#openlibrary.plugins.search.solr_client.SimpleQueryProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alternate query processor to be used when petabox php script is unavailable. To be used in development.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">SimpleQueryProcessor</span><span class="p">()</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">)</span>
+<span class="go">&#39;(title:hello^100 OR authors:hello^15 OR subjects:hello^10 OR language:hello^10 OR text:hello^1 OR fulltext:hello^1)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SimpleQueryProcessor</span><span class="p">()</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">)</span> 
+<span class="go">&#39;(title:hello^100 OR authors:hello^15 OR subjects:hello^10 OR language:hello^10 OR text:hello^1 OR fulltext:hello^1)</span>
+<span class="go"> (title:world^100 OR authors:world^15 OR subjects:world^10 OR language:world^10 OR text:world^1 OR fulltext:world^1)&#39;</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="openlibrary.plugins.search.solr_client.SimpleQueryProcessor.process">
+<tt class="descname">process</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.SimpleQueryProcessor.process" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.search.solr_client.SimpleQueryProcessor.process_token">
+<tt class="descname">process_token</tt><big>(</big><em>token</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.SimpleQueryProcessor.process_token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="openlibrary.plugins.search.solr_client.SolrError">
+<em class="property">exception </em><tt class="descclassname">openlibrary.plugins.search.solr_client.</tt><tt class="descname">SolrError</tt><a class="headerlink" href="#openlibrary.plugins.search.solr_client.SolrError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></tt></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.search.solr_client.Solr_client">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.search.solr_client.</tt><tt class="descname">Solr_client</tt><big>(</big><em>server_addr=('h02.us.archive.org'</em>, <em>8993)</em>, <em>shards=</em><span class="optional">[</span><span class="optional">]</span>, <em>pool_size=1</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.Solr_client" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="method">
+<dt id="openlibrary.plugins.search.solr_client.Solr_client.Xfacet_token_inverse">
+<tt class="descname">Xfacet_token_inverse</tt><big>(</big><em>token</em>, <em>facet_list=('has_fulltext'</em>, <em>'authors'</em>, <em>'subjects'</em>, <em>'facet_year'</em>, <em>'language'</em>, <em>'language_code'</em>, <em>'languages'</em>, <em>'publishers')</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.Solr_client.Xfacet_token_inverse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.search.solr_client.Solr_client.advanced_search">
+<tt class="descname">advanced_search</tt><big>(</big><em>query</em>, <em>**params</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.Solr_client.advanced_search" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.search.solr_client.Solr_client.basic_query">
+<tt class="descname">basic_query</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.Solr_client.basic_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.search.solr_client.Solr_client.basic_search">
+<tt class="descname">basic_search</tt><big>(</big><em>query</em>, <em>**params</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.Solr_client.basic_search" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.search.solr_client.Solr_client.exact_facet_count">
+<tt class="descname">exact_facet_count</tt><big>(</big><em>query</em>, <em>selected_facets</em>, <em>facet_name</em>, <em>facet_value</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.Solr_client.exact_facet_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.search.solr_client.Solr_client.facet_token_inverse">
+<tt class="descname">facet_token_inverse</tt><big>(</big><em>*a</em>, <em>**k</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.Solr_client.facet_token_inverse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.search.solr_client.Solr_client.facets">
+<tt class="descname">facets</tt><big>(</big><em>query</em>, <em>facet_list=('has_fulltext'</em>, <em>'authors'</em>, <em>'subjects'</em>, <em>'facet_year'</em>, <em>'language'</em>, <em>'language_code'</em>, <em>'languages'</em>, <em>'publishers')</em>, <em>maxrows=5000</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.Solr_client.facets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get facet counts for query.  Todo: statistical faceting.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.search.solr_client.Solr_client.fulltext_search">
+<tt class="descname">fulltext_search</tt><big>(</big><em>query</em>, <em>rows=None</em>, <em>start=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.Solr_client.fulltext_search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does an advanced search on fulltext:blah.
+You get back a pair (x,y) where x is the total # of hits
+and y is a list of identifiers like [&#8220;foo&#8221;, &#8220;bar&#8221;, etc.]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.search.solr_client.Solr_client.isearch">
+<tt class="descname">isearch</tt><big>(</big><em>query</em>, <em>loc=0</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.Solr_client.isearch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.search.solr_client.Solr_client.pagetext_search">
+<tt class="descname">pagetext_search</tt><big>(</big><em>locator</em>, <em>query</em>, <em>rows=None</em>, <em>start=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.Solr_client.pagetext_search" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Does an advanced search on</dt>
+<dd>pagetext:blah locator:identifier</dd>
+</dl>
+<p>where identifier is one of the id&#8217;s from fulltext search.
+You get back a list of page numbers like [21, 25, 39].</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="openlibrary.plugins.search.solr_client.Solr_client.prefix_query">
+<em class="property">static </em><tt class="descname">prefix_query</tt><big>(</big><em>prefix</em>, <em>query</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.Solr_client.prefix_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.search.solr_client.Solr_client.raw_search">
+<tt class="descname">raw_search</tt><big>(</big><em>query</em>, <em>**params</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.Solr_client.raw_search" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.search.solr_client.Solr_client.search">
+<tt class="descname">search</tt><big>(</big><em>query</em>, <em>**params</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.Solr_client.search" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.search.solr_client.Solr_result">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.search.solr_client.</tt><tt class="descname">Solr_result</tt><big>(</big><em>result_xml</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.Solr_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.search.solr_client.create_query_processor">
+<tt class="descclassname">openlibrary.plugins.search.solr_client.</tt><tt class="descname">create_query_processor</tt><big>(</big><em>type</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.create_query_processor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.search.solr_client.facet_counts">
+<tt class="descclassname">openlibrary.plugins.search.solr_client.</tt><tt class="descname">facet_counts</tt><big>(</big><em>result_list</em>, <em>facet_fields</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.facet_counts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return list of facet counts for a search result set.</p>
+<p>The list of field names to fact on is <a href="#id1"><span class="problematic" id="id2">`</span></a>facet_fields&#8217;.
+The result list from solr is <a href="#id3"><span class="problematic" id="id4">`</span></a>result_list&#8217;.  The structures
+look like:</p>
+<blockquote>
+result_list = [ { fieldname1 : [values...] }, ... ]
+facet_fields = (&#8216;author&#8217;, &#8216;media_type&#8217;, ...)</blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="p">[</span>             <span class="p">{</span><span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;Julius Caesar&#39;</span><span class="p">],</span>                                     <span class="s">&#39;author&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;William Shakespeare&#39;</span><span class="p">],</span>                              <span class="s">&#39;format&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;folio&#39;</span><span class="p">]</span> <span class="p">},</span>                                         <span class="p">{</span><span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;Richard III&#39;</span><span class="p">],</span>                                       <span class="s">&#39;author&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;William Shakespeare&#39;</span><span class="p">],</span>                              <span class="s">&#39;format&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;folio&#39;</span><span class="p">]</span> <span class="p">},</span>                                         <span class="p">{</span><span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;Tom Sawyer&#39;</span><span class="p">],</span>                                        <span class="s">&#39;author&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;Mark Twain&#39;</span><span class="p">],</span>                                       <span class="s">&#39;format&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;hardcover&#39;</span><span class="p">]</span> <span class="p">},</span>                                     <span class="p">{</span><span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;The Space Merchants&#39;</span><span class="p">],</span>                               <span class="s">&#39;author&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;Frederik Pohl&#39;</span><span class="p">,</span> <span class="s">&#39;C. M. Kornbluth&#39;</span><span class="p">],</span>                 <span class="s">&#39;format&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;paperback&#39;</span><span class="p">]</span> <span class="p">},</span>                                     <span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fnames</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;author&#39;</span><span class="p">,</span> <span class="s">&#39;topic&#39;</span><span class="p">,</span> <span class="s">&#39;format&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">facet_counts</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">fnames</span><span class="p">)</span>  
+<span class="go">[(&#39;author&#39;, [(&#39;William Shakespeare&#39;, 2),</span>
+<span class="go">             (&#39;C. M. Kornbluth&#39;, 1),</span>
+<span class="go">             (&#39;Frederik Pohl&#39;, 1),</span>
+<span class="go">             (&#39;Mark Twain&#39;, 1)]),</span>
+<span class="go"> (&#39;format&#39;, [(&#39;folio&#39;, 2),</span>
+<span class="go">             (&#39;hardcover&#39;, 1),</span>
+<span class="go">             (&#39;paperback&#39;, 1)])]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.search.solr_client.ocaid_to_olid">
+<tt class="descclassname">openlibrary.plugins.search.solr_client.</tt><tt class="descname">ocaid_to_olid</tt><big>(</big><em>ocaid</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.ocaid_to_olid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.search.solr_client.snd">
+<tt class="descclassname">openlibrary.plugins.search.solr_client.</tt><tt class="descname">snd</tt><big>(</big><em>(a</em>, <em>b)</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.solr_client.snd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="facet_hash.html"
+                        title="previous chapter">facet_hash</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="stopword.html"
+                        title="next chapter">stopword</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/api/openlibrary/plugins/search/solr_client.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stopword.html" title="stopword"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="facet_hash.html" title="facet_hash"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >search</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

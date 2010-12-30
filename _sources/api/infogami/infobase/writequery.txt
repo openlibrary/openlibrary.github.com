@@ -1,0 +1,6 @@
+
+writequery
+==========
+
+.. automodule:: infogami.infobase.writequery
+    :members:

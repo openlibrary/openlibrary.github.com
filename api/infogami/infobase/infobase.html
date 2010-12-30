@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>infobase &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="infobase" href="index.html" />
+    <link rel="next" title="logger" href="logger.html" />
+    <link rel="prev" title="dbstore" href="dbstore.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="logger.html" title="logger"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="dbstore.html" title="dbstore"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">infobase</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-infogami.infobase.infobase">
+<span id="infobase"></span><h1>infobase<a class="headerlink" href="#module-infogami.infobase.infobase" title="Permalink to this headline">¶</a></h1>
+<p>Infobase: structured database.</p>
+<p>Infobase is a structured database which contains multiple sites.
+Each site is an independent collection of objects.</p>
+<dl class="class">
+<dt id="infogami.infobase.infobase.Infobase">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.infobase.</tt><tt class="descname">Infobase</tt><big>(</big><em>store</em>, <em>secret_key</em><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Infobase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infobase contains multiple sites.</p>
+<dl class="method">
+<dt id="infogami.infobase.infobase.Infobase.add_event_listener">
+<tt class="descname">add_event_listener</tt><big>(</big><em>listener</em><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Infobase.add_event_listener" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.infobase.Infobase.create">
+<tt class="descname">create</tt><big>(</big><em>sitename</em><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Infobase.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new site with the sitename.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.infobase.Infobase.delete">
+<tt class="descname">delete</tt><big>(</big><em>sitename</em><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Infobase.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the site with the given name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.infobase.Infobase.fire_event">
+<tt class="descname">fire_event</tt><big>(</big><em>event</em><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Infobase.fire_event" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.infobase.Infobase.get">
+<tt class="descname">get</tt><big>(</big><em>sitename</em><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Infobase.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the site with the given name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.infobase.Infobase.remove_event_listener">
+<tt class="descname">remove_event_listener</tt><big>(</big><em>listener</em><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Infobase.remove_event_listener" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.infobase.Site">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.infobase.</tt><tt class="descname">Site</tt><big>(</big><em>_infobase</em>, <em>sitename</em>, <em>store</em>, <em>secret_key</em><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Site" title="Permalink to this definition">¶</a></dt>
+<dd><p>A site of infobase.</p>
+<dl class="method">
+<dt id="infogami.infobase.infobase.Site.add_trigger">
+<tt class="descname">add_trigger</tt><big>(</big><em>type</em>, <em>func</em><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Site.add_trigger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers a trigger to call func when object of specified type is modified. 
+If type=None is specified then the trigger is called for every modification.
+func is called with old object and new object as arguments. old object will be None if the object is newly created.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.infobase.Site.bootstrap">
+<tt class="descname">bootstrap</tt><big>(</big><em>admin_password='admin123'</em><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Site.bootstrap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.infobase.Site.delete">
+<tt class="descname">delete</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Site.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.infobase.Site.get">
+<tt class="descname">get</tt><big>(</big><em>key</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Site.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.infobase.Site.get_account_manager">
+<tt class="descname">get_account_manager</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Site.get_account_manager" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.infobase.Site.get_change">
+<tt class="descname">get_change</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Site.get_change" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.infobase.Site.get_many">
+<tt class="descname">get_many</tt><big>(</big><em>keys</em><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Site.get_many" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.infobase.Site.get_permissions">
+<tt class="descname">get_permissions</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Site.get_permissions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.infobase.Site.get_seq">
+<tt class="descname">get_seq</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Site.get_seq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.infobase.Site.get_store">
+<tt class="descname">get_store</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Site.get_store" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.infobase.Site.new_key">
+<tt class="descname">new_key</tt><big>(</big><em>type</em>, <em>kw=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Site.new_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.infobase.Site.recentchanges">
+<tt class="descname">recentchanges</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Site.recentchanges" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.infobase.Site.save">
+<tt class="descname">save</tt><big>(</big><em>key</em>, <em>doc</em>, <em>timestamp=None</em>, <em>comment=None</em>, <em>data=None</em>, <em>ip=None</em>, <em>author=None</em>, <em>action=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Site.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.infobase.Site.save_many">
+<tt class="descname">save_many</tt><big>(</big><em>query</em>, <em>timestamp=None</em>, <em>comment=None</em>, <em>data=None</em>, <em>ip=None</em>, <em>author=None</em>, <em>action=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Site.save_many" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.infobase.Site.things">
+<tt class="descname">things</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Site.things" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.infobase.Site.versions">
+<tt class="descname">versions</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Site.versions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.infobase.Site.withKey">
+<tt class="descname">withKey</tt><big>(</big><em>key</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Site.withKey" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.infobase.Site.write">
+<tt class="descname">write</tt><big>(</big><em>query</em>, <em>timestamp=None</em>, <em>comment=None</em>, <em>data=None</em>, <em>ip=None</em>, <em>author=None</em>, <em>action=None</em>, <em>_internal=False</em><big>)</big><a class="headerlink" href="#infogami.infobase.infobase.Site.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="dbstore.html"
+                        title="previous chapter">dbstore</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="logger.html"
+                        title="next chapter">logger</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/infogami/infobase/infobase.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="logger.html" title="logger"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="dbstore.html" title="dbstore"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" >infobase</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

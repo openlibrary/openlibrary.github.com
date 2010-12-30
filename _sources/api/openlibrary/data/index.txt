@@ -1,0 +1,20 @@
+
+data
+====
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   db.rst
+   dump.rst
+   sitemap.rst
+   solr.rst
+
+Documentation
+-------------
+
+.. automodule:: openlibrary.data
+    :members:

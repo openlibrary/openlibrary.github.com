@@ -1,0 +1,6 @@
+
+conftest
+========
+
+.. automodule:: infogami.conftest
+    :members:

@@ -65,14 +65,17 @@
 <li>Python virtualenv</li>
 </ul>
 <p>To install them on Ubuntu/Debian:</p>
-<div class="highlight-python"><pre>$ sudo apt-get install postgresql libpq-dev git-core openjdk-6-jre-headless python-virtualenv
-
-
-$ sudo apt-get install python-psycopg2 libxslt-dev</pre>
+<div class="highlight-python"><pre>$ sudo apt-get install postgresql libpq-dev git-core openjdk-6-jre-headless python-virtualenv python-dev
+$ sudo apt-get install libxslt1-dev</pre>
 </div>
 <p>To install them on Mac OS X:</p>
 <div class="highlight-python"><pre>$ brew install postgresql git
 $ sudo easy_install virtualenv</pre>
+</div>
+<p>Make sure you create a postgres user account for you.:</p>
+<div class="highlight-python"><pre>$ sudo -u postgres createuser anand
+[sudo] password for anand:
+Shall the new role be a superuser? (y/n) y</pre>
 </div>
 <p>Open Library depends also on the following packages, but they are installed by the install script.</p>
 <ul class="simple">
@@ -205,9 +208,9 @@ $ . ~/pyenvs/ol/bin/activate</pre>
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2004-2010, Internet Archive.
-      Last updated on Dec 29, 2010.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
     </div>
   </body>
 </html>

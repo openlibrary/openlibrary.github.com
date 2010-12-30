@@ -1,0 +1,29 @@
+
+core
+====
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   couch.rst
+   formats.rst
+   helpers.rst
+   ia.rst
+   lists/index.rst
+   mocks/index.rst
+   mocksite.rst
+   models.rst
+   olmarkdown.rst
+   processors/index.rst
+   schema.rst
+   seq.rst
+   setup_commands.rst
+
+Documentation
+-------------
+
+.. automodule:: openlibrary.core
+    :members:

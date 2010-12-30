@@ -1,0 +1,6 @@
+
+i18n
+====
+
+.. automodule:: infogami.utils.i18n
+    :members:

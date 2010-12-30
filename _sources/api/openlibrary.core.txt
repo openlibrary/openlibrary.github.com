@@ -1,6 +1,0 @@
-openlibrary.core.helpers
-========================
-
-.. automodule:: openlibrary.core.helpers
-    :members:
-

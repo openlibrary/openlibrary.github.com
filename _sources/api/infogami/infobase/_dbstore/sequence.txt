@@ -1,0 +1,6 @@
+
+sequence
+========
+
+.. automodule:: infogami.infobase._dbstore.sequence
+    :members:

@@ -1,0 +1,237 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>account &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="infobase" href="index.html" />
+    <link rel="next" title="bootstrap" href="bootstrap.html" />
+    <link rel="prev" title="_json" href="_json.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="bootstrap.html" title="bootstrap"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="_json.html" title="_json"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">infobase</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-infogami.infobase.account">
+<span id="account"></span><h1>account<a class="headerlink" href="#module-infogami.infobase.account" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="infogami.infobase.account.AccountManager">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.account.</tt><tt class="descname">AccountManager</tt><big>(</big><em>site</em>, <em>secret_key</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.account.AccountManager.assert_email">
+<tt class="descname">assert_email</tt><big>(</big><em>email</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.assert_email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.account.AccountManager.assert_password">
+<tt class="descname">assert_password</tt><big>(</big><em>password</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.assert_password" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.account.AccountManager.assert_trusted_machine">
+<tt class="descname">assert_trusted_machine</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.assert_trusted_machine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.account.AccountManager.check_reset_code">
+<tt class="descname">check_reset_code</tt><big>(</big><em>username</em>, <em>code</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.check_reset_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.account.AccountManager.checkpassword">
+<tt class="descname">checkpassword</tt><big>(</big><em>username</em>, <em>raw_password</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.checkpassword" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.account.AccountManager.find_user_by_email">
+<tt class="descname">find_user_by_email</tt><big>(</big><em>email</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.find_user_by_email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.account.AccountManager.get_email">
+<tt class="descname">get_email</tt><big>(</big><em>user</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.get_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used internally by server.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.account.AccountManager.get_user">
+<tt class="descname">get_user</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.get_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current user from the session.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.account.AccountManager.get_user_code">
+<tt class="descname">get_user_code</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.get_user_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.account.AccountManager.get_user_email">
+<tt class="descname">get_user_email</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.get_user_email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.account.AccountManager.login">
+<tt class="descname">login</tt><big>(</big><em>username</em>, <em>password</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.login" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.account.AccountManager.register">
+<tt class="descname">register</tt><big>(</big><em>username</em>, <em>email</em>, <em>password</em>, <em>data</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.register" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.account.AccountManager.register1">
+<tt class="descname">register1</tt><big>(</big><em>username</em>, <em>email</em>, <em>enc_password</em>, <em>data</em>, <em>ip=None</em>, <em>timestamp=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.register1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.account.AccountManager.reset_password">
+<tt class="descname">reset_password</tt><big>(</big><em>username</em>, <em>code</em>, <em>password</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.reset_password" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.account.AccountManager.set_auth_token">
+<tt class="descname">set_auth_token</tt><big>(</big><em>user_key</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.set_auth_token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.account.AccountManager.update_user">
+<tt class="descname">update_user</tt><big>(</big><em>old_password</em>, <em>new_password</em>, <em>email</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.update_user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.account.AccountManager.update_user1">
+<tt class="descname">update_user1</tt><big>(</big><em>user</em>, <em>enc_password</em>, <em>email</em>, <em>ip=None</em>, <em>timestamp=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.update_user1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.account.AccountManager.update_user_details">
+<tt class="descname">update_user_details</tt><big>(</big><em>username</em>, <em>**params</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.update_user_details" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update user details like email, active, bot, verified.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.account.admin_only">
+<tt class="descclassname">infogami.infobase.account.</tt><tt class="descname">admin_only</tt><big>(</big><em>f</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.admin_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator to limit a function to admin user only.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.account.get_user_root">
+<tt class="descclassname">infogami.infobase.account.</tt><tt class="descname">get_user_root</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.account.get_user_root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.account.make_query">
+<tt class="descclassname">infogami.infobase.account.</tt><tt class="descname">make_query</tt><big>(</big><em>user</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.make_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="_json.html"
+                        title="previous chapter">_json</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="bootstrap.html"
+                        title="next chapter">bootstrap</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/infogami/infobase/account.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="bootstrap.html" title="bootstrap"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="_json.html" title="_json"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" >infobase</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+
+db
+==
+
+.. automodule:: openlibrary.coverstore.db
+    :members:

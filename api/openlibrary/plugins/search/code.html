@@ -1,0 +1,280 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>code &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="search" href="index.html" />
+    <link rel="next" title="collapse" href="collapse.html" />
+    <link rel="prev" title="search" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="collapse.html" title="collapse"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="search"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">search</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.plugins.search.code">
+<span id="code"></span><h1>code<a class="headerlink" href="#module-openlibrary.plugins.search.code" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="openlibrary.plugins.search.code.SearchProcessor">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.search.code.</tt><tt class="descname">SearchProcessor</tt><a class="headerlink" href="#openlibrary.plugins.search.code.SearchProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.plugins.search.code.SearchProcessor.normalize">
+<tt class="descname">normalize</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.code.SearchProcessor.normalize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Normalize string value by remove unnecessary punctuation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.search.code.SearchProcessor.search">
+<tt class="descname">search</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.code.SearchProcessor.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs solr query from given query dict, executes it and returns the results.</p>
+<p>Sample queries:</p>
+<blockquote>
+{&#8216;q&#8217;: &#8216;Tom Sawyer&#8217;}
+{&#8216;authors&#8217;: &#8216;Mark Twain&#8217;}
+{&#8216;q&#8217;: &#8216;Tom Sawyer&#8217;}
+{&#8216;title&#8217;: &#8216;Tom Sawyer&#8217;}
+{&#8216;title&#8217;: &#8216;Tom Sawyer&#8217;, &#8216;authors&#8217;: &#8216;Mark Twain&#8217;, &#8216;lccn&#8217;: &#8216;49049011&#8217;}
+{&#8216;title&#8217;: &#8216;Tom Sawyer&#8217;, &#8216;authors&#8217;: &#8216;Mark Twain&#8217;, &#8216;publisher&#8217;: &#8216;49049011&#8217;}</blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.search.code.Timestamp">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.search.code.</tt><tt class="descname">Timestamp</tt><a class="headerlink" href="#openlibrary.plugins.search.code.Timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="method">
+<dt id="openlibrary.plugins.search.code.Timestamp.results">
+<tt class="descname">results</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.code.Timestamp.results" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.search.code.Timestamp.update">
+<tt class="descname">update</tt><big>(</big><em>msg</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.code.Timestamp.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.search.code.Timestamp1">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.search.code.</tt><tt class="descname">Timestamp1</tt><big>(</big><em>key=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.code.Timestamp1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="method">
+<dt id="openlibrary.plugins.search.code.Timestamp1.switch">
+<tt class="descname">switch</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.code.Timestamp1.switch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.search.code.clean_punctuation">
+<tt class="descclassname">openlibrary.plugins.search.code.</tt><tt class="descname">clean_punctuation</tt><big>(</big><em>s</em>, <em>field=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.code.clean_punctuation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.search.code.collect_works">
+<tt class="descclassname">openlibrary.plugins.search.code.</tt><tt class="descname">collect_works</tt><big>(</big><em>result_list</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.code.collect_works" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.search.code.exact_facet_count">
+<tt class="descclassname">openlibrary.plugins.search.code.</tt><tt class="descname">exact_facet_count</tt><big>(</big><em>query</em>, <em>selected_facets</em>, <em>facet_name</em>, <em>facet_value</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.code.exact_facet_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.search.code.fullsearch">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.search.code.</tt><tt class="descname">fullsearch</tt><a class="headerlink" href="#openlibrary.plugins.search.code.fullsearch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.search.code.fullsearch.GET">
+<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.code.fullsearch.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.search.code.fullsearch.POST">
+<tt class="descname">POST</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.code.fullsearch.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.search.code.get_books">
+<tt class="descclassname">openlibrary.plugins.search.code.</tt><tt class="descname">get_books</tt><big>(</big><em>keys</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.code.get_books" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all books specified by the keys in a single query and also prefetch all the author records.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.search.code.lookup_ocaid">
+<tt class="descclassname">openlibrary.plugins.search.code.</tt><tt class="descname">lookup_ocaid</tt><big>(</big><em>ocaid</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.code.lookup_ocaid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.search.code.munch_qresults">
+<tt class="descclassname">openlibrary.plugins.search.code.</tt><tt class="descname">munch_qresults</tt><big>(</big><em>qlist</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.code.munch_qresults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.search.code.munch_qresults_stored">
+<tt class="descclassname">openlibrary.plugins.search.code.</tt><tt class="descname">munch_qresults_stored</tt><big>(</big><em>qresults</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.code.munch_qresults_stored" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.search.code.parse_host">
+<tt class="descclassname">openlibrary.plugins.search.code.</tt><tt class="descname">parse_host</tt><big>(</big><em>host_and_port</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.code.parse_host" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">parse_host</span><span class="p">(</span><span class="s">&#39;alice:1234&#39;</span><span class="p">)</span>
+<span class="go">(&#39;alice&#39;, 1234)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.search.code.restore_slash">
+<tt class="descclassname">openlibrary.plugins.search.code.</tt><tt class="descname">restore_slash</tt><big>(</big><em>book</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.code.restore_slash" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.search.code.search">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.search.code.</tt><tt class="descname">search</tt><a class="headerlink" href="#openlibrary.plugins.search.code.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.search.code.search.GET">
+<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.code.search.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.search.code.search.POST">
+<tt class="descname">POST</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.code.search.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.search.code.search_api">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.search.code.</tt><tt class="descname">search_api</tt><a class="headerlink" href="#openlibrary.plugins.search.code.search_api" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.plugins.search.code.search_api.GET">
+<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.code.search_api.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.search.code.search_json">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.search.code.</tt><tt class="descname">search_json</tt><a class="headerlink" href="#openlibrary.plugins.search.code.search_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.search.code.search_json.GET">
+<tt class="descname">GET</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.code.search_json.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">search</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="collapse.html"
+                        title="next chapter">collapse</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/api/openlibrary/plugins/search/code.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="collapse.html" title="collapse"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="search"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >search</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

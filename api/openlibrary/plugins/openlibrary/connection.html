@@ -1,0 +1,262 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>connection &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="openlibrary" href="index.html" />
+    <link rel="next" title="infobase_hook" href="infobase_hook.html" />
+    <link rel="prev" title="code" href="code.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="infobase_hook.html" title="infobase_hook"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="code.html" title="code"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">openlibrary</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.plugins.openlibrary.connection">
+<span id="connection"></span><h1>connection<a class="headerlink" href="#module-openlibrary.plugins.openlibrary.connection" title="Permalink to this headline">¶</a></h1>
+<p>Open Library extension to provide a new kind of client connection with caching support.</p>
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.connection.ConnectionMiddleware">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.connection.</tt><tt class="descname">ConnectionMiddleware</tt><big>(</big><em>conn</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.ConnectionMiddleware" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.get">
+<tt class="descname">get</tt><big>(</big><em>sitename</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.get_auth_token">
+<tt class="descname">get_auth_token</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.get_auth_token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.get_many">
+<tt class="descname">get_many</tt><big>(</big><em>sitename</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.get_many" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.request">
+<tt class="descname">request</tt><big>(</big><em>sitename</em>, <em>path</em>, <em>method='GET'</em>, <em>data=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.request" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.save">
+<tt class="descname">save</tt><big>(</big><em>sitename</em>, <em>path</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.save_many">
+<tt class="descname">save_many</tt><big>(</big><em>sitename</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.save_many" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.set_auth_token">
+<tt class="descname">set_auth_token</tt><big>(</big><em>token</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.set_auth_token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.write">
+<tt class="descname">write</tt><big>(</big><em>sitename</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.connection.LocalCacheMiddleware">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.connection.</tt><tt class="descname">LocalCacheMiddleware</tt><big>(</big><em>conn</em>, <em>cache_prefixes</em>, <em>cache_size=10000</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.LocalCacheMiddleware" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.openlibrary.connection.ConnectionMiddleware" title="openlibrary.plugins.openlibrary.connection.ConnectionMiddleware"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.openlibrary.connection.ConnectionMiddleware</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.LocalCacheMiddleware.cachable">
+<tt class="descname">cachable</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.LocalCacheMiddleware.cachable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests if key is cacheable.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.LocalCacheMiddleware.get">
+<tt class="descname">get</tt><big>(</big><em>sitename</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.LocalCacheMiddleware.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.LocalCacheMiddleware.get_cache">
+<tt class="descname">get_cache</tt><big>(</big><em>cache_size</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.LocalCacheMiddleware.get_cache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.LocalCacheMiddleware.save">
+<tt class="descname">save</tt><big>(</big><em>sitename</em>, <em>path</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.LocalCacheMiddleware.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.LocalCacheMiddleware.save_many">
+<tt class="descname">save_many</tt><big>(</big><em>sitename</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.LocalCacheMiddleware.save_many" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.LocalCacheMiddleware.write">
+<tt class="descname">write</tt><big>(</big><em>sitename</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.LocalCacheMiddleware.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.connection.MemcacheMiddleware">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.connection.</tt><tt class="descname">MemcacheMiddleware</tt><big>(</big><em>conn</em>, <em>memcache_servers</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MemcacheMiddleware" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.openlibrary.connection.ConnectionMiddleware" title="openlibrary.plugins.openlibrary.connection.ConnectionMiddleware"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.openlibrary.connection.ConnectionMiddleware</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.get">
+<tt class="descname">get</tt><big>(</big><em>sitename</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.get_many">
+<tt class="descname">get_many</tt><big>(</big><em>sitename</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.get_many" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.get_memcache">
+<tt class="descname">get_memcache</tt><big>(</big><em>memcache_servers</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.get_memcache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.connection.MigrationMiddleware">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.connection.</tt><tt class="descname">MigrationMiddleware</tt><big>(</big><em>conn</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MigrationMiddleware" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.openlibrary.connection.ConnectionMiddleware" title="openlibrary.plugins.openlibrary.connection.ConnectionMiddleware"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.openlibrary.connection.ConnectionMiddleware</span></tt></a></p>
+<p>Temporary middleware to handle upstream to www migration.</p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.MigrationMiddleware.exists">
+<tt class="descname">exists</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MigrationMiddleware.exists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.MigrationMiddleware.fix_doc">
+<tt class="descname">fix_doc</tt><big>(</big><em>doc</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MigrationMiddleware.fix_doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.MigrationMiddleware.get">
+<tt class="descname">get</tt><big>(</big><em>sitename</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MigrationMiddleware.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.MigrationMiddleware.get_many">
+<tt class="descname">get_many</tt><big>(</big><em>sitename</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MigrationMiddleware.get_many" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.connection.OLConnection">
+<tt class="descclassname">openlibrary.plugins.openlibrary.connection.</tt><tt class="descname">OLConnection</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.OLConnection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a connection to Open Library infobase server.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="code.html"
+                        title="previous chapter">code</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="infobase_hook.html"
+                        title="next chapter">infobase_hook</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/api/openlibrary/plugins/openlibrary/connection.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="infobase_hook.html" title="infobase_hook"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="code.html" title="code"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >openlibrary</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

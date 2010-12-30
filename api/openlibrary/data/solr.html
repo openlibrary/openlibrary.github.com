@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>solr &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="data" href="index.html" />
+    <link rel="next" title="i18n" href="../i18n/index.html" />
+    <link rel="prev" title="sitemap" href="sitemap.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../i18n/index.html" title="i18n"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="sitemap.html" title="sitemap"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">data</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.data.solr">
+<span id="solr"></span><h1>solr<a class="headerlink" href="#module-openlibrary.data.solr" title="Permalink to this headline">¶</a></h1>
+<p>Library to process edition, work and author records and emit (key, property, value) triples that can be combined later for solr indexing.</p>
+<dl class="class">
+<dt id="openlibrary.data.solr.Writer">
+<em class="property">class </em><tt class="descclassname">openlibrary.data.solr.</tt><tt class="descname">Writer</tt><a class="headerlink" href="#openlibrary.data.solr.Writer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.data.solr.Writer.close">
+<tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.data.solr.Writer.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.data.solr.Writer.flush">
+<tt class="descname">flush</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.data.solr.Writer.flush" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.data.solr.Writer.get_file">
+<tt class="descname">get_file</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.data.solr.Writer.get_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.data.solr.Writer.get_filename">
+<tt class="descname">get_filename</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.data.solr.Writer.get_filename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.data.solr.Writer.write">
+<tt class="descname">write</tt><big>(</big><em>triples</em><big>)</big><a class="headerlink" href="#openlibrary.data.solr.Writer.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.solr.find_redirect">
+<tt class="descclassname">openlibrary.data.solr.</tt><tt class="descname">find_redirect</tt><big>(</big><em>redirect_db</em>, <em>key</em><big>)</big><a class="headerlink" href="#openlibrary.data.solr.find_redirect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the redirection of the given key if any.</p>
+<p>When there is a redirection for the given key, the redirection is returned.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">db</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;/authors/OL1A&#39;</span><span class="p">:</span> <span class="s">&#39;/authors/OL2A&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find_redirect</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="s">&#39;/authors/OL1A&#39;</span><span class="p">)</span>
+<span class="go">&#39;/authors/OL2A&#39;</span>
+</pre></div>
+</div>
+<p>If there is no redirection, same key is returned.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">find_redirect</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="s">&#39;/authors/OL3A&#39;</span><span class="p">)</span>
+<span class="go">&#39;/authors/OL3A&#39;</span>
+</pre></div>
+</div>
+<p>Multiple levels of redirections are followed.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">db</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;/authors/OL1A&#39;</span><span class="p">:</span> <span class="s">&#39;/authors/OL2A&#39;</span><span class="p">,</span> <span class="s">&#39;/authors/OL2A&#39;</span><span class="p">:</span> <span class="s">&#39;/authors/OL3A&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find_redirect</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="s">&#39;/authors/OL1A&#39;</span><span class="p">)</span>
+<span class="go">&#39;/authors/OL3A&#39;</span>
+</pre></div>
+</div>
+<p>In case of cyclic redirections, None is returned.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">db</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;/authors/OL1A&#39;</span><span class="p">:</span> <span class="s">&#39;/authors/OL2A&#39;</span><span class="p">,</span> <span class="s">&#39;/authors/OL2A&#39;</span><span class="p">:</span> <span class="s">&#39;/authors/OL1A&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find_redirect</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="s">&#39;/authors/OL1A&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.solr.fix_subjects">
+<tt class="descclassname">openlibrary.data.solr.</tt><tt class="descname">fix_subjects</tt><big>(</big><em>doc</em><big>)</big><a class="headerlink" href="#openlibrary.data.solr.fix_subjects" title="Permalink to this definition">¶</a></dt>
+<dd><p>In some records, the subjects are references/text instead of string. This function fixes that.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.solr.generate_dump">
+<tt class="descclassname">openlibrary.data.solr.</tt><tt class="descname">generate_dump</tt><big>(</big><em>editions_dump</em>, <em>works_dump</em>, <em>authors_dump</em>, <em>redirects_dump</em><big>)</big><a class="headerlink" href="#openlibrary.data.solr.generate_dump" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.solr.get_subjects">
+<tt class="descclassname">openlibrary.data.solr.</tt><tt class="descname">get_subjects</tt><big>(</big><em>doc</em><big>)</big><a class="headerlink" href="#openlibrary.data.solr.get_subjects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.solr.pharse1_process_dumps">
+<tt class="descclassname">openlibrary.data.solr.</tt><tt class="descname">pharse1_process_dumps</tt><big>(</big><em>editions_dump</em>, <em>works_dump</em>, <em>authors_dump</em>, <em>redirects_dump</em><big>)</big><a class="headerlink" href="#openlibrary.data.solr.pharse1_process_dumps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.solr.phase2_process_files">
+<tt class="descclassname">openlibrary.data.solr.</tt><tt class="descname">phase2_process_files</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.data.solr.phase2_process_files" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.solr.process_author">
+<tt class="descclassname">openlibrary.data.solr.</tt><tt class="descname">process_author</tt><big>(</big><em>doc</em><big>)</big><a class="headerlink" href="#openlibrary.data.solr.process_author" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.solr.process_author_dump">
+<tt class="descclassname">openlibrary.data.solr.</tt><tt class="descname">process_author_dump</tt><big>(</big><em>writer</em>, <em>authors_dump</em><big>)</big><a class="headerlink" href="#openlibrary.data.solr.process_author_dump" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.solr.process_edition">
+<tt class="descclassname">openlibrary.data.solr.</tt><tt class="descname">process_edition</tt><big>(</big><em>doc</em><big>)</big><a class="headerlink" href="#openlibrary.data.solr.process_edition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.solr.process_edition_dump">
+<tt class="descclassname">openlibrary.data.solr.</tt><tt class="descname">process_edition_dump</tt><big>(</big><em>writer</em>, <em>editions_dump</em><big>)</big><a class="headerlink" href="#openlibrary.data.solr.process_edition_dump" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.solr.process_redirect_dump">
+<tt class="descclassname">openlibrary.data.solr.</tt><tt class="descname">process_redirect_dump</tt><big>(</big><em>writer</em>, <em>redirects_dump</em><big>)</big><a class="headerlink" href="#openlibrary.data.solr.process_redirect_dump" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.solr.process_solr_work_record">
+<tt class="descclassname">openlibrary.data.solr.</tt><tt class="descname">process_solr_work_record</tt><big>(</big><em>key</em>, <em>d</em><big>)</big><a class="headerlink" href="#openlibrary.data.solr.process_solr_work_record" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.solr.process_triples">
+<tt class="descclassname">openlibrary.data.solr.</tt><tt class="descname">process_triples</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#openlibrary.data.solr.process_triples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes a file with triples, sort it using first column and groups it by first column.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.solr.process_work">
+<tt class="descclassname">openlibrary.data.solr.</tt><tt class="descname">process_work</tt><big>(</big><em>doc</em>, <em>author_db</em>, <em>redirect_db</em><big>)</big><a class="headerlink" href="#openlibrary.data.solr.process_work" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.solr.process_work_dump">
+<tt class="descclassname">openlibrary.data.solr.</tt><tt class="descname">process_work_dump</tt><big>(</big><em>writer</em>, <em>works_dump</em>, <em>author_db</em>, <em>redirect_db</em><big>)</big><a class="headerlink" href="#openlibrary.data.solr.process_work_dump" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.solr.process_work_triples">
+<tt class="descclassname">openlibrary.data.solr.</tt><tt class="descname">process_work_triples</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#openlibrary.data.solr.process_work_triples" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.solr.subdict">
+<tt class="descclassname">openlibrary.data.solr.</tt><tt class="descname">subdict</tt><big>(</big><em>d</em>, <em>properties</em><big>)</big><a class="headerlink" href="#openlibrary.data.solr.subdict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="sitemap.html"
+                        title="previous chapter">sitemap</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../i18n/index.html"
+                        title="next chapter">i18n</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/openlibrary/data/solr.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../i18n/index.html" title="i18n"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="sitemap.html" title="sitemap"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >data</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

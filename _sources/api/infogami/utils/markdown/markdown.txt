@@ -1,0 +1,6 @@
+
+markdown
+========
+
+.. automodule:: infogami.utils.markdown.markdown
+    :members:

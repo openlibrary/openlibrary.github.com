@@ -1,0 +1,6 @@
+
+olmanage
+========
+
+.. automodule:: openlibrary.plugins.oltemplates.olmanage
+    :members:

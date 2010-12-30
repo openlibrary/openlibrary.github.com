@@ -1,0 +1,25 @@
+
+openlibrary
+===========
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   code.rst
+   connection.rst
+   infobase_hook.rst
+   lists.rst
+   processors.rst
+   readbooks.rst
+   schema.rst
+   showmarc.rst
+   utils.rst
+
+Documentation
+-------------
+
+.. automodule:: openlibrary.plugins.openlibrary
+    :members:

@@ -1,0 +1,28 @@
+
+coverstore
+==========
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   archive.rst
+   code.rst
+   config.rst
+   coverlib.rst
+   db.rst
+   disk.rst
+   imagecache.rst
+   oldb.rst
+   schema.rst
+   server.rst
+   utils.rst
+   warc.rst
+
+Documentation
+-------------
+
+.. automodule:: openlibrary.coverstore
+    :members:

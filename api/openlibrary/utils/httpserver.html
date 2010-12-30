@@ -1,0 +1,167 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>httpserver &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="utils" href="index.html" />
+    <link rel="next" title="isbn" href="isbn.html" />
+    <link rel="prev" title="form" href="form.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="isbn.html" title="isbn"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="form.html" title="form"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">utils</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.utils.httpserver">
+<span id="httpserver"></span><h1>httpserver<a class="headerlink" href="#module-openlibrary.utils.httpserver" title="Permalink to this headline">¶</a></h1>
+<p>http server for testing.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">server</span> <span class="o">=</span> <span class="n">HTTPServer</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="mi">8090</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">server</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">&#39;/hello/world&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;GET&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">should_return</span><span class="p">(</span><span class="s">&#39;hello, world!&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;content-type&#39;</span><span class="p">:</span> <span class="s">&#39;text/plain&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://0.0.0.0:8090/hello/world&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="go">&#39;hello, world!&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span><span class="o">.</span><span class="n">info</span><span class="p">()</span><span class="o">.</span><span class="n">getheader</span><span class="p">(</span><span class="s">&#39;Content-Type&#39;</span><span class="p">)</span>
+<span class="go">&#39;text/plain&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">server</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://0.0.0.0:8090/hello/world&#39;</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="c">...</span>
+<span class="nc">IOError</span>: <span class="n-Identifier">[Errno socket error] (61, &#39;Connection refused&#39;)</span>
+</pre></div>
+</div>
+<dl class="class">
+<dt id="openlibrary.utils.httpserver.HTTPServer">
+<em class="property">class </em><tt class="descclassname">openlibrary.utils.httpserver.</tt><tt class="descname">HTTPServer</tt><big>(</big><em>port=8090</em><big>)</big><a class="headerlink" href="#openlibrary.utils.httpserver.HTTPServer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.utils.httpserver.HTTPServer.request">
+<tt class="descname">request</tt><big>(</big><em>path</em>, <em>method='GET'</em>, <em>query={}</em><big>)</big><a class="headerlink" href="#openlibrary.utils.httpserver.HTTPServer.request" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.httpserver.HTTPServer.stop">
+<tt class="descname">stop</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.utils.httpserver.HTTPServer.stop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.utils.httpserver.Respose">
+<em class="property">class </em><tt class="descclassname">openlibrary.utils.httpserver.</tt><tt class="descname">Respose</tt><a class="headerlink" href="#openlibrary.utils.httpserver.Respose" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.utils.httpserver.Respose.should_return">
+<tt class="descname">should_return</tt><big>(</big><em>data</em>, <em>status='200 OK'</em>, <em>headers={}</em><big>)</big><a class="headerlink" href="#openlibrary.utils.httpserver.Respose.should_return" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="form.html"
+                        title="previous chapter">form</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="isbn.html"
+                        title="next chapter">isbn</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/openlibrary/utils/httpserver.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="isbn.html" title="isbn"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="form.html" title="form"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >utils</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

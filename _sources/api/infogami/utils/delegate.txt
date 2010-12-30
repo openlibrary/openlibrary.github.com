@@ -1,0 +1,6 @@
+
+delegate
+========
+
+.. automodule:: infogami.utils.delegate
+    :members:

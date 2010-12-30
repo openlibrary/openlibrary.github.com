@@ -1,0 +1,6 @@
+
+client
+======
+
+.. automodule:: infogami.infobase.client
+    :members:

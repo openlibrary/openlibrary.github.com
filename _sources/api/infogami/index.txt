@@ -1,0 +1,21 @@
+
+infogami
+========
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   config.rst
+   conftest.rst
+   core/index.rst
+   infobase/index.rst
+   utils/index.rst
+
+Documentation
+-------------
+
+.. automodule:: infogami
+    :members:

@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>jsdef &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="upstream" href="index.html" />
+    <link rel="next" title="merge_authors" href="merge_authors.html" />
+    <link rel="prev" title="forms" href="forms.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="merge_authors.html" title="merge_authors"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="forms.html" title="forms"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">upstream</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.plugins.upstream.jsdef">
+<span id="jsdef"></span><h1>jsdef<a class="headerlink" href="#module-openlibrary.plugins.upstream.jsdef" title="Permalink to this headline">¶</a></h1>
+<p>Templetor extension to support javascript templates.</p>
+<p>During AJAX development, there will be need to generate HTML and update
+some part of the DOM. It it clumsy to do that in javascript. Even though
+there are some javascript template engines, it often ends up in duplication
+because of writing a Python template and a Javascript template for doing
+the same thing.</p>
+<p>This extension adds a new block <cite>jsdef</cite> to Templetor, which provides a
+a template function just like <cite>def</cite> and also generates an equivalent
+javascript function.</p>
+<p>USAGE:</p>
+<blockquote>
+import jsdef
+render = web.tempalte.render(&#8220;templates/&#8221;, extensions=[jsdef.extension])</blockquote>
+<p>Sample Template:</p>
+<blockquote>
+<p>$def with (page)</p>
+<p>&lt;h1&gt;$page.title&lt;/h1&gt;</p>
+<dl class="docutils">
+<dt>$jsdef render_books(books):</dt>
+<dd><dl class="first docutils">
+<dt>&lt;ul&gt;</dt>
+<dd><dl class="first last docutils">
+<dt>$for book in books:</dt>
+<dd>&lt;li&gt;&lt;a href=&#8221;$book.key&#8221;&gt;$book.title&lt;/a&gt;&lt;/li&gt;</dd>
+</dl>
+</dd>
+</dl>
+<p class="last">&lt;/ul&gt;</p>
+</dd>
+<dt>&lt;div id=&#8221;books&#8221;&gt;</dt>
+<dd>$:render_books(page.books)</dd>
+</dl>
+<p>&lt;/div&gt;</p>
+<dl class="docutils">
+<dt>&lt;script type=&#8221;text/javascript&#8221;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>function udpate_books(books) {</dt>
+<dd>document.getElementById(&#8220;books&#8221;).innerHTML = render_books(books);</dd>
+</dl>
+<p class="last">}</p>
+</dd>
+</dl>
+<p>&lt;/script&gt;</p>
+</blockquote>
+<p>For more details, see:
+<a class="reference external" href="http://github.com/anandology/notebook/tree/master/2010/03/jsdef/">http://github.com/anandology/notebook/tree/master/2010/03/jsdef/</a></p>
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.jsdef.JSDefNode">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.jsdef.</tt><tt class="descname">JSDefNode</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.JSDefNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">web.template.DefNode</span></tt></p>
+<p>Node to represent jsdef block.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.jsdef.JSNode">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.jsdef.</tt><tt class="descname">JSNode</tt><big>(</big><em>node</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.JSNode" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.plugins.upstream.jsdef.JSNode.emit">
+<tt class="descname">emit</tt><big>(</big><em>indent</em>, <em>text_indent=''</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.JSNode.emit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.jsdef.JSNode.jsemit">
+<tt class="descname">jsemit</tt><big>(</big><em>node</em>, <em>indent</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.JSNode.jsemit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emit Javascript for given node.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">jsemit</span> <span class="o">=</span> <span class="n">JSNode</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span><span class="o">.</span><span class="n">jsemit</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jsemit</span><span class="p">(</span><span class="n">web</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">StatementNode</span><span class="p">(</span><span class="s">&quot;break&quot;</span><span class="p">),</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="go">&#39;break;\n&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jsemit</span><span class="p">(</span><span class="n">web</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">AssignmentNode</span><span class="p">(</span><span class="s">&quot;x = 1&quot;</span><span class="p">),</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="go">&#39;var x = 1;\n&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.jsdef.JSNode.jsemit_AssignmentNode">
+<tt class="descname">jsemit_AssignmentNode</tt><big>(</big><em>node</em>, <em>indent</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.JSNode.jsemit_AssignmentNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.jsdef.JSNode.jsemit_BlockNode">
+<tt class="descname">jsemit_BlockNode</tt><big>(</big><em>node</em>, <em>indent</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.JSNode.jsemit_BlockNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.jsdef.JSNode.jsemit_ElseNode">
+<tt class="descname">jsemit_ElseNode</tt><big>(</big><em>node</em>, <em>indent</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.JSNode.jsemit_ElseNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.jsdef.JSNode.jsemit_ExpressionNode">
+<tt class="descname">jsemit_ExpressionNode</tt><big>(</big><em>node</em>, <em>indent</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.JSNode.jsemit_ExpressionNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.jsdef.JSNode.jsemit_ForNode">
+<tt class="descname">jsemit_ForNode</tt><big>(</big><em>node</em>, <em>indent</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.JSNode.jsemit_ForNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.jsdef.JSNode.jsemit_IfNode">
+<tt class="descname">jsemit_IfNode</tt><big>(</big><em>node</em>, <em>indent</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.JSNode.jsemit_IfNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.jsdef.JSNode.jsemit_JSDefNode">
+<tt class="descname">jsemit_JSDefNode</tt><big>(</big><em>node</em>, <em>indent</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.JSNode.jsemit_JSDefNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.jsdef.JSNode.jsemit_LineNode">
+<tt class="descname">jsemit_LineNode</tt><big>(</big><em>node</em>, <em>indent</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.JSNode.jsemit_LineNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.jsdef.JSNode.jsemit_StatementNode">
+<tt class="descname">jsemit_StatementNode</tt><big>(</big><em>node</em>, <em>indent</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.JSNode.jsemit_StatementNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.jsdef.JSNode.jsemit_SuiteNode">
+<tt class="descname">jsemit_SuiteNode</tt><big>(</big><em>node</em>, <em>indent</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.JSNode.jsemit_SuiteNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.jsdef.JSNode.jsemit_TextNode">
+<tt class="descname">jsemit_TextNode</tt><big>(</big><em>node</em>, <em>indent</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.JSNode.jsemit_TextNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.jsdef.extension">
+<tt class="descclassname">openlibrary.plugins.upstream.jsdef.</tt><tt class="descname">extension</tt><big>(</big><em>parser</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.extension" title="Permalink to this definition">¶</a></dt>
+<dd><p>jsdef extension. Adds support for <cite>jsdef</cite> block to template parser.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s">&quot;$jsdef hello(name):</span><span class="se">\n</span><span class="s">    Hello $name!&quot;</span><span class="p">,</span> <span class="n">extensions</span><span class="o">=</span><span class="p">[</span><span class="n">extension</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">t</span><span class="p">()</span> 
+<span class="go">&lt;script type=&quot;text/javascript&quot;&gt;</span>
+<span class="go">function hello(name){</span>
+<span class="go">    var self = [], loop;</span>
+<span class="go">    self.push(&quot;Hello &quot;); self.push(websafe(name)); self.push(&quot;!\n&quot;);</span>
+<span class="go">    return self.join(&quot;&quot;);</span>
+<span class="go">}</span>
+<span class="go">&lt;/script&gt;        </span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.jsdef.py2js">
+<tt class="descclassname">openlibrary.plugins.upstream.jsdef.</tt><tt class="descname">py2js</tt><big>(</big><em>expr</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.py2js" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a python expression to javascript.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">py2js</span><span class="p">(</span><span class="s">&quot;x + y&quot;</span><span class="p">)</span>
+<span class="go">&#39;x + y&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">py2js</span><span class="p">(</span><span class="s">&quot;x and y&quot;</span><span class="p">)</span>
+<span class="go">&#39;x &amp;&amp; y&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">py2js</span><span class="p">(</span><span class="s">&quot;x or not y&quot;</span><span class="p">)</span>
+<span class="go">&#39;x || ! y&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.jsdef.tokenize">
+<tt class="descclassname">openlibrary.plugins.upstream.jsdef.</tt><tt class="descname">tokenize</tt><big>(</big><em>code</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.tokenize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tokenize python code.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">tokenize</span><span class="p">(</span><span class="s">&quot;x + y&quot;</span><span class="p">))</span>
+<span class="go">[&#39;x&#39;, &#39; &#39;, &#39;+&#39;, &#39; &#39;, &#39;y&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="forms.html"
+                        title="previous chapter">forms</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="merge_authors.html"
+                        title="next chapter">merge_authors</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/api/openlibrary/plugins/upstream/jsdef.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="merge_authors.html" title="merge_authors"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="forms.html" title="forms"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >upstream</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

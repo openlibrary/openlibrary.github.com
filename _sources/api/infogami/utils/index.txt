@@ -1,0 +1,29 @@
+
+utils
+=====
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   app.rst
+   context.rst
+   delegate.rst
+   features.rst
+   flash.rst
+   i18n.rst
+   macro.rst
+   markdown/index.rst
+   stats.rst
+   storage.rst
+   template.rst
+   types.rst
+   view.rst
+
+Documentation
+-------------
+
+.. automodule:: infogami.utils
+    :members:

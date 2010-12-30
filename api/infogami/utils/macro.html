@@ -1,0 +1,200 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>macro &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="utils" href="index.html" />
+    <link rel="next" title="markdown" href="markdown/index.html" />
+    <link rel="prev" title="i18n" href="i18n.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="markdown/index.html" title="markdown"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="i18n.html" title="i18n"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">utils</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-infogami.utils.macro">
+<span id="macro"></span><h1>macro<a class="headerlink" href="#module-infogami.utils.macro" title="Permalink to this headline">¶</a></h1>
+<p>Macro extension to markdown.</p>
+<p>Macros take argument string as input and returns result as markdown text.</p>
+<dl class="function">
+<dt id="infogami.utils.macro.HelloWorld">
+<tt class="descclassname">infogami.utils.macro.</tt><tt class="descname">HelloWorld</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.utils.macro.HelloWorld" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hello world macro.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.macro.ListOfMacros">
+<tt class="descclassname">infogami.utils.macro.</tt><tt class="descname">ListOfMacros</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.utils.macro.ListOfMacros" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists all available macros.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.utils.macro.MacroExtension">
+<em class="property">class </em><tt class="descclassname">infogami.utils.macro.</tt><tt class="descname">MacroExtension</tt><big>(</big><em>configs={}</em><big>)</big><a class="headerlink" href="#infogami.utils.macro.MacroExtension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="markdown/markdown.html#infogami.utils.markdown.markdown.Extension" title="infogami.utils.markdown.markdown.Extension"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.markdown.markdown.Extension</span></tt></a></p>
+<dl class="method">
+<dt id="infogami.utils.macro.MacroExtension.extendMarkdown">
+<tt class="descname">extendMarkdown</tt><big>(</big><em>md</em>, <em>md_globals</em><big>)</big><a class="headerlink" href="#infogami.utils.macro.MacroExtension.extendMarkdown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.utils.macro.MacroPattern">
+<em class="property">class </em><tt class="descclassname">infogami.utils.macro.</tt><tt class="descname">MacroPattern</tt><big>(</big><em>md</em><big>)</big><a class="headerlink" href="#infogami.utils.macro.MacroPattern" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="markdown/markdown.html#infogami.utils.markdown.markdown.Pattern" title="infogami.utils.markdown.markdown.Pattern"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.markdown.markdown.Pattern</span></tt></a></p>
+<p>Inline pattern to replace macros.</p>
+<dl class="method">
+<dt id="infogami.utils.macro.MacroPattern.handleMatch">
+<tt class="descname">handleMatch</tt><big>(</big><em>m</em>, <em>doc</em><big>)</big><a class="headerlink" href="#infogami.utils.macro.MacroPattern.handleMatch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.utils.macro.MacroPattern.store">
+<tt class="descname">store</tt><big>(</big><em>md</em>, <em>macro_info</em><big>)</big><a class="headerlink" href="#infogami.utils.macro.MacroPattern.store" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.macro.call_macro">
+<tt class="descclassname">infogami.utils.macro.</tt><tt class="descname">call_macro</tt><big>(</big><em>name</em>, <em>args</em><big>)</big><a class="headerlink" href="#infogami.utils.macro.call_macro" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.macro.load_macros">
+<tt class="descclassname">infogami.utils.macro.</tt><tt class="descname">load_macros</tt><big>(</big><em>plugin_root</em>, <em>lazy=False</em><big>)</big><a class="headerlink" href="#infogami.utils.macro.load_macros" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds $plugin_root/macros to macro search path.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.macro.macro">
+<tt class="descclassname">infogami.utils.macro.</tt><tt class="descname">macro</tt><big>(</big><em>f</em><big>)</big><a class="headerlink" href="#infogami.utils.macro.macro" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator to register a markdown macro.
+Macro is a function that takes argument string and returns result as markdown string.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.macro.makeExtension">
+<tt class="descclassname">infogami.utils.macro.</tt><tt class="descname">makeExtension</tt><big>(</big><em>configs={}</em><big>)</big><a class="headerlink" href="#infogami.utils.macro.makeExtension" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.macro.replace_macros">
+<tt class="descclassname">infogami.utils.macro.</tt><tt class="descname">replace_macros</tt><big>(</big><em>html</em>, <em>macros</em><big>)</big><a class="headerlink" href="#infogami.utils.macro.replace_macros" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replaces the macro place holders with real macro output.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.macro.safeeval_args">
+<tt class="descclassname">infogami.utils.macro.</tt><tt class="descname">safeeval_args</tt><big>(</big><em>args</em><big>)</big><a class="headerlink" href="#infogami.utils.macro.safeeval_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evalues the args string safely using templator.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="i18n.html"
+                        title="previous chapter">i18n</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="markdown/index.html"
+                        title="next chapter">markdown</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/infogami/utils/macro.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="markdown/index.html" title="markdown"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="i18n.html" title="i18n"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" >utils</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

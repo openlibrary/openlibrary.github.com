@@ -1,0 +1,6 @@
+
+flash
+=====
+
+.. automodule:: infogami.utils.flash
+    :members:

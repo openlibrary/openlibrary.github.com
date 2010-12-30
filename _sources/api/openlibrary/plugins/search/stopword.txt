@@ -1,0 +1,6 @@
+
+stopword
+========
+
+.. automodule:: openlibrary.plugins.search.stopword
+    :members:

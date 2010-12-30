@@ -1,0 +1,378 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>lists &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="openlibrary" href="index.html" />
+    <link rel="next" title="processors" href="processors.html" />
+    <link rel="prev" title="infobase_hook" href="infobase_hook.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="processors.html" title="processors"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="infobase_hook.html" title="infobase_hook"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">openlibrary</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.plugins.openlibrary.lists">
+<span id="lists"></span><h1>lists<a class="headerlink" href="#module-openlibrary.plugins.openlibrary.lists" title="Permalink to this headline">¶</a></h1>
+<p>Lists implementaion.</p>
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.lists.export">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.lists.</tt><tt class="descname">export</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.export.GET">
+<tt class="descname">GET</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.export.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.export.get_editions">
+<tt class="descname">get_editions</tt><big>(</big><em>list</em>, <em>raw=False</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.export.get_editions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.lists.feeds">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.lists.</tt><tt class="descname">feeds</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.feeds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.feeds.GET">
+<tt class="descname">GET</tt><big>(</big><em>key</em>, <em>name</em>, <em>format</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.feeds.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.feeds.GET_updates_atom">
+<tt class="descname">GET_updates_atom</tt><big>(</big><em>list</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.feeds.GET_updates_atom" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.lists.get_active_lists_in_random">
+<tt class="descclassname">openlibrary.plugins.openlibrary.lists.</tt><tt class="descname">get_active_lists_in_random</tt><big>(</big><em>limit=20</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.get_active_lists_in_random" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.lists.list_editions">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.lists.</tt><tt class="descname">list_editions</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.list_editions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<p>Controller for displaying lists of a seed or lists of a person.</p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.list_editions.GET">
+<tt class="descname">GET</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.list_editions.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.list_editions.is_enabled">
+<tt class="descname">is_enabled</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.list_editions.is_enabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.lists.list_editions_json">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.lists.</tt><tt class="descname">list_editions_json</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.list_editions_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.list_editions_json.GET">
+<tt class="descname">GET</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.list_editions_json.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.list_editions_json.process_edition">
+<tt class="descname">process_edition</tt><big>(</big><em>e</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.list_editions_json.process_edition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.lists.list_editions_yaml">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.lists.</tt><tt class="descname">list_editions_yaml</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.list_editions_yaml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.openlibrary.lists.list_subjects_json" title="openlibrary.plugins.openlibrary.lists.list_subjects_json"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.openlibrary.lists.list_subjects_json</span></tt></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.lists.list_seed_yaml">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.lists.</tt><tt class="descname">list_seed_yaml</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.list_seed_yaml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.openlibrary.lists.list_seeds" title="openlibrary.plugins.openlibrary.lists.list_seeds"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.openlibrary.lists.list_seeds</span></tt></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.lists.list_seeds">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.lists.</tt><tt class="descname">list_seeds</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.list_seeds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.list_seeds.GET">
+<tt class="descname">GET</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.list_seeds.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.list_seeds.POST">
+<tt class="descname">POST</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.list_seeds.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.lists.list_subjects_json">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.lists.</tt><tt class="descname">list_subjects_json</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.list_subjects_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.list_subjects_json.GET">
+<tt class="descname">GET</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.list_subjects_json.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.list_subjects_json.get_subjects">
+<tt class="descname">get_subjects</tt><big>(</big><em>list</em>, <em>limit</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.list_subjects_json.get_subjects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.lists.list_view_json">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.lists.</tt><tt class="descname">list_view_json</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.list_view_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.list_view_json.GET">
+<tt class="descname">GET</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.list_view_json.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.list_view_json.dumps">
+<tt class="descname">dumps</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.list_view_json.dumps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.list_view_json.get_list_data">
+<tt class="descname">get_list_data</tt><big>(</big><em>list</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.list_view_json.get_list_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.lists.list_view_yaml">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.lists.</tt><tt class="descname">list_view_yaml</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.list_view_yaml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.openlibrary.lists.list_view_json" title="openlibrary.plugins.openlibrary.lists.list_view_json"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.openlibrary.lists.list_view_json</span></tt></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.lists.lists">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.lists.</tt><tt class="descname">lists</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.lists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<p>Controller for displaying lists of a seed or lists of a person.</p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.lists.GET">
+<tt class="descname">GET</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.lists.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.lists.get_doc">
+<tt class="descname">get_doc</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.lists.get_doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.lists.is_enabled">
+<tt class="descname">is_enabled</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.lists.is_enabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.lists.render">
+<tt class="descname">render</tt><big>(</big><em>doc</em>, <em>lists</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.lists.render" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.lists.lists_delete">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.lists.</tt><tt class="descname">lists_delete</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.lists_delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.lists_delete.POST">
+<tt class="descname">POST</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.lists_delete.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.lists.lists_home">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.lists.</tt><tt class="descname">lists_home</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.lists_home" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.lists_home.GET">
+<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.lists_home.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.lists.lists_json">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.lists.</tt><tt class="descname">lists_json</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.lists_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.lists_json.GET">
+<tt class="descname">GET</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.lists_json.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.lists_json.POST">
+<tt class="descname">POST</tt><big>(</big><em>user_key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.lists_json.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.lists_json.dumps">
+<tt class="descname">dumps</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.lists_json.dumps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.lists_json.forbidden">
+<tt class="descname">forbidden</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.lists_json.forbidden" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.lists_json.get_content_type">
+<tt class="descname">get_content_type</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.lists_json.get_content_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.lists_json.get_lists">
+<tt class="descname">get_lists</tt><big>(</big><em>doc</em>, <em>limit=50</em>, <em>offset=0</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.lists_json.get_lists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.lists_json.loads">
+<tt class="descname">loads</tt><big>(</big><em>text</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.lists_json.loads" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.lists.lists_json.process_seeds">
+<tt class="descname">process_seeds</tt><big>(</big><em>seeds</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.lists_json.process_seeds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.lists.lists_yaml">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.lists.</tt><tt class="descname">lists_yaml</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.lists_yaml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.openlibrary.lists.lists_json" title="openlibrary.plugins.openlibrary.lists.lists_json"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.openlibrary.lists.lists_json</span></tt></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.lists.make_collection">
+<tt class="descclassname">openlibrary.plugins.openlibrary.lists.</tt><tt class="descname">make_collection</tt><big>(</big><em>size</em>, <em>entries</em>, <em>limit</em>, <em>offset</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.make_collection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.lists.setup">
+<tt class="descclassname">openlibrary.plugins.openlibrary.lists.</tt><tt class="descname">setup</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.lists.setup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="infobase_hook.html"
+                        title="previous chapter">infobase_hook</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="processors.html"
+                        title="next chapter">processors</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/api/openlibrary/plugins/openlibrary/lists.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="processors.html" title="processors"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="infobase_hook.html" title="infobase_hook"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >openlibrary</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

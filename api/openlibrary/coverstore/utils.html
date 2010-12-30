@@ -1,0 +1,209 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>utils &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="coverstore" href="index.html" />
+    <link rel="next" title="warc" href="warc.html" />
+    <link rel="prev" title="server" href="server.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="warc.html" title="warc"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="server.html" title="server"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">coverstore</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.coverstore.utils">
+<span id="utils"></span><h1>utils<a class="headerlink" href="#module-openlibrary.coverstore.utils" title="Permalink to this headline">¶</a></h1>
+<p>Utilities for coverstore</p>
+<dl class="class">
+<dt id="openlibrary.coverstore.utils.AppURLopener">
+<em class="property">class </em><tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">AppURLopener</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.AppURLopener" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">urllib.FancyURLopener</span></tt></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.utils.changequery">
+<tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">changequery</tt><big>(</big><em>url</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.changequery" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">changequery</span><span class="p">(</span><span class="s">&#39;http://google.com/search?q=foo&#39;</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="go">&#39;http://google.com/search?q=bar&amp;x=y&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.utils.download">
+<tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">download</tt><big>(</big><em>url</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.download" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.utils.get_ol_url">
+<tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">get_ol_url</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.get_ol_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.utils.ol_get">
+<tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">ol_get</tt><big>(</big><em>olkey</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.ol_get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.utils.ol_things">
+<tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">ol_things</tt><big>(</big><em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.ol_things" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.utils.random_string">
+<tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">random_string</tt><big>(</big><em>n</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.random_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.utils.read_file">
+<tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">read_file</tt><big>(</big><em>path</em>, <em>offset</em>, <em>size</em>, <em>chunk=51200</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.read_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an iterator over file data at specified offset and size.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">read_file</span><span class="p">(</span><span class="s">&#39;/dev/urandom&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)))</span>
+<span class="go">10000</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.utils.rm_f">
+<tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">rm_f</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.rm_f" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.utils.safeint">
+<tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">safeint</tt><big>(</big><em>value</em>, <em>default=None</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.safeint" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">safeint</span><span class="p">(</span><span class="s">&#39;1&#39;</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">safeint</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">safeint</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.utils.urldecode">
+<tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">urldecode</tt><big>(</big><em>url</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.urldecode" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">urldecode</span><span class="p">(</span><span class="s">&#39;http://google.com/search?q=bar&amp;x=y&#39;</span><span class="p">)</span>
+<span class="go">(&#39;http://google.com/search&#39;, {&#39;q&#39;: &#39;bar&#39;, &#39;x&#39;: &#39;y&#39;})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urldecode</span><span class="p">(</span><span class="s">&#39;http://google.com/&#39;</span><span class="p">)</span>
+<span class="go">(&#39;http://google.com/&#39;, {})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.utils.urlencode">
+<tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">urlencode</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.urlencode" title="Permalink to this definition">¶</a></dt>
+<dd><p>urlencodes the given data dictionary. If any of the value is a file object, data is multipart encoded.</p>
+<p>&#64;&#64;&#64; should go into web.browser</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="server.html"
+                        title="previous chapter">server</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="warc.html"
+                        title="next chapter">warc</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/openlibrary/coverstore/utils.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="warc.html" title="warc"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="server.html" title="server"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >coverstore</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

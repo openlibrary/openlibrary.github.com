@@ -1,0 +1,212 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>i18n &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="utils" href="index.html" />
+    <link rel="next" title="macro" href="macro.html" />
+    <link rel="prev" title="flash" href="flash.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="macro.html" title="macro"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="flash.html" title="flash"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">utils</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-infogami.utils.i18n">
+<span id="i18n"></span><h1>i18n<a class="headerlink" href="#module-infogami.utils.i18n" title="Permalink to this headline">¶</a></h1>
+<p>Support for Internationalization.</p>
+<dl class="function">
+<dt id="infogami.utils.i18n.dirstrip">
+<tt class="descclassname">infogami.utils.i18n.</tt><tt class="descname">dirstrip</tt><big>(</big><em>f</em>, <em>dir</em><big>)</big><a class="headerlink" href="#infogami.utils.i18n.dirstrip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Strips dir from f.
+&gt;&gt;&gt; dirstrip(&#8216;a/b/c/d&#8217;, &#8216;a/b/&#8217;)
+&#8216;c/d&#8217;</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.i18n.find">
+<tt class="descclassname">infogami.utils.i18n.</tt><tt class="descname">find</tt><big>(</big><em>path</em>, <em>pattern</em><big>)</big><a class="headerlink" href="#infogami.utils.i18n.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find all files matching the given pattern in the file hierarchy rooted at path.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.i18n.find_i18n_namespace">
+<tt class="descclassname">infogami.utils.i18n.</tt><tt class="descname">find_i18n_namespace</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#infogami.utils.i18n.find_i18n_namespace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds i18n namespace from the path.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">find_i18n_namespace</span><span class="p">(</span><span class="s">&#39;/i18n/type/type/strings.en&#39;</span><span class="p">)</span>
+<span class="go">&#39;/type/type&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find_i18n_namespace</span><span class="p">(</span><span class="s">&#39;/i18n/strings.en&#39;</span><span class="p">)</span>
+<span class="go">&#39;/&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.utils.i18n.i18n">
+<em class="property">class </em><tt class="descclassname">infogami.utils.i18n.</tt><tt class="descname">i18n</tt><a class="headerlink" href="#infogami.utils.i18n.i18n" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.utils.i18n.i18n.get">
+<tt class="descname">get</tt><big>(</big><em>namespace</em>, <em>key</em><big>)</big><a class="headerlink" href="#infogami.utils.i18n.i18n.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.utils.i18n.i18n.get_count">
+<tt class="descname">get_count</tt><big>(</big><em>namespace</em>, <em>lang=None</em><big>)</big><a class="headerlink" href="#infogami.utils.i18n.i18n.get_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.utils.i18n.i18n.get_languages">
+<tt class="descname">get_languages</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.utils.i18n.i18n.get_languages" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.utils.i18n.i18n.get_locale">
+<tt class="descname">get_locale</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.utils.i18n.i18n.get_locale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.utils.i18n.i18n.get_namespace">
+<tt class="descname">get_namespace</tt><big>(</big><em>namespace</em><big>)</big><a class="headerlink" href="#infogami.utils.i18n.i18n.get_namespace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.utils.i18n.i18n.get_namespaces">
+<tt class="descname">get_namespaces</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.utils.i18n.i18n.get_namespaces" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.utils.i18n.i18n.getkeys">
+<tt class="descname">getkeys</tt><big>(</big><em>namespace</em>, <em>lang=None</em><big>)</big><a class="headerlink" href="#infogami.utils.i18n.i18n.getkeys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.i18n.i18n_loadhook">
+<tt class="descclassname">infogami.utils.i18n.</tt><tt class="descname">i18n_loadhook</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.utils.i18n.i18n_loadhook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load hook to set web.ctx.lang bases on HTTP_ACCEPT_LANGUAGE header.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.utils.i18n.i18n_namespace">
+<em class="property">class </em><tt class="descclassname">infogami.utils.i18n.</tt><tt class="descname">i18n_namespace</tt><big>(</big><em>i18n</em>, <em>namespace</em><big>)</big><a class="headerlink" href="#infogami.utils.i18n.i18n_namespace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="infogami.utils.i18n.i18n_string">
+<em class="property">class </em><tt class="descclassname">infogami.utils.i18n.</tt><tt class="descname">i18n_string</tt><big>(</big><em>i18n</em>, <em>namespace</em>, <em>key</em><big>)</big><a class="headerlink" href="#infogami.utils.i18n.i18n_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.i18n.load_strings">
+<tt class="descclassname">infogami.utils.i18n.</tt><tt class="descname">load_strings</tt><big>(</big><em>plugin_path</em><big>)</big><a class="headerlink" href="#infogami.utils.i18n.load_strings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load string.xx files from plugin/i18n/string.* files.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="flash.html"
+                        title="previous chapter">flash</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="macro.html"
+                        title="next chapter">macro</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/infogami/utils/i18n.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="macro.html" title="macro"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="flash.html" title="flash"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" >utils</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+
+solr_client
+===========
+
+.. automodule:: openlibrary.plugins.search.solr_client
+    :members:

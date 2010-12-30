@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>disk &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="coverstore" href="index.html" />
+    <link rel="next" title="imagecache" href="imagecache.html" />
+    <link rel="prev" title="db" href="db.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="imagecache.html" title="imagecache"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="db.html" title="db"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">coverstore</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.coverstore.disk">
+<span id="disk"></span><h1>disk<a class="headerlink" href="#module-openlibrary.coverstore.disk" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="openlibrary.coverstore.disk.ArchiveDisk">
+<em class="property">class </em><tt class="descclassname">openlibrary.coverstore.disk.</tt><tt class="descname">ArchiveDisk</tt><big>(</big><em>root</em>, <em>prefix='file'</em>, <em>maxsize=524288000</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.disk.ArchiveDisk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.coverstore.disk.WARCDisk" title="openlibrary.coverstore.disk.WARCDisk"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.coverstore.disk.WARCDisk</span></tt></a></p>
+<p>Disk interface to internet archive storage.</p>
+<p>There is a convention that is used to name files and items. 
+prefix_xxxx_yy.ext is saved in item named prefix_xxxx.</p>
+<dl class="method">
+<dt id="openlibrary.coverstore.disk.ArchiveDisk.create_file">
+<tt class="descname">create_file</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.disk.ArchiveDisk.create_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.disk.ArchiveDisk.get_item_name">
+<tt class="descname">get_item_name</tt><big>(</big><em>warcfilename</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.disk.ArchiveDisk.get_item_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.disk.ArchiveDisk.item_url">
+<tt class="descname">item_url</tt><big>(</big><em>itemname</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.disk.ArchiveDisk.item_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns http url to access files from the item specified by the itemname.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.disk.ArchiveDisk.make_warcfile">
+<tt class="descname">make_warcfile</tt><big>(</big><em>warcfilename</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.disk.ArchiveDisk.make_warcfile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.disk.ArchiveDisk.read">
+<tt class="descname">read</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.disk.ArchiveDisk.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.coverstore.disk.Disk">
+<em class="property">class </em><tt class="descclassname">openlibrary.coverstore.disk.</tt><tt class="descname">Disk</tt><big>(</big><em>root</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.disk.Disk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disk interface to store files.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">string</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;rm -rf test_disk&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disk</span> <span class="o">=</span> <span class="n">Disk</span><span class="p">(</span><span class="s">&quot;test_disk&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span> <span class="o">=</span> <span class="n">disk</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;hello, world!&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span> <span class="o">=</span> <span class="n">disk</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">letters</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f3</span> <span class="o">=</span> <span class="n">disk</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">letters</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disk</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span>
+<span class="go">&#39;hello, world!&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disk</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>
+<span class="go">&#39;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disk</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f3</span><span class="p">)</span>
+<span class="go">&#39;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="openlibrary.coverstore.disk.Disk.make_filename">
+<tt class="descname">make_filename</tt><big>(</big><em>prefix=''</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.disk.Disk.make_filename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.disk.Disk.read">
+<tt class="descname">read</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.disk.Disk.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.disk.Disk.write">
+<tt class="descname">write</tt><big>(</big><em>data</em>, <em>params={}</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.disk.Disk.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.coverstore.disk.LayeredDisk">
+<em class="property">class </em><tt class="descclassname">openlibrary.coverstore.disk.</tt><tt class="descname">LayeredDisk</tt><big>(</big><em>disks</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.disk.LayeredDisk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disk interface over multiple disks.
+Write always happens to the first disk and 
+read happens on the first disk where the file is available.</p>
+<dl class="method">
+<dt id="openlibrary.coverstore.disk.LayeredDisk.read">
+<tt class="descname">read</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.disk.LayeredDisk.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.disk.LayeredDisk.write">
+<tt class="descname">write</tt><big>(</big><em>data</em>, <em>headers={}</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.disk.LayeredDisk.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.coverstore.disk.WARCDisk">
+<em class="property">class </em><tt class="descclassname">openlibrary.coverstore.disk.</tt><tt class="descname">WARCDisk</tt><big>(</big><em>root</em>, <em>prefix='file'</em>, <em>maxsize=524288000</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.disk.WARCDisk" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.coverstore.disk.WARCDisk.filesize">
+<tt class="descname">filesize</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.disk.WARCDisk.filesize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.disk.WARCDisk.find">
+<tt class="descname">find</tt><big>(</big><em>dir</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.disk.WARCDisk.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find all files in the given directory.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.disk.WARCDisk.get_item_name">
+<tt class="descname">get_item_name</tt><big>(</big><em>warcfilename</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.disk.WARCDisk.get_item_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.disk.WARCDisk.get_next_warcfile">
+<tt class="descname">get_next_warcfile</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.coverstore.disk.WARCDisk.get_next_warcfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the next warc file.</p>
+<p>For a new disk, next_warcfile should be file_0000_00.warc.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">string</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;rm -rf test_disk&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disk</span> <span class="o">=</span> <span class="n">WARCDisk</span><span class="p">(</span><span class="s">&quot;test_disk&quot;</span><span class="p">,</span> <span class="n">maxsize</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disk</span><span class="o">.</span><span class="n">get_next_warcfile</span><span class="p">()</span>
+<span class="go">&#39;file_0000_00.warc&#39;</span>
+</pre></div>
+</div>
+<p>After writing enough data, it should move to next file.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">disk</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;x&#39;</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disk</span><span class="o">.</span><span class="n">get_next_warcfile</span><span class="p">()</span>
+<span class="go">&#39;file_0000_01.warc&#39;</span>
+</pre></div>
+</div>
+<p>A a new disk with existing data should be able to find the correct value of next_warcfile.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">disk</span> <span class="o">=</span> <span class="n">WARCDisk</span><span class="p">(</span><span class="s">&quot;test_disk&quot;</span><span class="p">,</span> <span class="n">maxsize</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disk</span><span class="o">.</span><span class="n">get_next_warcfile</span><span class="p">()</span>
+<span class="go">&#39;file_0000_01.warc&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.disk.WARCDisk.get_path">
+<tt class="descname">get_path</tt><big>(</big><em>warcfilename</em>, <em>create_dirs=False</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.disk.WARCDisk.get_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.disk.WARCDisk.read">
+<tt class="descname">read</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.disk.WARCDisk.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.disk.WARCDisk.write">
+<tt class="descname">write</tt><big>(</big><em>data</em>, <em>headers={}</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.disk.WARCDisk.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.disk.random_string">
+<tt class="descclassname">openlibrary.coverstore.disk.</tt><tt class="descname">random_string</tt><big>(</big><em>n</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.disk.random_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="db.html"
+                        title="previous chapter">db</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="imagecache.html"
+                        title="next chapter">imagecache</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/openlibrary/coverstore/disk.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="imagecache.html" title="imagecache"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="db.html" title="db"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >coverstore</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

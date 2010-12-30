@@ -1,0 +1,6 @@
+
+code
+====
+
+.. automodule:: openlibrary.plugins.oltemplates.code
+    :members:

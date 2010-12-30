@@ -1,0 +1,27 @@
+
+plugins
+=======
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   admin/index.rst
+   books/index.rst
+   inside/index.rst
+   mobile/index.rst
+   ol_infobase.rst
+   oltemplates/index.rst
+   openlibrary/index.rst
+   scod/index.rst
+   search/index.rst
+   upstream/index.rst
+   worksearch/index.rst
+
+Documentation
+-------------
+
+.. automodule:: openlibrary.plugins
+    :members:

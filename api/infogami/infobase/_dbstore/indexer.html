@@ -1,0 +1,159 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>indexer &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="_dbstore" href="index.html" />
+    <link rel="next" title="read" href="read.html" />
+    <link rel="prev" title="_dbstore" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="read.html" title="read"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="_dbstore"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >infogami</a> &raquo;</li>
+          <li><a href="../index.html" >infobase</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">_dbstore</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-infogami.infobase._dbstore.indexer">
+<span id="indexer"></span><h1>indexer<a class="headerlink" href="#module-infogami.infobase._dbstore.indexer" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="infogami.infobase._dbstore.indexer.Indexer">
+<em class="property">class </em><tt class="descclassname">infogami.infobase._dbstore.indexer.</tt><tt class="descname">Indexer</tt><a class="headerlink" href="#infogami.infobase._dbstore.indexer.Indexer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indexer computes the values to be indexed.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">indexer</span> <span class="o">=</span> <span class="n">Indexer</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">indexer</span><span class="o">.</span><span class="n">compute_index</span><span class="p">({</span><span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;/books/foo&quot;</span><span class="p">,</span> <span class="s">&quot;title&quot;</span><span class="p">:</span> <span class="s">&quot;The Foo Book&quot;</span><span class="p">,</span> <span class="s">&quot;authors&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;/authors/a1&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;/authors/a2&quot;</span><span class="p">}]}))</span>
+<span class="go">[(&#39;ref&#39;, &#39;authors&#39;, &#39;/authors/a1&#39;), (&#39;ref&#39;, &#39;authors&#39;, &#39;/authors/a2&#39;), (&#39;str&#39;, &#39;title&#39;, &#39;The Foo Book&#39;)]</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="infogami.infobase._dbstore.indexer.Indexer.compute_index">
+<tt class="descname">compute_index</tt><big>(</big><em>doc</em><big>)</big><a class="headerlink" href="#infogami.infobase._dbstore.indexer.Indexer.compute_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an iterator with (datatype, key, value) for each value be indexed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase._dbstore.indexer.Indexer.diff_index">
+<tt class="descname">diff_index</tt><big>(</big><em>old_doc</em>, <em>new_doc</em><big>)</big><a class="headerlink" href="#infogami.infobase._dbstore.indexer.Indexer.diff_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the difference between the index of old doc and new doc.
+Returns the indexes to be deleted and indexes to be inserted.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="n">Indexer</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r1</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;/books/foo&quot;</span><span class="p">,</span> <span class="s">&quot;title&quot;</span><span class="p">:</span> <span class="s">&quot;The Foo Book&quot;</span><span class="p">,</span> <span class="s">&quot;authors&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;/authors/a1&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;/authors/a2&quot;</span><span class="p">}]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r2</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;/books/foo&quot;</span><span class="p">,</span> <span class="s">&quot;title&quot;</span><span class="p">:</span> <span class="s">&quot;The Bar Book&quot;</span><span class="p">,</span> <span class="s">&quot;authors&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;/authors/a2&quot;</span><span class="p">}]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">deletes</span><span class="p">,</span> <span class="n">inserts</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">diff_index</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">deletes</span><span class="p">)</span>
+<span class="go">[(&#39;str&#39;, &#39;title&#39;, &#39;The Foo Book&#39;), (&#39;ref&#39;, &#39;authors&#39;, &#39;/authors/a1&#39;)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">inserts</span><span class="p">)</span>
+<span class="go">[(&#39;str&#39;, &#39;title&#39;, &#39;The Bar Book&#39;)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">_dbstore</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="read.html"
+                        title="next chapter">read</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/api/infogami/infobase/_dbstore/indexer.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="read.html" title="read"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="_dbstore"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >infogami</a> &raquo;</li>
+          <li><a href="../index.html" >infobase</a> &raquo;</li>
+          <li><a href="index.html" >_dbstore</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

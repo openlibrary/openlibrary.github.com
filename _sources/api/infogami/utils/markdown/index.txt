@@ -1,0 +1,18 @@
+
+markdown
+========
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   markdown.rst
+   mdx_footnotes.rst
+
+Documentation
+-------------
+
+.. automodule:: infogami.utils.markdown
+    :members:

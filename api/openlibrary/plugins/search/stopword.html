@@ -1,0 +1,140 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>stopword &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="search" href="index.html" />
+    <link rel="next" title="upstream" href="../upstream/index.html" />
+    <link rel="prev" title="solr_client" href="solr_client.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../upstream/index.html" title="upstream"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="solr_client.html" title="solr_client"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">search</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.plugins.search.stopword">
+<span id="stopword"></span><h1>stopword<a class="headerlink" href="#module-openlibrary.plugins.search.stopword" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="openlibrary.plugins.search.stopword.basic_strip_stopwords">
+<tt class="descclassname">openlibrary.plugins.search.stopword.</tt><tt class="descname">basic_strip_stopwords</tt><big>(</big><em>q</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.stopword.basic_strip_stopwords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Strip stopwords from an all-alphabetic query, needed to avoid some bugs
+in the php basic query expander.  do something more sensible later &#64;&#64;</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">basic_strip_stopwords</span><span class="p">(</span><span class="s">&#39;soul of man&#39;</span><span class="p">)</span>
+<span class="go">soul man</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">basic_strip_stopwords</span><span class="p">(</span><span class="s">&#39;Rubber soul&#39;</span><span class="p">)</span>
+<span class="go">Rubber soul</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">basic_strip_stopwords</span><span class="p">(</span><span class="s">&#39;title:(soul of man)&#39;</span><span class="p">)</span>
+<span class="go">title:(soul of man)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="solr_client.html"
+                        title="previous chapter">solr_client</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../upstream/index.html"
+                        title="next chapter">upstream</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/api/openlibrary/plugins/search/stopword.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../upstream/index.html" title="upstream"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="solr_client.html" title="solr_client"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >search</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

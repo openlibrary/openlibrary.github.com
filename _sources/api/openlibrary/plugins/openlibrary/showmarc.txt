@@ -1,0 +1,6 @@
+
+showmarc
+========
+
+.. automodule:: openlibrary.plugins.openlibrary.showmarc
+    :members:

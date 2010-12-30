@@ -1,0 +1,22 @@
+
+_dbstore
+========
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   indexer.rst
+   read.rst
+   save.rst
+   schema.rst
+   sequence.rst
+   store.rst
+
+Documentation
+-------------
+
+.. automodule:: infogami.infobase._dbstore
+    :members:

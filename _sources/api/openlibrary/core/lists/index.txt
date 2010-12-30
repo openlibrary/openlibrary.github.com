@@ -1,0 +1,19 @@
+
+lists
+=====
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   engine.rst
+   model.rst
+   updater.rst
+
+Documentation
+-------------
+
+.. automodule:: openlibrary.core.lists
+    :members:

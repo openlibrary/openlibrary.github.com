@@ -1,0 +1,162 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>solr &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="utils" href="index.html" />
+    <link rel="next" title="infogami" href="../../infogami/index.html" />
+    <link rel="prev" title="schema" href="schema.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../infogami/index.html" title="infogami"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="schema.html" title="schema"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">utils</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.utils.solr">
+<span id="solr"></span><h1>solr<a class="headerlink" href="#module-openlibrary.utils.solr" title="Permalink to this headline">¶</a></h1>
+<p>Python library for accessing Solr.</p>
+<dl class="class">
+<dt id="openlibrary.utils.solr.Solr">
+<em class="property">class </em><tt class="descclassname">openlibrary.utils.solr.</tt><tt class="descname">Solr</tt><big>(</big><em>base_url</em><big>)</big><a class="headerlink" href="#openlibrary.utils.solr.Solr" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.utils.solr.Solr.escape">
+<tt class="descname">escape</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#openlibrary.utils.solr.Solr.escape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Escape special characters in the query string</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">solr</span> <span class="o">=</span> <span class="n">Solr</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solr</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="s">&quot;a[b]c&quot;</span><span class="p">)</span>
+<span class="go">&#39;a\\[b\\]c&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.solr.Solr.select">
+<tt class="descname">select</tt><big>(</big><em>query</em>, <em>fields=None</em>, <em>facets=None</em>, <em>rows=None</em>, <em>start=None</em>, <em>doc_wrapper=None</em>, <em>facet_wrapper=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.utils.solr.Solr.select" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute a solr query.</p>
+<p>query can be a string or a dicitonary. If query is a dictionary, query
+is constucted by concatinating all the key-value pairs with AND condition.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.utils.solr.urlencode">
+<tt class="descclassname">openlibrary.utils.solr.</tt><tt class="descname">urlencode</tt><big>(</big><em>d</em>, <em>doseq=False</em><big>)</big><a class="headerlink" href="#openlibrary.utils.solr.urlencode" title="Permalink to this definition">¶</a></dt>
+<dd><p>There is a bug in urllib when used with unicode data.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;q&quot;</span><span class="p">:</span> <span class="s">u&quot;</span><span class="se">\u0C05</span><span class="s">&quot;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urllib</span><span class="o">.</span><span class="n">urlencode</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="go">&#39;q=%E0%B0%85&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urllib</span><span class="o">.</span><span class="n">urlencode</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">doseq</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="go">&#39;q=%3F&#39;</span>
+</pre></div>
+</div>
+<p>This function encodes all the unicode strings in utf-8 before passing them to urllib.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="schema.html"
+                        title="previous chapter">schema</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../infogami/index.html"
+                        title="next chapter">infogami</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/openlibrary/utils/solr.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../infogami/index.html" title="infogami"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="schema.html" title="schema"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >utils</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

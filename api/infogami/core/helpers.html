@@ -1,0 +1,211 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>helpers &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="core" href="index.html" />
+    <link rel="next" title="infobase" href="../infobase/index.html" />
+    <link rel="prev" title="forms" href="forms.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../infobase/index.html" title="infobase"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="forms.html" title="forms"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">core</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-infogami.core.helpers">
+<span id="helpers"></span><h1>helpers<a class="headerlink" href="#module-infogami.core.helpers" title="Permalink to this headline">¶</a></h1>
+<p>Generic Utilities.</p>
+<dl class="class">
+<dt id="infogami.core.helpers.betterlist">
+<em class="property">class </em><tt class="descclassname">infogami.core.helpers.</tt><tt class="descname">betterlist</tt><a class="headerlink" href="#infogami.core.helpers.betterlist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">list</span></tt></p>
+<p>List with dict like setdefault method.</p>
+<dl class="method">
+<dt id="infogami.core.helpers.betterlist.fill">
+<tt class="descname">fill</tt><big>(</big><em>size</em><big>)</big><a class="headerlink" href="#infogami.core.helpers.betterlist.fill" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.core.helpers.betterlist.items">
+<tt class="descname">items</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.core.helpers.betterlist.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.core.helpers.betterlist.iteritems">
+<tt class="descname">iteritems</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.core.helpers.betterlist.iteritems" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.core.helpers.betterlist.setdefault">
+<tt class="descname">setdefault</tt><big>(</big><em>index</em>, <em>value</em><big>)</big><a class="headerlink" href="#infogami.core.helpers.betterlist.setdefault" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.core.helpers.flatten">
+<tt class="descclassname">infogami.core.helpers.</tt><tt class="descname">flatten</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#infogami.core.helpers.flatten" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a dictionary flat.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s">&#39;c&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xdict</span><span class="p">(</span><span class="n">flatten</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+<span class="go">{&#39;a&#39;: 1, &#39;b#0&#39;: 2, &#39;b#1&#39;: 3, &#39;c.x&#39;: 4, &#39;c.y&#39;: 5}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.core.helpers.subdict">
+<tt class="descclassname">infogami.core.helpers.</tt><tt class="descname">subdict</tt><big>(</big><em>d</em>, <em>keys</em><big>)</big><a class="headerlink" href="#infogami.core.helpers.subdict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subset like operation on dictionary.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">subdict</span><span class="p">({</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">])</span>
+<span class="go">{&#39;a&#39;: 1, &#39;c&#39;: 3}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">subdict</span><span class="p">({</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">])</span>
+<span class="go">{&#39;a&#39;: 1, &#39;c&#39;: 3}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.core.helpers.trim">
+<tt class="descclassname">infogami.core.helpers.</tt><tt class="descname">trim</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#infogami.core.helpers.trim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove empty elements from a list or dictionary.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">trim</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="mi">42</span><span class="p">])</span>
+<span class="go">[2, 3, 42]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">trim</span><span class="p">([{</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}])</span>
+<span class="go">[{&#39;x&#39;: 1}, {&#39;x&#39;: 3}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">trim</span><span class="p">({</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="s">&#39;z&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">]})</span>
+<span class="go">{&#39;x&#39;: 1, &#39;z&#39;: [&#39;a&#39;, &#39;b&#39;]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">trim</span><span class="p">(</span><span class="n">unflatten</span><span class="p">({</span><span class="s">&#39;a#1#2.b&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}))</span>
+<span class="go">{&#39;a&#39;: [[{&#39;b&#39;: 1}]]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">trim</span><span class="p">(</span><span class="n">flatten</span><span class="p">(</span><span class="n">unflatten</span><span class="p">({</span><span class="s">&#39;a#1#2.b&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})))</span>
+<span class="go">{&#39;a#1#2.b&#39;: 1}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.core.helpers.unflatten">
+<tt class="descclassname">infogami.core.helpers.</tt><tt class="descname">unflatten</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#infogami.core.helpers.unflatten" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse of flatten.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xdict</span><span class="p">(</span><span class="n">unflatten</span><span class="p">({</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;b#0&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;b#1&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&#39;c.x&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s">&#39;c.y&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}))</span>
+<span class="go">{&#39;a&#39;: 1, &#39;b&#39;: [2, 3], &#39;c&#39;: {&#39;x&#39;: 4, &#39;y&#39;: 5}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">unflatten</span><span class="p">({</span><span class="s">&#39;a#1#2.b&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+<span class="go">{&#39;a&#39;: [None, [None, None, {&#39;b&#39;: 1}]]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.core.helpers.xdict">
+<em class="property">class </em><tt class="descclassname">infogami.core.helpers.</tt><tt class="descname">xdict</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#infogami.core.helpers.xdict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary wrapper to give sorted repr.
+Used for doctest.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="forms.html"
+                        title="previous chapter">forms</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../infobase/index.html"
+                        title="next chapter">infobase</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/infogami/core/helpers.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../infobase/index.html" title="infobase"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="forms.html" title="forms"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" >core</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

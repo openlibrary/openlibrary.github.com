@@ -1,0 +1,6 @@
+
+read
+====
+
+.. automodule:: infogami.infobase._dbstore.read
+    :members:

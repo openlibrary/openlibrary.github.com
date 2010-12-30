@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>core &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="infobase" href="index.html" />
+    <link rel="next" title="dbstore" href="dbstore.html" />
+    <link rel="prev" title="config" href="config.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dbstore.html" title="dbstore"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="config.html" title="config"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">infobase</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-infogami.infobase.core">
+<span id="core"></span><h1>core<a class="headerlink" href="#module-infogami.infobase.core" title="Permalink to this headline">¶</a></h1>
+<p>Core datastructures for Infogami.</p>
+<dl class="exception">
+<dt id="infogami.infobase.core.BadData">
+<em class="property">exception </em><tt class="descclassname">infogami.infobase.core.</tt><tt class="descname">BadData</tt><big>(</big><em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.BadData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#infogami.infobase.core.InfobaseException" title="infogami.infobase.core.InfobaseException"><tt class="xref py py-class docutils literal"><span class="pre">infogami.infobase.core.InfobaseException</span></tt></a></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="infogami.infobase.core.Conflict">
+<em class="property">exception </em><tt class="descclassname">infogami.infobase.core.</tt><tt class="descname">Conflict</tt><big>(</big><em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.Conflict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#infogami.infobase.core.InfobaseException" title="infogami.infobase.core.InfobaseException"><tt class="xref py py-class docutils literal"><span class="pre">infogami.infobase.core.InfobaseException</span></tt></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.core.Event">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.core.</tt><tt class="descname">Event</tt><big>(</big><em>sitename</em>, <em>name</em>, <em>timestamp</em>, <em>ip</em>, <em>username</em>, <em>data</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.Event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infobase Event.</p>
+<p>Events are fired when something important happens (write, new account etc.).
+Some code can listen to the events and do some action (like logging, updating external cache etc.).</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="infogami.infobase.core.InfobaseException">
+<em class="property">exception </em><tt class="descclassname">infogami.infobase.core.</tt><tt class="descname">InfobaseException</tt><big>(</big><em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.InfobaseException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></tt></p>
+<dl class="method">
+<dt id="infogami.infobase.core.InfobaseException.dict">
+<tt class="descname">dict</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.core.InfobaseException.dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="infogami.infobase.core.NotFound">
+<em class="property">exception </em><tt class="descclassname">infogami.infobase.core.</tt><tt class="descname">NotFound</tt><big>(</big><em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.NotFound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#infogami.infobase.core.InfobaseException" title="infogami.infobase.core.InfobaseException"><tt class="xref py py-class docutils literal"><span class="pre">infogami.infobase.core.InfobaseException</span></tt></a></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="infogami.infobase.core.PermissionDenied">
+<em class="property">exception </em><tt class="descclassname">infogami.infobase.core.</tt><tt class="descname">PermissionDenied</tt><big>(</big><em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.PermissionDenied" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#infogami.infobase.core.InfobaseException" title="infogami.infobase.core.InfobaseException"><tt class="xref py py-class docutils literal"><span class="pre">infogami.infobase.core.InfobaseException</span></tt></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.core.Reference">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.core.</tt><tt class="descname">Reference</tt><a class="headerlink" href="#infogami.infobase.core.Reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">unicode</span></tt></p>
+<p>Python type for reference type.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.core.SiteStore">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.core.</tt><tt class="descname">SiteStore</tt><a class="headerlink" href="#infogami.infobase.core.SiteStore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interface for Infobase data storage</p>
+<dl class="method">
+<dt id="infogami.infobase.core.SiteStore.find_user">
+<tt class="descname">find_user</tt><big>(</big><em>email</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.SiteStore.find_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the key of the user with the specified email.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.core.SiteStore.get">
+<tt class="descname">get</tt><big>(</big><em>key</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.SiteStore.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.core.SiteStore.get_many">
+<tt class="descname">get_many</tt><big>(</big><em>keys</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.SiteStore.get_many" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.core.SiteStore.get_user_details">
+<tt class="descname">get_user_details</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.SiteStore.get_user_details" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a storage object with user email and encrypted password.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.core.SiteStore.initialze">
+<tt class="descname">initialze</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.core.SiteStore.initialze" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialzes the store for the first time.
+This is called before doing the bootstrap.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.core.SiteStore.new_key">
+<tt class="descname">new_key</tt><big>(</big><em>type</em>, <em>kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.SiteStore.new_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a new key to create a object of specified type. 
+The store guarentees that it never returns the same key again.
+Optional keyword arguments can be specified to give more hints 
+to the store in generating the new key.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.core.SiteStore.register">
+<tt class="descname">register</tt><big>(</big><em>key</em>, <em>email</em>, <em>encrypted</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.SiteStore.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers a new user.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.core.SiteStore.set_cache">
+<tt class="descname">set_cache</tt><big>(</big><em>cache</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.SiteStore.set_cache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.core.SiteStore.things">
+<tt class="descname">things</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.SiteStore.things" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.core.SiteStore.transact">
+<tt class="descname">transact</tt><big>(</big><em>f</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.SiteStore.transact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes function f in a transaction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.core.SiteStore.update_user_details">
+<tt class="descname">update_user_details</tt><big>(</big><em>key</em>, <em>email</em>, <em>enc_password</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.SiteStore.update_user_details" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update user&#8217;s email and/or encrypted password.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.core.SiteStore.versions">
+<tt class="descname">versions</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.SiteStore.versions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.core.SiteStore.write">
+<tt class="descname">write</tt><big>(</big><em>query</em>, <em>timestamp=None</em>, <em>comment=None</em>, <em>machine_comment=None</em>, <em>ip=None</em>, <em>author=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.SiteStore.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.core.Store">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.core.</tt><tt class="descname">Store</tt><a class="headerlink" href="#infogami.infobase.core.Store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Storage for Infobase.</p>
+<p>Store manages one or many SiteStores.</p>
+<dl class="method">
+<dt id="infogami.infobase.core.Store.create">
+<tt class="descname">create</tt><big>(</big><em>sitename</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.Store.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new site with the given name and returns store for it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.core.Store.delete">
+<tt class="descname">delete</tt><big>(</big><em>sitename</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.Store.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the store for the specified sitename.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.core.Store.get">
+<tt class="descname">get</tt><big>(</big><em>sitename</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.Store.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns store object for the given sitename.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.core.Text">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.core.</tt><tt class="descname">Text</tt><a class="headerlink" href="#infogami.infobase.core.Text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">unicode</span></tt></p>
+<p>Python type for /type/text.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.core.Thing">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.core.</tt><tt class="descname">Thing</tt><big>(</big><em>store</em>, <em>key</em>, <em>data</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.Thing" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.core.Thing.copy">
+<tt class="descname">copy</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.core.Thing.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.core.Thing.format_data">
+<tt class="descname">format_data</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.core.Thing.format_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="infogami.infobase.core.Thing.from_dict">
+<em class="property">static </em><tt class="descname">from_dict</tt><big>(</big><em>store</em>, <em>key</em>, <em>data</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.Thing.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="infogami.infobase.core.Thing.from_json">
+<em class="property">static </em><tt class="descname">from_json</tt><big>(</big><em>store</em>, <em>key</em>, <em>data</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.Thing.from_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.core.Thing.get">
+<tt class="descname">get</tt><big>(</big><em>key</em>, <em>default=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.Thing.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.core.Thing.get_property">
+<tt class="descname">get_property</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.Thing.get_property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="infogami.infobase.core.TypeMismatch">
+<em class="property">exception </em><tt class="descclassname">infogami.infobase.core.</tt><tt class="descname">TypeMismatch</tt><big>(</big><em>type_expected</em>, <em>type_found</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.TypeMismatch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#infogami.infobase.core.BadData" title="infogami.infobase.core.BadData"><tt class="xref py py-class docutils literal"><span class="pre">infogami.infobase.core.BadData</span></tt></a></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="infogami.infobase.core.UserNotFound">
+<em class="property">exception </em><tt class="descclassname">infogami.infobase.core.</tt><tt class="descname">UserNotFound</tt><big>(</big><em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.core.UserNotFound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#infogami.infobase.core.InfobaseException" title="infogami.infobase.core.InfobaseException"><tt class="xref py py-class docutils literal"><span class="pre">infogami.infobase.core.InfobaseException</span></tt></a></p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="config.html"
+                        title="previous chapter">config</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="dbstore.html"
+                        title="next chapter">dbstore</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/infogami/infobase/core.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dbstore.html" title="dbstore"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="config.html" title="config"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" >infobase</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

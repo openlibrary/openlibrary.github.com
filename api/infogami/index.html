@@ -1,0 +1,203 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>infogami &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../index.html" />
+    <link rel="up" title="API Documentation" href="../index.html" />
+    <link rel="next" title="config" href="config.html" />
+    <link rel="prev" title="solr" href="../openlibrary/utils/solr.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="config.html" title="config"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../openlibrary/utils/solr.html" title="solr"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="infogami">
+<h1>infogami<a class="headerlink" href="#infogami" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="config.html">config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conftest.html">conftest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core/index.html">core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infobase/index.html">infobase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils/index.html">utils</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="module-infogami">
+<span id="documentation"></span><h2>Documentation<a class="headerlink" href="#module-infogami" title="Permalink to this headline">¶</a></h2>
+<p>Infogami: Structured Wiki (<a class="reference external" href="http://infogami.org">http://infogami.org</a>)</p>
+<dl class="function">
+<dt id="infogami.action">
+<tt class="descclassname">infogami.</tt><tt class="descname">action</tt><big>(</big><em>f</em><big>)</big><a class="headerlink" href="#infogami.action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator to register an infogami action.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.find_action">
+<tt class="descclassname">infogami.</tt><tt class="descname">find_action</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#infogami.find_action" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.help">
+<tt class="descclassname">infogami.</tt><tt class="descname">help</tt><big>(</big><em>name=None</em><big>)</big><a class="headerlink" href="#infogami.help" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show this help.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.install">
+<tt class="descclassname">infogami.</tt><tt class="descname">install</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.install" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setup everything.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.install_hook">
+<tt class="descclassname">infogami.</tt><tt class="descname">install_hook</tt><big>(</big><em>f</em><big>)</big><a class="headerlink" href="#infogami.install_hook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator to register install hook.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.main">
+<tt class="descclassname">infogami.</tt><tt class="descname">main</tt><big>(</big><em>config_file</em>, <em>*args</em><big>)</big><a class="headerlink" href="#infogami.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start Infogami using config file.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.run">
+<tt class="descclassname">infogami.</tt><tt class="descname">run</tt><big>(</big><em>args=None</em><big>)</big><a class="headerlink" href="#infogami.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.run_action">
+<tt class="descclassname">infogami.</tt><tt class="descname">run_action</tt><big>(</big><em>name</em>, <em>args=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#infogami.run_action" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.shell">
+<tt class="descclassname">infogami.</tt><tt class="descname">shell</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.shell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interactive Shell</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.startserver">
+<tt class="descclassname">infogami.</tt><tt class="descname">startserver</tt><big>(</big><em>*args</em><big>)</big><a class="headerlink" href="#infogami.startserver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start webserver.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">infogami</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-infogami">Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../openlibrary/utils/solr.html"
+                        title="previous chapter">solr</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="config.html"
+                        title="next chapter">config</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/api/infogami/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="config.html" title="config"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../openlibrary/utils/solr.html" title="solr"
+             >previous</a> |</li>
+        <li><a href="../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

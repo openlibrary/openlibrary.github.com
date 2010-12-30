@@ -1,0 +1,156 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>collapse &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="search" href="index.html" />
+    <link rel="next" title="facet_hash" href="facet_hash.html" />
+    <link rel="prev" title="code" href="code.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="facet_hash.html" title="facet_hash"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="code.html" title="code"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">search</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.plugins.search.collapse">
+<span id="collapse"></span><h1>collapse<a class="headerlink" href="#module-openlibrary.plugins.search.collapse" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="openlibrary.plugins.search.collapse.collapse_groups">
+<tt class="descclassname">openlibrary.plugins.search.collapse.</tt><tt class="descname">collapse_groups</tt><big>(</big><em>page_numbers</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.collapse.collapse_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a list of page numbers, return a list of (pagenum, rdesc) pairs
+corresponding to ranges of consecutive page numbers.  For each range,
+pagenum is the first page number in the range, and rdesc is a string
+describing the range.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">collapse_groups</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<span class="go">[(1, &#39;1&#39;), (3, &#39;3-4&#39;), (7, &#39;7-12&#39;), (18, &#39;18&#39;), (23, &#39;23-25&#39;)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.search.collapse.collapse_one_group">
+<tt class="descclassname">openlibrary.plugins.search.collapse.</tt><tt class="descname">collapse_one_group</tt><big>(</big><em>leaf_group</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.search.collapse.collapse_one_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>collapse list of leaves into a single string, i.e.
+&gt;&gt;&gt; collapse_one_group([2,3,4])
+&#8216;2-4&#8217;
+&gt;&gt;&gt; collapse_one_group([85])
+&#8216;85&#8217;
+&gt;&gt;&gt; # next example used to say 27-9, but we ditched that.
+&gt;&gt;&gt; collapse_one_group([27,28,29])
+&#8216;27-29&#8217;
+&gt;&gt;&gt; collapse_one_group([238,239,240,241])
+&#8216;238-241&#8217;
+&gt;&gt;&gt; # don&#8217;t say 280-5 any more either
+&gt;&gt;&gt; collapse_one_group([280,281,282,283,284,285])
+&#8216;280-285&#8217;</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="code.html"
+                        title="previous chapter">code</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="facet_hash.html"
+                        title="next chapter">facet_hash</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/api/openlibrary/plugins/search/collapse.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="facet_hash.html" title="facet_hash"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="code.html" title="code"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >search</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+
+merge_authors
+=============
+
+.. automodule:: openlibrary.plugins.upstream.merge_authors
+    :members:

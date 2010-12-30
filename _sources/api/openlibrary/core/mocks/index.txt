@@ -1,0 +1,17 @@
+
+mocks
+=====
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   mock_couchdb.rst
+
+Documentation
+-------------
+
+.. automodule:: openlibrary.core.mocks
+    :members:

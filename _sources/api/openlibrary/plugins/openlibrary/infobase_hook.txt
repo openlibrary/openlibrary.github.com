@@ -1,0 +1,6 @@
+
+infobase_hook
+=============
+
+.. automodule:: openlibrary.plugins.openlibrary.infobase_hook
+    :members:

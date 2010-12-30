@@ -1,0 +1,254 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>storage &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="utils" href="index.html" />
+    <link rel="next" title="template" href="template.html" />
+    <link rel="prev" title="stats" href="stats.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="template.html" title="template"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="stats.html" title="stats"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">utils</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-infogami.utils.storage">
+<span id="storage"></span><h1>storage<a class="headerlink" href="#module-infogami.utils.storage" title="Permalink to this headline">¶</a></h1>
+<p>Useful datastructures.</p>
+<dl class="class">
+<dt id="infogami.utils.storage.DefaultDict">
+<em class="property">class </em><tt class="descclassname">infogami.utils.storage.</tt><tt class="descname">DefaultDict</tt><big>(</big><em>default</em><big>)</big><a class="headerlink" href="#infogami.utils.storage.DefaultDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">dict</span></tt></p>
+<p>Dictionary with a default value for unknown keys.
+Source: <a class="reference external" href="http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/389639">http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/389639</a></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">DefaultDict</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">foo</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="s">&#39;bar&#39;</span><span class="p">]</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">x</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.utils.storage.DictPile">
+<em class="property">class </em><tt class="descclassname">infogami.utils.storage.</tt><tt class="descname">DictPile</tt><big>(</big><em>dicts=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#infogami.utils.storage.DictPile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">UserDict.DictMixin</span></tt></p>
+<p>Pile of ditionaries. 
+A key in top dictionary covers the key with the same name in the bottom dictionary.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;y&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s">&#39;z&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">DictPile</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;z&#39;</span><span class="p">]</span> 
+<span class="go">(1, 5, 6)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;z&#39;</span><span class="p">]</span> 
+<span class="go">(4, 5, 6)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;x&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">add_dict</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;z&#39;</span><span class="p">]</span>
+<span class="go">(0, 1, 6)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="infogami.utils.storage.DictPile.add_dict">
+<tt class="descname">add_dict</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#infogami.utils.storage.DictPile.add_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds d to the pile of dicts at the top.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.utils.storage.DictPile.keys">
+<tt class="descname">keys</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.utils.storage.DictPile.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.utils.storage.OrderedDict">
+<em class="property">class </em><tt class="descclassname">infogami.utils.storage.</tt><tt class="descname">OrderedDict</tt><big>(</big><em>d={}</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.utils.storage.OrderedDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">dict</span></tt></p>
+<p>A dictionary in which the insertion order of items is preserved.</p>
+<dl class="method">
+<dt id="infogami.utils.storage.OrderedDict.clear">
+<tt class="descname">clear</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.utils.storage.OrderedDict.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.utils.storage.OrderedDict.index">
+<tt class="descname">index</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#infogami.utils.storage.OrderedDict.index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.utils.storage.OrderedDict.items">
+<tt class="descname">items</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.utils.storage.OrderedDict.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.utils.storage.OrderedDict.iteritems">
+<tt class="descname">iteritems</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.utils.storage.OrderedDict.iteritems" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.utils.storage.OrderedDict.iterkeys">
+<tt class="descname">iterkeys</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.utils.storage.OrderedDict.iterkeys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.utils.storage.OrderedDict.itervalues">
+<tt class="descname">itervalues</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.utils.storage.OrderedDict.itervalues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.utils.storage.OrderedDict.keys">
+<tt class="descname">keys</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.utils.storage.OrderedDict.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.utils.storage.OrderedDict.popitem">
+<tt class="descname">popitem</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.utils.storage.OrderedDict.popitem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.utils.storage.OrderedDict.setdefault">
+<tt class="descname">setdefault</tt><big>(</big><em>key</em>, <em>failobj=None</em><big>)</big><a class="headerlink" href="#infogami.utils.storage.OrderedDict.setdefault" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.utils.storage.OrderedDict.update">
+<tt class="descname">update</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#infogami.utils.storage.OrderedDict.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.utils.storage.OrderedDict.values">
+<tt class="descname">values</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.utils.storage.OrderedDict.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.utils.storage.ReadOnlyDict">
+<em class="property">class </em><tt class="descclassname">infogami.utils.storage.</tt><tt class="descname">ReadOnlyDict</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#infogami.utils.storage.ReadOnlyDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary wrapper to provide read-only access to a dictionary.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.utils.storage.SiteLocalDict">
+<em class="property">class </em><tt class="descclassname">infogami.utils.storage.</tt><tt class="descname">SiteLocalDict</tt><a class="headerlink" href="#infogami.utils.storage.SiteLocalDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes a dictionary that maps sites to objects.
+When somebody tries to get or set an attribute or item 
+of the SiteLocalDict, it passes it on to the object 
+for the active site in dictionary.
+Active site is found from <cite>context.site</cite>.
+see infogami.utils.context.context</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="stats.html"
+                        title="previous chapter">stats</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="template.html"
+                        title="next chapter">template</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/infogami/utils/storage.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="template.html" title="template"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="stats.html" title="stats"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" >utils</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

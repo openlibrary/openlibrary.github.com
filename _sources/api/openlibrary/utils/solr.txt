@@ -1,0 +1,6 @@
+
+solr
+====
+
+.. automodule:: openlibrary.utils.solr
+    :members:

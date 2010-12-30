@@ -1,0 +1,6 @@
+
+indexer
+=======
+
+.. automodule:: infogami.infobase._dbstore.indexer
+    :members:

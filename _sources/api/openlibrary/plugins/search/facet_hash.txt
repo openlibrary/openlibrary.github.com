@@ -1,0 +1,6 @@
+
+facet_hash
+==========
+
+.. automodule:: openlibrary.plugins.search.facet_hash
+    :members:

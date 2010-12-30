@@ -1,0 +1,6 @@
+
+mem
+===
+
+.. automodule:: openlibrary.plugins.admin.mem
+    :members:

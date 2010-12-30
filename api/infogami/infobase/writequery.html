@@ -1,0 +1,277 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>writequery &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="infobase" href="index.html" />
+    <link rel="next" title="utils" href="../utils/index.html" />
+    <link rel="prev" title="utils" href="utils.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../utils/index.html" title="utils"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="utils.html" title="utils"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">infobase</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-infogami.infobase.writequery">
+<span id="writequery"></span><h1>writequery<a class="headerlink" href="#module-infogami.infobase.writequery" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="infogami.infobase.writequery.SaveProcessor">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.writequery.</tt><tt class="descname">SaveProcessor</tt><big>(</big><em>store</em>, <em>author</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.SaveProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.writequery.SaveProcessor.find_references">
+<tt class="descname">find_references</tt><big>(</big><em>d</em>, <em>result=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.SaveProcessor.find_references" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.writequery.SaveProcessor.find_types">
+<tt class="descname">find_types</tt><big>(</big><em>keys</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.SaveProcessor.find_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.writequery.SaveProcessor.get_many">
+<tt class="descname">get_many</tt><big>(</big><em>keys</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.SaveProcessor.get_many" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.writequery.SaveProcessor.get_permission">
+<tt class="descname">get_permission</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.SaveProcessor.get_permission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns permission for the specified key.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.writequery.SaveProcessor.get_property">
+<tt class="descname">get_property</tt><big>(</big><em>type</em>, <em>name</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.SaveProcessor.get_property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.writequery.SaveProcessor.get_thing">
+<tt class="descname">get_thing</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.SaveProcessor.get_thing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.writequery.SaveProcessor.get_type">
+<tt class="descname">get_type</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.SaveProcessor.get_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.writequery.SaveProcessor.has_permission">
+<tt class="descname">has_permission</tt><big>(</big><em>author</em>, <em>key</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.SaveProcessor.has_permission" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.writequery.SaveProcessor.process">
+<tt class="descname">process</tt><big>(</big><em>key</em>, <em>data</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.SaveProcessor.process" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.writequery.SaveProcessor.process_data">
+<tt class="descname">process_data</tt><big>(</big><em>d</em>, <em>type</em>, <em>old_data=None</em>, <em>prefix=''</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.SaveProcessor.process_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.writequery.SaveProcessor.process_many">
+<tt class="descname">process_many</tt><big>(</big><em>docs</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.SaveProcessor.process_many" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.writequery.SaveProcessor.process_value">
+<tt class="descname">process_value</tt><big>(</big><em>value</em>, <em>property</em>, <em>prefix=''</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.SaveProcessor.process_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.writequery.SaveProcessor.validate_properties">
+<tt class="descname">validate_properties</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.SaveProcessor.validate_properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.writequery.WriteQueryProcessor">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.writequery.</tt><tt class="descname">WriteQueryProcessor</tt><big>(</big><em>store</em>, <em>author</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.WriteQueryProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.writequery.WriteQueryProcessor.connect">
+<tt class="descname">connect</tt><big>(</big><em>data</em>, <em>name</em>, <em>connect</em>, <em>value</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.WriteQueryProcessor.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies the data dict by performing the specified connect.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">getdata</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">WriteQueryProcessor</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">getdata</span><span class="p">(),</span> <span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;update&#39;</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">)</span>
+<span class="go">{&#39;a&#39;: &#39;bar&#39;, &#39;b&#39;: [&#39;foo&#39;, &#39;bar&#39;]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">getdata</span><span class="p">(),</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;update_list&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;foobar&#39;</span><span class="p">])</span>
+<span class="go">{&#39;a&#39;: &#39;foo&#39;, &#39;b&#39;: [&#39;foobar&#39;]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">getdata</span><span class="p">(),</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;insert&#39;</span><span class="p">,</span> <span class="s">&#39;foobar&#39;</span><span class="p">)</span>
+<span class="go">{&#39;a&#39;: &#39;foo&#39;, &#39;b&#39;: [&#39;foo&#39;, &#39;bar&#39;, &#39;foobar&#39;]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">getdata</span><span class="p">(),</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;insert&#39;</span><span class="p">,</span> <span class="s">&#39;foo&#39;</span><span class="p">)</span>
+<span class="go">{&#39;a&#39;: &#39;foo&#39;, &#39;b&#39;: [&#39;foo&#39;, &#39;bar&#39;]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">getdata</span><span class="p">(),</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;delete&#39;</span><span class="p">,</span> <span class="s">&#39;foobar&#39;</span><span class="p">)</span>
+<span class="go">{&#39;a&#39;: &#39;foo&#39;, &#39;b&#39;: [&#39;foo&#39;, &#39;bar&#39;]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.writequery.WriteQueryProcessor.connect_all">
+<tt class="descname">connect_all</tt><big>(</big><em>data</em>, <em>query</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.WriteQueryProcessor.connect_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applys all connects specified in the query to data.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">WriteQueryProcessor</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">]}</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">query</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;connect&#39;</span><span class="p">:</span> <span class="s">&#39;update&#39;</span><span class="p">,</span> <span class="s">&#39;value&#39;</span><span class="p">:</span> <span class="s">&#39;bar&#39;</span><span class="p">},</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;connect&#39;</span><span class="p">:</span> <span class="s">&#39;insert&#39;</span><span class="p">,</span> <span class="s">&#39;value&#39;</span><span class="p">:</span> <span class="s">&#39;foobar&#39;</span><span class="p">}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">connect_all</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
+<span class="go">{&#39;a&#39;: &#39;bar&#39;, &#39;b&#39;: [&#39;foo&#39;, &#39;bar&#39;, &#39;foobar&#39;]}</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">query</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;connect&#39;</span><span class="p">:</span> <span class="s">&#39;update&#39;</span><span class="p">,</span> <span class="s">&#39;value&#39;</span><span class="p">:</span> <span class="s">&#39;bar&#39;</span><span class="p">},</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;connect&#39;</span><span class="p">:</span> <span class="s">&#39;delete&#39;</span><span class="p">,</span> <span class="s">&#39;value&#39;</span><span class="p">:</span> <span class="s">&#39;foo&#39;</span><span class="p">}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">connect_all</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
+<span class="go">{&#39;a&#39;: &#39;bar&#39;, &#39;b&#39;: [&#39;bar&#39;]}</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">query</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;connect&#39;</span><span class="p">:</span> <span class="s">&#39;update&#39;</span><span class="p">,</span> <span class="s">&#39;value&#39;</span><span class="p">:</span> <span class="s">&#39;bar&#39;</span><span class="p">},</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;connect&#39;</span><span class="p">:</span> <span class="s">&#39;update_list&#39;</span><span class="p">,</span> <span class="s">&#39;value&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;foobar&#39;</span><span class="p">]}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">connect_all</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
+<span class="go">{&#39;a&#39;: &#39;bar&#39;, &#39;b&#39;: [&#39;foo&#39;, &#39;foobar&#39;]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.writequery.WriteQueryProcessor.process">
+<tt class="descname">process</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.WriteQueryProcessor.process" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.writequery.WriteQueryProcessor.remove_connects">
+<tt class="descname">remove_connects</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.WriteQueryProcessor.remove_connects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.writequery.get_permission">
+<tt class="descclassname">infogami.infobase.writequery.</tt><tt class="descname">get_permission</tt><big>(</big><em>store</em>, <em>key</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.get_permission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns permission for the specified key.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.writequery.get_thing">
+<tt class="descclassname">infogami.infobase.writequery.</tt><tt class="descname">get_thing</tt><big>(</big><em>store</em>, <em>key</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.get_thing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.writequery.has_permission">
+<tt class="descclassname">infogami.infobase.writequery.</tt><tt class="descname">has_permission</tt><big>(</big><em>store</em>, <em>author</em>, <em>key</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.has_permission" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.writequery.serialize">
+<tt class="descclassname">infogami.infobase.writequery.</tt><tt class="descname">serialize</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#infogami.infobase.writequery.serialize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="utils.html"
+                        title="previous chapter">utils</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../utils/index.html"
+                        title="next chapter">utils</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/infogami/infobase/writequery.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../utils/index.html" title="utils"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="utils.html" title="utils"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" >infobase</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,187 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>features &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="utils" href="index.html" />
+    <link rel="next" title="flash" href="flash.html" />
+    <link rel="prev" title="delegate" href="delegate.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="flash.html" title="flash"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="delegate.html" title="delegate"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">utils</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-infogami.utils.features">
+<span id="features"></span><h1>features<a class="headerlink" href="#module-infogami.utils.features" title="Permalink to this headline">¶</a></h1>
+<p>Feature flags support for Infogami.</p>
+<dl class="function">
+<dt id="infogami.utils.features.call_filter">
+<tt class="descclassname">infogami.utils.features.</tt><tt class="descname">call_filter</tt><big>(</big><em>spec</em><big>)</big><a class="headerlink" href="#infogami.utils.features.call_filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.features.filter_admin">
+<tt class="descclassname">infogami.utils.features.</tt><tt class="descname">filter_admin</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.utils.features.filter_admin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.features.filter_disabled">
+<tt class="descclassname">infogami.utils.features.</tt><tt class="descname">filter_disabled</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.utils.features.filter_disabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.features.filter_enabled">
+<tt class="descclassname">infogami.utils.features.</tt><tt class="descname">filter_enabled</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.utils.features.filter_enabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.features.filter_loggedin">
+<tt class="descclassname">infogami.utils.features.</tt><tt class="descname">filter_loggedin</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.utils.features.filter_loggedin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.features.filter_queryparam">
+<tt class="descclassname">infogami.utils.features.</tt><tt class="descname">filter_queryparam</tt><big>(</big><em>name</em>, <em>value</em><big>)</big><a class="headerlink" href="#infogami.utils.features.filter_queryparam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns true if the current request has a queryparam with given name and value.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.features.filter_usergroup">
+<tt class="descclassname">infogami.utils.features.</tt><tt class="descname">filter_usergroup</tt><big>(</big><em>usergroup</em><big>)</big><a class="headerlink" href="#infogami.utils.features.filter_usergroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns true if the current user is member of the given usergroup.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.features.find_enabled_features">
+<tt class="descclassname">infogami.utils.features.</tt><tt class="descname">find_enabled_features</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.utils.features.find_enabled_features" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.features.is_enabled">
+<tt class="descclassname">infogami.utils.features.</tt><tt class="descname">is_enabled</tt><big>(</big><em>flag</em><big>)</big><a class="headerlink" href="#infogami.utils.features.is_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests whether the given feature flag is enabled for this request.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.features.loadhook">
+<tt class="descclassname">infogami.utils.features.</tt><tt class="descname">loadhook</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.utils.features.loadhook" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.features.register_filter">
+<tt class="descclassname">infogami.utils.features.</tt><tt class="descname">register_filter</tt><big>(</big><em>name</em>, <em>method</em><big>)</big><a class="headerlink" href="#infogami.utils.features.register_filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.utils.features.set_feature_flags">
+<tt class="descclassname">infogami.utils.features.</tt><tt class="descname">set_feature_flags</tt><big>(</big><em>flags</em><big>)</big><a class="headerlink" href="#infogami.utils.features.set_feature_flags" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="delegate.html"
+                        title="previous chapter">delegate</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="flash.html"
+                        title="next chapter">flash</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/infogami/utils/features.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="flash.html" title="flash"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="delegate.html" title="delegate"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" >utils</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

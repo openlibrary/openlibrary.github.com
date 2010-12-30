@@ -1,0 +1,560 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>client &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="infobase" href="index.html" />
+    <link rel="next" title="common" href="common.html" />
+    <link rel="prev" title="cache" href="cache.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="common.html" title="common"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cache.html" title="cache"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">infobase</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-infogami.infobase.client">
+<span id="client"></span><h1>client<a class="headerlink" href="#module-infogami.infobase.client" title="Permalink to this headline">¶</a></h1>
+<p>Infobase client.</p>
+<dl class="class">
+<dt id="infogami.infobase.client.Changeset">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">Changeset</tt><big>(</big><em>site</em>, <em>data</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Changeset" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="staticmethod">
+<dt id="infogami.infobase.client.Changeset.create">
+<em class="property">static </em><tt class="descname">create</tt><big>(</big><em>site</em>, <em>data</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Changeset.create" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Changeset.dict">
+<tt class="descname">dict</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.client.Changeset.dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Changeset.get_changes">
+<tt class="descname">get_changes</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.client.Changeset.get_changes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Changeset.get_comment">
+<tt class="descname">get_comment</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.client.Changeset.get_comment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Changeset.init">
+<tt class="descname">init</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.client.Changeset.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Changeset.url">
+<tt class="descname">url</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.client.Changeset.url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="infogami.infobase.client.ClientException">
+<em class="property">exception </em><tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">ClientException</tt><big>(</big><em>status</em>, <em>msg</em>, <em>json=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.ClientException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></tt></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.client.Connection">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">Connection</tt><a class="headerlink" href="#infogami.infobase.client.Connection" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.client.Connection.get_auth_token">
+<tt class="descname">get_auth_token</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.client.Connection.get_auth_token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Connection.handle_error">
+<tt class="descname">handle_error</tt><big>(</big><em>status</em>, <em>error</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Connection.handle_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Connection.request">
+<tt class="descname">request</tt><big>(</big><em>path</em>, <em>method='GET'</em>, <em>data=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Connection.request" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Connection.set_auth_token">
+<tt class="descname">set_auth_token</tt><big>(</big><em>token</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Connection.set_auth_token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.client.LazyObject">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">LazyObject</tt><big>(</big><em>creator</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.LazyObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>LazyObject which creates the required object on demand.
+&gt;&gt;&gt; o = LazyObject(lambda: [1, 2, 3])
+&gt;&gt;&gt; o
+[1, 2, 3]</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.client.LocalConnection">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">LocalConnection</tt><big>(</big><em>**params</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.LocalConnection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#infogami.infobase.client.Connection" title="infogami.infobase.client.Connection"><tt class="xref py py-class docutils literal"><span class="pre">infogami.infobase.client.Connection</span></tt></a></p>
+<p>LocalConnection assumes that db_parameters are set in web.config.</p>
+<dl class="method">
+<dt id="infogami.infobase.client.LocalConnection.request">
+<tt class="descname">request</tt><big>(</big><em>sitename</em>, <em>path</em>, <em>method='GET'</em>, <em>data=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.LocalConnection.request" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="infogami.infobase.client.NotFound">
+<em class="property">exception </em><tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">NotFound</tt><big>(</big><em>msg</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.NotFound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#infogami.infobase.client.ClientException" title="infogami.infobase.client.ClientException"><tt class="xref py py-class docutils literal"><span class="pre">infogami.infobase.client.ClientException</span></tt></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.client.Nothing">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">Nothing</tt><a class="headerlink" href="#infogami.infobase.client.Nothing" title="Permalink to this definition">¶</a></dt>
+<dd><p>For representing missing values.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="n">Nothing</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="go">&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">web</span><span class="o">.</span><span class="n">utf8</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="go">&#39;&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.client.RemoteConnection">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">RemoteConnection</tt><big>(</big><em>base_url</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.RemoteConnection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#infogami.infobase.client.Connection" title="infogami.infobase.client.Connection"><tt class="xref py py-class docutils literal"><span class="pre">infogami.infobase.client.Connection</span></tt></a></p>
+<p>Connection to remote Infobase server.</p>
+<dl class="method">
+<dt id="infogami.infobase.client.RemoteConnection.request">
+<tt class="descname">request</tt><big>(</big><em>sitename</em>, <em>path</em>, <em>method='GET'</em>, <em>data=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.RemoteConnection.request" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.client.Sequence">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">Sequence</tt><big>(</big><em>conn</em>, <em>sitename</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Sequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dynamic sequences. 
+Quite similar to sequences in postgres, but there is no need of define anything upfront..</p>
+<blockquote>
+<p>seq = web.ctx.site.seq
+for i in range(10):</p>
+<blockquote>
+print seq.next_value(&#8220;foo&#8221;)</blockquote>
+</blockquote>
+<dl class="method">
+<dt id="infogami.infobase.client.Sequence.get_value">
+<tt class="descname">get_value</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Sequence.get_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Sequence.next_value">
+<tt class="descname">next_value</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Sequence.next_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.client.Site">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">Site</tt><big>(</big><em>conn</em>, <em>sitename</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.client.Site.can_write">
+<tt class="descname">can_write</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.can_write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.check_reset_code">
+<tt class="descname">check_reset_code</tt><big>(</big><em>username</em>, <em>code</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.check_reset_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.create">
+<tt class="descname">create</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates this site if not exists.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.exists">
+<tt class="descname">exists</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns true if this site exists.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.find_user_by_email">
+<tt class="descname">find_user_by_email</tt><big>(</big><em>email</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.find_user_by_email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.get">
+<tt class="descname">get</tt><big>(</big><em>key</em>, <em>revision=None</em>, <em>lazy=False</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.get_change">
+<tt class="descname">get_change</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.get_change" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.get_many">
+<tt class="descname">get_many</tt><big>(</big><em>keys</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.get_many" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.get_reset_code">
+<tt class="descname">get_reset_code</tt><big>(</big><em>email</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.get_reset_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the reset code for user specified by the email.
+This called to send forgot password email. 
+This should be called after logging in as admin.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.get_user">
+<tt class="descname">get_user</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.get_user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.get_user_email">
+<tt class="descname">get_user_email</tt><big>(</big><em>username</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.get_user_email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.login">
+<tt class="descname">login</tt><big>(</big><em>username</em>, <em>password</em>, <em>remember=False</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.login" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.new">
+<tt class="descname">new</tt><big>(</big><em>key</em>, <em>data=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.new" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new thing in memory.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.new_key">
+<tt class="descname">new_key</tt><big>(</big><em>type</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.new_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.recentchanges">
+<tt class="descname">recentchanges</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.recentchanges" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.register">
+<tt class="descname">register</tt><big>(</big><em>username</em>, <em>displayname</em>, <em>email</em>, <em>password</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.register" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.reset_password">
+<tt class="descname">reset_password</tt><big>(</big><em>username</em>, <em>code</em>, <em>password</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.reset_password" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.save">
+<tt class="descname">save</tt><big>(</big><em>query</em>, <em>comment=None</em>, <em>action=None</em>, <em>data=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.save_many">
+<tt class="descname">save_many</tt><big>(</big><em>query</em>, <em>comment=None</em>, <em>data=None</em>, <em>action=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.save_many" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.things">
+<tt class="descname">things</tt><big>(</big><em>query</em>, <em>details=False</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.things" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.update_user">
+<tt class="descname">update_user</tt><big>(</big><em>old_password</em>, <em>new_password</em>, <em>email</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.update_user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.update_user_details">
+<tt class="descname">update_user_details</tt><big>(</big><em>username</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.update_user_details" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.versions">
+<tt class="descname">versions</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.versions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.write">
+<tt class="descname">write</tt><big>(</big><em>query</em>, <em>comment=None</em>, <em>action=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.client.Store">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">Store</tt><big>(</big><em>conn</em>, <em>sitename</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store to store any arbitrary data.</p>
+<p>This provides a dictionary like interface for storing documents. 
+Each document can have an optional type (default is &#8220;&#8221;) and all the (type, name, value) triples are indexed.</p>
+<dl class="method">
+<dt id="infogami.infobase.client.Store.clear">
+<tt class="descname">clear</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.client.Store.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes all keys from the store. Use this with caution!</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Store.delete">
+<tt class="descname">delete</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Store.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Store.get">
+<tt class="descname">get</tt><big>(</big><em>key</em>, <em>default=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Store.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Store.items">
+<tt class="descname">items</tt><big>(</big><em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Store.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Store.iteritems">
+<tt class="descname">iteritems</tt><big>(</big><em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Store.iteritems" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Store.iterkeys">
+<tt class="descname">iterkeys</tt><big>(</big><em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Store.iterkeys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Store.itervalues">
+<tt class="descname">itervalues</tt><big>(</big><em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Store.itervalues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Store.keys">
+<tt class="descname">keys</tt><big>(</big><em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Store.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Store.query">
+<tt class="descname">query</tt><big>(</big><em>type=None</em>, <em>name=None</em>, <em>value=None</em>, <em>limit=100</em>, <em>offset=0</em>, <em>include_docs=False</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Store.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the  a list of keys matching the given query.        
+Sample result:</p>
+<blockquote>
+[{&#8220;key&#8221;: &#8220;a&#8221;}, {&#8220;key&#8221;: &#8220;b&#8221;}, {&#8220;key&#8221;: &#8220;c&#8221;}]</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Store.unlimited_query">
+<tt class="descname">unlimited_query</tt><big>(</big><em>type</em>, <em>name</em>, <em>value</em>, <em>offset=0</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Store.unlimited_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Store.update">
+<tt class="descname">update</tt><big>(</big><em>d={}</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Store.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Store.values">
+<tt class="descname">values</tt><big>(</big><em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Store.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.client.Thing">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">Thing</tt><big>(</big><em>site</em>, <em>key</em>, <em>data=None</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Thing" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="infogami.infobase.client.Thing.dict">
+<tt class="descname">dict</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.client.Thing.dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Thing.get">
+<tt class="descname">get</tt><big>(</big><em>key</em>, <em>default=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Thing.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Thing.keys">
+<tt class="descname">keys</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.client.Thing.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Thing.update">
+<tt class="descname">update</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Thing.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.client.Type">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">Type</tt><big>(</big><em>site</em>, <em>key</em>, <em>data=None</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#infogami.infobase.client.Thing" title="infogami.infobase.client.Thing"><tt class="xref py py-class docutils literal"><span class="pre">infogami.infobase.client.Thing</span></tt></a></p>
+<dl class="method">
+<dt id="infogami.infobase.client.Type.get_backreference">
+<tt class="descname">get_backreference</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Type.get_backreference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Type.get_property">
+<tt class="descname">get_property</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Type.get_property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.client.connect">
+<tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">connect</tt><big>(</big><em>type</em>, <em>**params</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect to infobase server using the given params.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.client.create_thing">
+<tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">create_thing</tt><big>(</big><em>site</em>, <em>key</em>, <em>data</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.create_thing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.client.hook">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">hook</tt><a class="headerlink" href="#infogami.infobase.client.hook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.client.metahook">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">metahook</tt><big>(</big><em>name</em>, <em>bases</em>, <em>attrs</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.metahook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">type</span></tt></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.client.parse_datetime">
+<tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">parse_datetime</tt><big>(</big><em>datestring</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.parse_datetime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses from isoformat.
+Is there any way to do this in stdlib?</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.client.register_changeset_class">
+<tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">register_changeset_class</tt><big>(</big><em>kind</em>, <em>klass</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.register_changeset_class" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.client.register_thing_class">
+<tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">register_thing_class</tt><big>(</big><em>type</em>, <em>klass</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.register_thing_class" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.client.storify">
+<tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">storify</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.storify" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.client.unstorify">
+<tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">unstorify</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.unstorify" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cache.html"
+                        title="previous chapter">cache</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="common.html"
+                        title="next chapter">common</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/infogami/infobase/client.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="common.html" title="common"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cache.html" title="cache"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" >infobase</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

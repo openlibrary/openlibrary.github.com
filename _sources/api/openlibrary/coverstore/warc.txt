@@ -1,0 +1,6 @@
+
+warc
+====
+
+.. automodule:: openlibrary.coverstore.warc
+    :members:

@@ -1,7 +1,10 @@
-API documentation
+API Documentation
 =================
 
-.. toctree::
-   :maxdepth: 4
+This is the API documentation generated from openlibrary source code.
 
-   openlibrary.core.rst
+.. toctree::
+   :maxdepth: 1
+
+   openlibrary/index.rst
+   infogami/index.rst

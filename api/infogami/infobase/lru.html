@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>lru &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="infobase" href="index.html" />
+    <link rel="next" title="multiple_insert" href="multiple_insert.html" />
+    <link rel="prev" title="logreader" href="logreader.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="multiple_insert.html" title="multiple_insert"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="logreader.html" title="logreader"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">infobase</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-infogami.infobase.lru">
+<span id="lru"></span><h1>lru<a class="headerlink" href="#module-infogami.infobase.lru" title="Permalink to this headline">¶</a></h1>
+<p>Infobase cache.</p>
+<dl class="class">
+<dt id="infogami.infobase.lru.LRU">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.lru.</tt><tt class="descname">LRU</tt><big>(</big><em>capacity</em>, <em>d=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.lru.LRU" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary which discards least recently used items when size 
+exceeds the specified capacity.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">LRU</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">(1, 2, 3)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="ow">and</span> <span class="n">d</span>
+<span class="go">[1, 3, 2]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">d</span>
+<span class="go">[3, 2, 1]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span>
+<span class="go">[2, 1, 4]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span>
+<span class="go">[2, 4]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span>
+<span class="go">[4, 2]</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="infogami.infobase.lru.LRU.clear">
+<tt class="descname">clear</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.lru.LRU.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.lru.LRU.delete">
+<tt class="descname">delete</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.lru.LRU.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.lru.LRU.delete_many">
+<tt class="descname">delete_many</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.lru.LRU.delete_many" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.lru.LRU.get">
+<tt class="descname">get</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.lru.LRU.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.lru.LRU.getnode">
+<tt class="descname">getnode</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.lru.LRU.getnode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.lru.LRU.items">
+<tt class="descname">items</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.lru.LRU.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.lru.LRU.keys">
+<tt class="descname">keys</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.lru.LRU.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.lru.LRU.prune">
+<tt class="descname">prune</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.lru.LRU.prune" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.lru.LRU.remove_node">
+<tt class="descname">remove_node</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.lru.LRU.remove_node" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.lru.LRU.touch">
+<tt class="descname">touch</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.lru.LRU.touch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.lru.LRU.update">
+<tt class="descname">update</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.lru.LRU.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.lru.Node">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.lru.</tt><tt class="descname">Node</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#infogami.infobase.lru.Node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Queue Node.</p>
+<dl class="attribute">
+<dt id="infogami.infobase.lru.Node.key">
+<tt class="descname">key</tt><a class="headerlink" href="#infogami.infobase.lru.Node.key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="infogami.infobase.lru.Node.next">
+<tt class="descname">next</tt><a class="headerlink" href="#infogami.infobase.lru.Node.next" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="infogami.infobase.lru.Node.prev">
+<tt class="descname">prev</tt><a class="headerlink" href="#infogami.infobase.lru.Node.prev" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="infogami.infobase.lru.Node.value">
+<tt class="descname">value</tt><a class="headerlink" href="#infogami.infobase.lru.Node.value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.lru.Queue">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.lru.</tt><tt class="descname">Queue</tt><a class="headerlink" href="#infogami.infobase.lru.Queue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Classic Queue Datastructure with O(1) inserts and deletes.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span>
+<span class="go">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">Node</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">Node</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span>
+<span class="go">[1, 2, 3]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">peek</span><span class="p">()</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span>
+<span class="go">[1, 3]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+<span class="gt">Traceback (most recent call last):</span>
+    <span class="o">...</span> 
+<span class="nc">Exception</span>: <span class="n-Identifier">Queue is empty</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="infogami.infobase.lru.Queue.clear">
+<tt class="descname">clear</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.lru.Queue.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.lru.Queue.insert">
+<tt class="descname">insert</tt><big>(</big><em>node</em><big>)</big><a class="headerlink" href="#infogami.infobase.lru.Queue.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inserts a node at the end of the queue.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.lru.Queue.peek">
+<tt class="descname">peek</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.lru.Queue.peek" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the element at the begining of the queue.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.lru.Queue.remove">
+<tt class="descname">remove</tt><big>(</big><em>node=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.lru.Queue.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes a node from the linked list. If node is None, head of the queue is removed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.lru.ThingCache">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.lru.</tt><tt class="descname">ThingCache</tt><big>(</big><em>capacity</em><big>)</big><a class="headerlink" href="#infogami.infobase.lru.ThingCache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#infogami.infobase.lru.LRU" title="infogami.infobase.lru.LRU"><tt class="xref py py-class docutils literal"><span class="pre">infogami.infobase.lru.LRU</span></tt></a></p>
+<p>LRU Cache for storing things. Key can be either id or (site_id, key).</p>
+<dl class="method">
+<dt id="infogami.infobase.lru.ThingCache.clear">
+<tt class="descname">clear</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.lru.ThingCache.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.lru.ThingCache.get">
+<tt class="descname">get</tt><big>(</big><em>key</em>, <em>default=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.lru.ThingCache.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.lru.ThingCache.remove_node">
+<tt class="descname">remove_node</tt><big>(</big><em>node=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.lru.ThingCache.remove_node" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.lru.lrumemoize">
+<tt class="descclassname">infogami.infobase.lru.</tt><tt class="descname">lrumemoize</tt><big>(</big><em>n</em><big>)</big><a class="headerlink" href="#infogami.infobase.lru.lrumemoize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.lru.synchronized">
+<tt class="descclassname">infogami.infobase.lru.</tt><tt class="descname">synchronized</tt><big>(</big><em>f</em><big>)</big><a class="headerlink" href="#infogami.infobase.lru.synchronized" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator to synchronize a method.
+Behavior of this is same as Java synchronized keyword.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="logreader.html"
+                        title="previous chapter">logreader</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="multiple_insert.html"
+                        title="next chapter">multiple_insert</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/infogami/infobase/lru.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="multiple_insert.html" title="multiple_insert"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="logreader.html" title="logreader"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" >infobase</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

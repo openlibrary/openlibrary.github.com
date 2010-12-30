@@ -1,0 +1,148 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>readbooks &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="openlibrary" href="index.html" />
+    <link rel="next" title="schema" href="schema.html" />
+    <link rel="prev" title="processors" href="processors.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="schema.html" title="schema"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="processors.html" title="processors"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">openlibrary</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.plugins.openlibrary.readbooks">
+<span id="readbooks"></span><h1>readbooks<a class="headerlink" href="#module-openlibrary.plugins.openlibrary.readbooks" title="Permalink to this headline">¶</a></h1>
+<p>Script to get all books from the database and print every book as python dict.</p>
+<p>WARNING: This gets only the new books with revision=1.</p>
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.readbooks.books">
+<tt class="descclassname">openlibrary.plugins.openlibrary.readbooks.</tt><tt class="descname">books</tt><big>(</big><em>fbooks</em>, <em>fauthors</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.readbooks.books" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.readbooks.main">
+<tt class="descclassname">openlibrary.plugins.openlibrary.readbooks.</tt><tt class="descname">main</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.readbooks.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.readbooks.parse_datum">
+<tt class="descclassname">openlibrary.plugins.openlibrary.readbooks.</tt><tt class="descname">parse_datum</tt><big>(</big><em>rows</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.readbooks.parse_datum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.readbooks.select">
+<tt class="descclassname">openlibrary.plugins.openlibrary.readbooks.</tt><tt class="descname">select</tt><big>(</big><em>query</em>, <em>chunk_size=50000</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.readbooks.select" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects large number of rows efficiently using cursors.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="processors.html"
+                        title="previous chapter">processors</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="schema.html"
+                        title="next chapter">schema</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/api/openlibrary/plugins/openlibrary/readbooks.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="schema.html" title="schema"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="processors.html" title="processors"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >openlibrary</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

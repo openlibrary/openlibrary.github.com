@@ -1,0 +1,6 @@
+
+processors
+==========
+
+.. automodule:: openlibrary.plugins.openlibrary.processors
+    :members:

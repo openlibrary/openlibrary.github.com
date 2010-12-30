@@ -1,0 +1,252 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>bulkimport &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="utils" href="index.html" />
+    <link rel="next" title="compress" href="compress.html" />
+    <link rel="prev" title="utils" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="compress.html" title="compress"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="utils"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">utils</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.utils.bulkimport">
+<span id="bulkimport"></span><h1>bulkimport<a class="headerlink" href="#module-openlibrary.utils.bulkimport" title="Permalink to this headline">¶</a></h1>
+<p>Utility to bulk import documents into Open Library database without
+going through infobase API.</p>
+<dl class="class">
+<dt id="openlibrary.utils.bulkimport.DocumentLoader">
+<em class="property">class </em><tt class="descclassname">openlibrary.utils.bulkimport.</tt><tt class="descname">DocumentLoader</tt><big>(</big><em>**params</em><big>)</big><a class="headerlink" href="#openlibrary.utils.bulkimport.DocumentLoader" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.utils.bulkimport.DocumentLoader.bulk_new">
+<tt class="descname">bulk_new</tt><big>(</big><em>documents</em>, <em>author='/user/ImportBot'</em>, <em>comment=None</em><big>)</big><a class="headerlink" href="#openlibrary.utils.bulkimport.DocumentLoader.bulk_new" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create new documents in the database without going through
+infobase.  This approach is very fast, but this can lead to
+errors in the database if the caller is not careful.</p>
+<p>All records must contain &#8220;key&#8221; and &#8220;type&#8221;
+properties. &#8220;last_modified&#8221; and &#8220;created&#8221; properties are
+automatically added to all records.</p>
+<p>Entries are not added to xxx_str, xxx_ref ... tables. reindex
+method must be called separately to do that.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.bulkimport.DocumentLoader.bulk_update">
+<tt class="descname">bulk_update</tt><big>(</big><em>documents</em>, <em>author='/user/ImportBot'</em>, <em>comment=None</em><big>)</big><a class="headerlink" href="#openlibrary.utils.bulkimport.DocumentLoader.bulk_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update existing documents in the database.</p>
+<p>When adding new properties, it is sufficient to specify key and
+new properties.</p>
+<dl class="docutils">
+<dt>db.bulk_update([</dt>
+<dd>{&#8216;key&#8217;: &#8216;/b/OL1M&#8217;, &#8216;work&#8217;: {&#8216;key&#8217;: &#8216;/works/OL1W&#8217;}}
+{&#8216;key&#8217;: &#8216;/b/OL2M&#8217;, &#8216;work&#8217;: {&#8216;key&#8217;: &#8216;/works/OL2M&#8217;}}],
+comment=&#8221;link works&#8221;)</dd>
+</dl>
+<p>When updating an existing property, it sufficient to specify key and new value of that property.</p>
+<dl class="docutils">
+<dt>db.bulk_update([</dt>
+<dd>{&#8216;key&#8217;: &#8216;/b/OL1M&#8217;, &#8216;title&#8217;: &#8216;New title&#8217;}],
+comment=&#8221;unicode normalize titles&#8221;)</dd>
+</dl>
+<p>When append new value to an existing property, entire list must be provied.</p>
+<dl class="docutils">
+<dt>db.bulk_update([{</dt>
+<dd><blockquote class="first">
+&#8216;key&#8217;: &#8216;/a/OL1A&#8217;, 
+&#8216;links&#8217;: [&#8216;<a class="reference external" href="http://en.wikipedia.org/wiki/Foo">http://en.wikipedia.org/wiki/Foo</a>&#8216;, &#8216;<a class="reference external" href="http://de.wikipedia.org/wiki/Foo">http://de.wikipedia.org/wiki/Foo</a>&#8216;]</blockquote>
+<p class="last">}, comment=&#8221;add german wikipedia links&#8221;)</p>
+</dd>
+</dl>
+<p>WARNING: This function should not be used to change the &#8220;type&#8221; property of documents.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.bulkimport.DocumentLoader.get_thing_id">
+<tt class="descname">get_thing_id</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.utils.bulkimport.DocumentLoader.get_thing_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.bulkimport.DocumentLoader.get_thing_ids">
+<tt class="descname">get_thing_ids</tt><big>(</big><em>keys</em><big>)</big><a class="headerlink" href="#openlibrary.utils.bulkimport.DocumentLoader.get_thing_ids" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.bulkimport.DocumentLoader.incr_seq">
+<tt class="descname">incr_seq</tt><big>(</big><em>seqname</em>, <em>n</em><big>)</big><a class="headerlink" href="#openlibrary.utils.bulkimport.DocumentLoader.incr_seq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Increment a sequence by n and returns the latest value of
+that sequence and returns list of n numbers.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.bulkimport.DocumentLoader.new_work_keys">
+<tt class="descname">new_work_keys</tt><big>(</big><em>n</em><big>)</big><a class="headerlink" href="#openlibrary.utils.bulkimport.DocumentLoader.new_work_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns n new works keys.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.bulkimport.DocumentLoader.reindex">
+<tt class="descname">reindex</tt><big>(</big><em>keys</em>, <em>tables=None</em><big>)</big><a class="headerlink" href="#openlibrary.utils.bulkimport.DocumentLoader.reindex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete existing entries and add new entries to xxx_str,
+xxx_ref .. tables for the documents specified by keys.</p>
+<p>If optional tables argument is specified then reindex is done only for values in those tables.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.utils.bulkimport.Reindexer">
+<em class="property">class </em><tt class="descclassname">openlibrary.utils.bulkimport.</tt><tt class="descname">Reindexer</tt><big>(</big><em>db</em><big>)</big><a class="headerlink" href="#openlibrary.utils.bulkimport.Reindexer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility to reindex documents.</p>
+<dl class="method">
+<dt id="openlibrary.utils.bulkimport.Reindexer.create_new_index">
+<tt class="descname">create_new_index</tt><big>(</big><em>documents</em>, <em>tables=None</em><big>)</big><a class="headerlink" href="#openlibrary.utils.bulkimport.Reindexer.create_new_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert data in to index tables for the specified documents.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.bulkimport.Reindexer.delete_earlier_index">
+<tt class="descname">delete_earlier_index</tt><big>(</big><em>documents</em>, <em>tables=None</em><big>)</big><a class="headerlink" href="#openlibrary.utils.bulkimport.Reindexer.delete_earlier_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove all prevous entries corresponding to the given documents</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.bulkimport.Reindexer.get_documents">
+<tt class="descname">get_documents</tt><big>(</big><em>keys</em><big>)</big><a class="headerlink" href="#openlibrary.utils.bulkimport.Reindexer.get_documents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get documents with given keys from database and add &#8220;id&#8221; and &#8220;type_id&#8221; to them.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.bulkimport.Reindexer.get_property_id">
+<tt class="descname">get_property_id</tt><big>(</big><em>type_id</em>, <em>name</em><big>)</big><a class="headerlink" href="#openlibrary.utils.bulkimport.Reindexer.get_property_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.bulkimport.Reindexer.prepare_insert">
+<tt class="descname">prepare_insert</tt><big>(</big><em>rows</em>, <em>thing_id</em>, <em>type_id</em>, <em>name</em>, <em>value</em>, <em>ordering=None</em><big>)</big><a class="headerlink" href="#openlibrary.utils.bulkimport.Reindexer.prepare_insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add data to be inserted to rows list.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.bulkimport.Reindexer.process_refs">
+<tt class="descname">process_refs</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#openlibrary.utils.bulkimport.Reindexer.process_refs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert key values to thing ids for xxx_ref tables.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.bulkimport.Reindexer.reindex">
+<tt class="descname">reindex</tt><big>(</big><em>keys</em>, <em>tables=None</em><big>)</big><a class="headerlink" href="#openlibrary.utils.bulkimport.Reindexer.reindex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reindex documents specified by the keys.</p>
+<p>If tables is specified, index is recomputed only for those tables and other tables are ignored.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">utils</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="compress.html"
+                        title="next chapter">compress</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/openlibrary/utils/bulkimport.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="compress.html" title="compress"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="utils"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >utils</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

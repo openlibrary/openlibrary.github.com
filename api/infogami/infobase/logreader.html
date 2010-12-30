@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>logreader &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="infobase" href="index.html" />
+    <link rel="next" title="lru" href="lru.html" />
+    <link rel="prev" title="logger" href="logger.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="lru.html" title="lru"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="logger.html" title="logger"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">infobase</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-infogami.infobase.logreader">
+<span id="logreader"></span><h1>logreader<a class="headerlink" href="#module-infogami.infobase.logreader" title="Permalink to this headline">¶</a></h1>
+<p>Log file reader.</p>
+<dl class="class">
+<dt id="infogami.infobase.logreader.LogFile">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.logreader.</tt><tt class="descname">LogFile</tt><big>(</big><em>root</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Single file interface over entire log files.</p>
+<p>Read all enties from a given timestamp:</p>
+<blockquote>
+<p>log = LogFile(&#8220;log&#8221;)
+log.skip_till(datetime.datetime(2008, 01, 01))</p>
+<dl class="docutils">
+<dt>for line in log:</dt>
+<dd>print log</dd>
+</dl>
+</blockquote>
+<p>Read log entries in chunks:</p>
+<blockquote>
+<p>log = LogFile(&#8220;log&#8221;)
+while True:</p>
+<blockquote>
+<p># read upto a maximum of 1000 lines
+lines = log.readlines(1000)
+if lines:</p>
+<blockquote>
+do_something(lines)</blockquote>
+<dl class="docutils">
+<dt>else:</dt>
+<dd>break</dd>
+</dl>
+</blockquote>
+</blockquote>
+<p>Read log entries infinitely:</p>
+<blockquote>
+<p>log = LogFile(&#8220;log&#8221;)
+while True:</p>
+<blockquote>
+<p># read upto a maximum of 1000 lines
+lines = log.readlines(1000)
+if lines:</p>
+<blockquote>
+do_something(lines)</blockquote>
+<dl class="docutils">
+<dt>else:</dt>
+<dd>time.sleep(10) # wait for more data to come</dd>
+</dl>
+</blockquote>
+</blockquote>
+<p>Remember the offset and set the offset.</p>
+<blockquote>
+offset = log.tell()
+log.seek(offset)</blockquote>
+<dl class="method">
+<dt id="infogami.infobase.logreader.LogFile.advance">
+<tt class="descname">advance</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogFile.advance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move to next file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.logreader.LogFile.date2file">
+<tt class="descname">date2file</tt><big>(</big><em>date</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogFile.date2file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.logreader.LogFile.file2date">
+<tt class="descname">file2date</tt><big>(</big><em>file</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogFile.file2date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.logreader.LogFile.find_filelist">
+<tt class="descname">find_filelist</tt><big>(</big><em>from_date=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogFile.find_filelist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.logreader.LogFile.readline">
+<tt class="descname">readline</tt><big>(</big><em>do_update=True</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogFile.readline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.logreader.LogFile.readlines">
+<tt class="descname">readlines</tt><big>(</big><em>n=1000000</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogFile.readlines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads multiple lines from the log file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.logreader.LogFile.seek">
+<tt class="descname">seek</tt><big>(</big><em>offset</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogFile.seek" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.logreader.LogFile.skip_till">
+<tt class="descname">skip_till</tt><big>(</big><em>date</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogFile.skip_till" title="Permalink to this definition">¶</a></dt>
+<dd><p>Skips till file with the specified date.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.logreader.LogFile.tell">
+<tt class="descname">tell</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogFile.tell" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.logreader.LogFile.update">
+<tt class="descname">update</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogFile.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.logreader.LogPlayback">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.logreader.</tt><tt class="descname">LogPlayback</tt><big>(</big><em>infobase</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogPlayback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Playback log</p>
+<dl class="method">
+<dt id="infogami.infobase.logreader.LogPlayback.new_account">
+<tt class="descname">new_account</tt><big>(</big><em>site</em>, <em>timestamp</em>, <em>data</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogPlayback.new_account" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.logreader.LogPlayback.playback">
+<tt class="descname">playback</tt><big>(</big><em>entry</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogPlayback.playback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Playback one log entry.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.logreader.LogPlayback.playback_stream">
+<tt class="descname">playback_stream</tt><big>(</big><em>entries</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogPlayback.playback_stream" title="Permalink to this definition">¶</a></dt>
+<dd><p>Playback all entries from the specified log stream.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.logreader.LogPlayback.save">
+<tt class="descname">save</tt><big>(</big><em>site</em>, <em>timestamp</em>, <em>data</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogPlayback.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.logreader.LogPlayback.update_account">
+<tt class="descname">update_account</tt><big>(</big><em>site</em>, <em>timestamp</em>, <em>data</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogPlayback.update_account" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.logreader.LogPlayback.write">
+<tt class="descname">write</tt><big>(</big><em>site</em>, <em>timestamp</em>, <em>data</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogPlayback.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.logreader.LogReader">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.logreader.</tt><tt class="descname">LogReader</tt><big>(</big><em>logfile</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads log file line by line and converts each line to python dict using simplejson.loads.</p>
+<dl class="method">
+<dt id="infogami.infobase.logreader.LogReader.read_entries">
+<tt class="descname">read_entries</tt><big>(</big><em>n=1000000</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogReader.read_entries" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;Reads multiple enties from the log. The maximum entries to be read is specified as argument.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.logreader.LogReader.read_entry">
+<tt class="descname">read_entry</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogReader.read_entry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads one entry from the log.
+None is returned when there are no more enties.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.logreader.LogReader.skip_till">
+<tt class="descname">skip_till</tt><big>(</big><em>timestamp</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogReader.skip_till" title="Permalink to this definition">¶</a></dt>
+<dd><p>Skips the log file till the specified timestamp.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="infogami.infobase.logreader.RsyncLogFile">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.logreader.</tt><tt class="descname">RsyncLogFile</tt><big>(</big><em>rsync_root</em>, <em>root</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.RsyncLogFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#infogami.infobase.logreader.LogFile" title="infogami.infobase.logreader.LogFile"><tt class="xref py py-class docutils literal"><span class="pre">infogami.infobase.logreader.LogFile</span></tt></a></p>
+<p>File interface to Remote log files. rsync is used for data transfer.</p>
+<p>log = RsyncLogFile(&#8220;machine::module_name/path&#8221;, &#8220;log&#8221;)</p>
+<dl class="docutils">
+<dt>for line in log:</dt>
+<dd>print line</dd>
+</dl>
+<dl class="method">
+<dt id="infogami.infobase.logreader.RsyncLogFile.rsync">
+<tt class="descname">rsync</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.RsyncLogFile.rsync" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.logreader.RsyncLogFile.update">
+<tt class="descname">update</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.RsyncLogFile.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.logreader.daterange">
+<tt class="descclassname">infogami.infobase.logreader.</tt><tt class="descname">daterange</tt><big>(</big><em>begin</em>, <em>end=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.daterange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an iterator over dates from begin to end (inclusive). 
+If end is not specified, end is taken as utcnow.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.logreader.ijoin">
+<tt class="descclassname">infogami.infobase.logreader.</tt><tt class="descname">ijoin</tt><big>(</big><em>iters</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.ijoin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Joins given list of iterators as a single iterator.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">ijoin</span><span class="p">([</span><span class="nb">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">)]))</span>
+<span class="go">[0, 1, 2, 3, 4, 10, 11, 12, 13, 14]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.logreader.nextday">
+<tt class="descclassname">infogami.infobase.logreader.</tt><tt class="descname">nextday</tt><big>(</big><em>date</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.nextday" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.logreader.to_timestamp">
+<tt class="descclassname">infogami.infobase.logreader.</tt><tt class="descname">to_timestamp</tt><big>(</big><em>iso_date_string</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.to_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="s">&#39;2008-01-01T01:01:01.010101&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">to_timestamp</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+<span class="go">&#39;2008-01-01T01:01:01.010101&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="logger.html"
+                        title="previous chapter">logger</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="lru.html"
+                        title="next chapter">lru</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/infogami/infobase/logreader.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="lru.html" title="lru"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="logger.html" title="logger"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" >infobase</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

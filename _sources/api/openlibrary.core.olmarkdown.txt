@@ -1,6 +1,0 @@
-openlibrary.core.olmarkdown
-===========================
-
-.. automodule:: openlibrary.core.olmarkdown
-    :members:
-

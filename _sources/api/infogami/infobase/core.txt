@@ -1,0 +1,6 @@
+
+core
+====
+
+.. automodule:: infogami.infobase.core
+    :members:

@@ -1,0 +1,22 @@
+
+core
+====
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   code.rst
+   db.rst
+   dbupgrade.rst
+   diff.rst
+   forms.rst
+   helpers.rst
+
+Documentation
+-------------
+
+.. automodule:: infogami.core
+    :members:

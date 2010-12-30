@@ -1,0 +1,6 @@
+
+mdx_footnotes
+=============
+
+.. automodule:: infogami.utils.markdown.mdx_footnotes
+    :members:

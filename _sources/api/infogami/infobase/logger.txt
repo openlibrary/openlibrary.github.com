@@ -1,0 +1,6 @@
+
+logger
+======
+
+.. automodule:: infogami.infobase.logger
+    :members:

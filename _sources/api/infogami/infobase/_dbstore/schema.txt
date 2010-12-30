@@ -1,0 +1,6 @@
+
+schema
+======
+
+.. automodule:: infogami.infobase._dbstore.schema
+    :members:

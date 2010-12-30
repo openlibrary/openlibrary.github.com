@@ -1,0 +1,6 @@
+
+diff
+====
+
+.. automodule:: infogami.core.diff
+    :members:

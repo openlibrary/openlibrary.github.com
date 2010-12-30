@@ -1,0 +1,217 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>readquery &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="infobase" href="index.html" />
+    <link rel="next" title="server" href="server.html" />
+    <link rel="prev" title="multiple_insert" href="multiple_insert.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="server.html" title="server"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="multiple_insert.html" title="multiple_insert"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">infobase</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-infogami.infobase.readquery">
+<span id="readquery"></span><h1>readquery<a class="headerlink" href="#module-infogami.infobase.readquery" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="infogami.infobase.readquery.Query">
+<em class="property">class </em><tt class="descclassname">infogami.infobase.readquery.</tt><tt class="descname">Query</tt><big>(</big><em>conditions=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.readquery.Query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query is a list of conditions.
+Each condition is a storage object with (&#8220;key&#8221;, &#8220;op&#8221;, &#8220;datatype&#8221;, &#8220;value&#8221;) as keys.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">Query</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span>
+<span class="go">&lt;query: []&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">add_condition</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="s">&quot;=&quot;</span><span class="p">,</span> <span class="s">&quot;str&quot;</span><span class="p">,</span> <span class="s">&quot;foo&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span>
+<span class="go">&lt;query: [&#39;name = str:foo&#39;]&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">add_condition</span><span class="p">(</span><span class="s">&#39;type&#39;</span><span class="p">,</span> <span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="s">&#39;ref&#39;</span><span class="p">,</span> <span class="s">&#39;/type/page&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">get_type</span><span class="p">()</span>
+<span class="go">&#39;/type/page&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span>
+<span class="go">&lt;query: [&#39;name = str:foo&#39;, &#39;type = ref:/type/page&#39;]&gt;</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="infogami.infobase.readquery.Query.add_condition">
+<tt class="descname">add_condition</tt><big>(</big><em>key</em>, <em>op</em>, <em>datatype</em>, <em>value</em><big>)</big><a class="headerlink" href="#infogami.infobase.readquery.Query.add_condition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.readquery.Query.assert_type_required">
+<tt class="descname">assert_type_required</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.readquery.Query.assert_type_required" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.readquery.Query.get_type">
+<tt class="descname">get_type</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.readquery.Query.get_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the condition for type if there is any.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.readquery.find_datatype">
+<tt class="descclassname">infogami.infobase.readquery.</tt><tt class="descname">find_datatype</tt><big>(</big><em>type</em>, <em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#infogami.infobase.readquery.find_datatype" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">find_datatype</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">&#39;int&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find_datatype</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+<span class="go">&#39;boolean&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find_datatype</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;hello&quot;</span><span class="p">)</span>
+<span class="go">&#39;str&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.readquery.get_thing">
+<tt class="descclassname">infogami.infobase.readquery.</tt><tt class="descname">get_thing</tt><big>(</big><em>store</em>, <em>key</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.readquery.get_thing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.readquery.make_query">
+<tt class="descclassname">infogami.infobase.readquery.</tt><tt class="descname">make_query</tt><big>(</big><em>store</em>, <em>query</em>, <em>prefix=''</em><big>)</big><a class="headerlink" href="#infogami.infobase.readquery.make_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a query object from query dict.
+&gt;&gt;&gt; store = common.create_test_store()
+&gt;&gt;&gt; make_query(store, {&#8216;type&#8217;: &#8216;/type/page&#8217;})
+&lt;query: [&#8216;type = ref:/type/page&#8217;]&gt;
+&gt;&gt;&gt; make_query(store, {&#8216;type&#8217;: &#8216;/type/page&#8217;, &#8216;title~&#8217;: &#8216;foo&#8217;, &#8216;life&#8217;: 42})
+&lt;query: [&#8216;life = int:42&#8217;, &#8216;type = ref:/type/page&#8217;, &#8216;title ~ str:foo&#8217;]&gt;
+&gt;&gt;&gt; make_query(store, {&#8216;type&#8217;: &#8216;/type/page&#8217;, &#8216;title~&#8217;: &#8216;foo&#8217;, &#8216;a:life&lt;&#8217;: 42, &#8220;b:life&gt;&#8221;: 420})        
+&lt;query: [&#8216;life &lt; int:42&#8217;, &#8216;type = ref:/type/page&#8217;, &#8216;title ~ str:foo&#8217;, &#8216;life &gt; int:420&#8217;]&gt;</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.readquery.make_versions_query">
+<tt class="descclassname">infogami.infobase.readquery.</tt><tt class="descname">make_versions_query</tt><big>(</big><em>store</em>, <em>query</em><big>)</big><a class="headerlink" href="#infogami.infobase.readquery.make_versions_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a versions query object from query dict.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.readquery.parse_key">
+<tt class="descclassname">infogami.infobase.readquery.</tt><tt class="descname">parse_key</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#infogami.infobase.readquery.parse_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses key and returns key and operator.
+&gt;&gt;&gt; parse_key(&#8216;foo&#8217;)
+(&#8216;foo&#8217;, &#8216;=&#8217;)
+&gt;&gt;&gt; parse_key(&#8216;foo=&#8217;)
+(&#8216;foo&#8217;, &#8216;=&#8217;)
+&gt;&gt;&gt; parse_key(&#8216;foo&lt;&#8217;)
+(&#8216;foo&#8217;, &#8216;&lt;&#8217;)
+&gt;&gt;&gt; parse_key(&#8216;foo~&#8217;)
+(&#8216;foo&#8217;, &#8216;~&#8217;)
+&gt;&gt;&gt; parse_key(&#8216;foo!=&#8217;)
+(&#8216;foo&#8217;, &#8216;!=&#8217;)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="infogami.infobase.readquery.run_things_query">
+<tt class="descclassname">infogami.infobase.readquery.</tt><tt class="descname">run_things_query</tt><big>(</big><em>store</em>, <em>query</em><big>)</big><a class="headerlink" href="#infogami.infobase.readquery.run_things_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="multiple_insert.html"
+                        title="previous chapter">multiple_insert</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="server.html"
+                        title="next chapter">server</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/infogami/infobase/readquery.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="server.html" title="server"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="multiple_insert.html" title="multiple_insert"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" >infobase</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2010, Internet Archive.
+      Last updated on Dec 30, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

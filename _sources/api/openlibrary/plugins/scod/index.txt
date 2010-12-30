@@ -1,0 +1,17 @@
+
+scod
+====
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   code.rst
+
+Documentation
+-------------
+
+.. automodule:: openlibrary.plugins.scod
+    :members:

@@ -1,0 +1,36 @@
+
+infobase
+========
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   _dbstore/index.rst
+   _json.rst
+   account.rst
+   bootstrap.rst
+   bulkupload.rst
+   cache.rst
+   client.rst
+   common.rst
+   config.rst
+   core.rst
+   dbstore.rst
+   infobase.rst
+   logger.rst
+   logreader.rst
+   lru.rst
+   multiple_insert.rst
+   readquery.rst
+   server.rst
+   utils.rst
+   writequery.rst
+
+Documentation
+-------------
+
+.. automodule:: infogami.infobase
+    :members:

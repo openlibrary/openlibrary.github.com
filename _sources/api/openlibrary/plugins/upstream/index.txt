@@ -1,0 +1,30 @@
+
+upstream
+========
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   account.rst
+   acs4.rst
+   adapter.rst
+   addbook.rst
+   borrow.rst
+   code.rst
+   covers.rst
+   data.rst
+   forms.rst
+   jsdef.rst
+   merge_authors.rst
+   models.rst
+   recentchanges.rst
+   utils.rst
+
+Documentation
+-------------
+
+.. automodule:: openlibrary.plugins.upstream
+    :members:
