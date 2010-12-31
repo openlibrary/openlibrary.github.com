@@ -1,5 +1,0 @@
-
-connections
-===========
-
-.. automodule:: openlibrary.core.connections

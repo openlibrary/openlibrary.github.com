@@ -1,5 +1,0 @@
-
-push
-====
-
-.. automodule:: openlibrary.couch.push

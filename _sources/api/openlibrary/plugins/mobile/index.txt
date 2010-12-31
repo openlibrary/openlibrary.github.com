@@ -9,7 +9,6 @@ Submodules
    :maxdepth: 1
 
    code.rst
-   middleware.rst
 
 Documentation
 -------------

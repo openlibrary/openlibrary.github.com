@@ -1,5 +1,0 @@
-
-merge
-=====
-
-.. automodule:: openlibrary.plugins.worksearch.merge

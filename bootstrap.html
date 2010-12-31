@@ -72,11 +72,16 @@
 <li>At least 1GB of RAM on your dev machine or virtual machine</li>
 <li>Python virtualenv</li>
 </ul>
-<p>To install them on Ubuntu/Debian:</p>
-<div class="highlight-python"><pre>$ sudo apt-get install postgresql libpq-dev git-core openjdk-6-jre-headless python-virtualenv python-dev
-$ sudo apt-get install libxslt1-dev</pre>
+<p>On Linux, installing some of the python packages depends on the following packages.</p>
+<ul class="simple">
+<li>python-dev</li>
+<li>libpq-dev</li>
+<li>libxslt-dev</li>
+</ul>
+<p>To install dependencies on Ubuntu/Debian:</p>
+<div class="highlight-python"><pre>$ sudo apt-get install postgresql libpq-dev git-core openjdk-6-jre-headless python-virtualenv python-dev libxslt-dev</pre>
 </div>
-<p>To install them on Mac OS X:</p>
+<p>To install dependencies on Mac OS X:</p>
 <div class="highlight-python"><pre>$ brew install postgresql git
 $ sudo easy_install virtualenv</pre>
 </div>
@@ -102,6 +107,7 @@ Shall the new role be a superuser? (y/n) y</pre>
 <li>python-memcached</li>
 <li>pyyaml</li>
 <li>simplejson</li>
+<li>sphinx</li>
 <li>web.py==0.33</li>
 </ul>
 </li>
@@ -124,14 +130,17 @@ stdout and stderr.</p>
 </div>
 <div class="section" id="run">
 <h2>Run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h2>
-<p>Once in the installation is done, running dev instance is very simple.:</p>
+<p>Once in the installation is done, running dev instance is very simple.</p>
+<p>Load the virtual env.:</p>
+<div class="highlight-python"><pre>$ source ~/pyenv/ol/bin/activate</pre>
+</div>
+<p>And start the services.:</p>
 <div class="highlight-python"><pre>$ python setup.py start
 ...</pre>
 </div>
-<p>This starts all the OL services using supervisord.</p>
+<p>This starts all the OL services using <a class="reference external" href="http://supervisord.org/">supervisord</a>.</p>
 <p>Once the services are started, Open Library dev instance will be available at:</p>
-<div class="highlight-python"><pre>http://0.0.0.0:8080/</pre>
-</div>
+<p><a class="reference external" href="http://0.0.0.0:8080/">http://0.0.0.0:8080/</a></p>
 </div>
 <div class="section" id="sample-data">
 <h2>Sample Data<a class="headerlink" href="#sample-data" title="Permalink to this headline">¶</a></h2>
@@ -208,7 +217,7 @@ stdout and stderr.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2010, Internet Archive.
-      Last updated on Dec 30, 2010.
+      Last updated on Dec 31, 2010.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
     </div>
   </body>

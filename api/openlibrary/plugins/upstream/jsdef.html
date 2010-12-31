@@ -113,14 +113,14 @@ $jsdef render_books(books):
 <dl class="method">
 <dt id="openlibrary.plugins.upstream.jsdef.JSNode.jsemit">
 <tt class="descname">jsemit</tt><big>(</big><em>node</em>, <em>indent</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.JSNode.jsemit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Emit Javascript for given node.</p>
+<dd><p>Emit Javascript for given node.:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">jsemit</span> <span class="o">=</span> <span class="n">JSNode</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span><span class="o">.</span><span class="n">jsemit</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">jsemit</span><span class="p">(</span><span class="n">web</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">StatementNode</span><span class="p">(</span><span class="s">&quot;break&quot;</span><span class="p">),</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
-<span class="go">&#39;break;\n&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">jsemit</span><span class="p">(</span><span class="n">web</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">AssignmentNode</span><span class="p">(</span><span class="s">&quot;x = 1&quot;</span><span class="p">),</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
-<span class="go">&#39;var x = 1;\n&#39;</span>
 </pre></div>
 </div>
+<p>&#8216;break;n&#8217;
+&gt;&gt;&gt; jsemit(web.template.AssignmentNode(&#8220;x = 1&#8221;), &#8220;&#8221;)
+&#8216;var x = 1;n&#8217;</p>
 </dd></dl>
 
 <dl class="method">
@@ -183,42 +183,43 @@ $jsdef render_books(books):
 <dl class="function">
 <dt id="openlibrary.plugins.upstream.jsdef.extension">
 <tt class="descclassname">openlibrary.plugins.upstream.jsdef.</tt><tt class="descname">extension</tt><big>(</big><em>parser</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.extension" title="Permalink to this definition">¶</a></dt>
-<dd><p>jsdef extension. Adds support for <cite>jsdef</cite> block to template parser.</p>
+<dd><p>jsdef extension. Adds support for <cite>jsdef</cite> block to template parser.:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s">&quot;$jsdef hello(name):</span><span class="se">\n</span><span class="s">    Hello $name!&quot;</span><span class="p">,</span> <span class="n">extensions</span><span class="o">=</span><span class="p">[</span><span class="n">extension</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">t</span><span class="p">()</span> 
-<span class="go">&lt;script type=&quot;text/javascript&quot;&gt;</span>
-<span class="go">function hello(name){</span>
-<span class="go">    var self = [], loop;</span>
-<span class="go">    self.push(&quot;Hello &quot;); self.push(websafe(name)); self.push(&quot;!\n&quot;);</span>
-<span class="go">    return self.join(&quot;&quot;);</span>
-<span class="go">}</span>
-<span class="go">&lt;/script&gt;        </span>
 </pre></div>
 </div>
+<p>&lt;script type=&#8221;text/javascript&#8221;&gt;
+function hello(name){</p>
+<blockquote>
+var self = [], loop;
+self.push(&#8220;Hello &#8221;); self.push(websafe(name)); self.push(&#8221;!n&#8221;);
+return self.join(&#8220;&#8221;);</blockquote>
+<p>}
+&lt;/script&gt;</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="openlibrary.plugins.upstream.jsdef.py2js">
 <tt class="descclassname">openlibrary.plugins.upstream.jsdef.</tt><tt class="descname">py2js</tt><big>(</big><em>expr</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.py2js" title="Permalink to this definition">¶</a></dt>
-<dd><p>Converts a python expression to javascript.</p>
+<dd><p>Converts a python expression to javascript.:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">py2js</span><span class="p">(</span><span class="s">&quot;x + y&quot;</span><span class="p">)</span>
-<span class="go">&#39;x + y&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">py2js</span><span class="p">(</span><span class="s">&quot;x and y&quot;</span><span class="p">)</span>
-<span class="go">&#39;x &amp;&amp; y&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">py2js</span><span class="p">(</span><span class="s">&quot;x or not y&quot;</span><span class="p">)</span>
-<span class="go">&#39;x || ! y&#39;</span>
 </pre></div>
 </div>
+<p>&#8216;x + y&#8217;
+&gt;&gt;&gt; py2js(&#8220;x and y&#8221;)
+&#8216;x &amp;&amp; y&#8217;
+&gt;&gt;&gt; py2js(&#8220;x or not y&#8221;)
+&#8216;x || ! y&#8217;</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="openlibrary.plugins.upstream.jsdef.tokenize">
 <tt class="descclassname">openlibrary.plugins.upstream.jsdef.</tt><tt class="descname">tokenize</tt><big>(</big><em>code</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.tokenize" title="Permalink to this definition">¶</a></dt>
-<dd><p>Tokenize python code.</p>
+<dd><p>Tokenize python code.:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">tokenize</span><span class="p">(</span><span class="s">&quot;x + y&quot;</span><span class="p">))</span>
-<span class="go">[&#39;x&#39;, &#39; &#39;, &#39;+&#39;, &#39; &#39;, &#39;y&#39;]</span>
 </pre></div>
 </div>
+<p>[&#8216;x&#8217;, &#8216; &#8216;, &#8216;+&#8217;, &#8216; &#8216;, &#8216;y&#8217;]</p>
 </dd></dl>
 
 </div>
@@ -284,7 +285,7 @@ $jsdef render_books(books):
     </div>
     <div class="footer">
         &copy; Copyright 2006-2010, Internet Archive.
-      Last updated on Dec 30, 2010.
+      Last updated on Dec 31, 2010.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
     </div>
   </body>
