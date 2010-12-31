@@ -3,4 +3,3 @@ code
 ====
 
 .. automodule:: openlibrary.plugins.books.code
-    :members:

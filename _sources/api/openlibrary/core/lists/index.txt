@@ -16,4 +16,3 @@ Documentation
 -------------
 
 .. automodule:: openlibrary.core.lists
-    :members:

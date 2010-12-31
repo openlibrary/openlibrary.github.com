@@ -3,4 +3,3 @@ dynlinks
 ========
 
 .. automodule:: openlibrary.plugins.books.dynlinks
-    :members:

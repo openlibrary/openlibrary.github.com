@@ -3,4 +3,3 @@ form
 ====
 
 .. automodule:: openlibrary.utils.form
-    :members:

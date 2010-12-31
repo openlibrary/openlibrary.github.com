@@ -3,4 +3,3 @@ store
 =====
 
 .. automodule:: infogami.infobase._dbstore.store
-    :members:

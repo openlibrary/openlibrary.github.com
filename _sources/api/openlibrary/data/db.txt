@@ -3,4 +3,3 @@ db
 ==
 
 .. automodule:: openlibrary.data.db
-    :members:

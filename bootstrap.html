@@ -54,6 +54,14 @@
   <div class="section" id="setting-up-a-dev-instance">
 <h1>Setting up a dev instance<a class="headerlink" href="#setting-up-a-dev-instance" title="Permalink to this headline">¶</a></h1>
 <p>Setting up OL dev instance requires installing third-party software, running many services.</p>
+<div class="section" id="supported-platforms">
+<h2>Supported Platforms<a class="headerlink" href="#supported-platforms" title="Permalink to this headline">¶</a></h2>
+<p>Open Library dev instance works on:</p>
+<div class="highlight-python"><pre>* Ubuntu 10.04
+* Ununtu 10.10
+* Mac OS X Snow Leopard</pre>
+</div>
+</div>
 <div class="section" id="dependencies">
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -106,41 +114,28 @@ Shall the new role be a superuser? (y/n) y</pre>
 <div class="highlight-python"><pre>$ git clone git://github.com/openlibrary/openlibrary.git
 $ cd openlibrary</pre>
 </div>
-<p>Now run the install script.</p>
-<blockquote>
-$ ./scripts/setup_dev_instance.py</blockquote>
-<p>The install script creates a virtualenv, installs all dependent python packages, installs vendor software and initializes OL databases. Detailed log is written to <tt class="docutils literal"><span class="pre">var/log/install.log</span></tt> and errors and info are reported to stdout and stderr.</p>
-<p>Setup a virtual env:</p>
-<div class="highlight-python"><pre>$ mkdir ~/pyenvs
-$ virtualenv ~/pyenv/ol
-$ . ~/pyenvs/ol/bin/activate</pre>
+<p>Now run the <tt class="docutils literal"><span class="pre">bootstrap</span></tt> command to do the remaining setup.:</p>
+<div class="highlight-python"><pre>$ python setup.py bootstrap</pre>
 </div>
-<p>Checkout submodules:</p>
-<div class="highlight-python"><pre>$ ./setup.sh</pre>
-</div>
-<p>Install third-party modules:</p>
-<div class="highlight-python"><pre>$ ./scripts/vendor-install.sh</pre>
-</div>
-<p>Setup databases:</p>
-<div class="highlight-python"><pre>$ ./scripts/initialize.sh</pre>
-</div>
+<p>The bootstrap command creates a virtualenv, installs all dependent python
+packages, installs vendor software and initializes OL databases. Detailed log
+is written to <tt class="docutils literal"><span class="pre">var/log/install.log</span></tt> and errors and info are reported to
+stdout and stderr.</p>
 </div>
 <div class="section" id="run">
 <h2>Run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h2>
-<p>Once in the installation is done, running dev instance is very simple.</p>
-<div class="highlight-python"><pre>$ ./scripts/start.sh
+<p>Once in the installation is done, running dev instance is very simple.:</p>
+<div class="highlight-python"><pre>$ python setup.py start
 ...</pre>
 </div>
-<p>This script starts all the OL services using supervisord.</p>
-<p>Open Library webserver is now running at:</p>
+<p>This starts all the OL services using supervisord.</p>
+<p>Once the services are started, Open Library dev instance will be available at:</p>
 <div class="highlight-python"><pre>http://0.0.0.0:8080/</pre>
 </div>
 </div>
 <div class="section" id="sample-data">
 <h2>Sample Data<a class="headerlink" href="#sample-data" title="Permalink to this headline">¶</a></h2>
-<p>Load sample data by running:</p>
-<div class="highlight-python"><pre>$ ./scripts/import_sample_data.py</pre>
-</div>
+<p>Loading sample data is not yet implemented.</p>
 </div>
 </div>
 
@@ -156,6 +151,7 @@ $ . ~/pyenvs/ol/bin/activate</pre>
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Setting up a dev instance</a><ul>
+<li><a class="reference internal" href="#supported-platforms">Supported Platforms</a></li>
 <li><a class="reference internal" href="#dependencies">Dependencies</a></li>
 <li><a class="reference internal" href="#installation">Installation</a></li>
 <li><a class="reference internal" href="#run">Run</a></li>
@@ -172,7 +168,7 @@ $ . ~/pyenvs/ol/bin/activate</pre>
                         title="next chapter">Getting Started with OL Development</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="_sources/setup.txt"
+    <li><a href="_sources/bootstrap.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">

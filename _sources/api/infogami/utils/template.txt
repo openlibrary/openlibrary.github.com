@@ -3,4 +3,3 @@ template
 ========
 
 .. automodule:: infogami.utils.template
-    :members:

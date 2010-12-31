@@ -3,4 +3,3 @@ bulkimport
 ==========
 
 .. automodule:: openlibrary.utils.bulkimport
-    :members:

@@ -3,4 +3,3 @@ seq
 ===
 
 .. automodule:: openlibrary.core.seq
-    :members:

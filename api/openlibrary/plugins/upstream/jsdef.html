@@ -68,42 +68,33 @@ the same thing.</p>
 a template function just like <cite>def</cite> and also generates an equivalent
 javascript function.</p>
 <p>USAGE:</p>
-<blockquote>
-import jsdef
-render = web.tempalte.render(&#8220;templates/&#8221;, extensions=[jsdef.extension])</blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">jsdef</span>
+<span class="n">render</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">tempalte</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s">&quot;templates/&quot;</span><span class="p">,</span> <span class="n">extensions</span><span class="o">=</span><span class="p">[</span><span class="n">jsdef</span><span class="o">.</span><span class="n">extension</span><span class="p">])</span>
+</pre></div>
+</div>
 <p>Sample Template:</p>
-<blockquote>
-<p>$def with (page)</p>
-<p>&lt;h1&gt;$page.title&lt;/h1&gt;</p>
-<dl class="docutils">
-<dt>$jsdef render_books(books):</dt>
-<dd><dl class="first docutils">
-<dt>&lt;ul&gt;</dt>
-<dd><dl class="first last docutils">
-<dt>$for book in books:</dt>
-<dd>&lt;li&gt;&lt;a href=&#8221;$book.key&#8221;&gt;$book.title&lt;/a&gt;&lt;/li&gt;</dd>
-</dl>
-</dd>
-</dl>
-<p class="last">&lt;/ul&gt;</p>
-</dd>
-<dt>&lt;div id=&#8221;books&#8221;&gt;</dt>
-<dd>$:render_books(page.books)</dd>
-</dl>
-<p>&lt;/div&gt;</p>
-<dl class="docutils">
-<dt>&lt;script type=&#8221;text/javascript&#8221;&gt;</dt>
-<dd><dl class="first docutils">
-<dt>function udpate_books(books) {</dt>
-<dd>document.getElementById(&#8220;books&#8221;).innerHTML = render_books(books);</dd>
-</dl>
-<p class="last">}</p>
-</dd>
-</dl>
-<p>&lt;/script&gt;</p>
-</blockquote>
-<p>For more details, see:
-<a class="reference external" href="http://github.com/anandology/notebook/tree/master/2010/03/jsdef/">http://github.com/anandology/notebook/tree/master/2010/03/jsdef/</a></p>
+<div class="highlight-python"><pre>$def with (page)
+
+&lt;h1&gt;$page.title&lt;/h1&gt;
+
+$jsdef render_books(books):
+    &lt;ul&gt;
+        $for book in books:
+            &lt;li&gt;&lt;a href="$book.key"&gt;$book.title&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    
+&lt;div id="books"&gt;
+    $:render_books(page.books)
+&lt;/div&gt;
+
+&lt;script type="text/javascript"&gt;
+    function udpate_books(books) {
+        document.getElementById("books").innerHTML = render_books(books);
+    }
+&lt;/script&gt;</pre>
+</div>
+<p>For more details, see:</p>
+<p><a class="reference external" href="http://github.com/anandology/notebook/tree/master/2010/03/jsdef/">http://github.com/anandology/notebook/tree/master/2010/03/jsdef/</a></p>
 <dl class="class">
 <dt id="openlibrary.plugins.upstream.jsdef.JSDefNode">
 <em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.jsdef.</tt><tt class="descname">JSDefNode</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.jsdef.JSDefNode" title="Permalink to this definition">¶</a></dt>

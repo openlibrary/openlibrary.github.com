@@ -3,4 +3,3 @@ dateutil
 ========
 
 .. automodule:: openlibrary.utils.dateutil
-    :members:

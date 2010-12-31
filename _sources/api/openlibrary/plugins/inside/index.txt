@@ -14,4 +14,3 @@ Documentation
 -------------
 
 .. automodule:: openlibrary.plugins.inside
-    :members:

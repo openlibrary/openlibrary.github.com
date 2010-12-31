@@ -3,4 +3,3 @@ memory
 ======
 
 .. automodule:: openlibrary.plugins.admin.memory
-    :members:

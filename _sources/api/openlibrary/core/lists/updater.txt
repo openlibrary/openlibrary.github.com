@@ -3,4 +3,3 @@ updater
 =======
 
 .. automodule:: openlibrary.core.lists.updater
-    :members:

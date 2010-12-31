@@ -59,12 +59,37 @@
 <span id="setup-commands"></span><h1>setup_commands<a class="headerlink" href="#module-openlibrary.core.setup_commands" title="Permalink to this headline">¶</a></h1>
 <p>Distutils commands for Open Library.</p>
 <dl class="class">
+<dt id="openlibrary.core.setup_commands.BootstrapCommand">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.setup_commands.</tt><tt class="descname">BootstrapCommand</tt><big>(</big><em>dist</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.BootstrapCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">setuptools.Command</span></tt></p>
+<p>Distutils command to bootstrap OL dev instance.</p>
+<p>This is invoked by calling:</p>
+<blockquote>
+$ python setup.py bootstrap</blockquote>
+<dl class="method">
+<dt id="openlibrary.core.setup_commands.BootstrapCommand.finalize_options">
+<tt class="descname">finalize_options</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.BootstrapCommand.finalize_options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.setup_commands.BootstrapCommand.initialize_options">
+<tt class="descname">initialize_options</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.BootstrapCommand.initialize_options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.setup_commands.BootstrapCommand.run">
+<tt class="descname">run</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.BootstrapCommand.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="openlibrary.core.setup_commands.BuildDoc">
 <em class="property">class </em><tt class="descclassname">openlibrary.core.setup_commands.</tt><tt class="descname">BuildDoc</tt><big>(</big><em>dist</em><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.BuildDoc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">sphinx.setup_command.BuildDoc</span></tt></p>
 <p>Distutils command to build generate API docs and Sphinx documentation.</p>
 <p>This is invoked by calling:</p>
-<div class="highlight-python"><pre>python setup.py build_sphinx     </pre>
+<div class="highlight-python"><pre>$ python setup.py build_sphinx     </pre>
 </div>
 <dl class="method">
 <dt id="openlibrary.core.setup_commands.BuildDoc.run">
@@ -79,19 +104,17 @@
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">setuptools.Command</span></tt></p>
 <p>Distutils command to start OL services.</p>
 <p>This is invoked by calling:</p>
-<div class="highlight-python"><pre>python setup.py start</pre>
+<div class="highlight-python"><pre>$ python setup.py start</pre>
 </div>
 <dl class="method">
 <dt id="openlibrary.core.setup_commands.StartCommand.finalize_options">
 <tt class="descname">finalize_options</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.StartCommand.finalize_options" title="Permalink to this definition">¶</a></dt>
-<dd><p>finalize options</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="openlibrary.core.setup_commands.StartCommand.initialize_options">
 <tt class="descname">initialize_options</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.StartCommand.initialize_options" title="Permalink to this definition">¶</a></dt>
-<dd><p>init options</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="openlibrary.core.setup_commands.StartCommand.run">

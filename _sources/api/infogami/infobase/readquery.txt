@@ -3,4 +3,3 @@ readquery
 =========
 
 .. automodule:: infogami.infobase.readquery
-    :members:

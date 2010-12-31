@@ -22,4 +22,3 @@ Documentation
 -------------
 
 .. automodule:: openlibrary.plugins.openlibrary
-    :members:

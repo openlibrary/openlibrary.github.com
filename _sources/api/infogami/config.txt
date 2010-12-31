@@ -3,4 +3,3 @@ config
 ======
 
 .. automodule:: infogami.config
-    :members:

@@ -3,4 +3,3 @@ formats
 =======
 
 .. automodule:: openlibrary.core.formats
-    :members:

@@ -3,4 +3,3 @@ ol_infobase
 ===========
 
 .. automodule:: openlibrary.plugins.ol_infobase
-    :members:

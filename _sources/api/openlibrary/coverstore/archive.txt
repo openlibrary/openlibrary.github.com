@@ -3,4 +3,3 @@ archive
 =======
 
 .. automodule:: openlibrary.coverstore.archive
-    :members:

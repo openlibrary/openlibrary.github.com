@@ -3,4 +3,3 @@ cache
 =====
 
 .. automodule:: infogami.infobase.cache
-    :members:

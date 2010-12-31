@@ -3,4 +3,3 @@ readbooks
 =========
 
 .. automodule:: openlibrary.plugins.openlibrary.readbooks
-    :members:

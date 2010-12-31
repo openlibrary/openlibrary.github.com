@@ -3,4 +3,3 @@ disk
 ====
 
 .. automodule:: openlibrary.coverstore.disk
-    :members:

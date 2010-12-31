@@ -3,4 +3,3 @@ models
 ======
 
 .. automodule:: openlibrary.core.models
-    :members:

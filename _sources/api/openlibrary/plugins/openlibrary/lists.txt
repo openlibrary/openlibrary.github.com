@@ -3,4 +3,3 @@ lists
 =====
 
 .. automodule:: openlibrary.plugins.openlibrary.lists
-    :members:

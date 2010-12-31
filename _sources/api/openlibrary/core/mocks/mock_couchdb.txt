@@ -3,4 +3,3 @@ mock_couchdb
 ============
 
 .. automodule:: openlibrary.core.mocks.mock_couchdb
-    :members:

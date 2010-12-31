@@ -3,4 +3,3 @@ macro
 =====
 
 .. automodule:: infogami.utils.macro
-    :members:

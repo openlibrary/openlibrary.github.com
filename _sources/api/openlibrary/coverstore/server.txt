@@ -3,4 +3,3 @@ server
 ======
 
 .. automodule:: openlibrary.coverstore.server
-    :members:

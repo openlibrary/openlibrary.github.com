@@ -17,6 +17,7 @@ Submodules
    openlibrary/index.rst
    scod/index.rst
    search/index.rst
+   test_ol_infobase.rst
    upstream/index.rst
    worksearch/index.rst
 
@@ -24,4 +25,3 @@ Documentation
 -------------
 
 .. automodule:: openlibrary.plugins
-    :members:

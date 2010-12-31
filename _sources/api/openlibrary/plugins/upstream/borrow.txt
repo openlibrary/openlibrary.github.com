@@ -3,4 +3,3 @@ borrow
 ======
 
 .. automodule:: openlibrary.plugins.upstream.borrow
-    :members:

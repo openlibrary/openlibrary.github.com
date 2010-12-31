@@ -3,4 +3,3 @@ olmemcache
 ==========
 
 .. automodule:: openlibrary.utils.olmemcache
-    :members:

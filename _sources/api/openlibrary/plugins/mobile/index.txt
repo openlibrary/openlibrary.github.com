@@ -9,9 +9,9 @@ Submodules
    :maxdepth: 1
 
    code.rst
+   middleware.rst
 
 Documentation
 -------------
 
 .. automodule:: openlibrary.plugins.mobile
-    :members:

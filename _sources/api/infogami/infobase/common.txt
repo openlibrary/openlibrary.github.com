@@ -3,4 +3,3 @@ common
 ======
 
 .. automodule:: infogami.infobase.common
-    :members:

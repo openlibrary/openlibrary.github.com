@@ -3,4 +3,3 @@ utils
 =====
 
 .. automodule:: infogami.infobase.utils
-    :members:

@@ -3,4 +3,3 @@ processors
 ==========
 
 .. automodule:: openlibrary.utils.processors
-    :members:

@@ -24,4 +24,3 @@ Documentation
 -------------
 
 .. automodule:: openlibrary.utils
-    :members:

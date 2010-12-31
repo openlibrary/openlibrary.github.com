@@ -57,12 +57,17 @@
   <div class="section" id="module-openlibrary.api">
 <span id="api"></span><h1>api<a class="headerlink" href="#module-openlibrary.api" title="Permalink to this headline">¶</a></h1>
 <p>Open Library API Client.</p>
-<p>ol = OpenLibrary(&#8220;<a class="reference external" href="http://0.0.0.0:8080">http://0.0.0.0:8080</a>&#8221;)
-ol.login(&#8216;joe&#8217;, &#8216;secret&#8217;)</p>
-<p>page = ol.get(&#8220;/sandbox&#8221;)
-print page[&#8220;body&#8221;]</p>
-<p>page[&#8220;body&#8221;] += &#8220;nnTest from API&#8221;
-ol.save(&#8220;/sandbox&#8221;, page, &#8220;test from api&#8221;)</p>
+<p>Sample Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ol</span> <span class="o">=</span> <span class="n">OpenLibrary</span><span class="p">(</span><span class="s">&quot;http://0.0.0.0:8080&quot;</span><span class="p">)</span>
+<span class="n">ol</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">&#39;joe&#39;</span><span class="p">,</span> <span class="s">&#39;secret&#39;</span><span class="p">)</span>
+
+<span class="n">page</span> <span class="o">=</span> <span class="n">ol</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;/sandbox&quot;</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">page</span><span class="p">[</span><span class="s">&quot;body&quot;</span><span class="p">]</span>
+
+<span class="n">page</span><span class="p">[</span><span class="s">&quot;body&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="s">&quot;</span><span class="se">\n\n</span><span class="s">Test from API&quot;</span>
+<span class="n">ol</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">&quot;/sandbox&quot;</span><span class="p">,</span> <span class="n">page</span><span class="p">,</span> <span class="s">&quot;test from api&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <dl class="exception">
 <dt id="openlibrary.api.OLError">
 <em class="property">exception </em><tt class="descclassname">openlibrary.api.</tt><tt class="descname">OLError</tt><big>(</big><em>http_error</em><big>)</big><a class="headerlink" href="#openlibrary.api.OLError" title="Permalink to this definition">¶</a></dt>
@@ -79,14 +84,14 @@ ol.save(&#8220;/sandbox&#8221;, page, &#8220;test from api&#8221;)</p>
 <p>The ~/.olrc file must be in ini format (format readable by
 ConfigParser module) and there should be a section with the
 server name. A sample configuration file may look like this:</p>
-<blockquote>
-<p>[openlibrary.org]
+<div class="highlight-python"><pre>[openlibrary.org]
 username = joe
-password = secret</p>
-<p>[0.0.0.0:8080]
+password = secret
+
+[0.0.0.0:8080]
 username = joe
-password = joe123</p>
-</blockquote>
+password = joe123</pre>
+</div>
 <p>Optionally section name can be passed as argument to force using a different section name.</p>
 </dd></dl>
 
@@ -120,12 +125,11 @@ password = joe123</p>
 performance issues. Pass limit=False to fetch all matching
 results by making multiple requests to the server. Please note
 the an iterator is returned insted of list when limit=False is
-passed.</p>
+passed.:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ol</span><span class="o">.</span><span class="n">query</span><span class="p">({</span><span class="s">&#39;type&#39;</span><span class="p">:</span> <span class="s">&#39;/type/type&#39;</span><span class="p">,</span> <span class="s">&#39;limit&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span> 
 <span class="go">[{&#39;key&#39;: &#39;/type/property&#39;}, {&#39;key&#39;: &#39;/type/type&#39;}]</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ol</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s">&#39;/type/type&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> 
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ol</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s">&#39;/type/type&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> 
 <span class="go">[{&#39;key&#39;: &#39;/type/property&#39;}, {&#39;key&#39;: &#39;/type/type&#39;}]</span>
 </pre></div>
 </div>
@@ -164,33 +168,33 @@ passed.</p>
 <dl class="function">
 <dt id="openlibrary.api.marshal">
 <tt class="descclassname">openlibrary.api.</tt><tt class="descname">marshal</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#openlibrary.api.marshal" title="Permalink to this definition">¶</a></dt>
-<dd><p>Serializes the specified data in the format required by OL.</p>
+<dd><p>Serializes the specified data in the format required by OL.:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">marshal</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2009</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6789</span><span class="p">))</span>
-<span class="go">{&#39;type&#39;: &#39;/type/datetime&#39;, &#39;value&#39;: &#39;2009-01-02T03:04:05.006789&#39;}</span>
 </pre></div>
 </div>
+<p>{&#8216;type&#8217;: &#8216;/type/datetime&#8217;, &#8216;value&#8217;: &#8216;2009-01-02T03:04:05.006789&#8217;}</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="openlibrary.api.parse_datetime">
 <tt class="descclassname">openlibrary.api.</tt><tt class="descname">parse_datetime</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#openlibrary.api.parse_datetime" title="Permalink to this definition">¶</a></dt>
-<dd><p>Parses ISO datetime formatted strinb.</p>
+<dd><p>Parses ISO datetime formatted string.:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">parse_datetime</span><span class="p">(</span><span class="s">&quot;2009-01-02T03:04:05.006789&quot;</span><span class="p">)</span>
-<span class="go">datetime.datetime(2009, 1, 2, 3, 4, 5, 6789)</span>
 </pre></div>
 </div>
+<p>datetime.datetime(2009, 1, 2, 3, 4, 5, 6789)</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="openlibrary.api.unmarshal">
 <tt class="descclassname">openlibrary.api.</tt><tt class="descname">unmarshal</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#openlibrary.api.unmarshal" title="Permalink to this definition">¶</a></dt>
-<dd><p>Converts OL serialized objects to python.</p>
+<dd><p>Converts OL serialized objects to python.:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">unmarshal</span><span class="p">({</span><span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;/type/text&quot;</span><span class="p">,</span> <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="s">&quot;hello, world&quot;</span><span class="p">})</span>
-<span class="go">&lt;text: u&#39;hello, world&#39;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">unmarshal</span><span class="p">({</span><span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;/type/datetime&quot;</span><span class="p">,</span> <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="s">&quot;2009-01-02T03:04:05.006789&quot;</span><span class="p">})</span>
-<span class="go">datetime.datetime(2009, 1, 2, 3, 4, 5, 6789)</span>
 </pre></div>
 </div>
+<p>&lt;text: u&#8217;hello, world&#8217;&gt;
+&gt;&gt;&gt; unmarshal({&#8220;type&#8221;: &#8220;/type/datetime&#8221;, &#8220;value&#8221;: &#8220;2009-01-02T03:04:05.006789&#8221;})
+datetime.datetime(2009, 1, 2, 3, 4, 5, 6789)</p>
 </dd></dl>
 
 </div>

@@ -3,4 +3,3 @@ adapter
 =======
 
 .. automodule:: openlibrary.plugins.upstream.adapter
-    :members:

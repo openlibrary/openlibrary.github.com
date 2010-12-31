@@ -8,11 +8,14 @@ Submodules
 .. toctree::
    :maxdepth: 1
 
+   connections.rst
    couch.rst
    formats.rst
    helpers.rst
    ia.rst
+   init.rst
    lists/index.rst
+   middleware.rst
    mocks/index.rst
    mocksite.rst
    models.rst
@@ -26,4 +29,3 @@ Documentation
 -------------
 
 .. automodule:: openlibrary.core
-    :members:

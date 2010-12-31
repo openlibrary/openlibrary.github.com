@@ -3,4 +3,3 @@ server
 ======
 
 .. automodule:: infogami.infobase.server
-    :members:

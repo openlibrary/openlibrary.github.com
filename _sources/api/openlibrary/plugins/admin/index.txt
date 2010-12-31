@@ -16,4 +16,3 @@ Documentation
 -------------
 
 .. automodule:: openlibrary.plugins.admin
-    :members:

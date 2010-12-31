@@ -3,4 +3,3 @@ compress
 ========
 
 .. automodule:: openlibrary.utils.compress
-    :members:

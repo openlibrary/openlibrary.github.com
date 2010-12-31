@@ -1,0 +1,5 @@
+
+init
+====
+
+.. automodule:: openlibrary.core.init

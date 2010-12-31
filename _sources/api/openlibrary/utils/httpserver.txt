@@ -3,4 +3,3 @@ httpserver
 ==========
 
 .. automodule:: openlibrary.utils.httpserver
-    :members:

@@ -3,4 +3,3 @@ code
 ====
 
 .. automodule:: openlibrary.coverstore.code
-    :members:

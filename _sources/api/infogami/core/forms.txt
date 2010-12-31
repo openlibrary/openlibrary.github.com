@@ -3,4 +3,3 @@ forms
 =====
 
 .. automodule:: infogami.core.forms
-    :members:

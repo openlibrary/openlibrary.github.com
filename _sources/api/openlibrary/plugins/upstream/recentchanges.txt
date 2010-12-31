@@ -3,4 +3,3 @@ recentchanges
 =============
 
 .. automodule:: openlibrary.plugins.upstream.recentchanges
-    :members:

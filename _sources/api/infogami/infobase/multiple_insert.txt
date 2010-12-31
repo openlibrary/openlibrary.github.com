@@ -3,4 +3,3 @@ multiple_insert
 ===============
 
 .. automodule:: infogami.infobase.multiple_insert
-    :members:

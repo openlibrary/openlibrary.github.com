@@ -3,4 +3,3 @@ olmarkdown
 ==========
 
 .. automodule:: openlibrary.core.olmarkdown
-    :members:

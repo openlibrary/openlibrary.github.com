@@ -3,4 +3,3 @@ context
 =======
 
 .. automodule:: infogami.utils.context
-    :members:

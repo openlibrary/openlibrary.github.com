@@ -3,4 +3,3 @@ i18n
 ====
 
 .. automodule:: openlibrary.i18n
-    :members:

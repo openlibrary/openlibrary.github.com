@@ -27,4 +27,3 @@ Documentation
 -------------
 
 .. automodule:: openlibrary.plugins.upstream
-    :members:

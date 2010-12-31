@@ -3,4 +3,3 @@ features
 ========
 
 .. automodule:: infogami.utils.features
-    :members:

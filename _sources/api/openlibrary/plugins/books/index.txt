@@ -15,4 +15,3 @@ Documentation
 -------------
 
 .. automodule:: openlibrary.plugins.books
-    :members:

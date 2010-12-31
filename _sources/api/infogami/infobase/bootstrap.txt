@@ -3,4 +3,3 @@ bootstrap
 =========
 
 .. automodule:: infogami.infobase.bootstrap
-    :members:

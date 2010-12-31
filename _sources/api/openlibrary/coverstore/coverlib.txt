@@ -3,4 +3,3 @@ coverlib
 ========
 
 .. automodule:: openlibrary.coverstore.coverlib
-    :members:

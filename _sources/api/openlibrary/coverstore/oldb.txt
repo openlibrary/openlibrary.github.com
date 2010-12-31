@@ -3,4 +3,3 @@ oldb
 ====
 
 .. automodule:: openlibrary.coverstore.oldb
-    :members:

@@ -3,4 +3,3 @@ dbupgrade
 =========
 
 .. automodule:: infogami.core.dbupgrade
-    :members:

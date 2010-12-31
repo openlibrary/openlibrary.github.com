@@ -3,4 +3,3 @@ logreader
 =========
 
 .. automodule:: infogami.infobase.logreader
-    :members:

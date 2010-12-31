@@ -17,4 +17,3 @@ Documentation
 -------------
 
 .. automodule:: openlibrary.data
-    :members:

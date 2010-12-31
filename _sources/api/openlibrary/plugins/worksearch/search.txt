@@ -3,4 +3,3 @@ search
 ======
 
 .. automodule:: openlibrary.plugins.worksearch.search
-    :members:

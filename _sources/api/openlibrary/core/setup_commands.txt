@@ -3,4 +3,3 @@ setup_commands
 ==============
 
 .. automodule:: openlibrary.core.setup_commands
-    :members:

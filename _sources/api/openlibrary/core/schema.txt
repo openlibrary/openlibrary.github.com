@@ -3,4 +3,3 @@ schema
 ======
 
 .. automodule:: openlibrary.core.schema
-    :members:

@@ -3,4 +3,3 @@ lru
 ===
 
 .. automodule:: infogami.infobase.lru
-    :members:

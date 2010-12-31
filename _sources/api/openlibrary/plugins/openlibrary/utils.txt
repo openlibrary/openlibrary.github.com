@@ -3,4 +3,3 @@ utils
 =====
 
 .. automodule:: openlibrary.plugins.openlibrary.utils
-    :members:

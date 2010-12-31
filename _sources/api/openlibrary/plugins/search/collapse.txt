@@ -3,4 +3,3 @@ collapse
 ========
 
 .. automodule:: openlibrary.plugins.search.collapse
-    :members:

@@ -61,52 +61,45 @@
 <dl class="class">
 <dt id="infogami.infobase.logreader.LogFile">
 <em class="property">class </em><tt class="descclassname">infogami.infobase.logreader.</tt><tt class="descname">LogFile</tt><big>(</big><em>root</em><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogFile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Single file interface over entire log files.</p>
+<dd><p>A file like interface over log files.</p>
+<p>Infobase log files are ordered by date. The presence of multiple files
+makes it difficult to read the them. This class provides a file like
+interface to make reading easier.</p>
 <p>Read all enties from a given timestamp:</p>
-<blockquote>
-<p>log = LogFile(&#8220;log&#8221;)
-log.skip_till(datetime.datetime(2008, 01, 01))</p>
-<dl class="docutils">
-<dt>for line in log:</dt>
-<dd>print log</dd>
-</dl>
-</blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">log</span> <span class="o">=</span> <span class="n">LogFile</span><span class="p">(</span><span class="s">&quot;log&quot;</span><span class="p">)</span>
+<span class="n">log</span><span class="o">.</span><span class="n">skip_till</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span> <span class="mo">01</span><span class="p">,</span> <span class="mo">01</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">log</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">log</span>
+</pre></div>
+</div>
 <p>Read log entries in chunks:</p>
-<blockquote>
-<p>log = LogFile(&#8220;log&#8221;)
-while True:</p>
-<blockquote>
-<p># read upto a maximum of 1000 lines
-lines = log.readlines(1000)
-if lines:</p>
-<blockquote>
-do_something(lines)</blockquote>
-<dl class="docutils">
-<dt>else:</dt>
-<dd>break</dd>
-</dl>
-</blockquote>
-</blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">log</span> <span class="o">=</span> <span class="n">LogFile</span><span class="p">(</span><span class="s">&quot;log&quot;</span><span class="p">)</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="c"># read upto a maximum of 1000 lines</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">log</span><span class="o">.</span><span class="n">readlines</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">lines</span><span class="p">:</span>
+        <span class="n">do_something</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
 <p>Read log entries infinitely:</p>
-<blockquote>
-<p>log = LogFile(&#8220;log&#8221;)
-while True:</p>
-<blockquote>
-<p># read upto a maximum of 1000 lines
-lines = log.readlines(1000)
-if lines:</p>
-<blockquote>
-do_something(lines)</blockquote>
-<dl class="docutils">
-<dt>else:</dt>
-<dd>time.sleep(10) # wait for more data to come</dd>
-</dl>
-</blockquote>
-</blockquote>
-<p>Remember the offset and set the offset.</p>
-<blockquote>
-offset = log.tell()
-log.seek(offset)</blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">log</span> <span class="o">=</span> <span class="n">LogFile</span><span class="p">(</span><span class="s">&quot;log&quot;</span><span class="p">)</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="c"># read upto a maximum of 1000 lines</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">log</span><span class="o">.</span><span class="n">readlines</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">lines</span><span class="p">:</span>
+        <span class="n">do_something</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c"># wait for more data to come</span>
+</pre></div>
+</div>
+<p>Remember the offset and set the offset:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">offset</span> <span class="o">=</span> <span class="n">log</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+<span class="n">log</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">offset</span><span class="p">)</span>
+</pre></div>
+</div>
 <dl class="method">
 <dt id="infogami.infobase.logreader.LogFile.advance">
 <tt class="descname">advance</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogFile.advance" title="Permalink to this definition">¶</a></dt>
@@ -158,6 +151,11 @@ log.seek(offset)</blockquote>
 <dl class="method">
 <dt id="infogami.infobase.logreader.LogFile.update">
 <tt class="descname">update</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogFile.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.logreader.LogFile.update_filelist">
+<tt class="descname">update_filelist</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.logreader.LogFile.update_filelist" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

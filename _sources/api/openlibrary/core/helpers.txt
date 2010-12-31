@@ -3,4 +3,3 @@ helpers
 =======
 
 .. automodule:: openlibrary.core.helpers
-    :members:

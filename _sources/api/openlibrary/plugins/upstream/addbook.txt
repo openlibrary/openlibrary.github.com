@@ -3,4 +3,3 @@ addbook
 =======
 
 .. automodule:: openlibrary.plugins.upstream.addbook
-    :members:

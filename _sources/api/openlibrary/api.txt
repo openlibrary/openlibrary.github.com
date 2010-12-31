@@ -3,4 +3,3 @@ api
 ===
 
 .. automodule:: openlibrary.api
-    :members:

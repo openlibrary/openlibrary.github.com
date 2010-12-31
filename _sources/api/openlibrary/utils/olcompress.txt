@@ -3,4 +3,3 @@ olcompress
 ==========
 
 .. automodule:: openlibrary.utils.olcompress
-    :members:

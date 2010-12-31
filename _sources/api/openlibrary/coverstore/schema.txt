@@ -3,4 +3,3 @@ schema
 ======
 
 .. automodule:: openlibrary.coverstore.schema
-    :members:

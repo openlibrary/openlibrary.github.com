@@ -9,10 +9,10 @@ Submodules
    :maxdepth: 1
 
    code.rst
+   merge.rst
    search.rst
 
 Documentation
 -------------
 
 .. automodule:: openlibrary.plugins.worksearch
-    :members:

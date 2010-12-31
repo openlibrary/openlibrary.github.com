@@ -14,4 +14,3 @@ Documentation
 -------------
 
 .. automodule:: openlibrary.core.mocks
-    :members:

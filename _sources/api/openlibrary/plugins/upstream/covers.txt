@@ -3,4 +3,3 @@ covers
 ======
 
 .. automodule:: openlibrary.plugins.upstream.covers
-    :members:

@@ -3,4 +3,3 @@ _json
 =====
 
 .. automodule:: infogami.infobase._json
-    :members:
