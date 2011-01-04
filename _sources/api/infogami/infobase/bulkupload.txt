@@ -1,5 +1,0 @@
-
-bulkupload
-==========
-
-.. automodule:: infogami.infobase.bulkupload

@@ -59,23 +59,39 @@
 <span id="setup-commands"></span><h1>setup_commands<a class="headerlink" href="#module-openlibrary.core.setup_commands" title="Permalink to this headline">¶</a></h1>
 <p>Distutils commands for Open Library.</p>
 <dl class="class">
+<dt id="openlibrary.core.setup_commands.BaseCommand">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.setup_commands.</tt><tt class="descname">BaseCommand</tt><big>(</big><em>dist</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.BaseCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">setuptools.Command</span></tt></p>
+<dl class="method">
+<dt id="openlibrary.core.setup_commands.BaseCommand.exec_command">
+<tt class="descname">exec_command</tt><big>(</big><em>args</em><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.BaseCommand.exec_command" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.setup_commands.BaseCommand.finalize_options">
+<tt class="descname">finalize_options</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.BaseCommand.finalize_options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.setup_commands.BaseCommand.get_virtualenv">
+<tt class="descname">get_virtualenv</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.BaseCommand.get_virtualenv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.setup_commands.BaseCommand.initialize_options">
+<tt class="descname">initialize_options</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.BaseCommand.initialize_options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="openlibrary.core.setup_commands.BootstrapCommand">
 <em class="property">class </em><tt class="descclassname">openlibrary.core.setup_commands.</tt><tt class="descname">BootstrapCommand</tt><big>(</big><em>dist</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.BootstrapCommand" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">setuptools.Command</span></tt></p>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.core.setup_commands.BaseCommand" title="openlibrary.core.setup_commands.BaseCommand"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.core.setup_commands.BaseCommand</span></tt></a></p>
 <p>Distutils command to bootstrap OL dev instance.</p>
 <p>This is invoked by calling:</p>
-<blockquote>
-$ python setup.py bootstrap</blockquote>
-<dl class="method">
-<dt id="openlibrary.core.setup_commands.BootstrapCommand.finalize_options">
-<tt class="descname">finalize_options</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.BootstrapCommand.finalize_options" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.setup_commands.BootstrapCommand.initialize_options">
-<tt class="descname">initialize_options</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.BootstrapCommand.initialize_options" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<div class="highlight-python"><pre>$ python setup.py bootstrap</pre>
+</div>
 <dl class="method">
 <dt id="openlibrary.core.setup_commands.BootstrapCommand.run">
 <tt class="descname">run</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.BootstrapCommand.run" title="Permalink to this definition">¶</a></dt>
@@ -99,28 +115,48 @@ $ python setup.py bootstrap</blockquote>
 </dd></dl>
 
 <dl class="class">
+<dt id="openlibrary.core.setup_commands.ShellCommand">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.setup_commands.</tt><tt class="descname">ShellCommand</tt><big>(</big><em>dist</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.ShellCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.core.setup_commands.BaseCommand" title="openlibrary.core.setup_commands.BaseCommand"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.core.setup_commands.BaseCommand</span></tt></a></p>
+<p>Distutils command to start a bash shell with OL environment.</p>
+<p>This is invoked by calling:</p>
+<div class="highlight-python"><pre>$ python setup.py shell</pre>
+</div>
+<dl class="method">
+<dt id="openlibrary.core.setup_commands.ShellCommand.run">
+<tt class="descname">run</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.ShellCommand.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="openlibrary.core.setup_commands.StartCommand">
 <em class="property">class </em><tt class="descclassname">openlibrary.core.setup_commands.</tt><tt class="descname">StartCommand</tt><big>(</big><em>dist</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.StartCommand" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">setuptools.Command</span></tt></p>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.core.setup_commands.BaseCommand" title="openlibrary.core.setup_commands.BaseCommand"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.core.setup_commands.BaseCommand</span></tt></a></p>
 <p>Distutils command to start OL services.</p>
 <p>This is invoked by calling:</p>
 <div class="highlight-python"><pre>$ python setup.py start</pre>
 </div>
 <dl class="method">
-<dt id="openlibrary.core.setup_commands.StartCommand.finalize_options">
-<tt class="descname">finalize_options</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.StartCommand.finalize_options" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.setup_commands.StartCommand.initialize_options">
-<tt class="descname">initialize_options</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.StartCommand.initialize_options" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
 <dt id="openlibrary.core.setup_commands.StartCommand.run">
 <tt class="descname">run</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.StartCommand.run" title="Permalink to this definition">¶</a></dt>
 <dd><p>runner</p>
 </dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.core.setup_commands.TestCommand">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.setup_commands.</tt><tt class="descname">TestCommand</tt><big>(</big><em>dist</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.TestCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.core.setup_commands.BaseCommand" title="openlibrary.core.setup_commands.BaseCommand"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.core.setup_commands.BaseCommand</span></tt></a></p>
+<p>Distutils command to tun all the tests.</p>
+<p>This is invoked by calling:</p>
+<div class="highlight-python"><pre>$ python setup.py test    </pre>
+</div>
+<dl class="method">
+<dt id="openlibrary.core.setup_commands.TestCommand.run">
+<tt class="descname">run</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.TestCommand.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -185,9 +221,9 @@ $ python setup.py bootstrap</blockquote>
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2006-2010, Internet Archive.
-      Last updated on Dec 31, 2010.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+        &copy; Copyright 2006-2011, Internet Archive.
+      Last updated on Jan 04, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
     </div>
   </body>
 </html>

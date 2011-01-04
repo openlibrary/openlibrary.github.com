@@ -12,7 +12,6 @@ Submodules
    _json.rst
    account.rst
    bootstrap.rst
-   bulkupload.rst
    cache.rst
    client.rst
    common.rst
