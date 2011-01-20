@@ -22,10 +22,7 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
-    <link rel="up" title="data" href="index.html" />
-    <link rel="next" title="dump" href="dump.html" />
-    <link rel="prev" title="data" href="index.html" /> 
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -37,16 +34,7 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="dump.html" title="dump"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="data"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
-          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">data</a> &raquo;</li> 
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -57,6 +45,64 @@
             
   <div class="section" id="db">
 <h1>db<a class="headerlink" href="#db" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-openlibrary.data.db"></span><p>Library to provide fast access to Open Library database.</p>
+<p>How to use:</p>
+<blockquote>
+<p>from openlibrary.data import db</p>
+<p>db.setup_database(db=&#8217;openlibrary&#8217;, user=&#8217;anand&#8217;, pw=&#8217;&#8216;)
+db.setup_memcache([&#8216;host1:port1&#8217;, &#8216;host2:port2&#8217;])</p>
+<p># get a set of docs
+docs = db.get_docs([&#8216;/sandbox&#8217;])</p>
+<p># get all books
+books = dc.itedocs(type=&#8221;/type/edition&#8221;)</p>
+<p># update docs
+db.update_docs(docs)</p>
+</blockquote>
+<p>Each doc is a storage object with &#8220;id&#8221;, &#8220;key&#8221;, &#8220;revision&#8221; and &#8220;data&#8221;.</p>
+<dl class="function">
+<dt id="openlibrary.data.db.setup_database">
+<tt class="descclassname">openlibrary.data.db.</tt><tt class="descname">setup_database</tt><big>(</big><em>**db_params</em><big>)</big><a class="headerlink" href="#openlibrary.data.db.setup_database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setup the database. This must be called before using any other functions in this module.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.db.setup_memcache">
+<tt class="descclassname">openlibrary.data.db.</tt><tt class="descname">setup_memcache</tt><big>(</big><em>servers</em><big>)</big><a class="headerlink" href="#openlibrary.data.db.setup_memcache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setup the memcached servers. 
+This must be called along with setup_database, if memcached servers are used in the system.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.db.longquery">
+<tt class="descclassname">openlibrary.data.db.</tt><tt class="descname">longquery</tt><big>(</big><em>query</em>, <em>vars</em>, <em>chunk_size=10000</em><big>)</big><a class="headerlink" href="#openlibrary.data.db.longquery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute an expensive query using db cursors.</p>
+<p>USAGE:</p>
+<blockquote>
+<dl class="docutils">
+<dt>for chunk in longquery(&#8220;SELECT * FROM bigtable&#8221;):</dt>
+<dd><dl class="first last docutils">
+<dt>for row in chunk:</dt>
+<dd>print row</dd>
+</dl>
+</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.db.iterdocs">
+<tt class="descclassname">openlibrary.data.db.</tt><tt class="descname">iterdocs</tt><big>(</big><em>type=None</em><big>)</big><a class="headerlink" href="#openlibrary.data.db.iterdocs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an iterator over all docs in the database.
+If type is specified, then only docs of that type will be returned.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.db.update_docs">
+<tt class="descclassname">openlibrary.data.db.</tt><tt class="descname">update_docs</tt><big>(</big><em>docs</em>, <em>comment</em>, <em>author</em>, <em>ip='127.0.0.1'</em><big>)</big><a class="headerlink" href="#openlibrary.data.db.update_docs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the given docs in the database by writing all the docs in a chunk.</p>
+<p>This doesn&#8217;t update the index tables. Avoid this function if you have any change that requires updating the index tables.</p>
+</dd></dl>
+
 </div>
 
 
@@ -68,12 +114,6 @@
             <p class="logo"><a href="../../../index.html">
               <img class="logo" src="../../../_static/logo_OL-lg.png" alt="Logo"/>
             </a></p>
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">data</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="dump.html"
-                        title="next chapter">dump</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../_sources/api/openlibrary/data/db.txt"
@@ -105,22 +145,13 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="dump.html" title="dump"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="data"
-             >previous</a> |</li>
-        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
-          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
-          <li><a href="index.html" >data</a> &raquo;</li> 
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Jan 04, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
+      Last updated on Jan 20, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
     </div>
   </body>
 </html>

@@ -1,0 +1,5 @@
+
+mock_memcache
+=============
+
+.. automodule:: openlibrary.mocks.mock_memcache

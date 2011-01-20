@@ -22,10 +22,7 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
-    <link rel="up" title="data" href="index.html" />
-    <link rel="next" title="sitemap" href="sitemap.html" />
-    <link rel="prev" title="db" href="db.html" /> 
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -37,16 +34,7 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="sitemap.html" title="sitemap"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="db.html" title="db"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
-          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">data</a> &raquo;</li> 
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -55,8 +43,113 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="dump">
-<h1>dump<a class="headerlink" href="#dump" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-openlibrary.data.dump">
+<span id="dump"></span><h1>dump<a class="headerlink" href="#module-openlibrary.data.dump" title="Permalink to this headline">¶</a></h1>
+<p>Library for generating and processing Open Library data dumps.</p>
+<p>Glossary:</p>
+<ul class="simple">
+<li>dump - Dump of latest revisions of all documents.</li>
+<li>cdump - Complete dump. Dump of all revisions of all documents.</li>
+<li>idump - Incremental dump. Dump of all revisions created in the given day.</li>
+</ul>
+<dl class="function">
+<dt id="openlibrary.data.dump.generate_cdump">
+<tt class="descclassname">openlibrary.data.dump.</tt><tt class="descname">generate_cdump</tt><big>(</big><em>data_file</em>, <em>date=None</em><big>)</big><a class="headerlink" href="#openlibrary.data.dump.generate_cdump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates cdump from a copy of data table.
+If date is specified, only revisions created on or before that date will be considered.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.dump.generate_dump">
+<tt class="descclassname">openlibrary.data.dump.</tt><tt class="descname">generate_dump</tt><big>(</big><em>cdump_file=None</em><big>)</big><a class="headerlink" href="#openlibrary.data.dump.generate_dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate dump from cdump.</p>
+<p>The given cdump must be sorted by key.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.dump.generate_idump">
+<tt class="descclassname">openlibrary.data.dump.</tt><tt class="descname">generate_idump</tt><big>(</big><em>day</em>, <em>**db_parameters</em><big>)</big><a class="headerlink" href="#openlibrary.data.dump.generate_idump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate incremental dump for the given day.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.dump.log">
+<tt class="descclassname">openlibrary.data.dump.</tt><tt class="descname">log</tt><big>(</big><em>*args</em><big>)</big><a class="headerlink" href="#openlibrary.data.dump.log" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.dump.main">
+<tt class="descclassname">openlibrary.data.dump.</tt><tt class="descname">main</tt><big>(</big><em>cmd</em>, <em>args</em><big>)</big><a class="headerlink" href="#openlibrary.data.dump.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Command Line interface for generating dumps.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.dump.make_bsddb">
+<tt class="descclassname">openlibrary.data.dump.</tt><tt class="descname">make_bsddb</tt><big>(</big><em>dbfile</em>, <em>dump_file</em><big>)</big><a class="headerlink" href="#openlibrary.data.dump.make_bsddb" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.dump.make_index">
+<tt class="descclassname">openlibrary.data.dump.</tt><tt class="descname">make_index</tt><big>(</big><em>dump_file</em><big>)</big><a class="headerlink" href="#openlibrary.data.dump.make_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make index with &#8220;path&#8221;, &#8220;title&#8221;, &#8220;created&#8221; and &#8220;last_modified&#8221; columns.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.dump.pgdecode">
+<tt class="descclassname">openlibrary.data.dump.</tt><tt class="descname">pgdecode</tt><big>(</big><em>text</em><big>)</big><a class="headerlink" href="#openlibrary.data.dump.pgdecode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decode postgres encoded text.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">pgdecode</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\\</span><span class="s">n&#39;</span><span class="p">)</span>
+<span class="go">&#39;\n&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.dump.pgencode">
+<tt class="descclassname">openlibrary.data.dump.</tt><tt class="descname">pgencode</tt><big>(</big><em>text</em><big>)</big><a class="headerlink" href="#openlibrary.data.dump.pgencode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reverse of pgdecode.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.dump.pmap">
+<tt class="descclassname">openlibrary.data.dump.</tt><tt class="descname">pmap</tt><big>(</big><em>f</em>, <em>tasks</em><big>)</big><a class="headerlink" href="#openlibrary.data.dump.pmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run tasks parallelly.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.dump.print_dump">
+<tt class="descclassname">openlibrary.data.dump.</tt><tt class="descname">print_dump</tt><big>(</big><em>json_records</em>, <em>filter=None</em><big>)</big><a class="headerlink" href="#openlibrary.data.dump.print_dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the given json_records in the dump format.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.dump.read_data_file">
+<tt class="descclassname">openlibrary.data.dump.</tt><tt class="descname">read_data_file</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#openlibrary.data.dump.read_data_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.dump.read_tsv">
+<tt class="descclassname">openlibrary.data.dump.</tt><tt class="descname">read_tsv</tt><big>(</big><em>file</em>, <em>strip=True</em><big>)</big><a class="headerlink" href="#openlibrary.data.dump.read_tsv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a tab seperated file and return an iterator over rows.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.dump.sort_dump">
+<tt class="descclassname">openlibrary.data.dump.</tt><tt class="descname">sort_dump</tt><big>(</big><em>dump_file=None</em>, <em>tmpdir='/tmp/'</em>, <em>buffer_size='1G'</em><big>)</big><a class="headerlink" href="#openlibrary.data.dump.sort_dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort the given dump based on key.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.dump.split_dump">
+<tt class="descclassname">openlibrary.data.dump.</tt><tt class="descname">split_dump</tt><big>(</big><em>dump_file=None</em>, <em>format='oldump_%s.txt'</em><big>)</big><a class="headerlink" href="#openlibrary.data.dump.split_dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split dump into authors, editions and works.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.data.dump.xopen">
+<tt class="descclassname">openlibrary.data.dump.</tt><tt class="descname">xopen</tt><big>(</big><em>path</em>, <em>mode='r'</em><big>)</big><a class="headerlink" href="#openlibrary.data.dump.xopen" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 
@@ -68,12 +161,6 @@
             <p class="logo"><a href="../../../index.html">
               <img class="logo" src="../../../_static/logo_OL-lg.png" alt="Logo"/>
             </a></p>
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="db.html"
-                        title="previous chapter">db</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="sitemap.html"
-                        title="next chapter">sitemap</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../_sources/api/openlibrary/data/dump.txt"
@@ -105,22 +192,13 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="sitemap.html" title="sitemap"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="db.html" title="db"
-             >previous</a> |</li>
-        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
-          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
-          <li><a href="index.html" >data</a> &raquo;</li> 
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Jan 04, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
+      Last updated on Jan 20, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
     </div>
   </body>
 </html>

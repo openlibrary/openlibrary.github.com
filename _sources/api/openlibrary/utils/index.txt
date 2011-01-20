@@ -13,6 +13,7 @@ Submodules
    dateutil.rst
    form.rst
    httpserver.rst
+   ia.rst
    isbn.rst
    olcompress.rst
    olmemcache.rst

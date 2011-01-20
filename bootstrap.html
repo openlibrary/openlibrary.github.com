@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="openlibrary v2.0 documentation" href="index.html" />
-    <link rel="next" title="Getting Started with OL Development" href="dev.html" />
+    <link rel="next" title="Architecture of the dev instance" href="architecture.html" />
     <link rel="prev" title="Open Library: Developer Documentation" href="index.html" /> 
   </head>
   <body>
@@ -37,7 +37,7 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="dev.html" title="Getting Started with OL Development"
+          <a href="architecture.html" title="Architecture of the dev instance"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Open Library: Developer Documentation"
@@ -53,45 +53,74 @@
             
   <div class="section" id="setting-up-a-dev-instance">
 <h1>Setting up a dev instance<a class="headerlink" href="#setting-up-a-dev-instance" title="Permalink to this headline">¶</a></h1>
-<p>Setting up OL dev instance requires installing third-party software, running many services.</p>
+<p>Setting up an Open Library dev instance requires installing third-party
+software and running many services.</p>
 <div class="section" id="supported-platforms">
 <h2>Supported Platforms<a class="headerlink" href="#supported-platforms" title="Permalink to this headline">¶</a></h2>
-<p>Open Library dev instance works on:</p>
-<div class="highlight-python"><pre>* Ununtu 10.10
-* Ubuntu 10.04</pre>
-</div>
+<p>The Open Library dev instance has been tested on the following platforms.</p>
+<ul class="simple">
+<li>Ubuntu 10.10</li>
+<li>Ubuntu 10.04</li>
+</ul>
 <p>Support for Mac OS X will be available soon.</p>
 </div>
-<div class="section" id="dependencies">
-<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>PostgreSQL 8.2 or later (psql)</li>
-<li>Python 2.5 or later (python)</li>
-<li>Git (git)</li>
-<li>Java Runtime (tested with openjdk-6-jre)</li>
-<li>At least 1GB of RAM on your dev machine or virtual machine</li>
-<li>Python virtualenv</li>
-<li>memcached</li>
-</ul>
-<p>On Linux, installing some of the python packages depends on the following packages.</p>
-<ul class="simple">
-<li>python-dev</li>
-<li>libpq-dev</li>
-<li>libxslt-dev</li>
-</ul>
-<p>To install dependencies on Ubuntu/Debian:</p>
+<div class="section" id="getting-the-source">
+<h2>Getting the source<a class="headerlink" href="#getting-the-source" title="Permalink to this headline">¶</a></h2>
+<p>We use <tt class="docutils literal"><span class="pre">git</span></tt> for version control. The openlibrary code repository is
+hosted on github at <a class="reference external" href="git://github.com/openlibrary/openlibrary.git">git://github.com/openlibrary/openlibrary.git</a>. You can get the
+source code from there using:</p>
+<div class="highlight-python"><pre>$ git clone git://github.com/openlibrary/openlibrary.git</pre>
+</div>
+<p>This will create a directory called openlibrary with the entire
+codebase checked out.</p>
+<p>If you don&#8217;t have git, you can get it using:</p>
+<div class="highlight-python"><pre>$ apt-get install git-core</pre>
+</div>
+<p>on Ubuntu or:</p>
+<div class="highlight-python"><pre>$ brew install git</pre>
+</div>
+<p>on MacOS</p>
+</div>
+<div class="section" id="installing-dependencies">
+<h2>Installing dependencies<a class="headerlink" href="#installing-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>The system requires a lot of 3rd party programs as well as a whole
+bunch of python libraries. We have an installation script which you
+can run that will setup the entire thing for you but in order to run
+this script, the following packages have to be installed first.</p>
+<dl class="docutils">
+<dt>PostgreSQL 8.2 or later (<tt class="docutils literal"><span class="pre">psql</span></tt>)</dt>
+<dd>This is where we store our data</dd>
+<dt>Python 2.5 or later (<tt class="docutils literal"><span class="pre">python</span></tt>)</dt>
+<dd>The application is written in python</dd>
+<dt>Java Runtime (tested with <tt class="docutils literal"><span class="pre">openjdk-6-jre</span></tt>)</dt>
+<dd>The indexer (<tt class="docutils literal"><span class="pre">solr</span></tt>) is a Java application</dd>
+<dt>Python virtualenv (<tt class="docutils literal"><span class="pre">python-virtualenv</span></tt>)</dt>
+<dd>Necessary to create &#8220;virtual&#8221; installations of Python so
+that we can install packages without touching your system
+distribution. More details at <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">the virtualenv PyPI
+page</a>.</dd>
+<dt>memcached (<tt class="docutils literal"><span class="pre">memcached</span></tt>)</dt>
+<dd>Used for distributed caching.</dd>
+</dl>
+<p>On Linux, you will also have to install the following dev packages
+<tt class="docutils literal"><span class="pre">python-dev</span></tt>, <tt class="docutils literal"><span class="pre">libpq-dev</span></tt> and <tt class="docutils literal"><span class="pre">libxslt-dev</span></tt>.</p>
+<p>In addition to this, you&#8217;ll need at least 1GB of RAM on your dev machine
+or virtual machine.</p>
+<p>To install all of these on Ubuntu/Debian:</p>
 <div class="highlight-python"><pre>$ sudo apt-get install memcached postgresql git-core openjdk-6-jre-headless python-virtualenv python-dev libpq-dev libxslt-dev</pre>
 </div>
-<p>To install dependencies on Mac OS X:</p>
+<p>To install all of them on Mac OS X:</p>
 <div class="highlight-python"><pre>$ brew install postgresql git
 $ sudo easy_install virtualenv</pre>
 </div>
-<p>Make sure you create a postgres user account for you.:</p>
-<div class="highlight-python"><pre>$ sudo -u postgres createuser anand
+<p>After the installation is done, create an user on the postgresql server:</p>
+<div class="highlight-python"><pre>$ sudo -u postgres createuser openlibrary
 [sudo] password for anand:
 Shall the new role be a superuser? (y/n) y</pre>
 </div>
-<p>Open Library depends also on the following packages, but they are installed by the install script.</p>
+<p>The following packages are necessary for Open Library development but
+they&#8217;re automatically installed by the installation script. They&#8217;re
+not all necessary to run but for things like testing, documentation etc.</p>
 <ul class="simple">
 <li>Apache Solr</li>
 <li>Apache CouchDB</li>
@@ -108,40 +137,43 @@ Shall the new role be a superuser? (y/n) y</pre>
 <li>python-memcached</li>
 <li>pyyaml</li>
 <li>simplejson</li>
+<li>web.py (version 0.33)</li>
+<li>supervisor</li>
+<li>py.test</li>
 <li>sphinx</li>
-<li>web.py==0.33</li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<p>The installation is driven by install config file <tt class="docutils literal"><span class="pre">conf/install.ini</span></tt>. Edit that file if you need customize installation.</p>
-<p>The installation script is part of the Open Library repository. You need to get the repository to run the script.</p>
-<div class="highlight-python"><pre>$ git clone git://github.com/openlibrary/openlibrary.git
-$ cd openlibrary</pre>
-</div>
-<p>Now run the <tt class="docutils literal"><span class="pre">bootstrap</span></tt> command to do the remaining setup.:</p>
+<div class="section" id="running-the-install-script">
+<h2>Running the install script<a class="headerlink" href="#running-the-install-script" title="Permalink to this headline">¶</a></h2>
+<p>The installation is driven by the <tt class="docutils literal"><span class="pre">conf/install.ini</span></tt> config
+file. Edit it if you need customize the installation process.</p>
+<p>Now you&#8217;re ready to go. Run the setuptools <tt class="docutils literal"><span class="pre">bootstrap</span></tt> command to do
+the everything.:</p>
 <div class="highlight-python"><pre>$ python setup.py bootstrap</pre>
 </div>
-<p>The bootstrap command creates a virtualenv, installs all dependent python
-packages, installs vendor software and initializes OL databases. Detailed log
-is written to <tt class="docutils literal"><span class="pre">var/log/install.log</span></tt> and errors and info are reported to
-stdout and stderr.</p>
+<p>The bootstrap command creates a virtualenv, installs all necessary
+python packages, installs vendor software and initializes the OL
+databases. A detailed log is written to <tt class="docutils literal"><span class="pre">var/log/install.log</span></tt> and
+info and errors are reported to stdout and stderr respectively.</p>
 </div>
-<div class="section" id="run">
-<h2>Run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h2>
-<p>Once in the installation is done, running dev instance is very simple.</p>
-<blockquote>
-$ python setup.py start
-...</blockquote>
+<div class="section" id="verify-the-installation">
+<h2>Verify the installation<a class="headerlink" href="#verify-the-installation" title="Permalink to this headline">¶</a></h2>
+<p><em>TDB</em> (insert notes on how to run smoke tests here).</p>
+</div>
+<div class="section" id="using-the-dev-instance">
+<h2>Using the dev instance<a class="headerlink" href="#using-the-dev-instance" title="Permalink to this headline">¶</a></h2>
+<p>Once in the installation is done, running dev instance is very simple.:</p>
+<div class="highlight-python"><pre>$ python setup.py start</pre>
+</div>
 <p>This starts all the OL services using <a class="reference external" href="http://supervisord.org/">supervisord</a>.</p>
 <p>Once the services are started, Open Library dev instance will be available at:</p>
 <p><a class="reference external" href="http://0.0.0.0:8080/">http://0.0.0.0:8080/</a></p>
 <p>Logs of the running services will be available in <tt class="docutils literal"><span class="pre">var/log/</span></tt>.</p>
 </div>
-<div class="section" id="sample-data">
-<h2>Sample Data<a class="headerlink" href="#sample-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="loading-sample-data">
+<h2>Loading sample data<a class="headerlink" href="#loading-sample-data" title="Permalink to this headline">¶</a></h2>
 <p>Loading sample data is not yet implemented.</p>
 </div>
 </div>
@@ -159,10 +191,12 @@ $ python setup.py start
   <ul>
 <li><a class="reference internal" href="#">Setting up a dev instance</a><ul>
 <li><a class="reference internal" href="#supported-platforms">Supported Platforms</a></li>
-<li><a class="reference internal" href="#dependencies">Dependencies</a></li>
-<li><a class="reference internal" href="#installation">Installation</a></li>
-<li><a class="reference internal" href="#run">Run</a></li>
-<li><a class="reference internal" href="#sample-data">Sample Data</a></li>
+<li><a class="reference internal" href="#getting-the-source">Getting the source</a></li>
+<li><a class="reference internal" href="#installing-dependencies">Installing dependencies</a></li>
+<li><a class="reference internal" href="#running-the-install-script">Running the install script</a></li>
+<li><a class="reference internal" href="#verify-the-installation">Verify the installation</a></li>
+<li><a class="reference internal" href="#using-the-dev-instance">Using the dev instance</a></li>
+<li><a class="reference internal" href="#loading-sample-data">Loading sample data</a></li>
 </ul>
 </li>
 </ul>
@@ -171,8 +205,8 @@ $ python setup.py start
   <p class="topless"><a href="index.html"
                         title="previous chapter">Open Library: Developer Documentation</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="dev.html"
-                        title="next chapter">Getting Started with OL Development</a></p>
+  <p class="topless"><a href="architecture.html"
+                        title="next chapter">Architecture of the dev instance</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/bootstrap.txt"
@@ -205,7 +239,7 @@ $ python setup.py start
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="dev.html" title="Getting Started with OL Development"
+          <a href="architecture.html" title="Architecture of the dev instance"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Open Library: Developer Documentation"
@@ -215,8 +249,8 @@ $ python setup.py start
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Jan 04, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
+      Last updated on Jan 20, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
     </div>
   </body>
 </html>

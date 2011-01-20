@@ -1,0 +1,5 @@
+
+mock_couchdb
+============
+
+.. automodule:: openlibrary.mocks.mock_couchdb

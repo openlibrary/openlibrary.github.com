@@ -15,6 +15,7 @@ Submodules
    coverstore/index.rst
    data/index.rst
    i18n/index.rst
+   mocks/index.rst
    plugins/index.rst
    utils/index.rst
 

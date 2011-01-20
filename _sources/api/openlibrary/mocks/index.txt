@@ -1,0 +1,18 @@
+
+mocks
+=====
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   mock_couchdb.rst
+   mock_infobase.rst
+   mock_memcache.rst
+
+Documentation
+-------------
+
+.. automodule:: openlibrary.mocks

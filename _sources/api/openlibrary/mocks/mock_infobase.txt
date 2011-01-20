@@ -1,0 +1,5 @@
+
+mock_infobase
+=============
+
+.. automodule:: openlibrary.mocks.mock_infobase

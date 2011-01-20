@@ -8,6 +8,7 @@ Submodules
 .. toctree::
    :maxdepth: 1
 
+   code.rst
    connection.rst
    infobase_hook.rst
    lists.rst

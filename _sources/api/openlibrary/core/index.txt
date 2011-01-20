@@ -8,13 +8,16 @@ Submodules
 .. toctree::
    :maxdepth: 1
 
+   cache.rst
+   connections.rst
    couch.rst
    formats.rst
    helpers.rst
    ia.rst
+   init.rst
    lists/index.rst
-   mocks/index.rst
-   mocksite.rst
+   middleware.rst
+   minicron.rst
    models.rst
    olmarkdown.rst
    processors/index.rst

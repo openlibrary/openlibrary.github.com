@@ -1,0 +1,186 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cache &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.core.cache">
+<span id="cache"></span><h1>cache<a class="headerlink" href="#module-openlibrary.core.cache" title="Permalink to this headline">¶</a></h1>
+<p>Caching utilities.</p>
+<dl class="class">
+<dt id="openlibrary.core.cache.memcache_memoize">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.cache.</tt><tt class="descname">memcache_memoize</tt><big>(</big><em>f</em>, <em>key_prefix=None</em>, <em>timeout=60</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.memcache_memoize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Memoizes a function, caching its return values in memcached for each input.</p>
+<p>After the timeout, a new thread is spawned to update the value and the old
+value is used while the update is in progress.</p>
+<p>This expects that both the args and return value are json encodable.</p>
+<p>This uses the memcache servers specified in the configuration.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>f</strong> &#8211; function to be memozied</li>
+<li><strong>key_prefix</strong> &#8211; key prefix used in memcache to store memoized results. A random value will be used if not specified.</li>
+<li><strong>servers</strong> &#8211; list of  memcached servers, each specified as &#8220;ip:port&#8221;</li>
+<li><strong>timeout</strong> &#8211; timeout in seconds after which the return value must be updated</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="openlibrary.core.cache.memcache_memoize.compute_key">
+<tt class="descname">compute_key</tt><big>(</big><em>args</em>, <em>kw</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.memcache_memoize.compute_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes memcache key for storing result of function call with given arguments.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.cache.memcache_memoize.encode_args">
+<tt class="descname">encode_args</tt><big>(</big><em>args</em>, <em>kw={}</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.memcache_memoize.encode_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encodes arguments to construct the memcache key.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.cache.memcache_memoize.join_threads">
+<tt class="descname">join_threads</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.cache.memcache_memoize.join_threads" title="Permalink to this definition">¶</a></dt>
+<dd><p>Waits for all active threads to finish.</p>
+<p>Used only in testing.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.cache.memcache_memoize.json_decode">
+<tt class="descname">json_decode</tt><big>(</big><em>json</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.memcache_memoize.json_decode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.cache.memcache_memoize.json_encode">
+<tt class="descname">json_encode</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.memcache_memoize.json_encode" title="Permalink to this definition">¶</a></dt>
+<dd><p>simplejson.dumps without extra spaces.</p>
+<p>memcache doesn&#8217;t like spaces in the key.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.core.cache.memcache_memoize.memcache">
+<tt class="descname">memcache</tt><a class="headerlink" href="#openlibrary.core.cache.memcache_memoize.memcache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.cache.memcache_memoize.memcache_get">
+<tt class="descname">memcache_get</tt><big>(</big><em>args</em>, <em>kw</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.memcache_memoize.memcache_get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the value from memcahe. Key is computed from the arguments.</p>
+<p>Returns (value, time) when the value is available, None otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.cache.memcache_memoize.memcache_set">
+<tt class="descname">memcache_set</tt><big>(</big><em>args</em>, <em>kw</em>, <em>value</em>, <em>time</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.memcache_memoize.memcache_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds value and time to memcache. Key is computed from the arguments.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.cache.memcache_memoize.update">
+<tt class="descname">update</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.memcache_memoize.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the value and adds it to memcache.</p>
+<p>Returns the computed value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.cache.memcache_memoize.update_async">
+<tt class="descname">update_async</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.memcache_memoize.update_async" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts the update process asynchronously.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo_OL-lg.png" alt="Logo"/>
+            </a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/openlibrary/core/cache.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Internet Archive.
+      Last updated on Jan 20, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>
