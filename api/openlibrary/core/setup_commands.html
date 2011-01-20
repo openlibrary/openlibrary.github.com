@@ -22,7 +22,10 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" /> 
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="core" href="index.html" />
+    <link rel="next" title="coverstore" href="../coverstore/index.html" />
+    <link rel="prev" title="seq" href="seq.html" /> 
   </head>
   <body>
     <div class="related">
@@ -34,7 +37,16 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="../coverstore/index.html" title="coverstore"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="seq.html" title="seq"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">core</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -103,6 +115,33 @@
 </dd></dl>
 
 <dl class="class">
+<dt id="openlibrary.core.setup_commands.RestartCommand">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.setup_commands.</tt><tt class="descname">RestartCommand</tt><big>(</big><em>dist</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.RestartCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.core.setup_commands.BaseCommand" title="openlibrary.core.setup_commands.BaseCommand"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.core.setup_commands.BaseCommand</span></tt></a></p>
+<p>Distutils command to restart OL services.</p>
+<p>This is invoked by calling:</p>
+<div class="highlight-python"><pre>$ python setup.py restart service-name</pre>
+</div>
+<p>This uses supervisorctl to restart the given service.</p>
+<dl class="method">
+<dt id="openlibrary.core.setup_commands.RestartCommand.finalize_options">
+<tt class="descname">finalize_options</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.RestartCommand.finalize_options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.setup_commands.RestartCommand.initialize_options">
+<tt class="descname">initialize_options</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.RestartCommand.initialize_options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.setup_commands.RestartCommand.run">
+<tt class="descname">run</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.RestartCommand.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>runner</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="openlibrary.core.setup_commands.ShellCommand">
 <em class="property">class </em><tt class="descclassname">openlibrary.core.setup_commands.</tt><tt class="descname">ShellCommand</tt><big>(</big><em>dist</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.core.setup_commands.ShellCommand" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#openlibrary.core.setup_commands.BaseCommand" title="openlibrary.core.setup_commands.BaseCommand"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.core.setup_commands.BaseCommand</span></tt></a></p>
@@ -164,6 +203,12 @@
             <p class="logo"><a href="../../../index.html">
               <img class="logo" src="../../../_static/logo_OL-lg.png" alt="Logo"/>
             </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="seq.html"
+                        title="previous chapter">seq</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../coverstore/index.html"
+                        title="next chapter">coverstore</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../_sources/api/openlibrary/core/setup_commands.txt"
@@ -195,13 +240,22 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="../coverstore/index.html" title="coverstore"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="seq.html" title="seq"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >core</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
       Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
     </div>
   </body>
 </html>

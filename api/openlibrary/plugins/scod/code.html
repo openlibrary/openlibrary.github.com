@@ -22,7 +22,10 @@
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" /> 
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="scod" href="index.html" />
+    <link rel="next" title="search" href="../search/index.html" />
+    <link rel="prev" title="scod" href="index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -34,7 +37,17 @@
         <li class="right" >
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="../search/index.html" title="search"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="scod"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">scod</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -43,140 +56,8 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="module-openlibrary.plugins.scod.code">
-<span id="code"></span><h1>code<a class="headerlink" href="#module-openlibrary.plugins.scod.code" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
-<dt id="openlibrary.plugins.scod.code.error">
-<tt class="descclassname">openlibrary.plugins.scod.code.</tt><tt class="descname">error</tt><big>(</big><em>message</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.scod.code.error" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.plugins.scod.code.get_book">
-<tt class="descclassname">openlibrary.plugins.scod.code.</tt><tt class="descname">get_book</tt><big>(</big><em>path</em>, <em>check_scanned=True</em>, <em>check_ocaid=True</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.scod.code.get_book" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.plugins.scod.code.get_email">
-<tt class="descclassname">openlibrary.plugins.scod.code.</tt><tt class="descname">get_email</tt><big>(</big><em>user</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.scod.code.get_email" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.plugins.scod.code.get_scan_queue">
-<tt class="descclassname">openlibrary.plugins.scod.code.</tt><tt class="descname">get_scan_queue</tt><big>(</big><em>scan_status</em>, <em>limit=None</em>, <em>offset=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.scod.code.get_scan_queue" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.plugins.scod.code.get_scan_record">
-<tt class="descclassname">openlibrary.plugins.scod.code.</tt><tt class="descname">get_scan_record</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.scod.code.get_scan_record" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.plugins.scod.code.get_scan_status">
-<tt class="descclassname">openlibrary.plugins.scod.code.</tt><tt class="descname">get_scan_status</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.scod.code.get_scan_status" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.plugins.scod.code.scan_book_notfound">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.scod.code.</tt><tt class="descname">scan_book_notfound</tt><a class="headerlink" href="#openlibrary.plugins.scod.code.scan_book_notfound" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.mode</span></tt></p>
-<dl class="method">
-<dt id="openlibrary.plugins.scod.code.scan_book_notfound.POST">
-<tt class="descname">POST</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.scod.code.scan_book_notfound.POST" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.scod.code.scan_book_notfound.is_scan_user">
-<tt class="descname">is_scan_user</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.scod.code.scan_book_notfound.is_scan_user" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.plugins.scod.code.scan_complete">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.scod.code.</tt><tt class="descname">scan_complete</tt><a class="headerlink" href="#openlibrary.plugins.scod.code.scan_complete" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.mode</span></tt></p>
-<dl class="method">
-<dt id="openlibrary.plugins.scod.code.scan_complete.GET">
-<tt class="descname">GET</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.scod.code.scan_complete.GET" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.scod.code.scan_complete.POST">
-<tt class="descname">POST</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.scod.code.scan_complete.POST" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.scod.code.scan_complete.is_scan_user">
-<tt class="descname">is_scan_user</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.scod.code.scan_complete.is_scan_user" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.plugins.scod.code.scan_confirm">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.scod.code.</tt><tt class="descname">scan_confirm</tt><a class="headerlink" href="#openlibrary.plugins.scod.code.scan_confirm" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.mode</span></tt></p>
-<dl class="method">
-<dt id="openlibrary.plugins.scod.code.scan_confirm.GET">
-<tt class="descname">GET</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.scod.code.scan_confirm.GET" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.plugins.scod.code.scan_inprogress">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.scod.code.</tt><tt class="descname">scan_inprogress</tt><a class="headerlink" href="#openlibrary.plugins.scod.code.scan_inprogress" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.scod.code.scan_book_notfound" title="openlibrary.plugins.scod.code.scan_book_notfound"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.scod.code.scan_book_notfound</span></tt></a></p>
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.plugins.scod.code.scan_login">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.scod.code.</tt><tt class="descname">scan_login</tt><a class="headerlink" href="#openlibrary.plugins.scod.code.scan_login" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.mode</span></tt></p>
-<dl class="method">
-<dt id="openlibrary.plugins.scod.code.scan_login.GET">
-<tt class="descname">GET</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.scod.code.scan_login.GET" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.plugins.scod.code.scan_queue">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.scod.code.</tt><tt class="descname">scan_queue</tt><a class="headerlink" href="#openlibrary.plugins.scod.code.scan_queue" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></p>
-<dl class="method">
-<dt id="openlibrary.plugins.scod.code.scan_queue.GET">
-<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.scod.code.scan_queue.GET" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.plugins.scod.code.scan_review">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.scod.code.</tt><tt class="descname">scan_review</tt><a class="headerlink" href="#openlibrary.plugins.scod.code.scan_review" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.mode</span></tt></p>
-<dl class="method">
-<dt id="openlibrary.plugins.scod.code.scan_review.GET">
-<tt class="descname">GET</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.scod.code.scan_review.GET" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.scod.code.scan_review.POST">
-<tt class="descname">POST</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.scod.code.scan_review.POST" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.plugins.scod.code.to_datetime">
-<tt class="descclassname">openlibrary.plugins.scod.code.</tt><tt class="descname">to_datetime</tt><big>(</big><em>iso_date_string</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.scod.code.to_datetime" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="s">&#39;2008-01-01T01:01:01.010101&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">to_timestamp</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
-<span class="go">&#39;2008-01-01T01:01:01.010101&#39;</span>
-</pre></div>
-</div>
-</dd></dl>
-
+  <div class="section" id="code">
+<h1>code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -188,6 +69,12 @@
             <p class="logo"><a href="../../../../index.html">
               <img class="logo" src="../../../../_static/logo_OL-lg.png" alt="Logo"/>
             </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">scod</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../search/index.html"
+                        title="next chapter">search</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../../_sources/api/openlibrary/plugins/scod/code.txt"
@@ -219,13 +106,23 @@
         <li class="right" >
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="../search/index.html" title="search"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="scod"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >scod</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
       Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
     </div>
   </body>
 </html>

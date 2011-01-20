@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>List of extra openlibrary setuptools commands &mdash; openlibrary v2.0 documentation</title>
+    <title>setup.py commands &mdash; openlibrary v2.0 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -24,8 +24,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="openlibrary v2.0 documentation" href="../index.html" />
     <link rel="up" title="Appendices" href="index.html" />
-    <link rel="next" title="Configuration files" href="config_files.html" />
-    <link rel="prev" title="Appendices" href="index.html" /> 
+    <link rel="prev" title="Configuration files" href="config_files.html" /> 
   </head>
   <body>
     <div class="related">
@@ -39,9 +38,6 @@
              >modules</a> |</li>
         <li class="right" >
           <a href="config_files.html" title="Configuration files"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="Appendices"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">Appendices</a> &raquo;</li> 
@@ -53,10 +49,49 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="list-of-extra-openlibrary-setuptools-commands">
-<h1>List of extra openlibrary setuptools commands<a class="headerlink" href="#list-of-extra-openlibrary-setuptools-commands" title="Permalink to this headline">¶</a></h1>
-<p>This pages lists the extra <a class="reference external" href="http://tarekziade.wordpress.com/2007/09/30/extending-setuptools-adding-a-new-command/">setuptools commands</a>
-that we have implemented for our <tt class="docutils literal"><span class="pre">setup.py</span></tt>.</p>
+  <div class="section" id="setup-py-commands">
+<h1>setup.py commands<a class="headerlink" href="#setup-py-commands" title="Permalink to this headline">¶</a></h1>
+<p>Most openlibrary operations are modeled as setup.py commands.</p>
+<div class="section" id="bootstrap">
+<h2>bootstrap<a class="headerlink" href="#bootstrap" title="Permalink to this headline">¶</a></h2>
+<p>Bootstraps the dev instance.</p>
+<div class="highlight-python"><pre>$ python setup.py bootstrap</pre>
+</div>
+<p>Bootstrap command is explained in <tt class="xref doc docutils literal"><span class="pre">bootstrap</span></tt>.</p>
+</div>
+<div class="section" id="start">
+<h2>start<a class="headerlink" href="#start" title="Permalink to this headline">¶</a></h2>
+<p>Starts all the OL services.:</p>
+<div class="highlight-python"><pre>$ python setup.py start</pre>
+</div>
+<p>This command starts supervisord using configuration from <tt class="docutils literal"><span class="pre">conf/supervisor/linux.ini</span></tt> or <tt class="docutils literal"><span class="pre">conf/supervisor/macosx.ini</span></tt> based on the platform.</p>
+<p>Logs of the services are written to <tt class="file docutils literal"><span class="pre">var/log</span></tt>.</p>
+</div>
+<div class="section" id="shell">
+<h2>shell<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h2>
+<p>Start a bash shell with the env required for running all OL scripts.</p>
+<div class="highlight-python"><pre>$ python setup.py shell</pre>
+</div>
+<p>This starts a bash shell with <a class="reference external" href="http://github.com/openlibrary/openlibrary/blob/master/conf/bashrc">conf/bashrc</a> as rc file.</p>
+</div>
+<div class="section" id="test">
+<h2>test<a class="headerlink" href="#test" title="Permalink to this headline">¶</a></h2>
+<p>Runs all the test cases.</p>
+<div class="highlight-python"><pre>$ python setup.py test</pre>
+</div>
+<p>Behind the scenes it runs <tt class="file docutils literal"><span class="pre">scripts/runtests.sh</span></tt>.</p>
+</div>
+<div class="section" id="build-sphinx">
+<h2>build_sphinx<a class="headerlink" href="#build-sphinx" title="Permalink to this headline">¶</a></h2>
+<p>Builds the sphinx docs.</p>
+<div class="highlight-python"><pre>$ python setup.py build_sphinx</pre>
+</div>
+<p>The docs will be generated in <tt class="docutils literal"><span class="pre">build/sphinx/html/</span></tt>.</p>
+<hr class="docutils" />
+<p>The custom setup.py commands are implemented in <a class="reference external" href="http://github.com/openlibrary/openlibrary/tree/master/openlibary/core/setup_commands.py">setup_commands.py</a>.</p>
+<p>To know more about how to add custom setuptools commands, see:</p>
+<p><a class="reference external" href="http://tarekziade.wordpress.com/2007/09/30/extending-setuptools-adding-a-new-command/">http://tarekziade.wordpress.com/2007/09/30/extending-setuptools-adding-a-new-command/</a></p>
+</div>
 </div>
 
 
@@ -68,12 +103,21 @@ that we have implemented for our <tt class="docutils literal"><span class="pre">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/logo_OL-lg.png" alt="Logo"/>
             </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">setup.py commands</a><ul>
+<li><a class="reference internal" href="#bootstrap">bootstrap</a></li>
+<li><a class="reference internal" href="#start">start</a></li>
+<li><a class="reference internal" href="#shell">shell</a></li>
+<li><a class="reference internal" href="#test">test</a></li>
+<li><a class="reference internal" href="#build-sphinx">build_sphinx</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">Appendices</a></p>
-  <h4>Next topic</h4>
   <p class="topless"><a href="config_files.html"
-                        title="next chapter">Configuration files</a></p>
+                        title="previous chapter">Configuration files</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/appendices/setup_commands.txt"
@@ -107,9 +151,6 @@ that we have implemented for our <tt class="docutils literal"><span class="pre">
              >modules</a> |</li>
         <li class="right" >
           <a href="config_files.html" title="Configuration files"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="Appendices"
              >previous</a> |</li>
         <li><a href="../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
           <li><a href="index.html" >Appendices</a> &raquo;</li> 
@@ -118,7 +159,7 @@ that we have implemented for our <tt class="docutils literal"><span class="pre">
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
       Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
     </div>
   </body>
 </html>

@@ -22,7 +22,10 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" /> 
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="data" href="index.html" />
+    <link rel="next" title="solr" href="solr.html" />
+    <link rel="prev" title="dump" href="dump.html" /> 
   </head>
   <body>
     <div class="related">
@@ -34,7 +37,16 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="solr.html" title="solr"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="dump.html" title="dump"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">data</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -43,68 +55,8 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="module-openlibrary.data.sitemap">
-<span id="sitemap"></span><h1>sitemap<a class="headerlink" href="#module-openlibrary.data.sitemap" title="Permalink to this headline">¶</a></h1>
-<p>Library for generating sitemaps from Open Library dump.</p>
-<p>Input for generating sitemaps is a tsv file with &#8220;path&#8221;, &#8220;title&#8221;, &#8220;created&#8221;
-and &#8220;last_modified&#8221; columns. It is desirable that the file is sorted on 
-&#8220;created&#8221; and &#8220;path&#8221;.</p>
-<p><a class="reference external" href="http://www.archive.org/download/ol-sitemaps/sitemap-books-0001.xml.gz">http://www.archive.org/download/ol-sitemaps/sitemap-books-0001.xml.gz</a>
-<a class="reference external" href="http://www.archive.org/download/ol-sitemaps/sitemap-books-0001.xml.gz">http://www.archive.org/download/ol-sitemaps/sitemap-books-0001.xml.gz</a></p>
-<p><a class="reference external" href="http://www.archive.org/download/ol-sitemaps/sitindex-books.xml.gz">http://www.archive.org/download/ol-sitemaps/sitindex-books.xml.gz</a>
-<a class="reference external" href="http://www.archive.org/download/ol-sitemaps/sitindex-authors.xml.gz">http://www.archive.org/download/ol-sitemaps/sitindex-authors.xml.gz</a>
-<a class="reference external" href="http://www.archive.org/download/ol-sitemaps/sitindex-works.xml.gz">http://www.archive.org/download/ol-sitemaps/sitindex-works.xml.gz</a>
-<a class="reference external" href="http://www.archive.org/download/ol-sitemaps/sitindex-subjects.xml.gz">http://www.archive.org/download/ol-sitemaps/sitindex-subjects.xml.gz</a></p>
-<dl class="function">
-<dt id="openlibrary.data.sitemap.dirindex">
-<tt class="descclassname">openlibrary.data.sitemap.</tt><tt class="descname">dirindex</tt><big>(</big><em>dir</em>, <em>back='..'</em><big>)</big><a class="headerlink" href="#openlibrary.data.sitemap.dirindex" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.data.sitemap.find_path">
-<tt class="descclassname">openlibrary.data.sitemap.</tt><tt class="descname">find_path</tt><big>(</big><em>key</em>, <em>type</em>, <em>json</em><big>)</big><a class="headerlink" href="#openlibrary.data.sitemap.find_path" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.data.sitemap.generate_html_index">
-<tt class="descclassname">openlibrary.data.sitemap.</tt><tt class="descname">generate_html_index</tt><big>(</big><em>index_file</em>, <em>outdir</em><big>)</big><a class="headerlink" href="#openlibrary.data.sitemap.generate_html_index" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.data.sitemap.generate_sitemaps">
-<tt class="descclassname">openlibrary.data.sitemap.</tt><tt class="descname">generate_sitemaps</tt><big>(</big><em>index_file</em>, <em>outdir</em>, <em>prefix</em><big>)</big><a class="headerlink" href="#openlibrary.data.sitemap.generate_sitemaps" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.data.sitemap.gzwrite">
-<tt class="descclassname">openlibrary.data.sitemap.</tt><tt class="descname">gzwrite</tt><big>(</big><em>path</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.data.sitemap.gzwrite" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.data.sitemap.mkdir_p">
-<tt class="descclassname">openlibrary.data.sitemap.</tt><tt class="descname">mkdir_p</tt><big>(</big><em>dir</em><big>)</big><a class="headerlink" href="#openlibrary.data.sitemap.mkdir_p" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.data.sitemap.parse_index_file">
-<tt class="descclassname">openlibrary.data.sitemap.</tt><tt class="descname">parse_index_file</tt><big>(</big><em>index_file</em><big>)</big><a class="headerlink" href="#openlibrary.data.sitemap.parse_index_file" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.data.sitemap.write">
-<tt class="descclassname">openlibrary.data.sitemap.</tt><tt class="descname">write</tt><big>(</big><em>path</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.data.sitemap.write" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.data.sitemap.write_siteindex">
-<tt class="descclassname">openlibrary.data.sitemap.</tt><tt class="descname">write_siteindex</tt><big>(</big><em>data</em>, <em>outdir</em>, <em>prefix</em><big>)</big><a class="headerlink" href="#openlibrary.data.sitemap.write_siteindex" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.data.sitemap.write_sitemaps">
-<tt class="descclassname">openlibrary.data.sitemap.</tt><tt class="descname">write_sitemaps</tt><big>(</big><em>data</em>, <em>outdir</em>, <em>prefix</em><big>)</big><a class="headerlink" href="#openlibrary.data.sitemap.write_sitemaps" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+  <div class="section" id="sitemap">
+<h1>sitemap<a class="headerlink" href="#sitemap" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -116,6 +68,12 @@ and &#8220;last_modified&#8221; columns. It is desirable that the file is sorted
             <p class="logo"><a href="../../../index.html">
               <img class="logo" src="../../../_static/logo_OL-lg.png" alt="Logo"/>
             </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="dump.html"
+                        title="previous chapter">dump</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="solr.html"
+                        title="next chapter">solr</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../_sources/api/openlibrary/data/sitemap.txt"
@@ -147,13 +105,22 @@ and &#8220;last_modified&#8221; columns. It is desirable that the file is sorted
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="solr.html" title="solr"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="dump.html" title="dump"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >data</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
       Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
     </div>
   </body>
 </html>

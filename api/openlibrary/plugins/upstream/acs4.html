@@ -22,7 +22,10 @@
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" /> 
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="upstream" href="index.html" />
+    <link rel="next" title="adapter" href="adapter.html" />
+    <link rel="prev" title="account" href="account.html" /> 
   </head>
   <body>
     <div class="related">
@@ -34,7 +37,17 @@
         <li class="right" >
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="adapter.html" title="adapter"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="account.html" title="account"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">upstream</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -43,8 +56,217 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="acs4">
-<h1>acs4<a class="headerlink" href="#acs4" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-openlibrary.plugins.upstream.acs4">
+<span id="acs4"></span><h1>acs4<a class="headerlink" href="#module-openlibrary.plugins.upstream.acs4" title="Permalink to this headline">¶</a></h1>
+<p>Copyright(c)2010 Internet Archive. Software license AGPL version 3.</p>
+<p>Entry points - call from command line, or see:
+queryresourceitems, upload, request and mint.</p>
+<dl class="exception">
+<dt id="openlibrary.plugins.upstream.acs4.Acs4Exception">
+<em class="property">exception </em><tt class="descclassname">openlibrary.plugins.upstream.acs4.</tt><tt class="descname">Acs4Exception</tt><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.Acs4Exception" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></tt></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.acs4.add_limit_el">
+<tt class="descclassname">openlibrary.plugins.upstream.acs4.</tt><tt class="descname">add_limit_el</tt><big>(</big><em>el</em>, <em>start</em>, <em>count</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.add_limit_el" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.acs4.debug_consumer">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.acs4.</tt><tt class="descname">debug_consumer</tt><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.debug_consumer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.plugins.upstream.acs4.debug_consumer.dump">
+<tt class="descname">dump</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.debug_consumer.dump" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.acs4.debug_consumer.update">
+<tt class="descname">update</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.debug_consumer.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.acs4.decompose_tag">
+<tt class="descclassname">openlibrary.plugins.upstream.acs4.</tt><tt class="descname">decompose_tag</tt><big>(</big><em>tag</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.decompose_tag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.acs4.el_to_o">
+<tt class="descclassname">openlibrary.plugins.upstream.acs4.</tt><tt class="descname">el_to_o</tt><big>(</big><em>el</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.el_to_o" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.acs4.get_distributor_info">
+<tt class="descclassname">openlibrary.plugins.upstream.acs4.</tt><tt class="descname">get_distributor_info</tt><big>(</big><em>server</em>, <em>password</em>, <em>distributor</em>, <em>port=8080</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.get_distributor_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.acs4.get_resourceitem_info">
+<tt class="descclassname">openlibrary.plugins.upstream.acs4.</tt><tt class="descname">get_resourceitem_info</tt><big>(</big><em>server</em>, <em>password</em>, <em>resource</em>, <em>port=8080</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.get_resourceitem_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.acs4.get_resourcekey_info">
+<tt class="descclassname">openlibrary.plugins.upstream.acs4.</tt><tt class="descname">get_resourcekey_info</tt><big>(</big><em>server</em>, <em>password</em>, <em>resource</em>, <em>port=8080</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.get_resourcekey_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a dict of information describing a resource.</p>
+<p>This is where permissions are handled in the ACS4 database.</p>
+<p>Note that this is in the &#8216;operator inventory&#8217;, not as assigned to
+a specific distributor.</p>
+<p>The resource permissions are not recursively parsed, but are
+returned as a string.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.acs4.make_expiration">
+<tt class="descclassname">openlibrary.plugins.upstream.acs4.</tt><tt class="descname">make_expiration</tt><big>(</big><em>seconds</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.make_expiration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.acs4.make_hmac">
+<tt class="descclassname">openlibrary.plugins.upstream.acs4.</tt><tt class="descname">make_hmac</tt><big>(</big><em>password</em>, <em>el</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.make_hmac" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize an element and make an hmac with it and the given password</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.acs4.mint">
+<tt class="descclassname">openlibrary.plugins.upstream.acs4.</tt><tt class="descname">mint</tt><big>(</big><em>server</em>, <em>secret</em>, <em>resource</em>, <em>action</em>, <em>ordersource</em>, <em>rights=None</em>, <em>orderid=None</em>, <em>port=8080</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.mint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an acs4 download link.</p>
+<p>&#8216;secret&#8217; should be the base-64 encoded secret key string for the
+resource distributor.  This can be obtained by calling
+get_distributor_info and using sharedSecret from the result.</p>
+<p>Arguments:
+server
+secret - distributor_info[&#8216;sharedSecret&#8217;]
+resource - the acs4 resource uuid
+action - &#8216;enterloan&#8217; or &#8216;enterorder&#8217;
+ordersource - &#8216;My Store Name&#8217;, or distributor_info[&#8216;name&#8217;]</p>
+<p>Keyword arguments:</p>
+<dl class="docutils">
+<dt>rights - Used to further restrict rights on downloaded resource.</dt>
+<dd>See Content Server Technical Reference, section 3.4 for
+details on this string.  To expire the book in one day, and
+allow printing 2 pages per hour, specify
+rights=&#8217;$lrt#86400$$prn#2#3600$&#8217;  Yep.  Note that this can&#8217;t
+extend the rights already granted in ACS4.</dd>
+<dt>orderid - an opaque token, &#8216;orderid&#8217; in generated link, notifyurl</dt>
+<dd>posts.  Note that this <em>must</em> be unique (within the expiration
+window) or loan fulfillment will fail.  If not supplied, a
+random one will be generated.</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.acs4.o_to_el">
+<tt class="descclassname">openlibrary.plugins.upstream.acs4.</tt><tt class="descname">o_to_el</tt><big>(</big><em>o</em>, <em>name</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.o_to_el" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.acs4.o_to_meta_el">
+<tt class="descclassname">openlibrary.plugins.upstream.acs4.</tt><tt class="descname">o_to_meta_el</tt><big>(</big><em>o</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.o_to_meta_el" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a dict of metadata into a valid dc metadata element</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.acs4.post">
+<tt class="descclassname">openlibrary.plugins.upstream.acs4.</tt><tt class="descname">post</tt><big>(</big><em>xml</em>, <em>server</em>, <em>port</em>, <em>password</em>, <em>api_path</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>sign and post supplied xml to server at api_path, returning the result.</p>
+<p>Adds expiration, nonce and hmac to post.</p>
+<p>Parses the reply for an error response, and throws an exception
+one is found.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.acs4.queryresourceitems">
+<tt class="descclassname">openlibrary.plugins.upstream.acs4.</tt><tt class="descname">queryresourceitems</tt><big>(</big><em>server</em>, <em>password</em>, <em>start=0</em>, <em>count=0</em>, <em>distributor=None</em>, <em>port=8080</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.queryresourceitems" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.acs4.read_xml">
+<tt class="descclassname">openlibrary.plugins.upstream.acs4.</tt><tt class="descname">read_xml</tt><big>(</big><em>xml</em>, <em>nodename</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.read_xml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse xml (a string?) and pluck out a named subelement.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.acs4.request">
+<tt class="descclassname">openlibrary.plugins.upstream.acs4.</tt><tt class="descname">request</tt><big>(</big><em>server</em>, <em>api</em>, <em>action</em>, <em>request_args</em>, <em>password</em>, <em>start=0</em>, <em>count=0</em>, <em>permissions=None</em>, <em>port=8080</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a xml-mediated DB request to the ACS4 server.</p>
+<p>Arguments:
+server</p>
+<dl class="docutils">
+<dt>api - one of: (unique id required to e.g. get a single instance)</dt>
+<dd>DistributionRights      (distributor + resource)
+Distributor             (distributor)
+Fulfillment             (fulfillment)
+FulfillmentItem         (fulfillment)
+License                 (user + resource)
+ResourceItem            (resource + item)
+ResourceKey             (resource)
+UserPublic              (user)</dd>
+</dl>
+<p>action - &#8216;get count create delete update&#8217;</p>
+<dl class="docutils">
+<dt>request_args - a dict of elements to be added as children of the</dt>
+<dd>&#8216;api element&#8217; (e.g. distributionRights).  Note <em>all</em> must be
+supplied for &#8216;update&#8217; action, or the remainder will be nulled.</dd>
+</dl>
+<p>Keyword arguments:
+port</p>
+<dl class="docutils">
+<dt>permissions - This should be xml describing the item permissions,</dt>
+<dd>if any.  The best way to get this is to configure a sample
+book in the ACS4 admin console UI, then copy it here.  Any
+valid ACS4 xml fragment that includes a &#8216;permissions&#8217; element
+should work.</dd>
+</dl>
+<p>USE WITH CARE, this API can break your acs4 install!</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.acs4.serialize_el">
+<tt class="descclassname">openlibrary.plugins.upstream.acs4.</tt><tt class="descname">serialize_el</tt><big>(</big><em>el</em>, <em>consumer</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.serialize_el" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recursively serialize the given element to supplied consumer</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.acs4.set_resourceitem_info">
+<tt class="descclassname">openlibrary.plugins.upstream.acs4.</tt><tt class="descname">set_resourceitem_info</tt><big>(</big><em>server</em>, <em>password</em>, <em>info</em>, <em>port=8080</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.set_resourceitem_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>note that acs4 won&#8217;t let this change metadata info</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.acs4.set_resourcekey_info">
+<tt class="descclassname">openlibrary.plugins.upstream.acs4.</tt><tt class="descname">set_resourcekey_info</tt><big>(</big><em>server</em>, <em>password</em>, <em>info</em>, <em>port=8080</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.set_resourcekey_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set information for a resource, given a dict describing it.</p>
+<p>The resource_info argument should be an object as returned from
+set_resource_info().</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.acs4.upload">
+<tt class="descclassname">openlibrary.plugins.upstream.acs4.</tt><tt class="descname">upload</tt><big>(</big><em>server</em>, <em>filehandle</em>, <em>password</em>, <em>datapath=None</em>, <em>port=8080</em>, <em>metadata=None</em>, <em>permissions=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.acs4.upload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upload a file to ACS4.</p>
+<p>Arguments:
+server
+filehandle
+password</p>
+<p>Keyword arguments:
+port</p>
+<dl class="docutils">
+<dt>datapath - Path ON SERVER to file to be packaged.  When this is supplied,</dt>
+<dd>filehandle should be None.</dd>
+<dt>permissions - This should be xml describing the item permissions,</dt>
+<dd>if any.  The best way to get this is to configure a sample
+book in the ACS4 admin console UI, then copy it here.  Any
+valid ACS4 xml fragment that includes a &#8216;permissions&#8217; element
+should work.  A permissions sub-dict as returned by other
+calls will also work.</dd>
+<dt>metadata - Similar to permissions.  A flat name <span class="classifier-delimiter">:</span> <span class="classifier">value dict is</span></dt>
+<dd>also accepted.  ACS4 will fill in missing values from the media.</dd>
+</dl>
+</dd></dl>
+
 </div>
 
 
@@ -56,6 +278,12 @@
             <p class="logo"><a href="../../../../index.html">
               <img class="logo" src="../../../../_static/logo_OL-lg.png" alt="Logo"/>
             </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="account.html"
+                        title="previous chapter">account</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="adapter.html"
+                        title="next chapter">adapter</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../../_sources/api/openlibrary/plugins/upstream/acs4.txt"
@@ -87,13 +315,23 @@
         <li class="right" >
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="adapter.html" title="adapter"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="account.html" title="account"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >upstream</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
       Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
     </div>
   </body>
 </html>

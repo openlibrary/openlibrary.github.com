@@ -22,7 +22,10 @@
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" /> 
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="upstream" href="index.html" />
+    <link rel="next" title="models" href="models.html" />
+    <link rel="prev" title="jsdef" href="jsdef.html" /> 
   </head>
   <body>
     <div class="related">
@@ -34,7 +37,17 @@
         <li class="right" >
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="models.html" title="models"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="jsdef.html" title="jsdef"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">upstream</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -43,172 +56,8 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="module-openlibrary.plugins.upstream.merge_authors">
-<span id="merge-authors"></span><h1>merge_authors<a class="headerlink" href="#module-openlibrary.plugins.upstream.merge_authors" title="Permalink to this headline">¶</a></h1>
-<p>Merge authors.</p>
-<dl class="class">
-<dt id="openlibrary.plugins.upstream.merge_authors.AuthorMergeEngine">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.merge_authors.</tt><tt class="descname">AuthorMergeEngine</tt><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.AuthorMergeEngine" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.upstream.merge_authors.BasicMergeEngine" title="openlibrary.plugins.upstream.merge_authors.BasicMergeEngine"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.upstream.merge_authors.BasicMergeEngine</span></tt></a></p>
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.merge_authors.AuthorMergeEngine.find_backreferences">
-<tt class="descname">find_backreferences</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.AuthorMergeEngine.find_backreferences" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.merge_authors.AuthorMergeEngine.merge_docs">
-<tt class="descname">merge_docs</tt><big>(</big><em>master</em>, <em>dup</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.AuthorMergeEngine.merge_docs" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.merge_authors.AuthorMergeEngine.save">
-<tt class="descname">save</tt><big>(</big><em>docs</em>, <em>master</em>, <em>duplicates</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.AuthorMergeEngine.save" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.plugins.upstream.merge_authors.BasicMergeEngine">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.merge_authors.</tt><tt class="descname">BasicMergeEngine</tt><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.BasicMergeEngine" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generic merge functionality useful for all types of merges.</p>
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.merge_authors.BasicMergeEngine.convert_doc">
-<tt class="descname">convert_doc</tt><big>(</big><em>doc</em>, <em>master</em>, <em>duplicates</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.BasicMergeEngine.convert_doc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Converts references to any of the duplicates in the given doc to the master.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.merge_authors.BasicMergeEngine.do_merge">
-<tt class="descname">do_merge</tt><big>(</big><em>master</em>, <em>duplicates</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.BasicMergeEngine.do_merge" title="Permalink to this definition">¶</a></dt>
-<dd><p>Performs the merge and returns the list of docs to save.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.merge_authors.BasicMergeEngine.find_all_backreferences">
-<tt class="descname">find_all_backreferences</tt><big>(</big><em>duplicates</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.BasicMergeEngine.find_all_backreferences" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.merge_authors.BasicMergeEngine.find_backreferences">
-<tt class="descname">find_backreferences</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.BasicMergeEngine.find_backreferences" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns keys of all the docs which have a reference to the given key.</p>
-<p>All the subclasses must provide an implementation for this method.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.merge_authors.BasicMergeEngine.get_many">
-<tt class="descname">get_many</tt><big>(</big><em>keys</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.BasicMergeEngine.get_many" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.merge_authors.BasicMergeEngine.make_redirect_doc">
-<tt class="descname">make_redirect_doc</tt><big>(</big><em>key</em>, <em>redirect</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.BasicMergeEngine.make_redirect_doc" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.merge_authors.BasicMergeEngine.merge">
-<tt class="descname">merge</tt><big>(</big><em>master</em>, <em>duplicates</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.BasicMergeEngine.merge" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.merge_authors.BasicMergeEngine.merge_docs">
-<tt class="descname">merge_docs</tt><big>(</big><em>master</em>, <em>dup</em>, <em>ignore=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.BasicMergeEngine.merge_docs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Merge duplicate doc into master doc.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.merge_authors.BasicMergeEngine.merge_property">
-<tt class="descname">merge_property</tt><big>(</big><em>a</em>, <em>b</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.BasicMergeEngine.merge_property" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.merge_authors.BasicMergeEngine.save">
-<tt class="descname">save</tt><big>(</big><em>docs</em>, <em>master</em>, <em>duplicates</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.BasicMergeEngine.save" title="Permalink to this definition">¶</a></dt>
-<dd><p>Saves the effected docs because of merge.</p>
-<p>All the subclasses must provide an implementation for this method.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.plugins.upstream.merge_authors.dicthash">
-<tt class="descclassname">openlibrary.plugins.upstream.merge_authors.</tt><tt class="descname">dicthash</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.dicthash" title="Permalink to this definition">¶</a></dt>
-<dd><p>Dictionaries are not hashable. This function converts dictionary into nested tuples, so that it can hashed.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.plugins.upstream.merge_authors.fix_table_of_contents">
-<tt class="descclassname">openlibrary.plugins.upstream.merge_authors.</tt><tt class="descname">fix_table_of_contents</tt><big>(</big><em>table_of_contents</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.fix_table_of_contents" title="Permalink to this definition">¶</a></dt>
-<dd><p>Some books have bad table_of_contents. This function converts them in to correct format.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.plugins.upstream.merge_authors.merge_authors">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.merge_authors.</tt><tt class="descname">merge_authors</tt><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.merge_authors" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></p>
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.merge_authors.merge_authors.GET">
-<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.merge_authors.GET" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.merge_authors.merge_authors.POST">
-<tt class="descname">POST</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.merge_authors.POST" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.merge_authors.merge_authors.filter_authors">
-<tt class="descname">filter_authors</tt><big>(</big><em>keys</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.merge_authors.filter_authors" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.merge_authors.merge_authors.is_enabled">
-<tt class="descname">is_enabled</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.merge_authors.is_enabled" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.plugins.upstream.merge_authors.merge_authors_json">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.merge_authors.</tt><tt class="descname">merge_authors_json</tt><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.merge_authors_json" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></p>
-<p>JSON API for merge authors.</p>
-<p>This is called from the master author page to trigger the merge while displaying progress.</p>
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.merge_authors.merge_authors_json.POST">
-<tt class="descname">POST</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.merge_authors_json.POST" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.merge_authors.merge_authors_json.is_enabled">
-<tt class="descname">is_enabled</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.merge_authors_json.is_enabled" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.plugins.upstream.merge_authors.name_eq">
-<tt class="descclassname">openlibrary.plugins.upstream.merge_authors.</tt><tt class="descname">name_eq</tt><big>(</big><em>n1</em>, <em>n2</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.name_eq" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.plugins.upstream.merge_authors.setup">
-<tt class="descclassname">openlibrary.plugins.upstream.merge_authors.</tt><tt class="descname">setup</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.setup" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.plugins.upstream.merge_authors.space_squash_and_strip">
-<tt class="descclassname">openlibrary.plugins.upstream.merge_authors.</tt><tt class="descname">space_squash_and_strip</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.space_squash_and_strip" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.plugins.upstream.merge_authors.uniq">
-<tt class="descclassname">openlibrary.plugins.upstream.merge_authors.</tt><tt class="descname">uniq</tt><big>(</big><em>values</em>, <em>key=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.merge_authors.uniq" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the unique entries from the given values in the original order.</p>
-<p>The value of the optional <cite>key</cite> parameter should be a function that takes
-a single argument and returns a key to test the uniqueness.</p>
-</dd></dl>
-
+  <div class="section" id="merge-authors">
+<h1>merge_authors<a class="headerlink" href="#merge-authors" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -220,6 +69,12 @@ a single argument and returns a key to test the uniqueness.</p>
             <p class="logo"><a href="../../../../index.html">
               <img class="logo" src="../../../../_static/logo_OL-lg.png" alt="Logo"/>
             </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="jsdef.html"
+                        title="previous chapter">jsdef</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="models.html"
+                        title="next chapter">models</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../../_sources/api/openlibrary/plugins/upstream/merge_authors.txt"
@@ -251,13 +106,23 @@ a single argument and returns a key to test the uniqueness.</p>
         <li class="right" >
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="models.html" title="models"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="jsdef.html" title="jsdef"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >upstream</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
       Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
     </div>
   </body>
 </html>

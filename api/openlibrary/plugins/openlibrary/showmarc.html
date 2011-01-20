@@ -22,7 +22,10 @@
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" /> 
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="openlibrary" href="index.html" />
+    <link rel="next" title="utils" href="utils.html" />
+    <link rel="prev" title="schema" href="schema.html" /> 
   </head>
   <body>
     <div class="related">
@@ -34,7 +37,17 @@
         <li class="right" >
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="utils.html" title="utils"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="schema.html" title="schema"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">openlibrary</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -43,53 +56,8 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="module-openlibrary.plugins.openlibrary.showmarc">
-<span id="showmarc"></span><h1>showmarc<a class="headerlink" href="#module-openlibrary.plugins.openlibrary.showmarc" title="Permalink to this headline">¶</a></h1>
-<p>Hook to show mark details in Open Library.</p>
-<dl class="class">
-<dt id="openlibrary.plugins.openlibrary.showmarc.old_show_marc">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.showmarc.</tt><tt class="descname">old_show_marc</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.showmarc.old_show_marc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></p>
-<dl class="method">
-<dt id="openlibrary.plugins.openlibrary.showmarc.old_show_marc.GET">
-<tt class="descname">GET</tt><big>(</big><em>param</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.showmarc.old_show_marc.GET" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.plugins.openlibrary.showmarc.show_amazon">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.showmarc.</tt><tt class="descname">show_amazon</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.showmarc.show_amazon" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></p>
-<dl class="method">
-<dt id="openlibrary.plugins.openlibrary.showmarc.show_amazon.GET">
-<tt class="descname">GET</tt><big>(</big><em>asin</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.showmarc.show_amazon.GET" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.plugins.openlibrary.showmarc.show_ia">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.showmarc.</tt><tt class="descname">show_ia</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.showmarc.show_ia" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></p>
-<dl class="method">
-<dt id="openlibrary.plugins.openlibrary.showmarc.show_ia.GET">
-<tt class="descname">GET</tt><big>(</big><em>ia</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.showmarc.show_ia.GET" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.plugins.openlibrary.showmarc.show_marc">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.showmarc.</tt><tt class="descname">show_marc</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.showmarc.show_marc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></p>
-<dl class="method">
-<dt id="openlibrary.plugins.openlibrary.showmarc.show_marc.GET">
-<tt class="descname">GET</tt><big>(</big><em>filename</em>, <em>offset</em>, <em>length</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.showmarc.show_marc.GET" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
+  <div class="section" id="showmarc">
+<h1>showmarc<a class="headerlink" href="#showmarc" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -101,6 +69,12 @@
             <p class="logo"><a href="../../../../index.html">
               <img class="logo" src="../../../../_static/logo_OL-lg.png" alt="Logo"/>
             </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="schema.html"
+                        title="previous chapter">schema</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="utils.html"
+                        title="next chapter">utils</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../../_sources/api/openlibrary/plugins/openlibrary/showmarc.txt"
@@ -132,13 +106,23 @@
         <li class="right" >
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="utils.html" title="utils"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="schema.html" title="schema"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >openlibrary</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
       Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
     </div>
   </body>
 </html>

@@ -22,7 +22,10 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" /> 
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="core" href="index.html" />
+    <link rel="next" title="processors" href="processors/index.html" />
+    <link rel="prev" title="models" href="models.html" /> 
   </head>
   <body>
     <div class="related">
@@ -34,7 +37,16 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="processors/index.html" title="processors"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="models.html" title="models"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">core</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -43,55 +55,8 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="module-openlibrary.core.olmarkdown">
-<span id="olmarkdown"></span><h1>olmarkdown<a class="headerlink" href="#module-openlibrary.core.olmarkdown" title="Permalink to this headline">¶</a></h1>
-<p>Open Library Flavored Markdown, inspired by [Github Flavored Markdown][GFM].</p>
-<p>GFM: <a class="reference external" href="http://github.github.com/github-flavored-markdown/">http://github.github.com/github-flavored-markdown/</a></p>
-<p>Differences from traditional Markdown:
-* new lines in paragraph are treated as line breaks
-* URLs are autolinked
-* generated HTML is sanitized</p>
-<p>The custom changes done here to markdown are also reptead in WMD editor, 
-the javascript markdown editor used in OL.</p>
-<dl class="class">
-<dt id="openlibrary.core.olmarkdown.AutolinkPreprocessor">
-<em class="property">class </em><tt class="descclassname">openlibrary.core.olmarkdown.</tt><tt class="descname">AutolinkPreprocessor</tt><a class="headerlink" href="#openlibrary.core.olmarkdown.AutolinkPreprocessor" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.markdown.markdown.Preprocessor</span></tt></p>
-<dl class="method">
-<dt id="openlibrary.core.olmarkdown.AutolinkPreprocessor.run">
-<tt class="descname">run</tt><big>(</big><em>lines</em><big>)</big><a class="headerlink" href="#openlibrary.core.olmarkdown.AutolinkPreprocessor.run" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.core.olmarkdown.LineBreaksPreprocessor">
-<em class="property">class </em><tt class="descclassname">openlibrary.core.olmarkdown.</tt><tt class="descname">LineBreaksPreprocessor</tt><a class="headerlink" href="#openlibrary.core.olmarkdown.LineBreaksPreprocessor" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.markdown.markdown.Preprocessor</span></tt></p>
-<dl class="method">
-<dt id="openlibrary.core.olmarkdown.LineBreaksPreprocessor.run">
-<tt class="descname">run</tt><big>(</big><em>lines</em><big>)</big><a class="headerlink" href="#openlibrary.core.olmarkdown.LineBreaksPreprocessor.run" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.core.olmarkdown.OLMarkdown">
-<em class="property">class </em><tt class="descclassname">openlibrary.core.olmarkdown.</tt><tt class="descname">OLMarkdown</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.core.olmarkdown.OLMarkdown" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.markdown.markdown.Markdown</span></tt></p>
-<p>Open Library flavored Markdown, inspired by [Github Flavored Markdown][GFM].</p>
-<p>GFM: <a class="reference external" href="http://github.github.com/github-flavored-markdown/">http://github.github.com/github-flavored-markdown/</a></p>
-<p>Differences from traditional Markdown:
-* new lines in paragraph are treated as line breaks
-* URLs are autolinked
-* generated HTML is sanitized</p>
-<dl class="method">
-<dt id="openlibrary.core.olmarkdown.OLMarkdown.convert">
-<tt class="descname">convert</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.olmarkdown.OLMarkdown.convert" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
+  <div class="section" id="olmarkdown">
+<h1>olmarkdown<a class="headerlink" href="#olmarkdown" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -103,6 +68,12 @@ the javascript markdown editor used in OL.</p>
             <p class="logo"><a href="../../../index.html">
               <img class="logo" src="../../../_static/logo_OL-lg.png" alt="Logo"/>
             </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="models.html"
+                        title="previous chapter">models</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="processors/index.html"
+                        title="next chapter">processors</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../_sources/api/openlibrary/core/olmarkdown.txt"
@@ -134,13 +105,22 @@ the javascript markdown editor used in OL.</p>
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="processors/index.html" title="processors"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="models.html" title="models"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >core</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
       Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
     </div>
   </body>
 </html>

@@ -22,7 +22,10 @@
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" /> 
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="lists" href="index.html" />
+    <link rel="next" title="updater" href="updater.html" />
+    <link rel="prev" title="engine" href="engine.html" /> 
   </head>
   <body>
     <div class="related">
@@ -34,7 +37,17 @@
         <li class="right" >
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="updater.html" title="updater"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="engine.html" title="engine"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >core</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">lists</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -43,238 +56,8 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="module-openlibrary.core.lists.model">
-<span id="model"></span><h1>model<a class="headerlink" href="#module-openlibrary.core.lists.model" title="Permalink to this headline">¶</a></h1>
-<p>Helper functions used by the List model.</p>
-<dl class="class">
-<dt id="openlibrary.core.lists.model.ListMixin">
-<em class="property">class </em><tt class="descclassname">openlibrary.core.lists.model.</tt><tt class="descname">ListMixin</tt><a class="headerlink" href="#openlibrary.core.lists.model.ListMixin" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="attribute">
-<dt id="openlibrary.core.lists.model.ListMixin.ebook_count">
-<tt class="descname">ebook_count</tt><a class="headerlink" href="#openlibrary.core.lists.model.ListMixin.ebook_count" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="openlibrary.core.lists.model.ListMixin.edition_count">
-<tt class="descname">edition_count</tt><a class="headerlink" href="#openlibrary.core.lists.model.ListMixin.edition_count" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.model.ListMixin.get_couchdb_docs">
-<tt class="descname">get_couchdb_docs</tt><big>(</big><em>db</em>, <em>keys</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.ListMixin.get_couchdb_docs" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.model.ListMixin.get_default_cover">
-<tt class="descname">get_default_cover</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.ListMixin.get_default_cover" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.model.ListMixin.get_editions">
-<tt class="descname">get_editions</tt><big>(</big><em>limit=50</em>, <em>offset=0</em>, <em>_raw=False</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.ListMixin.get_editions" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the editions objects belonged to this list ordered by last_modified.</p>
-<p>When _raw=True, the edtion dicts are returned instead of edtion objects.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.model.ListMixin.get_seed">
-<tt class="descname">get_seed</tt><big>(</big><em>seed</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.ListMixin.get_seed" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.model.ListMixin.get_seeds">
-<tt class="descname">get_seeds</tt><big>(</big><em>sort=False</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.ListMixin.get_seeds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.model.ListMixin.get_subjects">
-<tt class="descname">get_subjects</tt><big>(</big><em>limit=20</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.ListMixin.get_subjects" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.model.ListMixin.get_top_subjects">
-<tt class="descname">get_top_subjects</tt><big>(</big><em>limit=20</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.ListMixin.get_top_subjects" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.model.ListMixin.get_works">
-<tt class="descname">get_works</tt><big>(</big><em>limit=50</em>, <em>offset=0</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.ListMixin.get_works" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.model.ListMixin.has_seed">
-<tt class="descname">has_seed</tt><big>(</big><em>seed</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.ListMixin.has_seed" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="openlibrary.core.lists.model.ListMixin.last_update">
-<tt class="descname">last_update</tt><a class="headerlink" href="#openlibrary.core.lists.model.ListMixin.last_update" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.model.ListMixin.load_changesets">
-<tt class="descname">load_changesets</tt><big>(</big><em>editions</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.ListMixin.load_changesets" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds &#8220;recent_changeset&#8221; to each edition.</p>
-<dl class="docutils">
-<dt>The recent_changeset will be of the form:</dt>
-<dd><dl class="first docutils">
-<dt>{</dt>
-<dd><p class="first">&#8220;id&#8221;: &#8221;...&#8221;,
-&#8220;author&#8221;: {</p>
-<blockquote>
-&#8220;key&#8221;: &#8221;..&#8221;, 
-&#8220;displayname&#8221;, &#8221;...&#8221;</blockquote>
-<p class="last">}, 
-&#8220;timestamp&#8221;: &#8221;...&#8221;,
-&#8220;ip&#8221;: &#8221;...&#8221;,
-&#8220;comment&#8221;: &#8221;...&#8221;</p>
-</dd>
-</dl>
-<p class="last">}</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.model.ListMixin.preload_authors">
-<tt class="descname">preload_authors</tt><big>(</big><em>editions</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.ListMixin.preload_authors" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.model.ListMixin.preload_works">
-<tt class="descname">preload_works</tt><big>(</big><em>editions</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.ListMixin.preload_works" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.model.ListMixin.preview">
-<tt class="descname">preview</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.ListMixin.preview" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return data to preview this list.</p>
-<p>Used in the API.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="openlibrary.core.lists.model.ListMixin.seed_summary">
-<tt class="descname">seed_summary</tt><a class="headerlink" href="#openlibrary.core.lists.model.ListMixin.seed_summary" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="openlibrary.core.lists.model.ListMixin.work_count">
-<tt class="descname">work_count</tt><a class="headerlink" href="#openlibrary.core.lists.model.ListMixin.work_count" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.core.lists.model.Seed">
-<em class="property">class </em><tt class="descclassname">openlibrary.core.lists.model.</tt><tt class="descname">Seed</tt><big>(</big><em>list</em>, <em>value</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.Seed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Seed of a list.</p>
-<dl class="docutils">
-<dt>Attributes:</dt>
-<dd><ul class="first last simple">
-<li>work_count</li>
-<li>edition_count</li>
-<li>ebook_count</li>
-<li>last_update</li>
-<li>type - &#8220;edition&#8221;, &#8220;work&#8221; or &#8220;subject&#8221;</li>
-<li>document - reference to the edition/work document</li>
-<li>title</li>
-<li>url</li>
-<li>cover</li>
-</ul>
-</dd>
-</dl>
-<dl class="attribute">
-<dt id="openlibrary.core.lists.model.Seed.cover">
-<tt class="descname">cover</tt><a class="headerlink" href="#openlibrary.core.lists.model.Seed.cover" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.model.Seed.dict">
-<tt class="descname">dict</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.Seed.dict" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="openlibrary.core.lists.model.Seed.ebook_count">
-<tt class="descname">ebook_count</tt><a class="headerlink" href="#openlibrary.core.lists.model.Seed.ebook_count" title="Permalink to this definition">¶</a></dt>
-<dd><p>ebooks</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="openlibrary.core.lists.model.Seed.edition_count">
-<tt class="descname">edition_count</tt><a class="headerlink" href="#openlibrary.core.lists.model.Seed.edition_count" title="Permalink to this definition">¶</a></dt>
-<dd><p>editions</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.model.Seed.get_cover">
-<tt class="descname">get_cover</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.Seed.get_cover" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.model.Seed.get_subject_url">
-<tt class="descname">get_subject_url</tt><big>(</big><em>subject</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.Seed.get_subject_url" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.model.Seed.get_title">
-<tt class="descname">get_title</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.Seed.get_title" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.model.Seed.get_url">
-<tt class="descname">get_url</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.Seed.get_url" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="openlibrary.core.lists.model.Seed.last_update">
-<tt class="descname">last_update</tt><a class="headerlink" href="#openlibrary.core.lists.model.Seed.last_update" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="openlibrary.core.lists.model.Seed.title">
-<tt class="descname">title</tt><a class="headerlink" href="#openlibrary.core.lists.model.Seed.title" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="openlibrary.core.lists.model.Seed.url">
-<tt class="descname">url</tt><a class="headerlink" href="#openlibrary.core.lists.model.Seed.url" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="openlibrary.core.lists.model.Seed.work_count">
-<tt class="descname">work_count</tt><a class="headerlink" href="#openlibrary.core.lists.model.Seed.work_count" title="Permalink to this definition">¶</a></dt>
-<dd><p>works</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.core.lists.model.cached_property">
-<tt class="descclassname">openlibrary.core.lists.model.</tt><tt class="descname">cached_property</tt><big>(</big><em>name</em>, <em>getter</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.cached_property" title="Permalink to this definition">¶</a></dt>
-<dd><p>Just like property, but the getter is called only for the first access.</p>
-<p>All subsequent accesses will use the cached value.</p>
-<p>The name argument must be same as the property name.</p>
-<p>Sample Usage:</p>
-<blockquote>
-count = cached_property(&#8220;count&#8221;, get_count)</blockquote>
-</dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.core.lists.model.crossproduct">
-<tt class="descclassname">openlibrary.core.lists.model.</tt><tt class="descname">crossproduct</tt><big>(</big><em>A</em>, <em>B</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.crossproduct" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.core.lists.model.get_subject">
-<tt class="descclassname">openlibrary.core.lists.model.</tt><tt class="descname">get_subject</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.get_subject" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.core.lists.model.valuesort">
-<tt class="descclassname">openlibrary.core.lists.model.</tt><tt class="descname">valuesort</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.valuesort" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sorts the keys in the dictionary based on the values.</p>
-</dd></dl>
-
+  <div class="section" id="model">
+<h1>model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -286,6 +69,12 @@ count = cached_property(&#8220;count&#8221;, get_count)</blockquote>
             <p class="logo"><a href="../../../../index.html">
               <img class="logo" src="../../../../_static/logo_OL-lg.png" alt="Logo"/>
             </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="engine.html"
+                        title="previous chapter">engine</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="updater.html"
+                        title="next chapter">updater</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../../_sources/api/openlibrary/core/lists/model.txt"
@@ -317,13 +106,23 @@ count = cached_property(&#8220;count&#8221;, get_count)</blockquote>
         <li class="right" >
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="updater.html" title="updater"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="engine.html" title="engine"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >core</a> &raquo;</li>
+          <li><a href="index.html" >lists</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
       Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
     </div>
   </body>
 </html>

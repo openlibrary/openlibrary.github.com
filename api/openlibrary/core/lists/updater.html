@@ -22,7 +22,10 @@
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" /> 
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="lists" href="index.html" />
+    <link rel="next" title="middleware" href="../middleware.html" />
+    <link rel="prev" title="model" href="model.html" /> 
   </head>
   <body>
     <div class="related">
@@ -34,7 +37,17 @@
         <li class="right" >
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="../middleware.html" title="middleware"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="model.html" title="model"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >core</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">lists</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -43,192 +56,8 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="module-openlibrary.core.lists.updater">
-<span id="updater"></span><h1>updater<a class="headerlink" href="#module-openlibrary.core.lists.updater" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="openlibrary.core.lists.updater.CachedDatabase">
-<em class="property">class </em><tt class="descclassname">openlibrary.core.lists.updater.</tt><tt class="descname">CachedDatabase</tt><big>(</big><em>db</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.CachedDatabase" title="Permalink to this definition">¶</a></dt>
-<dd><p>CouchDB Database that caches some documents locally for faster access.</p>
-<dl class="method">
-<dt id="openlibrary.core.lists.updater.CachedDatabase.commit">
-<tt class="descname">commit</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.CachedDatabase.commit" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.updater.CachedDatabase.get">
-<tt class="descname">get</tt><big>(</big><em>key</em>, <em>default=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.CachedDatabase.get" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.updater.CachedDatabase.preload">
-<tt class="descname">preload</tt><big>(</big><em>keys</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.CachedDatabase.preload" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.updater.CachedDatabase.reset">
-<tt class="descname">reset</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.CachedDatabase.reset" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.updater.CachedDatabase.save">
-<tt class="descname">save</tt><big>(</big><em>doc</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.CachedDatabase.save" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.updater.CachedDatabase.view">
-<tt class="descname">view</tt><big>(</big><em>name</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.CachedDatabase.view" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.core.lists.updater.EditionsDB">
-<em class="property">class </em><tt class="descclassname">openlibrary.core.lists.updater.</tt><tt class="descname">EditionsDB</tt><big>(</big><em>db</em>, <em>works_db</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.EditionsDB" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="openlibrary.core.lists.updater.EditionsDB.update_editions">
-<tt class="descname">update_editions</tt><big>(</big><em>editions</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.EditionsDB.update_editions" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.core.lists.updater.SeedsDB">
-<em class="property">class </em><tt class="descclassname">openlibrary.core.lists.updater.</tt><tt class="descname">SeedsDB</tt><big>(</big><em>db</em>, <em>works_db</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.SeedsDB" title="Permalink to this definition">¶</a></dt>
-<dd><p>The seed db stores summary like work_count, edition_count, ebook_count,
-last_update, subjects etc for each seed.</p>
-<p>The class provides methods to update the seeds database by reprocessing
-the associated work docs from works db.</p>
-<dl class="method">
-<dt id="openlibrary.core.lists.updater.SeedsDB.get_big_seeds">
-<tt class="descname">get_big_seeds</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.SeedsDB.get_big_seeds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.updater.SeedsDB.mark_seeds_for_update">
-<tt class="descname">mark_seeds_for_update</tt><big>(</big><em>seeds</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.SeedsDB.mark_seeds_for_update" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.updater.SeedsDB.update_seeds">
-<tt class="descname">update_seeds</tt><big>(</big><em>seeds</em>, <em>chunksize=50</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.SeedsDB.update_seeds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.core.lists.updater.Timer">
-<em class="property">class </em><tt class="descclassname">openlibrary.core.lists.updater.</tt><tt class="descname">Timer</tt><a class="headerlink" href="#openlibrary.core.lists.updater.Timer" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="openlibrary.core.lists.updater.Timer.end">
-<tt class="descname">end</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.Timer.end" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.updater.Timer.print_summary">
-<tt class="descname">print_summary</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.Timer.print_summary" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.updater.Timer.start">
-<tt class="descname">start</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.Timer.start" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.core.lists.updater.Updater">
-<em class="property">class </em><tt class="descclassname">openlibrary.core.lists.updater.</tt><tt class="descname">Updater</tt><big>(</big><em>config</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.Updater" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="openlibrary.core.lists.updater.Updater.create_db">
-<tt class="descname">create_db</tt><big>(</big><em>url</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.Updater.create_db" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.updater.Updater.process_changeset">
-<tt class="descname">process_changeset</tt><big>(</big><em>changeset</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.Updater.process_changeset" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.updater.Updater.process_changesets">
-<tt class="descname">process_changesets</tt><big>(</big><em>changesets</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.Updater.process_changesets" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.updater.Updater.update_pending_seeds">
-<tt class="descname">update_pending_seeds</tt><big>(</big><em>limit=100</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.Updater.update_pending_seeds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.updater.Updater.update_seeds">
-<tt class="descname">update_seeds</tt><big>(</big><em>seeds</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.Updater.update_seeds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.core.lists.updater.UpdaterContext">
-<em class="property">class </em><tt class="descclassname">openlibrary.core.lists.updater.</tt><tt class="descname">UpdaterContext</tt><a class="headerlink" href="#openlibrary.core.lists.updater.UpdaterContext" title="Permalink to this definition">¶</a></dt>
-<dd><p>The state of the updater.</p>
-<p>The updater context contains 3 dicts to store works, editions and seeds.</p>
-<dl class="method">
-<dt id="openlibrary.core.lists.updater.UpdaterContext.add_editions">
-<tt class="descname">add_editions</tt><big>(</big><em>editions</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.UpdaterContext.add_editions" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.updater.UpdaterContext.add_seeds">
-<tt class="descname">add_seeds</tt><big>(</big><em>seeds</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.UpdaterContext.add_seeds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.core.lists.updater.WorksDB">
-<em class="property">class </em><tt class="descclassname">openlibrary.core.lists.updater.</tt><tt class="descname">WorksDB</tt><big>(</big><em>db</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.WorksDB" title="Permalink to this definition">¶</a></dt>
-<dd><p>The works db contains the denormalized works.</p>
-<p>This class provides methods to update the database whenever a work or an
-edition is updated.</p>
-<dl class="method">
-<dt id="openlibrary.core.lists.updater.WorksDB.get_works">
-<tt class="descname">get_works</tt><big>(</big><em>seed</em>, <em>chunksize=1000</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.WorksDB.get_works" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.updater.WorksDB.update_edition">
-<tt class="descname">update_edition</tt><big>(</big><em>ctx</em>, <em>edition</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.WorksDB.update_edition" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.updater.WorksDB.update_editions">
-<tt class="descname">update_editions</tt><big>(</big><em>ctx</em>, <em>editions</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.WorksDB.update_editions" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.updater.WorksDB.update_work">
-<tt class="descname">update_work</tt><big>(</big><em>ctx</em>, <em>work</em>, <em>get=None</em>, <em>save=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.WorksDB.update_work" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds/Updates the given work in the database.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.lists.updater.WorksDB.update_works">
-<tt class="descname">update_works</tt><big>(</big><em>ctx</em>, <em>works</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.WorksDB.update_works" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.core.lists.updater.couchdb_bulk_save">
-<tt class="descclassname">openlibrary.core.lists.updater.</tt><tt class="descname">couchdb_bulk_save</tt><big>(</big><em>db</em>, <em>docs</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.couchdb_bulk_save" title="Permalink to this definition">¶</a></dt>
-<dd><p>Saves/updates the given docs into the given couchdb database using bulk save.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.core.lists.updater.main">
-<tt class="descclassname">openlibrary.core.lists.updater.</tt><tt class="descname">main</tt><big>(</big><em>configfile</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.main" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates an updater using the config files and calls it with changesets read from stdin.</p>
-<p>Expects one changeset per line in JSON format.</p>
-</dd></dl>
-
+  <div class="section" id="updater">
+<h1>updater<a class="headerlink" href="#updater" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -240,6 +69,12 @@ edition is updated.</p>
             <p class="logo"><a href="../../../../index.html">
               <img class="logo" src="../../../../_static/logo_OL-lg.png" alt="Logo"/>
             </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="model.html"
+                        title="previous chapter">model</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../middleware.html"
+                        title="next chapter">middleware</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../../_sources/api/openlibrary/core/lists/updater.txt"
@@ -271,13 +106,23 @@ edition is updated.</p>
         <li class="right" >
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="../middleware.html" title="middleware"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="model.html" title="model"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >core</a> &raquo;</li>
+          <li><a href="index.html" >lists</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
       Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
     </div>
   </body>
 </html>

@@ -22,7 +22,10 @@
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" /> 
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="upstream" href="index.html" />
+    <link rel="next" title="utils" href="utils.html" />
+    <link rel="prev" title="models" href="models.html" /> 
   </head>
   <body>
     <div class="related">
@@ -34,7 +37,17 @@
         <li class="right" >
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="utils.html" title="utils"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="models.html" title="models"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">upstream</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -43,121 +56,8 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="module-openlibrary.plugins.upstream.recentchanges">
-<span id="recentchanges"></span><h1>recentchanges<a class="headerlink" href="#module-openlibrary.plugins.upstream.recentchanges" title="Permalink to this headline">¶</a></h1>
-<p>New recentchanges implementation.</p>
-<p>This should go into infogami.</p>
-<dl class="class">
-<dt id="openlibrary.plugins.upstream.recentchanges.history">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.recentchanges.</tt><tt class="descname">history</tt><a class="headerlink" href="#openlibrary.plugins.upstream.recentchanges.history" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.mode</span></tt></p>
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.recentchanges.history.GET">
-<tt class="descname">GET</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.recentchanges.history.GET" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.plugins.upstream.recentchanges.index">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.recentchanges.</tt><tt class="descname">index</tt><a class="headerlink" href="#openlibrary.plugins.upstream.recentchanges.index" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></p>
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.recentchanges.index.GET">
-<tt class="descname">GET</tt><big>(</big><em>kind</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.recentchanges.index.GET" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.recentchanges.index.handle_encoding">
-<tt class="descname">handle_encoding</tt><big>(</big><em>query</em>, <em>encoding</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.recentchanges.index.handle_encoding" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.recentchanges.index.is_enabled">
-<tt class="descname">is_enabled</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.recentchanges.index.is_enabled" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.recentchanges.index.render">
-<tt class="descname">render</tt><big>(</big><em>date=None</em>, <em>kind=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.recentchanges.index.render" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.recentchanges.index.yaml_dump">
-<tt class="descname">yaml_dump</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.recentchanges.index.yaml_dump" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.plugins.upstream.recentchanges.index2">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.recentchanges.</tt><tt class="descname">index2</tt><a class="headerlink" href="#openlibrary.plugins.upstream.recentchanges.index2" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></p>
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.recentchanges.index2.GET">
-<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.recentchanges.index2.GET" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.plugins.upstream.recentchanges.index_with_date">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.recentchanges.</tt><tt class="descname">index_with_date</tt><a class="headerlink" href="#openlibrary.plugins.upstream.recentchanges.index_with_date" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.upstream.recentchanges.index" title="openlibrary.plugins.upstream.recentchanges.index"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.upstream.recentchanges.index</span></tt></a></p>
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.recentchanges.index_with_date.GET">
-<tt class="descname">GET</tt><big>(</big><em>date</em>, <em>kind</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.recentchanges.index_with_date.GET" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.plugins.upstream.recentchanges.recentchanges">
-<tt class="descclassname">openlibrary.plugins.upstream.recentchanges.</tt><tt class="descname">recentchanges</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.recentchanges.recentchanges" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.plugins.upstream.recentchanges.recentchanges_redirect">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.recentchanges.</tt><tt class="descname">recentchanges_redirect</tt><a class="headerlink" href="#openlibrary.plugins.upstream.recentchanges.recentchanges_redirect" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></p>
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.recentchanges.recentchanges_redirect.GET">
-<tt class="descname">GET</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.recentchanges.recentchanges_redirect.GET" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.recentchanges.recentchanges_redirect.is_enabled">
-<tt class="descname">is_enabled</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.recentchanges.recentchanges_redirect.is_enabled" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.plugins.upstream.recentchanges.recentchanges_view">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.recentchanges.</tt><tt class="descname">recentchanges_view</tt><a class="headerlink" href="#openlibrary.plugins.upstream.recentchanges.recentchanges_view" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></p>
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.recentchanges.recentchanges_view.GET">
-<tt class="descname">GET</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.recentchanges.recentchanges_view.GET" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.recentchanges.recentchanges_view.POST">
-<tt class="descname">POST</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.recentchanges.recentchanges_view.POST" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.recentchanges.recentchanges_view.get_change_url">
-<tt class="descname">get_change_url</tt><big>(</big><em>change</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.recentchanges.recentchanges_view.get_change_url" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.recentchanges.recentchanges_view.is_enabled">
-<tt class="descname">is_enabled</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.recentchanges.recentchanges_view.is_enabled" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
+  <div class="section" id="recentchanges">
+<h1>recentchanges<a class="headerlink" href="#recentchanges" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -169,6 +69,12 @@
             <p class="logo"><a href="../../../../index.html">
               <img class="logo" src="../../../../_static/logo_OL-lg.png" alt="Logo"/>
             </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="models.html"
+                        title="previous chapter">models</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="utils.html"
+                        title="next chapter">utils</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../../_sources/api/openlibrary/plugins/upstream/recentchanges.txt"
@@ -200,13 +106,23 @@
         <li class="right" >
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="utils.html" title="utils"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="models.html" title="models"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >upstream</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
       Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
     </div>
   </body>
 </html>

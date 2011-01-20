@@ -22,10 +22,7 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
-    <link rel="up" title="infobase" href="index.html" />
-    <link rel="next" title="writequery" href="writequery.html" />
-    <link rel="prev" title="server" href="server.html" /> 
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -37,16 +34,7 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="writequery.html" title="writequery"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="server.html" title="server"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
-          <li><a href="../index.html" >infogami</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">infobase</a> &raquo;</li> 
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -77,21 +65,21 @@
 <dl class="function">
 <dt id="infogami.infobase.utils.flatten">
 <tt class="descclassname">infogami.infobase.utils.</tt><tt class="descname">flatten</tt><big>(</big><em>nested_list</em>, <em>result=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.utils.flatten" title="Permalink to this definition">¶</a></dt>
-<dd><p>Flattens a nested list.</p>
+<dd><p>Flattens a nested list.:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">flatten</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]])</span>
-<span class="go">[1, 2, 3, 4, 5, 6]</span>
 </pre></div>
 </div>
+<p>[1, 2, 3, 4, 5, 6]</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="infogami.infobase.utils.flatten_dict">
 <tt class="descclassname">infogami.infobase.utils.</tt><tt class="descname">flatten_dict</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#infogami.infobase.utils.flatten_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Flattens a dictionary.</p>
+<dd><p>Flattens a dictionary.:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">flatten_dict</span><span class="p">({</span><span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;/books/foo&quot;</span><span class="p">,</span> <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;/type/book&quot;</span><span class="p">},</span> <span class="s">&quot;authors&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;/authors/a1&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;/authors/a2&quot;</span><span class="p">}]})</span>
-<span class="go">[(&#39;type.key&#39;, &#39;/type/book&#39;), (&#39;key&#39;, &#39;/books/foo&#39;), (&#39;authors.key&#39;, &#39;/authors/a1&#39;), (&#39;authors.key&#39;, &#39;/authors/a2&#39;)]</span>
 </pre></div>
 </div>
+<p>[(&#8216;type.key&#8217;, &#8216;/type/book&#8217;), (&#8216;key&#8217;, &#8216;/books/foo&#8217;), (&#8216;authors.key&#8217;, &#8216;/authors/a1&#8217;), (&#8216;authors.key&#8217;, &#8216;/authors/a2&#8217;)]</p>
 </dd></dl>
 
 <dl class="function">
@@ -163,14 +151,15 @@
 <dl class="function">
 <dt id="infogami.infobase.utils.safeint">
 <tt class="descclassname">infogami.infobase.utils.</tt><tt class="descname">safeint</tt><big>(</big><em>value</em>, <em>default</em><big>)</big><a class="headerlink" href="#infogami.infobase.utils.safeint" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">safeint</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="go">1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">safeint</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="go">0</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">safeint</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="go">0</span>
+<dd><p>Converts a string to integer. Returns the specified default value on error.:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">safeint</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>1
+&gt;&gt;&gt; safeint(&#8220;foo&#8221;, 0)
+0
+&gt;&gt;&gt; safeint(None, 0)
+0</p>
 </dd></dl>
 
 </div>
@@ -184,12 +173,6 @@
             <p class="logo"><a href="../../../index.html">
               <img class="logo" src="../../../_static/logo_OL-lg.png" alt="Logo"/>
             </a></p>
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="server.html"
-                        title="previous chapter">server</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="writequery.html"
-                        title="next chapter">writequery</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../_sources/api/infogami/infobase/utils.txt"
@@ -221,21 +204,12 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="writequery.html" title="writequery"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="server.html" title="server"
-             >previous</a> |</li>
-        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
-          <li><a href="../index.html" >infogami</a> &raquo;</li>
-          <li><a href="index.html" >infobase</a> &raquo;</li> 
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Jan 04, 2011.
+      Last updated on Jan 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
     </div>
   </body>

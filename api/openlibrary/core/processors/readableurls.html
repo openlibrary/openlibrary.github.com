@@ -22,7 +22,10 @@
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" /> 
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="processors" href="index.html" />
+    <link rel="next" title="schema" href="../schema.html" />
+    <link rel="prev" title="invalidation" href="invalidation.html" /> 
   </head>
   <body>
     <div class="related">
@@ -34,7 +37,17 @@
         <li class="right" >
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="../schema.html" title="schema"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="invalidation.html" title="invalidation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >core</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">processors</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -43,26 +56,8 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="module-openlibrary.core.processors.readableurls">
-<span id="readableurls"></span><h1>readableurls<a class="headerlink" href="#module-openlibrary.core.processors.readableurls" title="Permalink to this headline">¶</a></h1>
-<p>Various web.py application processors used in OL.</p>
-<dl class="class">
-<dt id="openlibrary.core.processors.readableurls.ReadableUrlProcessor">
-<em class="property">class </em><tt class="descclassname">openlibrary.core.processors.readableurls.</tt><tt class="descname">ReadableUrlProcessor</tt><a class="headerlink" href="#openlibrary.core.processors.readableurls.ReadableUrlProcessor" title="Permalink to this definition">¶</a></dt>
-<dd><p>Open Library code works with urls like /books/OL1M and
-/books/OL1M/edit. This processor seemlessly changes the urls to
-/books/OL1M/title and /books/OL1M/title/edit.</p>
-<p>The changequery function is also customized to support this.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.core.processors.readableurls.get_readable_path">
-<tt class="descclassname">openlibrary.core.processors.readableurls.</tt><tt class="descname">get_readable_path</tt><big>(</big><em>site</em>, <em>path</em>, <em>patterns</em>, <em>encoding=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.processors.readableurls.get_readable_path" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns real_path and readable_path from the given path.</p>
-<p>The patterns is a list of (path_regex, type, property_name, default_value)
-tuples.</p>
-</dd></dl>
-
+  <div class="section" id="readableurls">
+<h1>readableurls<a class="headerlink" href="#readableurls" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -74,6 +69,12 @@ tuples.</p>
             <p class="logo"><a href="../../../../index.html">
               <img class="logo" src="../../../../_static/logo_OL-lg.png" alt="Logo"/>
             </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="invalidation.html"
+                        title="previous chapter">invalidation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../schema.html"
+                        title="next chapter">schema</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../../_sources/api/openlibrary/core/processors/readableurls.txt"
@@ -105,13 +106,23 @@ tuples.</p>
         <li class="right" >
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="../schema.html" title="schema"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="invalidation.html" title="invalidation"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >core</a> &raquo;</li>
+          <li><a href="index.html" >processors</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
       Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
     </div>
   </body>
 </html>

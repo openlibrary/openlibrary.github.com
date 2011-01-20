@@ -10,6 +10,7 @@ Submodules
 
    code.rst
    db.rst
+   dbupgrade.rst
    diff.rst
    forms.rst
    helpers.rst

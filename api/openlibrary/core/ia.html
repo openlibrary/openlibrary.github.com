@@ -22,7 +22,10 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" /> 
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="core" href="index.html" />
+    <link rel="next" title="init" href="init.html" />
+    <link rel="prev" title="helpers" href="helpers.html" /> 
   </head>
   <body>
     <div class="related">
@@ -34,7 +37,16 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="init.html" title="init"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="helpers.html" title="helpers"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">core</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -43,28 +55,8 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="module-openlibrary.core.ia">
-<span id="ia"></span><h1>ia<a class="headerlink" href="#module-openlibrary.core.ia" title="Permalink to this headline">¶</a></h1>
-<p>Library for interacting wih archive.org.</p>
-<dl class="function">
-<dt id="openlibrary.core.ia.get_meta_xml">
-<tt class="descclassname">openlibrary.core.ia.</tt><tt class="descname">get_meta_xml</tt><big>(</big><em>itemid</em><big>)</big><a class="headerlink" href="#openlibrary.core.ia.get_meta_xml" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the contents of meta_xml as JSON.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.core.ia.xml2dict">
-<tt class="descclassname">openlibrary.core.ia.</tt><tt class="descname">xml2dict</tt><big>(</big><em>xml</em>, <em>**defaults</em><big>)</big><a class="headerlink" href="#openlibrary.core.ia.xml2dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Converts xml to python dictionary assuming that the xml is not nested.</p>
-<p>To get some tag as a list/set, pass a keyword argument with list/set as value.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xml2dict</span><span class="p">(</span><span class="s">&#39;&lt;doc&gt;&lt;x&gt;1&lt;/x&gt;&lt;x&gt;2&lt;/x&gt;&lt;/doc&gt;&#39;</span><span class="p">)</span>
-<span class="go">{&#39;x&#39;: 2}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">xml2dict</span><span class="p">(</span><span class="s">&#39;&lt;doc&gt;&lt;x&gt;1&lt;/x&gt;&lt;x&gt;2&lt;/x&gt;&lt;/doc&gt;&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="p">[])</span>
-<span class="go">{&#39;x&#39;: [1, 2]}</span>
-</pre></div>
-</div>
-</dd></dl>
-
+  <div class="section" id="ia">
+<h1>ia<a class="headerlink" href="#ia" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -76,6 +68,12 @@
             <p class="logo"><a href="../../../index.html">
               <img class="logo" src="../../../_static/logo_OL-lg.png" alt="Logo"/>
             </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="helpers.html"
+                        title="previous chapter">helpers</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="init.html"
+                        title="next chapter">init</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../_sources/api/openlibrary/core/ia.txt"
@@ -107,13 +105,22 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="init.html" title="init"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="helpers.html" title="helpers"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >core</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
       Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
     </div>
   </body>
 </html>
