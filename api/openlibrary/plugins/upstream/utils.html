@@ -56,8 +56,310 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="utils">
-<h1>utils<a class="headerlink" href="#utils" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-openlibrary.plugins.upstream.utils">
+<span id="utils"></span><h1>utils<a class="headerlink" href="#module-openlibrary.plugins.upstream.utils" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.utils.GZipMiddleware">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">GZipMiddleware</tt><big>(</big><em>app</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.GZipMiddleware" title="Permalink to this definition">¶</a></dt>
+<dd><p>WSGI middleware to gzip the response.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.utils.HTML">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">HTML</tt><big>(</big><em>html</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.HTML" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">unicode</span></tt></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.utils.MultiDict">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">MultiDict</tt><big>(</big><em>items=()</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.MultiDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">UserDict.DictMixin</span></tt></p>
+<p>Ordered Dictionary that can store multiple values.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">MultiDict</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">]</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">]</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s">&#39;z&#39;</span><span class="p">]</span>
+<span class="gt">Traceback (most recent call last):</span>
+    <span class="o">...</span>
+<span class="nc">KeyError</span>: <span class="n-Identifier">&#39;z&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">[&#39;x&#39;, &#39;x&#39;, &#39;y&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<span class="go">[(&#39;x&#39;, 1), (&#39;x&#39;, 2), (&#39;y&#39;, 3)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">multi_items</span><span class="p">()</span>
+<span class="go">[(&#39;x&#39;, [1, 2]), (&#39;y&#39;, [3])]</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.utils.MultiDict.getall">
+<tt class="descname">getall</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.MultiDict.getall" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.utils.MultiDict.items">
+<tt class="descname">items</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.MultiDict.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.utils.MultiDict.keys">
+<tt class="descname">keys</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.MultiDict.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.utils.MultiDict.multi_items">
+<tt class="descname">multi_items</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.MultiDict.multi_items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns items as tuple of key and a list of values.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.utils.MultiDict.values">
+<tt class="descname">values</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.MultiDict.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.utils.Request">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">Request</tt><a class="headerlink" href="#openlibrary.plugins.upstream.utils.Request" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="openlibrary.plugins.upstream.utils.Request.domain">
+<tt class="descname">domain</tt><a class="headerlink" href="#openlibrary.plugins.upstream.utils.Request.domain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.plugins.upstream.utils.Request.home">
+<tt class="descname">home</tt><a class="headerlink" href="#openlibrary.plugins.upstream.utils.Request.home" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.plugins.upstream.utils.Request.path">
+<tt class="descname">path</tt><a class="headerlink" href="#openlibrary.plugins.upstream.utils.Request.path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.utils.UpstreamMemcacheClient">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">UpstreamMemcacheClient</tt><big>(</big><em>servers</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.UpstreamMemcacheClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper to memcache Client to handle upstream specific conversion and OL specific compression.
+Compatible with memcache Client API.</p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.utils.UpstreamMemcacheClient.get">
+<tt class="descname">get</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.UpstreamMemcacheClient.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.utils.UpstreamMemcacheClient.get_multi">
+<tt class="descname">get_multi</tt><big>(</big><em>keys</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.UpstreamMemcacheClient.get_multi" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.fuzzy_find">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">fuzzy_find</tt><big>(</big><em>value</em>, <em>options</em>, <em>stopwords=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.fuzzy_find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Try find the option nearest to the value.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">fuzzy_find</span><span class="p">(</span><span class="s">&quot;O&#39;Reilly&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;O&#39;Reilly Inc&quot;</span><span class="p">,</span> <span class="s">&quot;Addison-Wesley&quot;</span><span class="p">])</span>
+<span class="go">&quot;O&#39;Reilly Inc&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.get_blog_feeds">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">get_blog_feeds</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.get_blog_feeds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.get_changes">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">get_changes</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.get_changes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.get_changes_v1">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">get_changes_v1</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.get_changes_v1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.get_changes_v2">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">get_changes_v2</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.get_changes_v2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.get_coverstore_url">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">get_coverstore_url</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.get_coverstore_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.get_edition_config">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">get_edition_config</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.get_edition_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.get_error">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">get_error</tt><big>(</big><em>name</em>, <em>*args</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.get_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return error with the given name from errors.tmpl template.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.get_history">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">get_history</tt><big>(</big><em>page</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.get_history" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.get_languages">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">get_languages</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.get_languages" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.get_locale">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">get_locale</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.get_locale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.get_markdown">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">get_markdown</tt><big>(</big><em>text</em>, <em>safe_mode=False</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.get_markdown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.get_message">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">get_message</tt><big>(</big><em>name</em>, <em>*args</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.get_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return message with given name from messages.tmpl template</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.get_message_from_template">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">get_message_from_template</tt><big>(</big><em>template_name</em>, <em>name</em>, <em>args</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.get_message_from_template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.get_random_recent_changes">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">get_random_recent_changes</tt><big>(</big><em>n</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.get_random_recent_changes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.get_recent_accounts">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">get_recent_accounts</tt><big>(</big><em>limit=5</em>, <em>offset=0</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.get_recent_accounts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.get_recent_author">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">get_recent_author</tt><big>(</big><em>doc</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.get_recent_author" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.get_version">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">get_version</tt><big>(</big><em>key</em>, <em>revision</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.get_version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.is_thing">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">is_thing</tt><big>(</big><em>t</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.is_thing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.json_encode">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">json_encode</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.json_encode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.list_recent_pages">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">list_recent_pages</tt><big>(</big><em>path</em>, <em>limit=100</em>, <em>offset=0</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.list_recent_pages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists all pages with name path/* in the order of last_modified.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.pad">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">pad</tt><big>(</big><em>seq</em>, <em>size</em>, <em>e=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.pad" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">pad</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">[1, 2, 0, 0]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.parse_toc">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">parse_toc</tt><big>(</big><em>text</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.parse_toc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses each line of toc</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.parse_toc_row">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">parse_toc_row</tt><big>(</big><em>line</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.parse_toc_row" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse one row of table of contents.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">d</span> <span class="o">=</span> <span class="n">parse_toc_row</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s">&#39;level&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;title&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;pagenum&#39;</span><span class="p">])</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="s">&quot;* chapter 1 | Welcome to the real world! | 2&quot;</span><span class="p">)</span>
+<span class="go">(1, &#39;chapter 1&#39;, &#39;Welcome to the real world!&#39;, &#39;2&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="s">&quot;Welcome to the real world!&quot;</span><span class="p">)</span>
+<span class="go">(0, &#39;&#39;, &#39;Welcome to the real world!&#39;, &#39;&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="s">&quot;** | Welcome to the real world! | 2&quot;</span><span class="p">)</span>
+<span class="go">(2, &#39;&#39;, &#39;Welcome to the real world!&#39;, &#39;2&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="s">&quot;|Preface | 1&quot;</span><span class="p">)</span>
+<span class="go">(0, &#39;&#39;, &#39;Preface&#39;, &#39;1&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="s">&quot;1.1 | Apple&quot;</span><span class="p">)</span>
+<span class="go">(0, &#39;1.1&#39;, &#39;Apple&#39;, &#39;&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.process_version">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">process_version</tt><big>(</big><em>v</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.process_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Looks at the version and adds machine_comment required for showing &#8220;View MARC&#8221; link.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.putctx">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">putctx</tt><big>(</big><em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.putctx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save a value in the context.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.radio_input">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">radio_input</tt><big>(</big><em>checked=False</em>, <em>**params</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.radio_input" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.radio_list">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">radio_list</tt><big>(</big><em>name</em>, <em>args</em>, <em>value</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.radio_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.render_template">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">render_template</tt><big>(</big><em>name</em>, <em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.render_template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.setup">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">setup</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do required initialization</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.unflatten">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">unflatten</tt><big>(</big><em>d</em>, <em>seperator='--'</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.unflatten" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert flattened data into nested form.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">unflatten</span><span class="p">({</span><span class="s">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&quot;b--x&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&quot;b--y&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&quot;c--0&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s">&quot;c--1&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">})</span>
+<span class="go">{&#39;a&#39;: 1, &#39;c&#39;: [4, 5], &#39;b&#39;: {&#39;y&#39;: 3, &#39;x&#39;: 2}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">unflatten</span><span class="p">({</span><span class="s">&quot;a--0--x&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&quot;a--0--y&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&quot;a--1--x&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&quot;a--1--y&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
+<span class="go">{&#39;a&#39;: [{&#39;x&#39;: 1, &#39;y&#39;: 2}, {&#39;x&#39;: 3, &#39;y&#39;: 4}]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.utils.websafe">
+<tt class="descclassname">openlibrary.plugins.upstream.utils.</tt><tt class="descname">websafe</tt><big>(</big><em>text</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.utils.websafe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 
@@ -121,8 +423,8 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
+      Last updated on Jan 21, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
     </div>
   </body>
 </html>

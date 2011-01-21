@@ -55,8 +55,274 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="models">
-<h1>models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-openlibrary.core.models">
+<span id="models"></span><h1>models<a class="headerlink" href="#module-openlibrary.core.models" title="Permalink to this headline">¶</a></h1>
+<p>Models of various OL objects.</p>
+<dl class="class">
+<dt id="openlibrary.core.models.Author">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.models.</tt><tt class="descname">Author</tt><big>(</big><em>site</em>, <em>key</em>, <em>data=None</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.Author" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.core.models.Thing" title="openlibrary.core.models.Thing"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.core.models.Thing</span></tt></a></p>
+<p>Class to represent /type/author objects in OL.</p>
+<dl class="attribute">
+<dt id="openlibrary.core.models.Author.edition_count">
+<tt class="descname">edition_count</tt><a class="headerlink" href="#openlibrary.core.models.Author.edition_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.Author.get_edition_count">
+<tt class="descname">get_edition_count</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.models.Author.get_edition_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.Author.get_lists">
+<tt class="descname">get_lists</tt><big>(</big><em>limit=50</em>, <em>offset=0</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.Author.get_lists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.Author.url">
+<tt class="descname">url</tt><big>(</big><em>suffix=''</em>, <em>**params</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.Author.url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.core.models.Edition">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.models.</tt><tt class="descname">Edition</tt><big>(</big><em>site</em>, <em>key</em>, <em>data=None</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.Edition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.core.models.Thing" title="openlibrary.core.models.Thing"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.core.models.Thing</span></tt></a></p>
+<p>Class to represent /type/edition objects in OL.</p>
+<dl class="method">
+<dt id="openlibrary.core.models.Edition.full_title">
+<tt class="descname">full_title</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.models.Edition.full_title" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.Edition.get_lists">
+<tt class="descname">get_lists</tt><big>(</big><em>limit=50</em>, <em>offset=0</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.Edition.get_lists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.Edition.get_publish_year">
+<tt class="descname">get_publish_year</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.models.Edition.get_publish_year" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.Edition.url">
+<tt class="descname">url</tt><big>(</big><em>suffix=''</em>, <em>**params</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.Edition.url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.core.models.Image">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.models.</tt><tt class="descname">Image</tt><big>(</big><em>site</em>, <em>category</em>, <em>id</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.Image" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.core.models.Image.info">
+<tt class="descname">info</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.models.Image.info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.Image.url">
+<tt class="descname">url</tt><big>(</big><em>size='M'</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.Image.url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.core.models.List">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.models.</tt><tt class="descname">List</tt><big>(</big><em>site</em>, <em>key</em>, <em>data=None</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.List" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.core.models.Thing" title="openlibrary.core.models.Thing"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.core.models.Thing</span></tt></a>, <a class="reference internal" href="lists/model.html#openlibrary.core.lists.model.ListMixin" title="openlibrary.core.lists.model.ListMixin"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.core.lists.model.ListMixin</span></tt></a></p>
+<p>Class to represent /type/list objects in OL.</p>
+<p>List contains the following properties:</p>
+<blockquote>
+<ul class="simple">
+<li>name - name of the list</li>
+<li>description - detailed description of the list (markdown)</li>
+<li>members - members of the list. Either references or subject strings.</li>
+<li>cover - id of the book cover. Picked from one of its editions.</li>
+<li>tags - list of tags to describe this list.</li>
+</ul>
+</blockquote>
+<dl class="method">
+<dt id="openlibrary.core.models.List.add_seed">
+<tt class="descname">add_seed</tt><big>(</big><em>seed</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.List.add_seed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new seed to this list.</p>
+<dl class="docutils">
+<dt>seed can be:</dt>
+<dd><ul class="first last simple">
+<li>author, edition or work object</li>
+<li>{&#8220;key&#8221;: &#8221;...&#8221;} for author, edition or work objects</li>
+<li>subject strings.</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.List.get_cover">
+<tt class="descname">get_cover</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.models.List.get_cover" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a cover object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.List.get_owner">
+<tt class="descname">get_owner</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.models.List.get_owner" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.List.get_tags">
+<tt class="descname">get_tags</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.models.List.get_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns tags as objects.</p>
+<p>Each tag object will contain name and url fields.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.List.remove_seed">
+<tt class="descname">remove_seed</tt><big>(</big><em>seed</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.List.remove_seed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes a seed for the list.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.List.url">
+<tt class="descname">url</tt><big>(</big><em>suffix=''</em>, <em>**params</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.List.url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.core.models.Subject">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.models.</tt><tt class="descname">Subject</tt><a class="headerlink" href="#openlibrary.core.models.Subject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">web.utils.Storage</span></tt></p>
+<dl class="method">
+<dt id="openlibrary.core.models.Subject.get_default_cover">
+<tt class="descname">get_default_cover</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.models.Subject.get_default_cover" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.Subject.get_lists">
+<tt class="descname">get_lists</tt><big>(</big><em>limit=1000</em>, <em>offset=0</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.Subject.get_lists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.Subject.get_seed">
+<tt class="descname">get_seed</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.models.Subject.get_seed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.Subject.url">
+<tt class="descname">url</tt><big>(</big><em>suffix=''</em>, <em>**params</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.Subject.url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.core.models.Thing">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.models.</tt><tt class="descname">Thing</tt><big>(</big><em>site</em>, <em>key</em>, <em>data=None</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.Thing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.infobase.client.Thing</span></tt></p>
+<p>Base class for all OL models.</p>
+<dl class="method">
+<dt id="openlibrary.core.models.Thing.get_history_preview">
+<tt class="descname">get_history_preview</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.models.Thing.get_history_preview" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.Thing.get_most_recent_change">
+<tt class="descname">get_most_recent_change</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.models.Thing.get_most_recent_change" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the most recent change.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.Thing.prefetch">
+<tt class="descname">prefetch</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.models.Thing.prefetch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prefetch all the anticipated data.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.core.models.User">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.models.</tt><tt class="descname">User</tt><big>(</big><em>site</em>, <em>key</em>, <em>data=None</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.User" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.core.models.Thing" title="openlibrary.core.models.Thing"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.core.models.Thing</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.core.models.User.get_lists">
+<tt class="descname">get_lists</tt><big>(</big><em>seed=None</em>, <em>limit=100</em>, <em>offset=0</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.User.get_lists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all the lists of this user.</p>
+<p>When seed is specified, this returns all the lists which contain the
+given seed.</p>
+<p>seed could be an object or a string like &#8220;subject:cheese&#8221;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.User.get_usergroups">
+<tt class="descname">get_usergroups</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.models.User.get_usergroups" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.User.is_admin">
+<tt class="descname">is_admin</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.models.User.is_admin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.User.new_list">
+<tt class="descname">new_list</tt><big>(</big><em>name</em>, <em>description</em>, <em>seeds</em>, <em>tags=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#openlibrary.core.models.User.new_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new list object with given name, description, and seeds.</p>
+<p>seeds must be a list containing references to author, edition, work or subject strings.</p>
+<p>Sample seeds:</p>
+<blockquote>
+{&#8220;key&#8221;: &#8220;/authors/OL1A&#8221;}
+{&#8220;key&#8221;: &#8220;/books/OL1M&#8221;}
+{&#8220;key&#8221;: &#8220;/works/OL1W&#8221;}
+&#8220;subject:love&#8221;
+&#8220;place:san_francisco&#8221;
+&#8220;time:1947&#8221;
+&#8220;person:gerge&#8221;</blockquote>
+<p>The caller must call list._save(...) to save the list.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.core.models.User.usergroups">
+<tt class="descname">usergroups</tt><a class="headerlink" href="#openlibrary.core.models.User.usergroups" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.core.models.Work">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.models.</tt><tt class="descname">Work</tt><big>(</big><em>site</em>, <em>key</em>, <em>data=None</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.Work" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.core.models.Thing" title="openlibrary.core.models.Thing"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.core.models.Thing</span></tt></a></p>
+<p>Class to represent /type/work objects in OL.</p>
+<dl class="attribute">
+<dt id="openlibrary.core.models.Work.edition_count">
+<tt class="descname">edition_count</tt><a class="headerlink" href="#openlibrary.core.models.Work.edition_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.Work.get_edition_count">
+<tt class="descname">get_edition_count</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.models.Work.get_edition_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.Work.get_lists">
+<tt class="descname">get_lists</tt><big>(</big><em>limit=50</em>, <em>offset=0</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.Work.get_lists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.Work.url">
+<tt class="descname">url</tt><big>(</big><em>suffix=''</em>, <em>**params</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.Work.url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.models.register_models">
+<tt class="descclassname">openlibrary.core.models.</tt><tt class="descname">register_models</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.models.register_models" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.models.register_types">
+<tt class="descclassname">openlibrary.core.models.</tt><tt class="descname">register_types</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.models.register_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register default types for various path patterns used in OL.</p>
+</dd></dl>
+
 </div>
 
 
@@ -119,8 +385,8 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
+      Last updated on Jan 21, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
     </div>
   </body>
 </html>

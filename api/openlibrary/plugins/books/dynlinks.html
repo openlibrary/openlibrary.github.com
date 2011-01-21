@@ -56,8 +56,157 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="dynlinks">
-<h1>dynlinks<a class="headerlink" href="#dynlinks" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-openlibrary.plugins.books.dynlinks">
+<span id="dynlinks"></span><h1>dynlinks<a class="headerlink" href="#module-openlibrary.plugins.books.dynlinks" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="openlibrary.plugins.books.dynlinks.DataProcessor">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.books.dynlinks.</tt><tt class="descname">DataProcessor</tt><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.DataProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processor to process the result when jscmd=data.</p>
+<dl class="method">
+<dt id="openlibrary.plugins.books.dynlinks.DataProcessor.get_authors">
+<tt class="descname">get_authors</tt><big>(</big><em>work</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.DataProcessor.get_authors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.books.dynlinks.DataProcessor.get_work">
+<tt class="descname">get_work</tt><big>(</big><em>doc</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.DataProcessor.get_work" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.books.dynlinks.DataProcessor.process">
+<tt class="descname">process</tt><big>(</big><em>result</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.DataProcessor.process" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.books.dynlinks.DataProcessor.process_doc">
+<tt class="descname">process_doc</tt><big>(</big><em>doc</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.DataProcessor.process_doc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes one document.
+Should be called only after initializing self.authors and self.works.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.dynlinks.dynlinks">
+<tt class="descclassname">openlibrary.plugins.books.dynlinks.</tt><tt class="descname">dynlinks</tt><big>(</big><em>bib_keys</em>, <em>options</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.dynlinks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.dynlinks.format_result">
+<tt class="descclassname">openlibrary.plugins.books.dynlinks.</tt><tt class="descname">format_result</tt><big>(</big><em>result</em>, <em>options</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.format_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format result as js or json.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">format_result</span><span class="p">({</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{})</span>
+<span class="go">&#39;var _OLBookInfo = {&quot;x&quot;: 1};&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">format_result</span><span class="p">({</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s">&#39;callback&#39;</span><span class="p">:</span> <span class="s">&#39;f&#39;</span><span class="p">})</span>
+<span class="go">&#39;f({&quot;x&quot;: 1});&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.dynlinks.get_authors">
+<tt class="descclassname">openlibrary.plugins.books.dynlinks.</tt><tt class="descname">get_authors</tt><big>(</big><em>docs</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.get_authors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dict of author_key to {&#8220;key&#8221;, &#8221;...&#8221;, &#8220;name&#8221;: &#8221;...&#8221;} for all authors in docs.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.dynlinks.get_ia_availability">
+<tt class="descclassname">openlibrary.plugins.books.dynlinks.</tt><tt class="descname">get_ia_availability</tt><big>(</big><em>itemid</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.get_ia_availability" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.dynlinks.get_many_as_dict">
+<tt class="descclassname">openlibrary.plugins.books.dynlinks.</tt><tt class="descname">get_many_as_dict</tt><big>(</big><em>keys</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.get_many_as_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.dynlinks.get_url">
+<tt class="descclassname">openlibrary.plugins.books.dynlinks.</tt><tt class="descname">get_url</tt><big>(</big><em>doc</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.get_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.dynlinks.ol_get_many">
+<tt class="descclassname">openlibrary.plugins.books.dynlinks.</tt><tt class="descname">ol_get_many</tt><big>(</big><em>keys</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.ol_get_many" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.dynlinks.ol_get_many_as_dict">
+<tt class="descclassname">openlibrary.plugins.books.dynlinks.</tt><tt class="descname">ol_get_many_as_dict</tt><big>(</big><em>keys</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.ol_get_many_as_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.dynlinks.ol_query">
+<tt class="descclassname">openlibrary.plugins.books.dynlinks.</tt><tt class="descname">ol_query</tt><big>(</big><em>name</em>, <em>value</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.ol_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.dynlinks.process_doc_for_viewapi">
+<tt class="descclassname">openlibrary.plugins.books.dynlinks.</tt><tt class="descname">process_doc_for_viewapi</tt><big>(</big><em>bib_key</em>, <em>page</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.process_doc_for_viewapi" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.dynlinks.process_result">
+<tt class="descclassname">openlibrary.plugins.books.dynlinks.</tt><tt class="descname">process_result</tt><big>(</big><em>result</em>, <em>jscmd</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.process_result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.dynlinks.process_result_for_details">
+<tt class="descclassname">openlibrary.plugins.books.dynlinks.</tt><tt class="descname">process_result_for_details</tt><big>(</big><em>result</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.process_result_for_details" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.dynlinks.process_result_for_viewapi">
+<tt class="descclassname">openlibrary.plugins.books.dynlinks.</tt><tt class="descname">process_result_for_viewapi</tt><big>(</big><em>result</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.process_result_for_viewapi" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.dynlinks.query_docs">
+<tt class="descclassname">openlibrary.plugins.books.dynlinks.</tt><tt class="descname">query_docs</tt><big>(</big><em>bib_keys</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.query_docs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a list of bib_keys, returns a mapping from bibkey to OL doc.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.dynlinks.query_keys">
+<tt class="descclassname">openlibrary.plugins.books.dynlinks.</tt><tt class="descname">query_keys</tt><big>(</big><em>bib_keys</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.query_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a list of bibkeys, returns a mapping from bibkey to OL key.</p>
+<p>&gt;&gt; query([&#8220;isbn:1234567890&#8221;])
+{&#8220;isbn:1234567890&#8221;: &#8220;/books/OL1M&#8221;}</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.dynlinks.split_key">
+<tt class="descclassname">openlibrary.plugins.books.dynlinks.</tt><tt class="descname">split_key</tt><big>(</big><em>bib_key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.split_key" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">split_key</span><span class="p">(</span><span class="s">&#39;1234567890&#39;</span><span class="p">)</span>
+<span class="go">(&#39;isbn_10&#39;, &#39;1234567890&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">split_key</span><span class="p">(</span><span class="s">&#39;ISBN:1234567890&#39;</span><span class="p">)</span>
+<span class="go">(&#39;isbn_10&#39;, &#39;1234567890&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">split_key</span><span class="p">(</span><span class="s">&#39;ISBN1234567890&#39;</span><span class="p">)</span>
+<span class="go">(&#39;isbn_10&#39;, &#39;1234567890&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">split_key</span><span class="p">(</span><span class="s">&#39;ISBN1234567890123&#39;</span><span class="p">)</span>
+<span class="go">(&#39;isbn_13&#39;, &#39;1234567890123&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">split_key</span><span class="p">(</span><span class="s">&#39;LCCNsa 64009056&#39;</span><span class="p">)</span>
+<span class="go">(&#39;lccn&#39;, &#39;sa 64009056&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">split_key</span><span class="p">(</span><span class="s">&#39;badkey&#39;</span><span class="p">)</span>
+<span class="go">(None, None)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.dynlinks.trim">
+<tt class="descclassname">openlibrary.plugins.books.dynlinks.</tt><tt class="descname">trim</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.trim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remote empty values from given dictionary.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">trim</span><span class="p">({</span><span class="s">&quot;a&quot;</span><span class="p">:</span> <span class="s">&quot;x&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;c&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s">&quot;d&quot;</span><span class="p">:</span> <span class="p">{}})</span>
+<span class="go">{&#39;a&#39;: &#39;x&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.dynlinks.uniq">
+<tt class="descclassname">openlibrary.plugins.books.dynlinks.</tt><tt class="descname">uniq</tt><big>(</big><em>values</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.uniq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 
@@ -121,8 +270,8 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
+      Last updated on Jan 21, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
     </div>
   </body>
 </html>

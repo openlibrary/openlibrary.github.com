@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Configuration files &mdash; openlibrary v2.0 documentation</title>
+    <title>Database Migrations &mdash; openlibrary v2.0 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -24,8 +24,8 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="openlibrary v2.0 documentation" href="../index.html" />
     <link rel="up" title="Appendices" href="index.html" />
-    <link rel="next" title="setup.py commands" href="setup_commands.html" />
-    <link rel="prev" title="Appendices" href="index.html" /> 
+    <link rel="next" title="Dependencies" href="dependencies.html" />
+    <link rel="prev" title="setup.py commands" href="setup_commands.html" /> 
   </head>
   <body>
     <div class="related">
@@ -38,10 +38,10 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="setup_commands.html" title="setup.py commands"
+          <a href="dependencies.html" title="Dependencies"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Appendices"
+          <a href="setup_commands.html" title="setup.py commands"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">Appendices</a> &raquo;</li> 
@@ -53,9 +53,17 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="configuration-files">
-<h1>Configuration files<a class="headerlink" href="#configuration-files" title="Permalink to this headline">¶</a></h1>
-<p>List of all the relevant config files, their syntaxes and what the control.</p>
+  <div class="section" id="database-migrations">
+<h1>Database Migrations<a class="headerlink" href="#database-migrations" title="Permalink to this headline">¶</a></h1>
+<p>Ocationally, new tables get added to openlibrary database and some existing
+tables get altered. Scripts are provided to migrate the existing dev instances
+to new schema.</p>
+<p>To migrate an existing dev instance:</p>
+<div class="highlight-python"><pre>$ python setup.py shell
+$ python scripts/migrate_db.py</pre>
+</div>
+<p>This will look the current database schema and identifies its version and
+upgrades it to the latest version.</p>
 </div>
 
 
@@ -68,14 +76,14 @@
               <img class="logo" src="../_static/logo_OL-lg.png" alt="Logo"/>
             </a></p>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">Appendices</a></p>
-  <h4>Next topic</h4>
   <p class="topless"><a href="setup_commands.html"
-                        title="next chapter">setup.py commands</a></p>
+                        title="previous chapter">setup.py commands</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="dependencies.html"
+                        title="next chapter">Dependencies</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="../_sources/appendices/config_files.txt"
+    <li><a href="../_sources/appendices/db_migrations.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -105,10 +113,10 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="setup_commands.html" title="setup.py commands"
+          <a href="dependencies.html" title="Dependencies"
              >next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Appendices"
+          <a href="setup_commands.html" title="setup.py commands"
              >previous</a> |</li>
         <li><a href="../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
           <li><a href="index.html" >Appendices</a> &raquo;</li> 

@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Configuration files &mdash; openlibrary v2.0 documentation</title>
+    <title>Dependencies &mdash; openlibrary v2.0 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -24,8 +24,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="openlibrary v2.0 documentation" href="../index.html" />
     <link rel="up" title="Appendices" href="index.html" />
-    <link rel="next" title="setup.py commands" href="setup_commands.html" />
-    <link rel="prev" title="Appendices" href="index.html" /> 
+    <link rel="prev" title="Database Migrations" href="db_migrations.html" /> 
   </head>
   <body>
     <div class="related">
@@ -38,10 +37,7 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="setup_commands.html" title="setup.py commands"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="Appendices"
+          <a href="db_migrations.html" title="Database Migrations"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">Appendices</a> &raquo;</li> 
@@ -53,9 +49,57 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="configuration-files">
-<h1>Configuration files<a class="headerlink" href="#configuration-files" title="Permalink to this headline">¶</a></h1>
-<p>List of all the relevant config files, their syntaxes and what the control.</p>
+  <div class="section" id="dependencies">
+<h1>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h1>
+<p>The system requires a lot of 3rd party programs as well as a whole
+bunch of python libraries. We have an installation script which you
+can run that will setup the entire thing for you but in order to run
+this script, the following packages have to be installed first.</p>
+<dl class="docutils">
+<dt>Git</dt>
+<dd>For getting the source repository</dd>
+<dt>PostgreSQL 8.2 or later (<tt class="docutils literal"><span class="pre">psql</span></tt>)</dt>
+<dd>This is where we store our data</dd>
+<dt>Python 2.5 or later (<tt class="docutils literal"><span class="pre">python</span></tt>)</dt>
+<dd>The application is written in python</dd>
+<dt>Java Runtime (tested with <tt class="docutils literal"><span class="pre">openjdk-6-jre</span></tt>)</dt>
+<dd>The indexer (<tt class="docutils literal"><span class="pre">solr</span></tt>) is a Java application</dd>
+<dt>Python virtualenv (<tt class="docutils literal"><span class="pre">python-virtualenv</span></tt>)</dt>
+<dd>Necessary to create &#8220;virtual&#8221; installations of Python so
+that we can install packages without touching your system
+distribution. More details at <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">the virtualenv PyPI
+page</a>.</dd>
+<dt>memcached (<tt class="docutils literal"><span class="pre">memcached</span></tt>)</dt>
+<dd>Used for distributed caching.</dd>
+</dl>
+<p>On Linux, you will also have to install the following dev packages
+<tt class="docutils literal"><span class="pre">python-dev</span></tt>, <tt class="docutils literal"><span class="pre">libpq-dev</span></tt> and <tt class="docutils literal"><span class="pre">libxslt-dev</span></tt>.</p>
+<p>The following python packages are necessary for Open Library development but
+they&#8217;re automatically installed by the installation script. They&#8217;re
+not all necessary to run but for things like testing, documentation etc.</p>
+<ul class="simple">
+<li>Apache Solr</li>
+<li>Apache CouchDB</li>
+<li>CouchDB Lucene</li>
+<li>Python Packages:<ul>
+<li>argparse</li>
+<li>Babel</li>
+<li>couchdb</li>
+<li>genshi</li>
+<li>lxml</li>
+<li>PIL</li>
+<li>psycopg2</li>
+<li>pymarc</li>
+<li>python-memcached</li>
+<li>pyyaml</li>
+<li>simplejson</li>
+<li>web.py (version 0.33)</li>
+<li>supervisor</li>
+<li>py.test</li>
+<li>sphinx</li>
+</ul>
+</li>
+</ul>
 </div>
 
 
@@ -68,14 +112,11 @@
               <img class="logo" src="../_static/logo_OL-lg.png" alt="Logo"/>
             </a></p>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">Appendices</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="setup_commands.html"
-                        title="next chapter">setup.py commands</a></p>
+  <p class="topless"><a href="db_migrations.html"
+                        title="previous chapter">Database Migrations</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="../_sources/appendices/config_files.txt"
+    <li><a href="../_sources/appendices/dependencies.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -105,10 +146,7 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="setup_commands.html" title="setup.py commands"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="Appendices"
+          <a href="db_migrations.html" title="Database Migrations"
              >previous</a> |</li>
         <li><a href="../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
           <li><a href="index.html" >Appendices</a> &raquo;</li> 

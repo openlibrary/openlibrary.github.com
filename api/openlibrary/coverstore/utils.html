@@ -55,8 +55,94 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="utils">
-<h1>utils<a class="headerlink" href="#utils" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-openlibrary.coverstore.utils">
+<span id="utils"></span><h1>utils<a class="headerlink" href="#module-openlibrary.coverstore.utils" title="Permalink to this headline">¶</a></h1>
+<p>Utilities for coverstore</p>
+<dl class="class">
+<dt id="openlibrary.coverstore.utils.AppURLopener">
+<em class="property">class </em><tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">AppURLopener</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.AppURLopener" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">urllib.FancyURLopener</span></tt></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.utils.changequery">
+<tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">changequery</tt><big>(</big><em>url</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.changequery" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">changequery</span><span class="p">(</span><span class="s">&#39;http://google.com/search?q=foo&#39;</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="go">&#39;http://google.com/search?q=bar&amp;x=y&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.utils.download">
+<tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">download</tt><big>(</big><em>url</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.download" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.utils.get_ol_url">
+<tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">get_ol_url</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.get_ol_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.utils.ol_get">
+<tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">ol_get</tt><big>(</big><em>olkey</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.ol_get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.utils.ol_things">
+<tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">ol_things</tt><big>(</big><em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.ol_things" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.utils.random_string">
+<tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">random_string</tt><big>(</big><em>n</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.random_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.utils.read_file">
+<tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">read_file</tt><big>(</big><em>path</em>, <em>offset</em>, <em>size</em>, <em>chunk=51200</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.read_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an iterator over file data at specified offset and size.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">read_file</span><span class="p">(</span><span class="s">&#39;/dev/urandom&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)))</span>
+<span class="go">10000</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.utils.rm_f">
+<tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">rm_f</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.rm_f" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.utils.safeint">
+<tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">safeint</tt><big>(</big><em>value</em>, <em>default=None</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.safeint" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">safeint</span><span class="p">(</span><span class="s">&#39;1&#39;</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">safeint</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">safeint</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.utils.urldecode">
+<tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">urldecode</tt><big>(</big><em>url</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.urldecode" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">urldecode</span><span class="p">(</span><span class="s">&#39;http://google.com/search?q=bar&amp;x=y&#39;</span><span class="p">)</span>
+<span class="go">(&#39;http://google.com/search&#39;, {&#39;q&#39;: &#39;bar&#39;, &#39;x&#39;: &#39;y&#39;})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urldecode</span><span class="p">(</span><span class="s">&#39;http://google.com/&#39;</span><span class="p">)</span>
+<span class="go">(&#39;http://google.com/&#39;, {})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.utils.urlencode">
+<tt class="descclassname">openlibrary.coverstore.utils.</tt><tt class="descname">urlencode</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.utils.urlencode" title="Permalink to this definition">¶</a></dt>
+<dd><p>urlencodes the given data dictionary. If any of the value is a file object, data is multipart encoded.</p>
+<p>&#64;&#64;&#64; should go into web.browser</p>
+</dd></dl>
+
 </div>
 
 
@@ -119,8 +205,8 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
+      Last updated on Jan 21, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
     </div>
   </body>
 </html>

@@ -56,8 +56,121 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="covers">
-<h1>covers<a class="headerlink" href="#covers" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-openlibrary.plugins.upstream.covers">
+<span id="covers"></span><h1>covers<a class="headerlink" href="#module-openlibrary.plugins.upstream.covers" title="Permalink to this headline">¶</a></h1>
+<p>Handle book cover/author photo upload.</p>
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.covers.add_cover">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.covers.</tt><tt class="descname">add_cover</tt><a class="headerlink" href="#openlibrary.plugins.upstream.covers.add_cover" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.covers.add_cover.GET">
+<tt class="descname">GET</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.covers.add_cover.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.covers.add_cover.POST">
+<tt class="descname">POST</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.covers.add_cover.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.covers.add_cover.save">
+<tt class="descname">save</tt><big>(</big><em>book</em>, <em>coverid</em>, <em>url=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.covers.add_cover.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.covers.add_cover.upload">
+<tt class="descname">upload</tt><big>(</big><em>key</em>, <em>i</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.covers.add_cover.upload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uploads a cover to coverstore and returns the response.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.covers.add_photo">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.covers.</tt><tt class="descname">add_photo</tt><a class="headerlink" href="#openlibrary.plugins.upstream.covers.add_photo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.upstream.covers.add_cover" title="openlibrary.plugins.upstream.covers.add_cover"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.upstream.covers.add_cover</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.covers.add_photo.save">
+<tt class="descname">save</tt><big>(</big><em>author</em>, <em>photoid</em>, <em>url=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.covers.add_photo.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.covers.add_work_cover">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.covers.</tt><tt class="descname">add_work_cover</tt><a class="headerlink" href="#openlibrary.plugins.upstream.covers.add_work_cover" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.upstream.covers.add_cover" title="openlibrary.plugins.upstream.covers.add_cover"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.upstream.covers.add_cover</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.covers.add_work_cover.upload">
+<tt class="descname">upload</tt><big>(</big><em>key</em>, <em>i</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.covers.add_work_cover.upload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.covers.manage_covers">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.covers.</tt><tt class="descname">manage_covers</tt><a class="headerlink" href="#openlibrary.plugins.upstream.covers.manage_covers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.covers.manage_covers.GET">
+<tt class="descname">GET</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.covers.manage_covers.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.covers.manage_covers.POST">
+<tt class="descname">POST</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.covers.manage_covers.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.covers.manage_covers.get_image">
+<tt class="descname">get_image</tt><big>(</big><em>book</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.covers.manage_covers.get_image" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.covers.manage_covers.get_images">
+<tt class="descname">get_images</tt><big>(</big><em>book</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.covers.manage_covers.get_images" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.covers.manage_covers.save_images">
+<tt class="descname">save_images</tt><big>(</big><em>book</em>, <em>covers</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.covers.manage_covers.save_images" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.covers.manage_photos">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.covers.</tt><tt class="descname">manage_photos</tt><a class="headerlink" href="#openlibrary.plugins.upstream.covers.manage_photos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.upstream.covers.manage_covers" title="openlibrary.plugins.upstream.covers.manage_covers"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.upstream.covers.manage_covers</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.covers.manage_photos.get_image">
+<tt class="descname">get_image</tt><big>(</big><em>author</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.covers.manage_photos.get_image" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.covers.manage_photos.get_images">
+<tt class="descname">get_images</tt><big>(</big><em>author</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.covers.manage_photos.get_images" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.covers.manage_photos.save_images">
+<tt class="descname">save_images</tt><big>(</big><em>author</em>, <em>photos</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.covers.manage_photos.save_images" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.covers.manage_work_covers">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.covers.</tt><tt class="descname">manage_work_covers</tt><a class="headerlink" href="#openlibrary.plugins.upstream.covers.manage_work_covers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.upstream.covers.manage_covers" title="openlibrary.plugins.upstream.covers.manage_covers"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.upstream.covers.manage_covers</span></tt></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.covers.setup">
+<tt class="descclassname">openlibrary.plugins.upstream.covers.</tt><tt class="descname">setup</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.covers.setup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 
@@ -121,8 +234,8 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
+      Last updated on Jan 21, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
     </div>
   </body>
 </html>

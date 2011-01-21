@@ -55,8 +55,70 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="init">
-<h1>init<a class="headerlink" href="#init" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-openlibrary.core.init">
+<span id="init"></span><h1>init<a class="headerlink" href="#module-openlibrary.core.init" title="Permalink to this headline">¶</a></h1>
+<p>Library for starting and monitoring Open Library services.</p>
+<p>Many services need to be started to run an Open Library instance. It becomes
+quite complicated to manage them manually. This library provides init, a
+process manager like unix init, for starting and managing OL services.</p>
+<p>This is used only for running the dev instance. In production, these services
+are typically run on multiple nodes and monitored using upstart.</p>
+<dl class="class">
+<dt id="openlibrary.core.init.Init">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.init.</tt><tt class="descname">Init</tt><big>(</big><em>config</em><big>)</big><a class="headerlink" href="#openlibrary.core.init.Init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Init process for starting and managing OL services.</p>
+<dl class="method">
+<dt id="openlibrary.core.init.Init.start">
+<tt class="descname">start</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.init.Init.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.init.Init.stop">
+<tt class="descname">stop</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.init.Init.stop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.core.init.Service">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.init.</tt><tt class="descname">Service</tt><big>(</big><em>init</em>, <em>name</em>, <em>config</em><big>)</big><a class="headerlink" href="#openlibrary.core.init.Service" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.core.init.Service.is_alive">
+<tt class="descname">is_alive</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.init.Service.is_alive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the service is running.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.init.Service.poll">
+<tt class="descname">poll</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.init.Service.poll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the exit status if the service is terminated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.init.Service.start">
+<tt class="descname">start</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.init.Service.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts the service.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.init.Service.stop">
+<tt class="descname">stop</tt><big>(</big><em>timeout=3</em><big>)</big><a class="headerlink" href="#openlibrary.core.init.Service.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops the service.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.init.Service.wait">
+<tt class="descname">wait</tt><big>(</big><em>timeout=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.init.Service.wait" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait for the service to complete and returns the exit status.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.init.main">
+<tt class="descclassname">openlibrary.core.init.</tt><tt class="descname">main</tt><big>(</big><em>config_file</em><big>)</big><a class="headerlink" href="#openlibrary.core.init.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 
@@ -119,8 +181,8 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
+      Last updated on Jan 21, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
     </div>
   </body>
 </html>

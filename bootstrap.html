@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="openlibrary v2.0 documentation" href="index.html" />
-    <link rel="next" title="Architecture of the dev instance" href="architecture.html" />
+    <link rel="next" title="Working with dev instance" href="working.html" />
     <link rel="prev" title="Open Library: Developer Documentation" href="index.html" /> 
   </head>
   <body>
@@ -37,7 +37,7 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="architecture.html" title="Architecture of the dev instance"
+          <a href="working.html" title="Working with dev instance"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Open Library: Developer Documentation"
@@ -61,89 +61,31 @@ software and running many services.</p>
 <ul class="simple">
 <li>Ubuntu 10.10</li>
 <li>Ubuntu 10.04</li>
+<li>Mac OS X Snow Leopard</li>
 </ul>
-<p>Support for Mac OS X will be available soon.</p>
+<p>Make sure you have at least 1GB of RAM on your dev machine or virtual machine.</p>
+</div>
+<div class="section" id="installing-dependencies">
+<h2>Installing dependencies<a class="headerlink" href="#installing-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>Open Library depends a lot of third-party programs as well as a whole
+bunch of python libraries.</p>
+<p>To install all the dependencies on Ubuntu:</p>
+<div class="highlight-python"><pre>$ wget -O - http://github.com/openlibrary/openlibrary/raw/master/scripts/install_dependencies.sh | bash</pre>
+</div>
+<p>To install all the dependencies on Mac OS X:</p>
+<div class="highlight-python"><pre>$ curl http://github.com/openlibrary/openlibrary/raw/master/scripts/install_dependencies.sh | bash</pre>
+</div>
+<p>The list of dependencies is available at <a class="reference internal" href="appendices/dependencies.html"><em>Dependencies</em></a>.</p>
 </div>
 <div class="section" id="getting-the-source">
 <h2>Getting the source<a class="headerlink" href="#getting-the-source" title="Permalink to this headline">¶</a></h2>
-<p>We use <tt class="docutils literal"><span class="pre">git</span></tt> for version control. The openlibrary code repository is
-hosted on github at <a class="reference external" href="git://github.com/openlibrary/openlibrary.git">git://github.com/openlibrary/openlibrary.git</a>. You can get the
-source code from there using:</p>
+<p>Open Library uses <tt class="docutils literal"><span class="pre">git</span></tt> for version control and the <a class="reference external" href="http://github.com/openlibrary/openlibrary">code repository</a> is
+hosted on github.</p>
+<p>You can get the source code from there using:</p>
 <div class="highlight-python"><pre>$ git clone git://github.com/openlibrary/openlibrary.git</pre>
 </div>
 <p>This will create a directory called openlibrary with the entire
 codebase checked out.</p>
-<p>If you don&#8217;t have git, you can get it using:</p>
-<div class="highlight-python"><pre>$ apt-get install git-core</pre>
-</div>
-<p>on Ubuntu or:</p>
-<div class="highlight-python"><pre>$ brew install git</pre>
-</div>
-<p>on MacOS</p>
-</div>
-<div class="section" id="installing-dependencies">
-<h2>Installing dependencies<a class="headerlink" href="#installing-dependencies" title="Permalink to this headline">¶</a></h2>
-<p>The system requires a lot of 3rd party programs as well as a whole
-bunch of python libraries. We have an installation script which you
-can run that will setup the entire thing for you but in order to run
-this script, the following packages have to be installed first.</p>
-<dl class="docutils">
-<dt>PostgreSQL 8.2 or later (<tt class="docutils literal"><span class="pre">psql</span></tt>)</dt>
-<dd>This is where we store our data</dd>
-<dt>Python 2.5 or later (<tt class="docutils literal"><span class="pre">python</span></tt>)</dt>
-<dd>The application is written in python</dd>
-<dt>Java Runtime (tested with <tt class="docutils literal"><span class="pre">openjdk-6-jre</span></tt>)</dt>
-<dd>The indexer (<tt class="docutils literal"><span class="pre">solr</span></tt>) is a Java application</dd>
-<dt>Python virtualenv (<tt class="docutils literal"><span class="pre">python-virtualenv</span></tt>)</dt>
-<dd>Necessary to create &#8220;virtual&#8221; installations of Python so
-that we can install packages without touching your system
-distribution. More details at <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">the virtualenv PyPI
-page</a>.</dd>
-<dt>memcached (<tt class="docutils literal"><span class="pre">memcached</span></tt>)</dt>
-<dd>Used for distributed caching.</dd>
-</dl>
-<p>On Linux, you will also have to install the following dev packages
-<tt class="docutils literal"><span class="pre">python-dev</span></tt>, <tt class="docutils literal"><span class="pre">libpq-dev</span></tt> and <tt class="docutils literal"><span class="pre">libxslt-dev</span></tt>.</p>
-<p>In addition to this, you&#8217;ll need at least 1GB of RAM on your dev machine
-or virtual machine.</p>
-<p>To install all of these on Ubuntu/Debian:</p>
-<div class="highlight-python"><pre>$ sudo apt-get install memcached postgresql git-core openjdk-6-jre-headless python-virtualenv python-dev libpq-dev libxslt-dev</pre>
-</div>
-<p>To install all of them on Mac OS X:</p>
-<div class="highlight-python"><pre>$ brew install postgresql git
-$ sudo easy_install virtualenv</pre>
-</div>
-<p>After the installation is done, create an user on the postgresql server:</p>
-<div class="highlight-python"><pre>$ sudo -u postgres createuser openlibrary
-[sudo] password for anand:
-Shall the new role be a superuser? (y/n) y</pre>
-</div>
-<p>The following packages are necessary for Open Library development but
-they&#8217;re automatically installed by the installation script. They&#8217;re
-not all necessary to run but for things like testing, documentation etc.</p>
-<ul class="simple">
-<li>Apache Solr</li>
-<li>Apache CouchDB</li>
-<li>CouchDB Lucene</li>
-<li>Python Packages:<ul>
-<li>argparse</li>
-<li>Babel</li>
-<li>couchdb</li>
-<li>genshi</li>
-<li>lxml</li>
-<li>PIL</li>
-<li>psycopg2</li>
-<li>pymarc</li>
-<li>python-memcached</li>
-<li>pyyaml</li>
-<li>simplejson</li>
-<li>web.py (version 0.33)</li>
-<li>supervisor</li>
-<li>py.test</li>
-<li>sphinx</li>
-</ul>
-</li>
-</ul>
 </div>
 <div class="section" id="running-the-install-script">
 <h2>Running the install script<a class="headerlink" href="#running-the-install-script" title="Permalink to this headline">¶</a></h2>
@@ -157,6 +99,15 @@ the everything.:</p>
 python packages, installs vendor software and initializes the OL
 databases. A detailed log is written to <tt class="docutils literal"><span class="pre">var/log/install.log</span></tt> and
 info and errors are reported to stdout and stderr respectively.</p>
+</div>
+<div class="section" id="get-css-and-js-files">
+<h2>Get css and js files<a class="headerlink" href="#get-css-and-js-files" title="Permalink to this headline">¶</a></h2>
+<p>Openlibrary uses css and js files from the database. Until this is fixed, get the latest css and js files using:</p>
+<div class="highlight-python"><pre>$ python setup.py shell
+$ ./scripts/copydocs.py /upstream/css/* /upstream/js/*
+...
+$ exit</pre>
+</div>
 </div>
 <div class="section" id="verify-the-installation">
 <h2>Verify the installation<a class="headerlink" href="#verify-the-installation" title="Permalink to this headline">¶</a></h2>
@@ -191,9 +142,10 @@ info and errors are reported to stdout and stderr respectively.</p>
   <ul>
 <li><a class="reference internal" href="#">Setting up a dev instance</a><ul>
 <li><a class="reference internal" href="#supported-platforms">Supported Platforms</a></li>
-<li><a class="reference internal" href="#getting-the-source">Getting the source</a></li>
 <li><a class="reference internal" href="#installing-dependencies">Installing dependencies</a></li>
+<li><a class="reference internal" href="#getting-the-source">Getting the source</a></li>
 <li><a class="reference internal" href="#running-the-install-script">Running the install script</a></li>
+<li><a class="reference internal" href="#get-css-and-js-files">Get css and js files</a></li>
 <li><a class="reference internal" href="#verify-the-installation">Verify the installation</a></li>
 <li><a class="reference internal" href="#using-the-dev-instance">Using the dev instance</a></li>
 <li><a class="reference internal" href="#loading-sample-data">Loading sample data</a></li>
@@ -205,8 +157,8 @@ info and errors are reported to stdout and stderr respectively.</p>
   <p class="topless"><a href="index.html"
                         title="previous chapter">Open Library: Developer Documentation</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="architecture.html"
-                        title="next chapter">Architecture of the dev instance</a></p>
+  <p class="topless"><a href="working.html"
+                        title="next chapter">Working with dev instance</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/bootstrap.txt"
@@ -239,7 +191,7 @@ info and errors are reported to stdout and stderr respectively.</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="architecture.html" title="Architecture of the dev instance"
+          <a href="working.html" title="Working with dev instance"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Open Library: Developer Documentation"
@@ -249,8 +201,8 @@ info and errors are reported to stdout and stderr respectively.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
+      Last updated on Jan 21, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
     </div>
   </body>
 </html>

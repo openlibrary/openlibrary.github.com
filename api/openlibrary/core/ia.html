@@ -55,8 +55,28 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="ia">
-<h1>ia<a class="headerlink" href="#ia" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-openlibrary.core.ia">
+<span id="ia"></span><h1>ia<a class="headerlink" href="#module-openlibrary.core.ia" title="Permalink to this headline">¶</a></h1>
+<p>Library for interacting wih archive.org.</p>
+<dl class="function">
+<dt id="openlibrary.core.ia.get_meta_xml">
+<tt class="descclassname">openlibrary.core.ia.</tt><tt class="descname">get_meta_xml</tt><big>(</big><em>itemid</em><big>)</big><a class="headerlink" href="#openlibrary.core.ia.get_meta_xml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the contents of meta_xml as JSON.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.ia.xml2dict">
+<tt class="descclassname">openlibrary.core.ia.</tt><tt class="descname">xml2dict</tt><big>(</big><em>xml</em>, <em>**defaults</em><big>)</big><a class="headerlink" href="#openlibrary.core.ia.xml2dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts xml to python dictionary assuming that the xml is not nested.</p>
+<p>To get some tag as a list/set, pass a keyword argument with list/set as value.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xml2dict</span><span class="p">(</span><span class="s">&#39;&lt;doc&gt;&lt;x&gt;1&lt;/x&gt;&lt;x&gt;2&lt;/x&gt;&lt;/doc&gt;&#39;</span><span class="p">)</span>
+<span class="go">{&#39;x&#39;: 2}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xml2dict</span><span class="p">(</span><span class="s">&#39;&lt;doc&gt;&lt;x&gt;1&lt;/x&gt;&lt;x&gt;2&lt;/x&gt;&lt;/doc&gt;&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="p">[])</span>
+<span class="go">{&#39;x&#39;: [1, 2]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </div>
 
 
@@ -119,8 +139,8 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
+      Last updated on Jan 21, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
     </div>
   </body>
 </html>

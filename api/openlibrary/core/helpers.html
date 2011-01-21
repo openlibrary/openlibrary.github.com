@@ -55,8 +55,107 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="helpers">
-<h1>helpers<a class="headerlink" href="#helpers" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-openlibrary.core.helpers">
+<span id="helpers"></span><h1>helpers<a class="headerlink" href="#module-openlibrary.core.helpers" title="Permalink to this headline">¶</a></h1>
+<p>Generic helper functions to use in the templates and the webapp.</p>
+<dl class="function">
+<dt id="openlibrary.core.helpers.sanitize">
+<tt class="descclassname">openlibrary.core.helpers.</tt><tt class="descname">sanitize</tt><big>(</big><em>html</em><big>)</big><a class="headerlink" href="#openlibrary.core.helpers.sanitize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes unsafe tags and attributes from html and adds
+<tt class="docutils literal"><span class="pre">rel=&quot;nofollow&quot;</span></tt> attribute to all external links.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.helpers.json_encode">
+<tt class="descclassname">openlibrary.core.helpers.</tt><tt class="descname">json_encode</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#openlibrary.core.helpers.json_encode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as simplejson.dumps.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.helpers.safesort">
+<tt class="descclassname">openlibrary.core.helpers.</tt><tt class="descname">safesort</tt><big>(</big><em>iterable</em>, <em>key=None</em>, <em>reverse=False</em><big>)</big><a class="headerlink" href="#openlibrary.core.helpers.safesort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sorts heterogeneous of objects without raising errors.</p>
+<p>Sorting heterogeneous objects sometimes causes error. For example,
+datetime and Nones don&#8217;t go well together. This function takes special
+care to make that work.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.helpers.datestr">
+<tt class="descclassname">openlibrary.core.helpers.</tt><tt class="descname">datestr</tt><big>(</big><em>then</em>, <em>now=None</em>, <em>lang=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.helpers.datestr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internationalized version of web.datestr.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.helpers.format_date">
+<tt class="descclassname">openlibrary.core.helpers.</tt><tt class="descname">format_date</tt><big>(</big><em>date</em>, <em>lang=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.helpers.format_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.helpers.sprintf">
+<tt class="descclassname">openlibrary.core.helpers.</tt><tt class="descname">sprintf</tt><big>(</big><em>s</em>, <em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.core.helpers.sprintf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handy utility for string replacements.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sprintf</span><span class="p">(</span><span class="s">&#39;hello </span><span class="si">%s</span><span class="s">&#39;</span><span class="p">,</span> <span class="s">&#39;python&#39;</span><span class="p">)</span>
+<span class="go">&#39;hello python&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sprintf</span><span class="p">(</span><span class="s">&#39;hello </span><span class="si">%(name)s</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;python&#39;</span><span class="p">)</span>
+<span class="go">&#39;hello python&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.helpers.cond">
+<tt class="descclassname">openlibrary.core.helpers.</tt><tt class="descname">cond</tt><big>(</big><em>pred</em>, <em>true_value</em>, <em>false_value=''</em><big>)</big><a class="headerlink" href="#openlibrary.core.helpers.cond" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lisp style cond function.</p>
+<p>Hanly to use instead of if-else expression.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.helpers.commify">
+<tt class="descclassname">openlibrary.core.helpers.</tt><tt class="descname">commify</tt><big>(</big><em>number</em>, <em>lang=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.helpers.commify" title="Permalink to this definition">¶</a></dt>
+<dd><p>localized version of web.commify</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.helpers.truncate">
+<tt class="descclassname">openlibrary.core.helpers.</tt><tt class="descname">truncate</tt><big>(</big><em>text</em>, <em>limit</em><big>)</big><a class="headerlink" href="#openlibrary.core.helpers.truncate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Truncate text and add ellipses if it longer than specified limit.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.helpers.urlsafe">
+<tt class="descclassname">openlibrary.core.helpers.</tt><tt class="descname">urlsafe</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#openlibrary.core.helpers.urlsafe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replaces the unsafe chars from path with underscores.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.helpers.texsafe">
+<tt class="descclassname">openlibrary.core.helpers.</tt><tt class="descname">texsafe</tt><big>(</big><em>text</em><big>)</big><a class="headerlink" href="#openlibrary.core.helpers.texsafe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Escapes the special characters in the given text for using it in tex type setting.</p>
+<p>Tex (or Latex) uses some characters in the ascii character range for
+special notations. These characters must be escaped when occur in the
+regular text. This function escapes those special characters.</p>
+<p>The list of special characters and the latex command to typeset them can
+be found in <a class="reference external" href="http://www.ctan.org/tex-archive/info/symbols/comprehensive/symbols-a4.pdf">The Comprehensive LaTeX Symbol List</a>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.helpers.parse_datetime">
+<tt class="descclassname">openlibrary.core.helpers.</tt><tt class="descname">parse_datetime</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#openlibrary.core.helpers.parse_datetime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates datetime object from isoformat.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="s">&#39;2008-01-01T01:01:01.010101&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parse_datetime</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+<span class="go">&#39;2008-01-01T01:01:01.010101&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.helpers.safeint">
+<tt class="descclassname">openlibrary.core.helpers.</tt><tt class="descname">safeint</tt><big>(</big><em>value</em>, <em>default=0</em><big>)</big><a class="headerlink" href="#openlibrary.core.helpers.safeint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convers the value to integer. Returns 0, if the conversion fails.</p>
+</dd></dl>
+
 </div>
 
 
@@ -119,8 +218,8 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
+      Last updated on Jan 21, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
     </div>
   </body>
 </html>

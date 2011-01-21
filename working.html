@@ -22,7 +22,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="openlibrary v2.0 documentation" href="index.html" /> 
+    <link rel="top" title="openlibrary v2.0 documentation" href="index.html" />
+    <link rel="next" title="Architecture of the dev instance" href="architecture.html" />
+    <link rel="prev" title="Setting up a dev instance" href="bootstrap.html" /> 
   </head>
   <body>
     <div class="related">
@@ -34,6 +36,12 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
+        <li class="right" >
+          <a href="architecture.html" title="Architecture of the dev instance"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="bootstrap.html" title="Setting up a dev instance"
+             accesskey="P">previous</a> |</li>
         <li><a href="index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -50,9 +58,11 @@
 <p>All open library services can be started by running:</p>
 <div class="highlight-python"><pre>$ python setup.py start</pre>
 </div>
-<p>This command starts services using supervisord using
-<tt class="file docutils literal"><span class="pre">conf/supervisord/linux.ini</span></tt> as configuration file on Linux and
-<tt class="file docutils literal"><span class="pre">conf/supervisord/macosx.ini</span></tt> on Mac.</p>
+<p>This starts all the OL services using <a class="reference external" href="http://supervisord.org/">supervisord</a>.</p>
+<p>The supervisor config files are in <tt class="file docutils literal"><span class="pre">conf/supervisor</span></tt>.</p>
+<p>Once the services are started, Open Library dev instance will be available at:</p>
+<p><a class="reference external" href="http://0.0.0.0:8080/">http://0.0.0.0:8080/</a></p>
+<p>Logs of the running services will be available in <tt class="docutils literal"><span class="pre">var/log/</span></tt>.</p>
 </div>
 <div class="section" id="restarting-services">
 <h2>Restarting services<a class="headerlink" href="#restarting-services" title="Permalink to this headline">¶</a></h2>
@@ -62,6 +72,10 @@
 </div>
 <p>Look at the supervisord config files to know the list of services.</p>
 <p>To know more about other available setup.py commands, see <a class="reference internal" href="appendices/setup_commands.html"><em>setup.py commands</em></a>.</p>
+</div>
+<div class="section" id="handling-database-schema-changes">
+<h2>Handling database schema changes<a class="headerlink" href="#handling-database-schema-changes" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="appendices/db_migrations.html"><em>Database Migrations</em></a> to know how to upgrade database schema.</p>
 </div>
 </div>
 
@@ -79,10 +93,17 @@
 <li><a class="reference internal" href="#">Working with dev instance</a><ul>
 <li><a class="reference internal" href="#starting-services">Starting services</a></li>
 <li><a class="reference internal" href="#restarting-services">Restarting services</a></li>
+<li><a class="reference internal" href="#handling-database-schema-changes">Handling database schema changes</a></li>
 </ul>
 </li>
 </ul>
 
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="bootstrap.html"
+                        title="previous chapter">Setting up a dev instance</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="architecture.html"
+                        title="next chapter">Architecture of the dev instance</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/working.txt"
@@ -114,13 +135,19 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
+        <li class="right" >
+          <a href="architecture.html" title="Architecture of the dev instance"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="bootstrap.html" title="Setting up a dev instance"
+             >previous</a> |</li>
         <li><a href="index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
+      Last updated on Jan 21, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
     </div>
   </body>
 </html>

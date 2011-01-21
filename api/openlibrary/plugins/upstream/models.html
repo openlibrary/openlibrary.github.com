@@ -56,8 +56,516 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="models">
-<h1>models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-openlibrary.plugins.upstream.models">
+<span id="models"></span><h1>models<a class="headerlink" href="#module-openlibrary.plugins.upstream.models" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.models.AddBookChangeset">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.models.</tt><tt class="descname">AddBookChangeset</tt><big>(</big><em>site</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.AddBookChangeset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.upstream.models.Changeset" title="openlibrary.plugins.upstream.models.Changeset"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.upstream.models.Changeset</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.AddBookChangeset.get_author">
+<tt class="descname">get_author</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.AddBookChangeset.get_author" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.AddBookChangeset.get_edition">
+<tt class="descname">get_edition</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.AddBookChangeset.get_edition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.AddBookChangeset.get_work">
+<tt class="descname">get_work</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.AddBookChangeset.get_work" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.models.Author">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.models.</tt><tt class="descname">Author</tt><big>(</big><em>site</em>, <em>key</em>, <em>data=None</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Author" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../core/models.html#openlibrary.core.models.Author" title="openlibrary.core.models.Author"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.core.models.Author</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Author.get_books">
+<tt class="descname">get_books</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Author.get_books" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Author.get_olid">
+<tt class="descname">get_olid</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Author.get_olid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Author.get_photo">
+<tt class="descname">get_photo</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Author.get_photo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Author.get_photo_url">
+<tt class="descname">get_photo_url</tt><big>(</big><em>size</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Author.get_photo_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Author.get_photos">
+<tt class="descname">get_photos</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Author.get_photos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.models.Changeset">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.models.</tt><tt class="descname">Changeset</tt><big>(</big><em>site</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Changeset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.infobase.client.Changeset</span></tt></p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Changeset.can_undo">
+<tt class="descname">can_undo</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Changeset.can_undo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Changeset.get_undo_changeset">
+<tt class="descname">get_undo_changeset</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Changeset.get_undo_changeset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the changeset that undone this transaction if one exists, None otherwise.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.models.Edition">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.models.</tt><tt class="descname">Edition</tt><big>(</big><em>site</em>, <em>key</em>, <em>data=None</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../core/models.html#openlibrary.core.models.Edition" title="openlibrary.core.models.Edition"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.core.models.Edition</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.get_authors">
+<tt class="descname">get_authors</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.get_authors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Added to provide same interface for work and edition</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.get_available_loans">
+<tt class="descname">get_available_loans</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.get_available_loans" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns [{&#8216;resource_id&#8217;: uuid, &#8216;resource_type&#8217;: type, &#8216;size&#8217;: bytes}]</p>
+<p>size may be None</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.get_classifications">
+<tt class="descname">get_classifications</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.get_classifications" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.get_cover">
+<tt class="descname">get_cover</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.get_cover" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.get_cover_url">
+<tt class="descname">get_cover_url</tt><big>(</big><em>size</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.get_cover_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.get_covers">
+<tt class="descname">get_covers</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.get_covers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.get_ia_meta_fields">
+<tt class="descname">get_ia_meta_fields</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.get_ia_meta_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.get_identifiers">
+<tt class="descname">get_identifiers</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.get_identifiers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns (name, value) pairs of all available identifiers.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.get_lending_resource_id">
+<tt class="descname">get_lending_resource_id</tt><big>(</big><em>type</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.get_lending_resource_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.get_lending_resources">
+<tt class="descname">get_lending_resources</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.get_lending_resources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the loan resource identifiers (in meta.xml format for ACS4 resources) for books hosted on archive.org</p>
+<dl class="docutils">
+<dt>Returns e.g. [&#8216;bookreader:lettertoannewarr00west&#8217;,</dt>
+<dd>&#8216;acs:epub:urn:uuid:0df6f344-7ce9-4038-885e-e02db34f2891&#8217;,
+&#8216;acs:pdf:urn:uuid:7f192e62-13f5-4a62-af48-be4bea67e109&#8217;]</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.get_links">
+<tt class="descname">get_links</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.get_links" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.get_next">
+<tt class="descname">get_next</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.get_next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Next edition of work</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.get_olid">
+<tt class="descname">get_olid</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.get_olid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.get_physical_dimensions">
+<tt class="descname">get_physical_dimensions</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.get_physical_dimensions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.get_prev">
+<tt class="descname">get_prev</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.get_prev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Previous edition of work</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.get_table_of_contents">
+<tt class="descname">get_table_of_contents</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.get_table_of_contents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.get_title">
+<tt class="descname">get_title</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.get_title" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.get_title_prefix">
+<tt class="descname">get_title_prefix</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.get_title_prefix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.get_toc_text">
+<tt class="descname">get_toc_text</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.get_toc_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.get_weight">
+<tt class="descname">get_weight</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.get_weight" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns weight as a storage object with value and units fields.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.is_daisy_encrypted">
+<tt class="descname">is_daisy_encrypted</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.is_daisy_encrypted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.set_classifications">
+<tt class="descname">set_classifications</tt><big>(</big><em>classifications</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.set_classifications" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.set_identifiers">
+<tt class="descname">set_identifiers</tt><big>(</big><em>identifiers</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.set_identifiers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the edition from identifiers specified as (name, value) pairs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.set_physical_dimensions">
+<tt class="descname">set_physical_dimensions</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.set_physical_dimensions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.set_toc_text">
+<tt class="descname">set_toc_text</tt><big>(</big><em>text</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.set_toc_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.set_weight">
+<tt class="descname">set_weight</tt><big>(</big><em>w</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.set_weight" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.plugins.upstream.models.Edition.title">
+<tt class="descname">title</tt><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.title" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.plugins.upstream.models.Edition.title_prefix">
+<tt class="descname">title_prefix</tt><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.title_prefix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Edition.update_loan_status">
+<tt class="descname">update_loan_status</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.update_loan_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the loan status</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.plugins.upstream.models.Edition.wp_citation_fields">
+<tt class="descname">wp_citation_fields</tt><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.wp_citation_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a wikipedia citation as defined by <a class="reference external" href="http://en.wikipedia.org/wiki/Template:Cite#Citing_books">http://en.wikipedia.org/wiki/Template:Cite#Citing_books</a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.models.ListChangeset">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.models.</tt><tt class="descname">ListChangeset</tt><big>(</big><em>site</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.ListChangeset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.upstream.models.Changeset" title="openlibrary.plugins.upstream.models.Changeset"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.upstream.models.Changeset</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.ListChangeset.get_added_seed">
+<tt class="descname">get_added_seed</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.ListChangeset.get_added_seed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.ListChangeset.get_list">
+<tt class="descname">get_list</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.ListChangeset.get_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.ListChangeset.get_removed_seed">
+<tt class="descname">get_removed_seed</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.ListChangeset.get_removed_seed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.ListChangeset.get_seed">
+<tt class="descname">get_seed</tt><big>(</big><em>seed</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.ListChangeset.get_seed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the seed object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.models.MergeAuthors">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.models.</tt><tt class="descname">MergeAuthors</tt><big>(</big><em>site</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.MergeAuthors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.upstream.models.Changeset" title="openlibrary.plugins.upstream.models.Changeset"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.upstream.models.Changeset</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.MergeAuthors.can_undo">
+<tt class="descname">can_undo</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.MergeAuthors.can_undo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.MergeAuthors.get_duplicates">
+<tt class="descname">get_duplicates</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.MergeAuthors.get_duplicates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.MergeAuthors.get_master">
+<tt class="descname">get_master</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.MergeAuthors.get_master" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.models.Subject">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.models.</tt><tt class="descname">Subject</tt><big>(</big><em>site</em>, <em>key</em>, <em>data=None</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Subject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.infobase.client.Thing</span></tt></p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Subject.get_author_count">
+<tt class="descname">get_author_count</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Subject.get_author_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Subject.get_authors">
+<tt class="descname">get_authors</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Subject.get_authors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Subject.get_covers">
+<tt class="descname">get_covers</tt><big>(</big><em>offset=0</em>, <em>limit=20</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Subject.get_covers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Subject.get_edition_count">
+<tt class="descname">get_edition_count</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Subject.get_edition_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Subject.get_editions">
+<tt class="descname">get_editions</tt><big>(</big><em>offset</em>, <em>limit=20</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Subject.get_editions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Subject.get_publishers">
+<tt class="descname">get_publishers</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Subject.get_publishers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Subject.get_related_subjects">
+<tt class="descname">get_related_subjects</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Subject.get_related_subjects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.models.SubjectPerson">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.models.</tt><tt class="descname">SubjectPerson</tt><big>(</big><em>site</em>, <em>key</em>, <em>data=None</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.SubjectPerson" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.upstream.models.Subject" title="openlibrary.plugins.upstream.models.Subject"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.upstream.models.Subject</span></tt></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.models.SubjectPlace">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.models.</tt><tt class="descname">SubjectPlace</tt><big>(</big><em>site</em>, <em>key</em>, <em>data=None</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.SubjectPlace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.upstream.models.Subject" title="openlibrary.plugins.upstream.models.Subject"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.upstream.models.Subject</span></tt></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.models.Undo">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.models.</tt><tt class="descname">Undo</tt><big>(</big><em>site</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Undo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.upstream.models.Changeset" title="openlibrary.plugins.upstream.models.Changeset"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.upstream.models.Changeset</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Undo.can_undo">
+<tt class="descname">can_undo</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Undo.can_undo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Undo.get_parent_changeset">
+<tt class="descname">get_parent_changeset</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Undo.get_parent_changeset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Undo.get_undo_of">
+<tt class="descname">get_undo_of</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Undo.get_undo_of" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.models.UnitParser">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.models.</tt><tt class="descname">UnitParser</tt><big>(</big><em>fields</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.UnitParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parsers values like dimentions and weight.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">UnitParser</span><span class="p">([</span><span class="s">&quot;height&quot;</span><span class="p">,</span> <span class="s">&quot;width&quot;</span><span class="p">,</span> <span class="s">&quot;depth&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s">&quot;9 x 3 x 2 inches&quot;</span><span class="p">)</span>
+<span class="go">&lt;Storage {&#39;units&#39;: &#39;inches&#39;, &#39;width&#39;: &#39;3&#39;, &#39;depth&#39;: &#39;2&#39;, &#39;height&#39;: &#39;9&#39;}&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">format</span><span class="p">({</span><span class="s">&quot;height&quot;</span><span class="p">:</span> <span class="s">&quot;9&quot;</span><span class="p">,</span> <span class="s">&quot;width&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&quot;depth&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&quot;units&quot;</span><span class="p">:</span> <span class="s">&quot;inches&quot;</span><span class="p">})</span>
+<span class="go">&#39;9 x 3 x 2 inches&#39;</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.UnitParser.format">
+<tt class="descname">format</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.UnitParser.format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.UnitParser.parse">
+<tt class="descname">parse</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.UnitParser.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse the string and return storage object with specified fields and units.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.models.User">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.models.</tt><tt class="descname">User</tt><big>(</big><em>site</em>, <em>key</em>, <em>data=None</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.User" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../core/models.html#openlibrary.core.models.User" title="openlibrary.core.models.User"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.core.models.User</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.User.get_creation_info">
+<tt class="descname">get_creation_info</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.User.get_creation_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.User.get_edit_count">
+<tt class="descname">get_edit_count</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.User.get_edit_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.User.get_edit_history">
+<tt class="descname">get_edit_history</tt><big>(</big><em>limit=10</em>, <em>offset=0</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.User.get_edit_history" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.User.get_email">
+<tt class="descname">get_email</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.User.get_email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.User.get_loan_count">
+<tt class="descname">get_loan_count</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.User.get_loan_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.User.get_name">
+<tt class="descname">get_name</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.User.get_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.plugins.upstream.models.User.name">
+<tt class="descname">name</tt><a class="headerlink" href="#openlibrary.plugins.upstream.models.User.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.User.update_loan_status">
+<tt class="descname">update_loan_status</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.User.update_loan_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the status of this user&#8217;s loans.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.models.Work">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.models.</tt><tt class="descname">Work</tt><big>(</big><em>site</em>, <em>key</em>, <em>data=None</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Work" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../core/models.html#openlibrary.core.models.Work" title="openlibrary.core.models.Work"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.core.models.Work</span></tt></a></p>
+<dl class="attribute">
+<dt id="openlibrary.plugins.upstream.models.Work.first_publish_year">
+<tt class="descname">first_publish_year</tt><a class="headerlink" href="#openlibrary.plugins.upstream.models.Work.first_publish_year" title="Permalink to this definition">¶</a></dt>
+<dd><p>first_publish_year</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Work.get_authors">
+<tt class="descname">get_authors</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Work.get_authors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Work.get_cover">
+<tt class="descname">get_cover</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Work.get_cover" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Work.get_cover_url">
+<tt class="descname">get_cover_url</tt><big>(</big><em>size</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Work.get_cover_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Work.get_covers">
+<tt class="descname">get_covers</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Work.get_covers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Work.get_covers_from_solr">
+<tt class="descname">get_covers_from_solr</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Work.get_covers_from_solr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Work.get_edition_covers">
+<tt class="descname">get_edition_covers</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Work.get_edition_covers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Work.get_olid">
+<tt class="descname">get_olid</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Work.get_olid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Work.get_sorted_editions">
+<tt class="descname">get_sorted_editions</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Work.get_sorted_editions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of works sorted by publish date</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Work.get_subjects">
+<tt class="descname">get_subjects</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Work.get_subjects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return subject strings.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.models.follow_redirect">
+<tt class="descclassname">openlibrary.plugins.upstream.models.</tt><tt class="descname">follow_redirect</tt><big>(</big><em>doc</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.follow_redirect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.models.get_works_solr">
+<tt class="descclassname">openlibrary.plugins.upstream.models.</tt><tt class="descname">get_works_solr</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.get_works_solr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.models.setup">
+<tt class="descclassname">openlibrary.plugins.upstream.models.</tt><tt class="descname">setup</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.setup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 
@@ -121,8 +629,8 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
+      Last updated on Jan 21, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
     </div>
   </body>
 </html>
