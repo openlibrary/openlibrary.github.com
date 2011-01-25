@@ -74,9 +74,9 @@ even for fairly short strings.  This class puts a compressor and
 decompressor into the same object, called a Compressor for convenience.</p>
 <p>Usage: running the three lines</p>
 <blockquote>
-compressor = Compressor(initial_seed)
+<div>compressor = Compressor(initial_seed)
 compressed_record = compressor.compress(some_record)
-restored_record = compressor.decompress(compressed_record)</blockquote>
+restored_record = compressor.decompress(compressed_record)</div></blockquote>
 <p>where initial_seed is a few kilobytes of messages, and some_record is
 a single record of maybe a few hundred bytes, for typical text, should
 result in compressed_record being 50% or less of the size of
@@ -164,8 +164,8 @@ some_record, and restored_record being identical to some_record.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Jan 21, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+      Last updated on Jan 25, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>
 </html>
