@@ -100,15 +100,6 @@ python packages, installs vendor software and initializes the OL
 databases. A detailed log is written to <tt class="docutils literal"><span class="pre">var/log/install.log</span></tt> and
 info and errors are reported to stdout and stderr respectively.</p>
 </div>
-<div class="section" id="get-css-and-js-files">
-<h2>Get css and js files<a class="headerlink" href="#get-css-and-js-files" title="Permalink to this headline">¶</a></h2>
-<p>Openlibrary uses css and js files from the database. Until this is fixed, get the latest css and js files using:</p>
-<div class="highlight-python"><pre>$ python setup.py shell
-$ ./scripts/copydocs.py /upstream/css/* /upstream/js/*
-...
-$ exit</pre>
-</div>
-</div>
 <div class="section" id="verify-the-installation">
 <h2>Verify the installation<a class="headerlink" href="#verify-the-installation" title="Permalink to this headline">¶</a></h2>
 <p><em>TDB</em> (insert notes on how to run smoke tests here).</p>
@@ -145,7 +136,6 @@ $ exit</pre>
 <li><a class="reference internal" href="#installing-dependencies">Installing dependencies</a></li>
 <li><a class="reference internal" href="#getting-the-source">Getting the source</a></li>
 <li><a class="reference internal" href="#running-the-install-script">Running the install script</a></li>
-<li><a class="reference internal" href="#get-css-and-js-files">Get css and js files</a></li>
 <li><a class="reference internal" href="#verify-the-installation">Verify the installation</a></li>
 <li><a class="reference internal" href="#using-the-dev-instance">Using the dev instance</a></li>
 <li><a class="reference internal" href="#loading-sample-data">Loading sample data</a></li>

@@ -1,0 +1,182 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Feature Flags &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="feature-flags">
+<h1>Feature Flags<a class="headerlink" href="#feature-flags" title="Permalink to this headline">¶</a></h1>
+<p>Feature flags is a way have features under development live on production and visible only to admins/beta-users.</p>
+<p>This idea came from flickr.</p>
+<p><a class="reference external" href="http://code.flickr.com/blog/2009/12/02/flipping-out/">http://code.flickr.com/blog/2009/12/02/flipping-out/</a></p>
+<div class="section" id="using-feature-flags">
+<h2>Using Feature Flags<a class="headerlink" href="#using-feature-flags" title="Permalink to this headline">¶</a></h2>
+<p>Feature flags are used in templates and in controller classes.</p>
+<p>To make some part of the template visible only if a feature-flag is enabled:</p>
+<div class="highlight-python"><pre>$if "lists" in ctx.features:
+    &lt;h3&gt;Lists&lt;/h3&gt;
+    $for list in page.get_lists():
+        ...</pre>
+</div>
+<p>To enable a url only if a feature flag is enabled:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">home</span><span class="p">(</span><span class="n">delegate</span><span class="o">.</span><span class="n">page</span><span class="p">):</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="s">&quot;/&quot;</span>
+
+    <span class="k">def</span> <span class="nf">is_enabled</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;home-v2&quot;</span> <span class="ow">in</span> <span class="n">web</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">features</span>
+
+    <span class="k">def</span> <span class="nf">GET</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">&quot;home&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-feature-flags">
+<h2>Setting Feature Flags<a class="headerlink" href="#setting-feature-flags" title="Permalink to this headline">¶</a></h2>
+<p>In Open Library, the feature flags are specified in the <tt class="docutils literal"><span class="pre">openlibrary.yml</span></tt> file as follows:</p>
+<div class="highlight-python"><pre>features:
+    merge-authors: enabled
+    lists: admin
+    lending_v2:
+        filter: usergroup
+        usergroup: beta-users</pre>
+</div>
+<p>The value of a feature flag is called a <em>filter</em>. A filter can be specified either as its name or as a dict containing its name and parameters.
+For example, the following 2 example mean the same.</p>
+<div class="highlight-python"><pre>features:
+    lists: admin
+
+features:
+    lists:
+        filter: admin</pre>
+</div>
+<p>Available filters are:</p>
+<p><strong>enabled</strong></p>
+<blockquote>
+<div>Enabled for all users.</div></blockquote>
+<p><strong>disabled</strong></p>
+<blockquote>
+<div>Disabled for all users.</div></blockquote>
+<p><strong>loggedin</strong></p>
+<blockquote>
+<div>Enabled only for logged-in users.</div></blockquote>
+<p><strong>admin</strong></p>
+<blockquote>
+<div>Enabled for admin users.</div></blockquote>
+<p><strong>usergroup</strong></p>
+<blockquote>
+<div><p>Enabled for the users part of the specified usergroup.</p>
+<div class="highlight-python"><pre>lending_v2:
+    filter: usergroup
+    usergroup: beta-users</pre>
+</div>
+</div></blockquote>
+<p><strong>queryparam</strong></p>
+<blockquote>
+<div><p>Enabled only if the url has a specified query parameter.</p>
+<div class="highlight-python"><pre>debug:
+    filter: queryparam
+    name: debug
+    value: true</pre>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo_OL-lg.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Feature Flags</a><ul>
+<li><a class="reference internal" href="#using-feature-flags">Using Feature Flags</a></li>
+<li><a class="reference internal" href="#setting-feature-flags">Setting Feature Flags</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/design/feature-flags.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Internet Archive.
+      Last updated on Jan 27, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>
