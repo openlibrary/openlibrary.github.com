@@ -8,6 +8,7 @@ Submodules
 .. toctree::
    :maxdepth: 1
 
+   admin/index.rst
    api.rst
    config.rst
    conftest.rst
