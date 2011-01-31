@@ -1,0 +1,5 @@
+
+admin
+=====
+
+.. automodule:: openlibrary.core.admin

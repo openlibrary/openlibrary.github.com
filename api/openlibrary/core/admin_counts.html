@@ -1,0 +1,180 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>admin_counts &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="core" href="index.html" />
+    <link rel="next" title="cache" href="cache.html" />
+    <link rel="prev" title="admin" href="admin.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cache.html" title="cache"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="admin.html" title="admin"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">core</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.core.admin_counts">
+<span id="admin-counts"></span><h1>admin_counts<a class="headerlink" href="#module-openlibrary.core.admin_counts" title="Permalink to this headline">¶</a></h1>
+<p>Script to read out data from thingdb and put it in couch so that it
+can be queried by the /admin pages on openlibrary</p>
+<dl class="exception">
+<dt id="openlibrary.core.admin_counts.InvalidType">
+<em class="property">exception </em><tt class="descclassname">openlibrary.core.admin_counts.</tt><tt class="descname">InvalidType</tt><a class="headerlink" href="#openlibrary.core.admin_counts.InvalidType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.TypeError</span></tt></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.admin_counts.connect_to_couch">
+<tt class="descclassname">openlibrary.core.admin_counts.</tt><tt class="descname">connect_to_couch</tt><big>(</big><em>config_file</em><big>)</big><a class="headerlink" href="#openlibrary.core.admin_counts.connect_to_couch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connects to the couch databases</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.admin_counts.connect_to_pg">
+<tt class="descclassname">openlibrary.core.admin_counts.</tt><tt class="descname">connect_to_pg</tt><big>(</big><em>config_file</em><big>)</big><a class="headerlink" href="#openlibrary.core.admin_counts.connect_to_pg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connects to the postgres database specified in the dictionary
+<cite>config</cite>. Needs a top level key <cite>db_parameters</cite> and under that
+<cite>database</cite> (or <cite>db</cite>) at the least. If <cite>user</cite> and <cite>host</cite> are
+provided, they&#8217;re used as well.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.admin_counts.get_delta_data">
+<tt class="descclassname">openlibrary.core.admin_counts.</tt><tt class="descname">get_delta_data</tt><big>(</big><em>admin_db</em>, <em>editions_db</em>, <em>today</em><big>)</big><a class="headerlink" href="#openlibrary.core.admin_counts.get_delta_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of new records of <cite>types</cite> by calculating the
+difference between yesterdays numbers and todays</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.admin_counts.get_range_data">
+<tt class="descclassname">openlibrary.core.admin_counts.</tt><tt class="descname">get_range_data</tt><big>(</big><em>infobase_db</em>, <em>coverstore_db</em>, <em>start</em>, <em>end</em><big>)</big><a class="headerlink" href="#openlibrary.core.admin_counts.get_range_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of new records of various types
+between <cite>start</cite> and <cite>end</cite></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.admin_counts.get_total_data">
+<tt class="descclassname">openlibrary.core.admin_counts.</tt><tt class="descname">get_total_data</tt><big>(</big><em>editions_db</em>, <em>works_db</em>, <em>seeds_db</em><big>)</big><a class="headerlink" href="#openlibrary.core.admin_counts.get_total_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get total counts for the various items and return them as a
+dictionary</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.admin_counts.main">
+<tt class="descclassname">openlibrary.core.admin_counts.</tt><tt class="descname">main</tt><big>(</big><em>infobase_config</em>, <em>openlibrary_config</em>, <em>coverstore_config</em>, <em>ndays=1</em><big>)</big><a class="headerlink" href="#openlibrary.core.admin_counts.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.admin_counts.store_data">
+<tt class="descclassname">openlibrary.core.admin_counts.</tt><tt class="descname">store_data</tt><big>(</big><em>db</em>, <em>data</em>, <em>date</em><big>)</big><a class="headerlink" href="#openlibrary.core.admin_counts.store_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo_OL-lg.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="admin.html"
+                        title="previous chapter">admin</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cache.html"
+                        title="next chapter">cache</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/openlibrary/core/admin_counts.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cache.html" title="cache"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="admin.html" title="admin"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >core</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Internet Archive.
+      Last updated on Jan 31, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

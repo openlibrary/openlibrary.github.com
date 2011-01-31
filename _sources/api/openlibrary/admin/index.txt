@@ -1,0 +1,17 @@
+
+admin
+=====
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   code.rst
+   utils.rst
+
+Documentation
+-------------
+
+.. automodule:: openlibrary.admin

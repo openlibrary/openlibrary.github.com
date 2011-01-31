@@ -60,7 +60,7 @@
 <span class="target" id="module-openlibrary.data.db"></span><p>Library to provide fast access to Open Library database.</p>
 <p>How to use:</p>
 <blockquote>
-<p>from openlibrary.data import db</p>
+<div><p>from openlibrary.data import db</p>
 <p>db.setup_database(db=&#8217;openlibrary&#8217;, user=&#8217;anand&#8217;, pw=&#8217;&#8216;)
 db.setup_memcache([&#8216;host1:port1&#8217;, &#8216;host2:port2&#8217;])</p>
 <p># get a set of docs
@@ -69,7 +69,7 @@ docs = db.get_docs([&#8216;/sandbox&#8217;])</p>
 books = dc.itedocs(type=&#8221;/type/edition&#8221;)</p>
 <p># update docs
 db.update_docs(docs)</p>
-</blockquote>
+</div></blockquote>
 <p>Each doc is a storage object with &#8220;id&#8221;, &#8220;key&#8221;, &#8220;revision&#8221; and &#8220;data&#8221;.</p>
 <dl class="function">
 <dt id="openlibrary.data.db.setup_database">
@@ -90,7 +90,7 @@ This must be called along with setup_database, if memcached servers are used in 
 <dd><p>Execute an expensive query using db cursors.</p>
 <p>USAGE:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt>for chunk in longquery(&#8220;SELECT * FROM bigtable&#8221;):</dt>
 <dd><dl class="first last docutils">
 <dt>for row in chunk:</dt>
@@ -98,7 +98,7 @@ This must be called along with setup_database, if memcached servers are used in 
 </dl>
 </dd>
 </dl>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="function">
@@ -177,8 +177,8 @@ If type is specified, then only docs of that type will be returned.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Jan 21, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+      Last updated on Jan 31, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>
 </html>

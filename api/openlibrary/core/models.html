@@ -134,14 +134,14 @@
 <p>Class to represent /type/list objects in OL.</p>
 <p>List contains the following properties:</p>
 <blockquote>
-<ul class="simple">
+<div><ul class="simple">
 <li>name - name of the list</li>
 <li>description - detailed description of the list (markdown)</li>
 <li>members - members of the list. Either references or subject strings.</li>
 <li>cover - id of the book cover. Picked from one of its editions.</li>
 <li>tags - list of tags to describe this list.</li>
 </ul>
-</blockquote>
+</div></blockquote>
 <dl class="method">
 <dt id="openlibrary.core.models.List.add_seed">
 <tt class="descname">add_seed</tt><big>(</big><em>seed</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.List.add_seed" title="Permalink to this definition">¶</a></dt>
@@ -217,7 +217,7 @@
 <dl class="class">
 <dt id="openlibrary.core.models.Thing">
 <em class="property">class </em><tt class="descclassname">openlibrary.core.models.</tt><tt class="descname">Thing</tt><big>(</big><em>site</em>, <em>key</em>, <em>data=None</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.Thing" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">infogami.infobase.client.Thing</span></tt></p>
+<dd><p>Bases: <a class="reference internal" href="../../infogami/infobase/client.html#infogami.infobase.client.Thing" title="infogami.infobase.client.Thing"><tt class="xref py py-class docutils literal"><span class="pre">infogami.infobase.client.Thing</span></tt></a></p>
 <p>Base class for all OL models.</p>
 <dl class="method">
 <dt id="openlibrary.core.models.Thing.get_history_preview">
@@ -268,13 +268,13 @@ given seed.</p>
 <p>seeds must be a list containing references to author, edition, work or subject strings.</p>
 <p>Sample seeds:</p>
 <blockquote>
-{&#8220;key&#8221;: &#8220;/authors/OL1A&#8221;}
+<div>{&#8220;key&#8221;: &#8220;/authors/OL1A&#8221;}
 {&#8220;key&#8221;: &#8220;/books/OL1M&#8221;}
 {&#8220;key&#8221;: &#8220;/works/OL1W&#8221;}
 &#8220;subject:love&#8221;
 &#8220;place:san_francisco&#8221;
 &#8220;time:1947&#8221;
-&#8220;person:gerge&#8221;</blockquote>
+&#8220;person:gerge&#8221;</div></blockquote>
 <p>The caller must call list._save(...) to save the list.</p>
 </dd></dl>
 
@@ -385,8 +385,8 @@ given seed.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Jan 21, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+      Last updated on Jan 31, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>
 </html>

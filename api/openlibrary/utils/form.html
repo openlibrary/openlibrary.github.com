@@ -55,8 +55,160 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="form">
-<h1>form<a class="headerlink" href="#form" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-openlibrary.utils.form">
+<span id="form"></span><h1>form<a class="headerlink" href="#module-openlibrary.utils.form" title="Permalink to this headline">¶</a></h1>
+<p>New form library to use instead of web.form.</p>
+<p>(this should go to web.py)</p>
+<dl class="class">
+<dt id="openlibrary.utils.form.AttributeList">
+<em class="property">class </em><tt class="descclassname">openlibrary.utils.form.</tt><tt class="descname">AttributeList</tt><a class="headerlink" href="#openlibrary.utils.form.AttributeList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">dict</span></tt></p>
+<p>List of atributes of input.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">AttributeList</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s">&#39;text&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">&lt;attrs: &#39;type=&quot;text&quot; name=&quot;x&quot; value=&quot;20&quot;&#39;&gt;x</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="openlibrary.utils.form.AttributeList.copy">
+<tt class="descname">copy</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.utils.form.AttributeList.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.utils.form.Checkbox">
+<em class="property">class </em><tt class="descclassname">openlibrary.utils.form.</tt><tt class="descname">Checkbox</tt><big>(</big><em>name</em>, <em>description=None</em>, <em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.utils.form.Checkbox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.utils.form.Input" title="openlibrary.utils.form.Input"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.utils.form.Input</span></tt></a></p>
+<p>Checkbox input.</p>
+<dl class="method">
+<dt id="openlibrary.utils.form.Checkbox.get_type">
+<tt class="descname">get_type</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.utils.form.Checkbox.get_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.utils.form.Form">
+<em class="property">class </em><tt class="descclassname">openlibrary.utils.form.</tt><tt class="descname">Form</tt><big>(</big><em>*inputs</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.utils.form.Form" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.utils.form.Form.fill">
+<tt class="descname">fill</tt><big>(</big><em>source</em><big>)</big><a class="headerlink" href="#openlibrary.utils.form.Form.fill" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.form.Form.render">
+<tt class="descname">render</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.utils.form.Form.render" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.form.Form.validates">
+<tt class="descname">validates</tt><big>(</big><em>source</em><big>)</big><a class="headerlink" href="#openlibrary.utils.form.Form.validates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.utils.form.Hidden">
+<em class="property">class </em><tt class="descclassname">openlibrary.utils.form.</tt><tt class="descname">Hidden</tt><big>(</big><em>name</em>, <em>description=None</em>, <em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.utils.form.Hidden" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.utils.form.Input" title="openlibrary.utils.form.Input"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.utils.form.Input</span></tt></a></p>
+<p>Hidden input.</p>
+<dl class="method">
+<dt id="openlibrary.utils.form.Hidden.get_type">
+<tt class="descname">get_type</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.utils.form.Hidden.get_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.form.Hidden.is_hidden">
+<tt class="descname">is_hidden</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.utils.form.Hidden.is_hidden" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.utils.form.Input">
+<em class="property">class </em><tt class="descclassname">openlibrary.utils.form.</tt><tt class="descname">Input</tt><big>(</big><em>name</em>, <em>description=None</em>, <em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.utils.form.Input" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.utils.form.Input.get_type">
+<tt class="descname">get_type</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.utils.form.Input.get_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.form.Input.is_hidden">
+<tt class="descname">is_hidden</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.utils.form.Input.is_hidden" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.form.Input.render">
+<tt class="descname">render</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.utils.form.Input.render" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.utils.form.Input.validate">
+<tt class="descname">validate</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#openlibrary.utils.form.Input.validate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.utils.form.Password">
+<em class="property">class </em><tt class="descclassname">openlibrary.utils.form.</tt><tt class="descname">Password</tt><big>(</big><em>name</em>, <em>description=None</em>, <em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.utils.form.Password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.utils.form.Input" title="openlibrary.utils.form.Input"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.utils.form.Input</span></tt></a></p>
+<p>Password input.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Password</span><span class="p">(</span><span class="s">&quot;password&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s">&#39;Password&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s">&#39;secret&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+<span class="go">&#39;&lt;input type=&quot;password&quot; id=&quot;password&quot; value=&quot;secret&quot; name=&quot;password&quot; /&gt;&#39;</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="openlibrary.utils.form.Password.get_type">
+<tt class="descname">get_type</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.utils.form.Password.get_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.utils.form.RegexpValidator">
+<em class="property">class </em><tt class="descclassname">openlibrary.utils.form.</tt><tt class="descname">RegexpValidator</tt><big>(</big><em>rexp</em>, <em>msg</em><big>)</big><a class="headerlink" href="#openlibrary.utils.form.RegexpValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.utils.form.Validator" title="openlibrary.utils.form.Validator"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.utils.form.Validator</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.utils.form.RegexpValidator.valid">
+<tt class="descname">valid</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#openlibrary.utils.form.RegexpValidator.valid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.utils.form.Textbox">
+<em class="property">class </em><tt class="descclassname">openlibrary.utils.form.</tt><tt class="descname">Textbox</tt><big>(</big><em>name</em>, <em>description=None</em>, <em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.utils.form.Textbox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.utils.form.Input" title="openlibrary.utils.form.Input"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.utils.form.Input</span></tt></a></p>
+<p>Textbox input.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Textbox</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s">&#39;Name&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s">&#39;joe&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+<span class="go">&#39;&lt;input type=&quot;text&quot; id=&quot;name&quot; value=&quot;joe&quot; name=&quot;name&quot; /&gt;&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Textbox</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s">&#39;Name&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s">&#39;joe&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="n">klass</span><span class="o">=</span><span class="s">&#39;input&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+<span class="go">&#39;&lt;input name=&quot;name&quot; value=&quot;joe&quot; class=&quot;input&quot; type=&quot;text&quot; id=&quot;name&quot; size=&quot;10&quot; /&gt;&#39;</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="openlibrary.utils.form.Textbox.get_type">
+<tt class="descname">get_type</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.utils.form.Textbox.get_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.utils.form.Validator">
+<em class="property">class </em><tt class="descclassname">openlibrary.utils.form.</tt><tt class="descname">Validator</tt><big>(</big><em>msg</em>, <em>test</em><big>)</big><a class="headerlink" href="#openlibrary.utils.form.Validator" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.utils.form.Validator.valid">
+<tt class="descname">valid</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#openlibrary.utils.form.Validator.valid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 

@@ -22,7 +22,10 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" /> 
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="infobase" href="index.html" />
+    <link rel="next" title="common" href="common.html" />
+    <link rel="prev" title="cache" href="cache.html" /> 
   </head>
   <body>
     <div class="related">
@@ -34,7 +37,16 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="common.html" title="common"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cache.html" title="cache"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">infobase</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -170,11 +182,11 @@
 <dd><p>Dynamic sequences. 
 Quite similar to sequences in postgres, but there is no need of define anything upfront..</p>
 <blockquote>
-<p>seq = web.ctx.site.seq
+<div><p>seq = web.ctx.site.seq
 for i in range(10):</p>
 <blockquote>
-print seq.next_value(&#8220;foo&#8221;)</blockquote>
-</blockquote>
+<div>print seq.next_value(&#8220;foo&#8221;)</div></blockquote>
+</div></blockquote>
 <dl class="method">
 <dt id="infogami.infobase.client.Sequence.get_value">
 <tt class="descname">get_value</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Sequence.get_value" title="Permalink to this definition">¶</a></dt>
@@ -371,7 +383,7 @@ Each document can have an optional type (default is &#8220;&#8221;) and all the 
 <dd><p>Returns the  a list of keys matching the given query.        
 Sample result:</p>
 <blockquote>
-[{&#8220;key&#8221;: &#8220;a&#8221;}, {&#8220;key&#8221;: &#8220;b&#8221;}, {&#8220;key&#8221;: &#8220;c&#8221;}]</blockquote>
+<div>[{&#8220;key&#8221;: &#8220;a&#8221;}, {&#8220;key&#8221;: &#8220;b&#8221;}, {&#8220;key&#8221;: &#8220;c&#8221;}]</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -493,6 +505,12 @@ Is there any way to do this in stdlib?</p>
             <p class="logo"><a href="../../../index.html">
               <img class="logo" src="../../../_static/logo_OL-lg.png" alt="Logo"/>
             </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cache.html"
+                        title="previous chapter">cache</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="common.html"
+                        title="next chapter">common</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../_sources/api/infogami/infobase/client.txt"
@@ -524,13 +542,22 @@ Is there any way to do this in stdlib?</p>
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="common.html" title="common"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cache.html" title="cache"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >infogami</a> &raquo;</li>
+          <li><a href="index.html" >infobase</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Jan 20, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
+      Last updated on Jan 31, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>
 </html>

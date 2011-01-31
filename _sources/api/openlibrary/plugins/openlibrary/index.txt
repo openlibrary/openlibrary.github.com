@@ -10,6 +10,7 @@ Submodules
 
    code.rst
    connection.rst
+   home.rst
    infobase_hook.rst
    lists.rst
    processors.rst

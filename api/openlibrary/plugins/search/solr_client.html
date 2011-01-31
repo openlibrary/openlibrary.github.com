@@ -204,8 +204,8 @@ You get back a list of page numbers like [21, 25, 39].</p>
 The result list from solr is <a href="#id3"><span class="problematic" id="id4">`</span></a>result_list&#8217;.  The structures
 look like:</p>
 <blockquote>
-result_list = [ { fieldname1 : [values...] }, ... ]
-facet_fields = (&#8216;author&#8217;, &#8216;media_type&#8217;, ...)</blockquote>
+<div>result_list = [ { fieldname1 : [values...] }, ... ]
+facet_fields = (&#8216;author&#8217;, &#8216;media_type&#8217;, ...)</div></blockquote>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="p">[</span>             <span class="p">{</span><span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;Julius Caesar&#39;</span><span class="p">],</span>                                     <span class="s">&#39;author&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;William Shakespeare&#39;</span><span class="p">],</span>                              <span class="s">&#39;format&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;folio&#39;</span><span class="p">]</span> <span class="p">},</span>                                         <span class="p">{</span><span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;Richard III&#39;</span><span class="p">],</span>                                       <span class="s">&#39;author&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;William Shakespeare&#39;</span><span class="p">],</span>                              <span class="s">&#39;format&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;folio&#39;</span><span class="p">]</span> <span class="p">},</span>                                         <span class="p">{</span><span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;Tom Sawyer&#39;</span><span class="p">],</span>                                        <span class="s">&#39;author&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;Mark Twain&#39;</span><span class="p">],</span>                                       <span class="s">&#39;format&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;hardcover&#39;</span><span class="p">]</span> <span class="p">},</span>                                     <span class="p">{</span><span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;The Space Merchants&#39;</span><span class="p">],</span>                               <span class="s">&#39;author&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;Frederik Pohl&#39;</span><span class="p">,</span> <span class="s">&#39;C. M. Kornbluth&#39;</span><span class="p">],</span>                 <span class="s">&#39;format&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;paperback&#39;</span><span class="p">]</span> <span class="p">},</span>                                     <span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fnames</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;author&#39;</span><span class="p">,</span> <span class="s">&#39;topic&#39;</span><span class="p">,</span> <span class="s">&#39;format&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">facet_counts</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">fnames</span><span class="p">)</span>  
@@ -293,8 +293,8 @@ facet_fields = (&#8216;author&#8217;, &#8216;media_type&#8217;, ...)</blockquote
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Jan 21, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+      Last updated on Jan 31, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>
 </html>
