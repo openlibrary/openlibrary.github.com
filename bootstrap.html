@@ -61,31 +61,35 @@ software and running many services.</p>
 <ul class="simple">
 <li>Ubuntu 10.10</li>
 <li>Ubuntu 10.04</li>
-<li>Mac OS X Snow Leopard</li>
+<li>Mac OS X Snow Leopard (with <a class="reference external" href="http://developer.apple.com/technologies/xcode.html">XCode</a> and <a class="reference external" href="http://mxcl.github.com/homebrew/">homebrew</a> installed)</li>
 </ul>
 <p>Make sure you have at least 1GB of RAM on your dev machine or virtual machine.</p>
-</div>
-<div class="section" id="installing-dependencies">
-<h2>Installing dependencies<a class="headerlink" href="#installing-dependencies" title="Permalink to this headline">¶</a></h2>
-<p>Open Library depends a lot of third-party programs as well as a whole
-bunch of python libraries.</p>
-<p>To install all the dependencies on Ubuntu:</p>
-<div class="highlight-python"><pre>$ wget -O - http://github.com/openlibrary/openlibrary/raw/master/scripts/install_dependencies.sh | bash</pre>
-</div>
-<p>To install all the dependencies on Mac OS X:</p>
-<div class="highlight-python"><pre>$ curl http://github.com/openlibrary/openlibrary/raw/master/scripts/install_dependencies.sh | bash</pre>
-</div>
-<p>The list of dependencies is available at <a class="reference internal" href="appendices/dependencies.html"><em>Dependencies</em></a>.</p>
 </div>
 <div class="section" id="getting-the-source">
 <h2>Getting the source<a class="headerlink" href="#getting-the-source" title="Permalink to this headline">¶</a></h2>
 <p>Open Library uses <tt class="docutils literal"><span class="pre">git</span></tt> for version control and the <a class="reference external" href="http://github.com/openlibrary/openlibrary">code repository</a> is
 hosted on github.</p>
 <p>You can get the source code from there using:</p>
-<div class="highlight-python"><pre>$ git clone git://github.com/openlibrary/openlibrary.git</pre>
+<div class="highlight-python"><pre>$ git clone git://github.com/openlibrary/openlibrary.git
+$ cd openlibrary</pre>
 </div>
 <p>This will create a directory called openlibrary with the entire
 codebase checked out.</p>
+<p>In case you don&#8217;t have git installed already, you can install it on Ubuntu using:</p>
+<div class="highlight-python"><pre>$ sudo apt-get install git-core</pre>
+</div>
+<p>and on Mac OS X using:</p>
+<div class="highlight-python"><pre>$ brew install git</pre>
+</div>
+</div>
+<div class="section" id="installing-dependencies">
+<h2>Installing dependencies<a class="headerlink" href="#installing-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>Open Library depends a lot of third-party programs.</p>
+<p>To install all the dependencies:</p>
+<div class="highlight-python"><pre>$ sudo python setup.py install_dependencies</pre>
+</div>
+<p>Note that this is run as root.</p>
+<p>See <a class="reference internal" href="appendices/dependencies.html"><em>Dependencies</em></a> for the list of dependencies.</p>
 </div>
 <div class="section" id="running-the-install-script">
 <h2>Running the install script<a class="headerlink" href="#running-the-install-script" title="Permalink to this headline">¶</a></h2>
@@ -133,8 +137,8 @@ info and errors are reported to stdout and stderr respectively.</p>
   <ul>
 <li><a class="reference internal" href="#">Setting up a dev instance</a><ul>
 <li><a class="reference internal" href="#supported-platforms">Supported Platforms</a></li>
-<li><a class="reference internal" href="#installing-dependencies">Installing dependencies</a></li>
 <li><a class="reference internal" href="#getting-the-source">Getting the source</a></li>
+<li><a class="reference internal" href="#installing-dependencies">Installing dependencies</a></li>
 <li><a class="reference internal" href="#running-the-install-script">Running the install script</a></li>
 <li><a class="reference internal" href="#verify-the-installation">Verify the installation</a></li>
 <li><a class="reference internal" href="#using-the-dev-instance">Using the dev instance</a></li>
@@ -192,7 +196,7 @@ info and errors are reported to stdout and stderr respectively.</p>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
       Last updated on Jan 31, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
     </div>
   </body>
 </html>
