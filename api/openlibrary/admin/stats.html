@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>minicron &mdash; openlibrary v2.0 documentation</title>
+    <title>stats &mdash; openlibrary v2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -23,9 +23,9 @@
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
-    <link rel="up" title="core" href="index.html" />
-    <link rel="next" title="models" href="models.html" />
-    <link rel="prev" title="middleware" href="middleware.html" /> 
+    <link rel="up" title="admin" href="index.html" />
+    <link rel="next" title="utils" href="utils.html" />
+    <link rel="prev" title="numbers" href="numbers.html" /> 
   </head>
   <body>
     <div class="related">
@@ -38,15 +38,15 @@
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="models.html" title="models"
+          <a href="utils.html" title="utils"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="middleware.html" title="middleware"
+          <a href="numbers.html" title="numbers"
              accesskey="P">previous</a> |</li>
         <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
           <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
           <li><a href="../index.html" >openlibrary</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">core</a> &raquo;</li> 
+          <li><a href="index.html" accesskey="U">admin</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -55,24 +55,47 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="module-openlibrary.core.minicron">
-<span id="minicron"></span><h1>minicron<a class="headerlink" href="#module-openlibrary.core.minicron" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-openlibrary.admin.stats">
+<span id="stats"></span><h1>stats<a class="headerlink" href="#module-openlibrary.admin.stats" title="Permalink to this headline">¶</a></h1>
+<p>Script to read out data from thingdb and put it in couch so that it
+can be queried by the /admin pages on openlibrary</p>
 <dl class="exception">
-<dt id="openlibrary.core.minicron.BadCronLine">
-<em class="property">exception </em><tt class="descclassname">openlibrary.core.minicron.</tt><tt class="descname">BadCronLine</tt><a class="headerlink" href="#openlibrary.core.minicron.BadCronLine" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.ValueError</span></tt></p>
+<dt id="openlibrary.admin.stats.InvalidType">
+<em class="property">exception </em><tt class="descclassname">openlibrary.admin.stats.</tt><tt class="descname">InvalidType</tt><a class="headerlink" href="#openlibrary.admin.stats.InvalidType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.TypeError</span></tt></p>
 </dd></dl>
 
-<dl class="class">
-<dt id="openlibrary.core.minicron.Minicron">
-<em class="property">class </em><tt class="descclassname">openlibrary.core.minicron.</tt><tt class="descname">Minicron</tt><big>(</big><em>cronfile</em>, <em>inittime=None</em>, <em>tickfreq=60</em><big>)</big><a class="headerlink" href="#openlibrary.core.minicron.Minicron" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
-<dl class="method">
-<dt id="openlibrary.core.minicron.Minicron.run">
-<tt class="descname">run</tt><big>(</big><em>times=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.minicron.Minicron.run" title="Permalink to this definition">¶</a></dt>
+<dl class="function">
+<dt id="openlibrary.admin.stats.connect_to_couch">
+<tt class="descclassname">openlibrary.admin.stats.</tt><tt class="descname">connect_to_couch</tt><big>(</big><em>config_file</em><big>)</big><a class="headerlink" href="#openlibrary.admin.stats.connect_to_couch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connects to the couch databases</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.admin.stats.connect_to_pg">
+<tt class="descclassname">openlibrary.admin.stats.</tt><tt class="descname">connect_to_pg</tt><big>(</big><em>config_file</em><big>)</big><a class="headerlink" href="#openlibrary.admin.stats.connect_to_pg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connects to the postgres database specified in the dictionary
+<cite>config</cite>. Needs a top level key <cite>db_parameters</cite> and under that
+<cite>database</cite> (or <cite>db</cite>) at the least. If <cite>user</cite> and <cite>host</cite> are
+provided, they&#8217;re used as well.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.admin.stats.main">
+<tt class="descclassname">openlibrary.admin.stats.</tt><tt class="descname">main</tt><big>(</big><em>infobase_config</em>, <em>openlibrary_config</em>, <em>coverstore_config</em>, <em>ndays=1</em><big>)</big><a class="headerlink" href="#openlibrary.admin.stats.main" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="function">
+<dt id="openlibrary.admin.stats.run_gathering_functions">
+<tt class="descclassname">openlibrary.admin.stats.</tt><tt class="descname">run_gathering_functions</tt><big>(</big><em>infobase_db</em>, <em>coverstore_db</em>, <em>seeds_db</em>, <em>editions_db</em>, <em>works_db</em>, <em>admin_db</em>, <em>start</em>, <em>end</em>, <em>prefix</em>, <em>key_prefix=None</em><big>)</big><a class="headerlink" href="#openlibrary.admin.stats.run_gathering_functions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs all the data gathering functions with the given prefix
+inside the numbers module</p>
 </dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.admin.stats.store_data">
+<tt class="descclassname">openlibrary.admin.stats.</tt><tt class="descname">store_data</tt><big>(</big><em>db</em>, <em>data</em>, <em>date</em><big>)</big><a class="headerlink" href="#openlibrary.admin.stats.store_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </div>
 
@@ -86,14 +109,14 @@
               <img class="logo" src="../../../_static/logo_OL-lg.png" alt="Logo"/>
             </a></p>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="middleware.html"
-                        title="previous chapter">middleware</a></p>
+  <p class="topless"><a href="numbers.html"
+                        title="previous chapter">numbers</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="models.html"
-                        title="next chapter">models</a></p>
+  <p class="topless"><a href="utils.html"
+                        title="next chapter">utils</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="../../../_sources/api/openlibrary/core/minicron.txt"
+    <li><a href="../../../_sources/api/openlibrary/admin/stats.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -123,15 +146,15 @@
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="models.html" title="models"
+          <a href="utils.html" title="utils"
              >next</a> |</li>
         <li class="right" >
-          <a href="middleware.html" title="middleware"
+          <a href="numbers.html" title="numbers"
              >previous</a> |</li>
         <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
           <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
           <li><a href="../index.html" >openlibrary</a> &raquo;</li>
-          <li><a href="index.html" >core</a> &raquo;</li> 
+          <li><a href="index.html" >admin</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

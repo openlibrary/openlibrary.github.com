@@ -1,0 +1,216 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>numbers &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="admin" href="index.html" />
+    <link rel="next" title="stats" href="stats.html" />
+    <link rel="prev" title="code" href="code.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stats.html" title="stats"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="code.html" title="code"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">admin</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.admin.numbers">
+<span id="numbers"></span><h1>numbers<a class="headerlink" href="#module-openlibrary.admin.numbers" title="Permalink to this headline">¶</a></h1>
+<p>List of functions that return various numbers which are stored in the
+admin database by the stats module.</p>
+<p>All functions prefixed with <cite>admin_range__</cite> will be run for each day and the
+result will be stored as the part after it. e.g. the result of
+admin_range__foo will be stored under the key <cite>foo</cite>.</p>
+<p>All functions prefixed with <cite>admin_delta__</cite> will be run for the current
+day and the result will be stored as the part after it. e.g. the
+result of <cite>admin_delta__foo</cite> will be stored under the key <cite>foo</cite>.</p>
+<p>All functions prefixed with <cite>admin_total__</cite> will be run for the current
+day and the result will be stored as <cite>total_&lt;key&gt;</cite>. e.g. the result of
+<cite>admin_total__foo</cite> will be stored under the key <cite>total__foo</cite>.</p>
+<p>Functions with names other than the these will not be called from the
+main harness. They can be utility functions.</p>
+<dl class="exception">
+<dt id="openlibrary.admin.numbers.InvalidType">
+<em class="property">exception </em><tt class="descclassname">openlibrary.admin.numbers.</tt><tt class="descname">InvalidType</tt><a class="headerlink" href="#openlibrary.admin.numbers.InvalidType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.TypeError</span></tt></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.admin.numbers.admin_delta__ebook">
+<tt class="descclassname">openlibrary.admin.numbers.</tt><tt class="descname">admin_delta__ebook</tt><big>(</big><em>**kargs</em><big>)</big><a class="headerlink" href="#openlibrary.admin.numbers.admin_delta__ebook" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.admin.numbers.admin_delta__subject">
+<tt class="descclassname">openlibrary.admin.numbers.</tt><tt class="descname">admin_delta__subject</tt><big>(</big><em>**kargs</em><big>)</big><a class="headerlink" href="#openlibrary.admin.numbers.admin_delta__subject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.admin.numbers.admin_range__cover">
+<tt class="descclassname">openlibrary.admin.numbers.</tt><tt class="descname">admin_range__cover</tt><big>(</big><em>**kargs</em><big>)</big><a class="headerlink" href="#openlibrary.admin.numbers.admin_range__cover" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queries the number of covers added between <cite>start</cite> and <cite>end</cite></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.admin.numbers.admin_range__human_edits">
+<tt class="descclassname">openlibrary.admin.numbers.</tt><tt class="descname">admin_range__human_edits</tt><big>(</big><em>**kargs</em><big>)</big><a class="headerlink" href="#openlibrary.admin.numbers.admin_range__human_edits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the number of edits between the <cite>start</cite> and <cite>end</cite>
+parameters done by humans. <cite>thingdb</cite> is the database.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.admin.numbers.admin_total__author">
+<tt class="descclassname">openlibrary.admin.numbers.</tt><tt class="descname">admin_total__author</tt><big>(</big><em>**kargs</em><big>)</big><a class="headerlink" href="#openlibrary.admin.numbers.admin_total__author" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.admin.numbers.admin_total__cover">
+<tt class="descclassname">openlibrary.admin.numbers.</tt><tt class="descname">admin_total__cover</tt><big>(</big><em>**kargs</em><big>)</big><a class="headerlink" href="#openlibrary.admin.numbers.admin_total__cover" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.admin.numbers.admin_total__ebook">
+<tt class="descclassname">openlibrary.admin.numbers.</tt><tt class="descname">admin_total__ebook</tt><big>(</big><em>**kargs</em><big>)</big><a class="headerlink" href="#openlibrary.admin.numbers.admin_total__ebook" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.admin.numbers.admin_total__edition">
+<tt class="descclassname">openlibrary.admin.numbers.</tt><tt class="descname">admin_total__edition</tt><big>(</big><em>**kargs</em><big>)</big><a class="headerlink" href="#openlibrary.admin.numbers.admin_total__edition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.admin.numbers.admin_total__list">
+<tt class="descclassname">openlibrary.admin.numbers.</tt><tt class="descname">admin_total__list</tt><big>(</big><em>**kargs</em><big>)</big><a class="headerlink" href="#openlibrary.admin.numbers.admin_total__list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.admin.numbers.admin_total__subject">
+<tt class="descclassname">openlibrary.admin.numbers.</tt><tt class="descname">admin_total__subject</tt><big>(</big><em>**kargs</em><big>)</big><a class="headerlink" href="#openlibrary.admin.numbers.admin_total__subject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.admin.numbers.admin_total__work">
+<tt class="descclassname">openlibrary.admin.numbers.</tt><tt class="descname">admin_total__work</tt><big>(</big><em>**kargs</em><big>)</big><a class="headerlink" href="#openlibrary.admin.numbers.admin_total__work" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.admin.numbers.query_single_thing">
+<tt class="descclassname">openlibrary.admin.numbers.</tt><tt class="descname">query_single_thing</tt><big>(</big><em>db</em>, <em>typ</em>, <em>start</em>, <em>end</em><big>)</big><a class="headerlink" href="#openlibrary.admin.numbers.query_single_thing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query the counts a single type from the things table</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.admin.numbers.single_thing_skeleton">
+<tt class="descclassname">openlibrary.admin.numbers.</tt><tt class="descname">single_thing_skeleton</tt><big>(</big><em>**kargs</em><big>)</big><a class="headerlink" href="#openlibrary.admin.numbers.single_thing_skeleton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns number of things of <cite>type</cite> added between <cite>start</cite> and <cite>end</cite>.</p>
+<p><cite>type</cite> is partially applied for admin__[work, edition, user, author, list].</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo_OL-lg.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="code.html"
+                        title="previous chapter">code</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="stats.html"
+                        title="next chapter">stats</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/openlibrary/admin/numbers.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stats.html" title="stats"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="code.html" title="code"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >admin</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Internet Archive.
+      Last updated on Feb 03, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

@@ -9,6 +9,8 @@ Submodules
    :maxdepth: 1
 
    code.rst
+   numbers.rst
+   stats.rst
    utils.rst
 
 Documentation

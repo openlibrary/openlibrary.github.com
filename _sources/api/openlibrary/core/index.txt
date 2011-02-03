@@ -9,7 +9,6 @@ Submodules
    :maxdepth: 1
 
    admin.rst
-   admin_counts.rst
    cache.rst
    connections.rst
    couch.rst
