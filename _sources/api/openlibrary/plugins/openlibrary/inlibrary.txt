@@ -1,0 +1,5 @@
+
+inlibrary
+=========
+
+.. automodule:: openlibrary.plugins.openlibrary.inlibrary

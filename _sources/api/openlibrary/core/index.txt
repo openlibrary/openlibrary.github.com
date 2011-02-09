@@ -16,6 +16,7 @@ Submodules
    helpers.rst
    ia.rst
    init.rst
+   inlibrary.rst
    lists/index.rst
    middleware.rst
    minicron.rst

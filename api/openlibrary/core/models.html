@@ -128,6 +128,26 @@
 </dd></dl>
 
 <dl class="class">
+<dt id="openlibrary.core.models.Library">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.models.</tt><tt class="descname">Library</tt><big>(</big><em>site</em>, <em>key</em>, <em>data=None</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.Library" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.core.models.Thing" title="openlibrary.core.models.Thing"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.core.models.Thing</span></tt></a></p>
+<p>Library document.</p>
+<p>Each library has a list of IP addresses belongs to that library.</p>
+<dl class="method">
+<dt id="openlibrary.core.models.Library.get_ip_range_list">
+<tt class="descname">get_ip_range_list</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.models.Library.get_ip_range_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns IpRangeList object for the range of IPs of this library.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.models.Library.has_ip">
+<tt class="descname">has_ip</tt><big>(</big><em>ip</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.Library.has_ip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the the given ip is part of the library&#8217;s ip range.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="openlibrary.core.models.List">
 <em class="property">class </em><tt class="descclassname">openlibrary.core.models.</tt><tt class="descname">List</tt><big>(</big><em>site</em>, <em>key</em>, <em>data=None</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.models.List" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#openlibrary.core.models.Thing" title="openlibrary.core.models.Thing"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.core.models.Thing</span></tt></a>, <a class="reference internal" href="lists/model.html#openlibrary.core.lists.model.ListMixin" title="openlibrary.core.lists.model.ListMixin"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.core.lists.model.ListMixin</span></tt></a></p>
@@ -385,7 +405,7 @@ given seed.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Feb 07, 2011.
+      Last updated on Feb 09, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

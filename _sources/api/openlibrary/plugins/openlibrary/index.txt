@@ -12,6 +12,7 @@ Submodules
    connection.rst
    home.rst
    infobase_hook.rst
+   inlibrary.rst
    lists.rst
    processors.rst
    readbooks.rst
