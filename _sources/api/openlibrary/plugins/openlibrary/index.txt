@@ -8,6 +8,7 @@ Submodules
 .. toctree::
    :maxdepth: 1
 
+   borrow_home.rst
    code.rst
    connection.rst
    home.rst

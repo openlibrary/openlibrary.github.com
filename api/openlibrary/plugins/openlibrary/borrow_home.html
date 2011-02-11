@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>_dbstore &mdash; openlibrary v2.0 documentation</title>
+    <title>borrow_home &mdash; openlibrary v2.0 documentation</title>
     <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -23,9 +23,9 @@
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
-    <link rel="up" title="infobase" href="../index.html" />
-    <link rel="next" title="indexer" href="indexer.html" />
-    <link rel="prev" title="infobase" href="../index.html" /> 
+    <link rel="up" title="openlibrary" href="index.html" />
+    <link rel="next" title="code" href="code.html" />
+    <link rel="prev" title="openlibrary" href="index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -38,15 +38,16 @@
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="indexer.html" title="indexer"
+          <a href="code.html" title="code"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../index.html" title="infobase"
+          <a href="index.html" title="openlibrary"
              accesskey="P">previous</a> |</li>
         <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
           <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >infogami</a> &raquo;</li>
-          <li><a href="../index.html" accesskey="U">infobase</a> &raquo;</li> 
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">openlibrary</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -55,25 +56,30 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="dbstore">
-<h1>_dbstore<a class="headerlink" href="#dbstore" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="indexer.html">indexer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="read.html">read</a></li>
-<li class="toctree-l1"><a class="reference internal" href="save.html">save</a></li>
-<li class="toctree-l1"><a class="reference internal" href="schema.html">schema</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sequence.html">sequence</a></li>
-<li class="toctree-l1"><a class="reference internal" href="store.html">store</a></li>
-</ul>
-</div>
-</div>
-<div class="section" id="module-infogami.infobase._dbstore">
-<span id="documentation"></span><h2>Documentation<a class="headerlink" href="#module-infogami.infobase._dbstore" title="Permalink to this headline">¶</a></h2>
-<p>DB engine for infobase.</p>
-</div>
+  <div class="section" id="module-openlibrary.plugins.openlibrary.borrow_home">
+<span id="borrow-home"></span><h1>borrow_home<a class="headerlink" href="#module-openlibrary.plugins.openlibrary.borrow_home" title="Permalink to this headline">¶</a></h1>
+<p>Controller for /borrow page.</p>
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.borrow_home.borrow">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.borrow_home.</tt><tt class="descname">borrow</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.borrow_home.borrow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.borrow_home.borrow.GET">
+<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.borrow_home.borrow.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.borrow_home.borrow.is_enabled">
+<tt class="descname">is_enabled</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.borrow_home.borrow.is_enabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.borrow_home.setup">
+<tt class="descclassname">openlibrary.plugins.openlibrary.borrow_home.</tt><tt class="descname">setup</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.borrow_home.setup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 
@@ -85,26 +91,15 @@
             <p class="logo"><a href="../../../../index.html">
               <img class="logo" src="../../../../_static/logo_OL-lg.png" alt="Logo"/>
             </a></p>
-  <h3><a href="../../../../index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">_dbstore</a><ul>
-<li><a class="reference internal" href="#submodules">Submodules</a><ul>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-infogami.infobase._dbstore">Documentation</a></li>
-</ul>
-</li>
-</ul>
-
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../index.html"
-                        title="previous chapter">infobase</a></p>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">openlibrary</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="indexer.html"
-                        title="next chapter">indexer</a></p>
+  <p class="topless"><a href="code.html"
+                        title="next chapter">code</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="../../../../_sources/api/infogami/infobase/_dbstore/index.txt"
+    <li><a href="../../../../_sources/api/openlibrary/plugins/openlibrary/borrow_home.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -134,15 +129,16 @@
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="indexer.html" title="indexer"
+          <a href="code.html" title="code"
              >next</a> |</li>
         <li class="right" >
-          <a href="../index.html" title="infobase"
+          <a href="index.html" title="openlibrary"
              >previous</a> |</li>
         <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
           <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >infogami</a> &raquo;</li>
-          <li><a href="../index.html" >infobase</a> &raquo;</li> 
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >openlibrary</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
