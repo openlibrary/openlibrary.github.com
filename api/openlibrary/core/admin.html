@@ -60,33 +60,31 @@
 <p>Admin functionality.</p>
 <dl class="class">
 <dt id="openlibrary.core.admin.Stats">
-<em class="property">class </em><tt class="descclassname">openlibrary.core.admin.</tt><tt class="descname">Stats</tt><big>(</big><em>docs=None</em>, <em>key=None</em>, <em>total_key=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.admin.Stats" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">openlibrary.core.admin.</tt><tt class="descname">Stats</tt><big>(</big><em>docs</em>, <em>key</em>, <em>total_key</em><big>)</big><a class="headerlink" href="#openlibrary.core.admin.Stats" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
 <dt id="openlibrary.core.admin.Stats.get_counts">
-<tt class="descname">get_counts</tt><big>(</big><em>ndays=30</em><big>)</big><a class="headerlink" href="#openlibrary.core.admin.Stats.get_counts" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the stats for last n days as an array.</p>
+<tt class="descname">get_counts</tt><big>(</big><em>ndays=28</em>, <em>times=False</em><big>)</big><a class="headerlink" href="#openlibrary.core.admin.Stats.get_counts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the stats for last n days as an array useful for
+plotting. i.e. an array of [x, y] tuples where y is the value
+and <cite>x</cite> the x coordinate.</p>
+<p>If times is True, the x coordinate in the tuple will be
+timestamps for the day.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="openlibrary.core.admin.Stats.get_summary">
-<tt class="descname">get_summary</tt><big>(</big><em>ndays=30</em><big>)</big><a class="headerlink" href="#openlibrary.core.admin.Stats.get_summary" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_summary</tt><big>(</big><em>ndays=28</em><big>)</big><a class="headerlink" href="#openlibrary.core.admin.Stats.get_summary" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the summary of counts for past n days.</p>
 <p>Summary can be either sum or average depending on the type of stats.
 This is used to find counts for last 7 days and last 28 days.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.core.admin.Stats.get_total">
-<tt class="descname">get_total</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.admin.Stats.get_total" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the total counts.</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="function">
 <dt id="openlibrary.core.admin.get_stats">
-<tt class="descclassname">openlibrary.core.admin.</tt><tt class="descname">get_stats</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.admin.get_stats" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the stats</p>
+<tt class="descclassname">openlibrary.core.admin.</tt><tt class="descname">get_stats</tt><big>(</big><em>ndays=30</em><big>)</big><a class="headerlink" href="#openlibrary.core.admin.get_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the stats for the past <cite>ndays</cite></p>
 </dd></dl>
 
 </div>
@@ -151,7 +149,7 @@ This is used to find counts for last 7 days and last 28 days.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Feb 11, 2011.
+      Last updated on Feb 12, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>
