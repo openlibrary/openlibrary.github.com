@@ -1,0 +1,5 @@
+
+stats
+=====
+
+.. automodule:: openlibrary.plugins.openlibrary.stats

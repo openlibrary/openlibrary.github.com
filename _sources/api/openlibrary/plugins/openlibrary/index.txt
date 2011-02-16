@@ -19,6 +19,7 @@ Submodules
    readbooks.rst
    schema.rst
    showmarc.rst
+   stats.rst
    utils.rst
 
 Documentation

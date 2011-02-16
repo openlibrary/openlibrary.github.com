@@ -59,6 +59,48 @@
   <div class="section" id="module-openlibrary.plugins.worksearch.code">
 <span id="code"></span><h1>code<a class="headerlink" href="#module-openlibrary.plugins.worksearch.code" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
+<dt id="openlibrary.plugins.worksearch.code.SubjectEngine">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.worksearch.code.</tt><tt class="descname">SubjectEngine</tt><a class="headerlink" href="#openlibrary.plugins.worksearch.code.SubjectEngine" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.plugins.worksearch.code.SubjectEngine.facet_wrapper">
+<tt class="descname">facet_wrapper</tt><big>(</big><em>facet</em>, <em>value</em>, <em>count</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.worksearch.code.SubjectEngine.facet_wrapper" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.worksearch.code.SubjectEngine.get_ebook_count">
+<tt class="descname">get_ebook_count</tt><big>(</big><em>name</em>, <em>value</em>, <em>publish_year</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.worksearch.code.SubjectEngine.get_ebook_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.worksearch.code.SubjectEngine.get_meta">
+<tt class="descname">get_meta</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.worksearch.code.SubjectEngine.get_meta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.worksearch.code.SubjectEngine.get_subject">
+<tt class="descname">get_subject</tt><big>(</big><em>key</em>, <em>details=False</em>, <em>offset=0</em>, <em>sort='editions'</em>, <em>limit=12</em>, <em>**filters</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.worksearch.code.SubjectEngine.get_subject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.worksearch.code.SubjectEngine.make_query">
+<tt class="descname">make_query</tt><big>(</big><em>key</em>, <em>filters</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.worksearch.code.SubjectEngine.make_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.worksearch.code.SubjectEngine.parse_key">
+<tt class="descname">parse_key</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.worksearch.code.SubjectEngine.parse_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns prefix and path from the key.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.worksearch.code.SubjectEngine.query_optons_for_details">
+<tt class="descname">query_optons_for_details</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.worksearch.code.SubjectEngine.query_optons_for_details" title="Permalink to this definition">¶</a></dt>
+<dd><p>Additional query options to be added when details=True.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="openlibrary.plugins.worksearch.code.author_search">
 <em class="property">class </em><tt class="descclassname">openlibrary.plugins.worksearch.code.</tt><tt class="descname">author_search</tt><a class="headerlink" href="#openlibrary.plugins.worksearch.code.author_search" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
@@ -143,7 +185,7 @@
 
 <dl class="function">
 <dt id="openlibrary.plugins.worksearch.code.get_subject">
-<tt class="descclassname">openlibrary.plugins.worksearch.code.</tt><tt class="descname">get_subject</tt><big>(</big><em>key</em>, <em>details=False</em>, <em>offset=0</em>, <em>limit=12</em>, <em>**filters</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.worksearch.code.get_subject" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">openlibrary.plugins.worksearch.code.</tt><tt class="descname">get_subject</tt><big>(</big><em>key</em>, <em>details=False</em>, <em>offset=0</em>, <em>sort='editions'</em>, <em>limit=12</em>, <em>**filters</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.worksearch.code.get_subject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns data related to a subject.</p>
 <p>By default, it returns a storage object with key, name, work_count and works.
 The offset and limit arguments are used to get the works.</p>
@@ -409,7 +451,7 @@ The offset and limit arguments are used to get the works.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Feb 15, 2011.
+      Last updated on Feb 16, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>
