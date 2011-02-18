@@ -140,7 +140,10 @@
 <dl class="method">
 <dt id="openlibrary.plugins.upstream.models.Edition.get_available_loans">
 <tt class="descname">get_available_loans</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Edition.get_available_loans" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns [{&#8216;resource_id&#8217;: uuid, &#8216;resource_type&#8217;: type, &#8216;size&#8217;: bytes}]</p>
+<dd><p>Get the resource types currently available to be loaned out for this edition.  Does NOT
+take into account the user&#8217;s status (e.g. number of books out, in-library status, etc).
+This is like checking if this book is on the shelf.</p>
+<p>Returns [{&#8216;resource_id&#8217;: uuid, &#8216;resource_type&#8217;: type, &#8216;size&#8217;: bytes}]</p>
 <p>size may be None</p>
 </dd></dl>
 
@@ -629,7 +632,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Feb 17, 2011.
+      Last updated on Feb 18, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>
