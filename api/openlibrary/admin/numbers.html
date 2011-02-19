@@ -113,6 +113,14 @@ parameters done by humans. <cite>thingdb</cite> is the database.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="openlibrary.admin.numbers.admin_range__loans">
+<tt class="descclassname">openlibrary.admin.numbers.</tt><tt class="descname">admin_range__loans</tt><big>(</big><em>logroot</em>, <em>start</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.admin.numbers.admin_range__loans" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the number of loans on a given day.</p>
+<p>Loan info is written to infobase write log. Grepping through the log file gives us the counts.</p>
+<p>WARNING: This script must be run on the node that has infobase logs.</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="openlibrary.admin.numbers.admin_range__visitors">
 <tt class="descclassname">openlibrary.admin.numbers.</tt><tt class="descname">admin_range__visitors</tt><big>(</big><em>**kargs</em><big>)</big><a class="headerlink" href="#openlibrary.admin.numbers.admin_range__visitors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Finds number of unique IPs to visit the OL website.</p>
@@ -233,7 +241,7 @@ parameters done by humans. <cite>thingdb</cite> is the database.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Feb 18, 2011.
+      Last updated on Feb 19, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

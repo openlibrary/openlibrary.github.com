@@ -117,6 +117,7 @@
     <dt><a href="api/openlibrary/admin/numbers.html#openlibrary.admin.numbers.admin_range__bot_edits">admin_range__bot_edits() (in module openlibrary.admin.numbers)</a></dt>
     <dt><a href="api/openlibrary/admin/numbers.html#openlibrary.admin.numbers.admin_range__covers">admin_range__covers() (in module openlibrary.admin.numbers)</a></dt>
     <dt><a href="api/openlibrary/admin/numbers.html#openlibrary.admin.numbers.admin_range__human_edits">admin_range__human_edits() (in module openlibrary.admin.numbers)</a></dt>
+    <dt><a href="api/openlibrary/admin/numbers.html#openlibrary.admin.numbers.admin_range__loans">admin_range__loans() (in module openlibrary.admin.numbers)</a></dt>
     <dt><a href="api/openlibrary/admin/numbers.html#openlibrary.admin.numbers.admin_range__visitors">admin_range__visitors() (in module openlibrary.admin.numbers)</a></dt>
     <dt><a href="api/openlibrary/admin/numbers.html#openlibrary.admin.numbers.admin_total__authors">admin_total__authors() (in module openlibrary.admin.numbers)</a></dt>
     <dt><a href="api/openlibrary/admin/numbers.html#openlibrary.admin.numbers.admin_total__covers">admin_total__covers() (in module openlibrary.admin.numbers)</a></dt>
@@ -277,9 +278,9 @@
     <dt><a href="api/openlibrary/mocks/mock_couchdb.html#openlibrary.mocks.mock_couchdb.Database.compact">compact() (openlibrary.mocks.mock_couchdb.Database method)</a></dt>
     <dt><a href="api/openlibrary/i18n/index.html#openlibrary.i18n.compile_translations">compile_translations() (in module openlibrary.i18n)</a></dt>
     <dt><a href="api/openlibrary/utils/compress.html#openlibrary.utils.compress.Compressor.compress">compress() (openlibrary.utils.compress.Compressor method)</a></dt>
-    <dt><a href="api/openlibrary/utils/compress.html#openlibrary.utils.compress.Compressor">Compressor (class in openlibrary.utils.compress)</a></dt>
 </dl></td>
   <td style="width: 33%" valign="top"><dl>
+    <dt><a href="api/openlibrary/utils/compress.html#openlibrary.utils.compress.Compressor">Compressor (class in openlibrary.utils.compress)</a></dt>
     <dt><a href="api/infogami/infobase/_dbstore/indexer.html#infogami.infobase._dbstore.indexer.Indexer.compute_index">compute_index() (infogami.infobase._dbstore.indexer.Indexer method)</a></dt>
     <dd><dl>
       <dt><a href="api/openlibrary/mocks/mock_infobase.html#openlibrary.mocks.mock_infobase.MockSite.compute_index">(openlibrary.mocks.mock_infobase.MockSite method)</a></dt>
@@ -293,8 +294,6 @@
       <dt><a href="api/infogami/infobase/writequery.html#infogami.infobase.writequery.WriteQueryProcessor.connect">(infogami.infobase.writequery.WriteQueryProcessor method)</a></dt>
   </dl></dd>
     <dt><a href="api/infogami/infobase/writequery.html#infogami.infobase.writequery.WriteQueryProcessor.connect_all">connect_all() (infogami.infobase.writequery.WriteQueryProcessor method)</a></dt>
-    <dt><a href="api/openlibrary/admin/stats.html#openlibrary.admin.stats.connect_to_couch">connect_to_couch() (in module openlibrary.admin.stats)</a></dt>
-    <dt><a href="api/openlibrary/admin/stats.html#openlibrary.admin.stats.connect_to_pg">connect_to_pg() (in module openlibrary.admin.stats)</a></dt>
     <dt><a href="api/infogami/infobase/client.html#infogami.infobase.client.Connection">Connection (class in infogami.infobase.client)</a></dt>
     <dt><a href="api/openlibrary/plugins/openlibrary/connection.html#openlibrary.plugins.openlibrary.connection.ConnectionMiddleware">ConnectionMiddleware (class in openlibrary.plugins.openlibrary.connection)</a></dt>
     <dt><a href="api/openlibrary/plugins/upstream/borrow.html#openlibrary.plugins.upstream.borrow.ContentServer">ContentServer (class in openlibrary.plugins.upstream.borrow)</a></dt>
@@ -766,6 +765,8 @@
   </dl></dd>
     <dt><a href="api/openlibrary/plugins/openlibrary/home.html#openlibrary.plugins.openlibrary.home.home.GET">GET() (openlibrary.plugins.openlibrary.home.home method)</a></dt>
     <dd><dl>
+      <dt><a href="api/openlibrary/plugins/openlibrary/libraries.html#openlibrary.plugins.openlibrary.libraries.libraries.GET">(openlibrary.plugins.openlibrary.libraries.libraries method)</a></dt>
+      <dt><a href="api/openlibrary/plugins/openlibrary/libraries.html#openlibrary.plugins.openlibrary.libraries.locations.GET">(openlibrary.plugins.openlibrary.libraries.locations method)</a></dt>
       <dt><a href="api/openlibrary/plugins/openlibrary/lists.html#openlibrary.plugins.openlibrary.lists.export.GET">(openlibrary.plugins.openlibrary.lists.export method)</a></dt>
       <dt><a href="api/openlibrary/plugins/openlibrary/lists.html#openlibrary.plugins.openlibrary.lists.feeds.GET">(openlibrary.plugins.openlibrary.lists.feeds method)</a></dt>
       <dt><a href="api/openlibrary/plugins/openlibrary/lists.html#openlibrary.plugins.openlibrary.lists.list_editions.GET">(openlibrary.plugins.openlibrary.lists.list_editions method)</a></dt>
@@ -927,6 +928,7 @@
     <dt><a href="api/openlibrary/plugins/upstream/models.html#openlibrary.plugins.upstream.models.Work.get_covers_from_solr">get_covers_from_solr() (openlibrary.plugins.upstream.models.Work method)</a></dt>
     <dt><a href="api/openlibrary/plugins/upstream/utils.html#openlibrary.plugins.upstream.utils.get_coverstore_url">get_coverstore_url() (in module openlibrary.plugins.upstream.utils)</a></dt>
     <dt><a href="api/openlibrary/plugins/upstream/models.html#openlibrary.plugins.upstream.models.User.get_creation_info">get_creation_info() (openlibrary.plugins.upstream.models.User method)</a></dt>
+    <dt><a href="api/openlibrary/plugins/upstream/models.html#openlibrary.plugins.upstream.models.Edition.get_current_and_available_loans">get_current_and_available_loans() (openlibrary.plugins.upstream.models.Edition method)</a></dt>
     <dt><a href="api/infogami/infobase/server.html#infogami.infobase.server.get_data">get_data() (in module infogami.infobase.server)</a></dt>
     <dd><dl>
       <dt><a href="api/openlibrary/coverstore/warc.html#openlibrary.coverstore.warc.LazyWARCRecord.get_data">(openlibrary.coverstore.warc.LazyWARCRecord method)</a></dt>
@@ -1475,7 +1477,7 @@
     <dt><a href="api/openlibrary/plugins/ol_infobase.html#openlibrary.plugins.ol_infobase.invalidate_most_recent_change">invalidate_most_recent_change() (in module openlibrary.plugins.ol_infobase)</a></dt>
     <dt><a href="api/openlibrary/plugins/ol_infobase.html#openlibrary.plugins.ol_infobase.MemcacheInvalidater.invalidate_work">invalidate_work() (openlibrary.plugins.ol_infobase.MemcacheInvalidater method)</a></dt>
     <dt><a href="api/openlibrary/core/processors/invalidation.html#openlibrary.core.processors.invalidation.InvalidationProcessor">InvalidationProcessor (class in openlibrary.core.processors.invalidation)</a></dt>
-    <dt><a href="api/openlibrary/admin/stats.html#openlibrary.admin.stats.InvalidType">InvalidType</a>, <a href="api/openlibrary/admin/numbers.html#openlibrary.admin.numbers.InvalidType">[1]</a></dt>
+    <dt><a href="api/openlibrary/admin/numbers.html#openlibrary.admin.numbers.InvalidType">InvalidType</a></dt>
     <dt><a href="api/openlibrary/plugins/admin/code.html#openlibrary.plugins.admin.code.ipaddress">ipaddress (class in openlibrary.plugins.admin.code)</a></dt>
     <dt><a href="api/openlibrary/plugins/admin/code.html#openlibrary.plugins.admin.code.IPAddress">IPAddress (class in openlibrary.plugins.admin.code)</a></dt>
     <dt><a href="api/openlibrary/plugins/admin/code.html#openlibrary.plugins.admin.code.ipaddress_view">ipaddress_view (class in openlibrary.plugins.admin.code)</a></dt>
@@ -1614,6 +1616,7 @@
     <dt><a href="api/infogami/utils/template.html#infogami.utils.template.LazyTemplate">LazyTemplate (class in infogami.utils.template)</a></dt>
     <dt><a href="api/infogami/infobase/common.html#infogami.infobase.common.LazyThing">LazyThing (class in infogami.infobase.common)</a></dt>
     <dt><a href="api/openlibrary/coverstore/warc.html#openlibrary.coverstore.warc.LazyWARCRecord">LazyWARCRecord (class in openlibrary.coverstore.warc)</a></dt>
+    <dt><a href="api/openlibrary/plugins/openlibrary/libraries.html#openlibrary.plugins.openlibrary.libraries.libraries">libraries (class in openlibrary.plugins.openlibrary.libraries)</a></dt>
     <dt><a href="api/openlibrary/core/models.html#openlibrary.core.models.Library">Library (class in openlibrary.core.models)</a></dt>
     <dt><a href="api/openlibrary/core/olmarkdown.html#openlibrary.core.olmarkdown.LineBreaksPreprocessor">LineBreaksPreprocessor (class in openlibrary.core.olmarkdown)</a></dt>
     <dt><a href="api/infogami/utils/view.html#infogami.utils.view.link">link() (in module infogami.utils.view)</a></dt>
@@ -1668,6 +1671,7 @@
     <dt><a href="api/openlibrary/plugins/admin/code.html#openlibrary.plugins.admin.code.loans_admin">loans_admin (class in openlibrary.plugins.admin.code)</a></dt>
     <dt><a href="api/openlibrary/plugins/openlibrary/connection.html#openlibrary.plugins.openlibrary.connection.LocalCacheMiddleware">LocalCacheMiddleware (class in openlibrary.plugins.openlibrary.connection)</a></dt>
     <dt><a href="api/infogami/infobase/client.html#infogami.infobase.client.LocalConnection">LocalConnection (class in infogami.infobase.client)</a></dt>
+    <dt><a href="api/openlibrary/plugins/openlibrary/libraries.html#openlibrary.plugins.openlibrary.libraries.locations">locations (class in openlibrary.plugins.openlibrary.libraries)</a></dt>
     <dt><a href="api/openlibrary/coverstore/archive.html#openlibrary.coverstore.archive.log">log() (in module openlibrary.coverstore.archive)</a></dt>
     <dd><dl>
       <dt><a href="api/openlibrary/data/dump.html#openlibrary.data.dump.log">(in module openlibrary.data.dump)</a></dt>
@@ -1699,7 +1703,6 @@
     <dt><a href="api/infogami/utils/macro.html#infogami.utils.macro.MacroPattern">MacroPattern (class in infogami.utils.macro)</a></dt>
     <dt><a href="api/infogami/index.html#infogami.main">main() (in module infogami)</a></dt>
     <dd><dl>
-      <dt><a href="api/openlibrary/admin/stats.html#openlibrary.admin.stats.main">(in module openlibrary.admin.stats)</a></dt>
       <dt><a href="api/openlibrary/core/init.html#openlibrary.core.init.main">(in module openlibrary.core.init)</a></dt>
       <dt><a href="api/openlibrary/core/lists/updater.html#openlibrary.core.lists.updater.main">(in module openlibrary.core.lists.updater)</a></dt>
       <dt><a href="api/openlibrary/coverstore/server.html#openlibrary.coverstore.server.main">(in module openlibrary.coverstore.server)</a></dt>
@@ -1879,7 +1882,6 @@
     <dt><a href="api/openlibrary/admin/index.html#module-openlibrary.admin">openlibrary.admin (module)</a></dt>
     <dt><a href="api/openlibrary/admin/code.html#module-openlibrary.admin.code">openlibrary.admin.code (module)</a></dt>
     <dt><a href="api/openlibrary/admin/numbers.html#module-openlibrary.admin.numbers">openlibrary.admin.numbers (module)</a></dt>
-    <dt><a href="api/openlibrary/admin/stats.html#module-openlibrary.admin.stats">openlibrary.admin.stats (module)</a></dt>
     <dt><a href="api/openlibrary/admin/utils.html#module-openlibrary.admin.utils">openlibrary.admin.utils (module)</a></dt>
     <dt><a href="api/openlibrary/api.html#module-openlibrary.api">openlibrary.api (module)</a></dt>
     <dt><a href="api/openlibrary/config.html#module-openlibrary.config">openlibrary.config (module)</a></dt>
@@ -1925,9 +1927,9 @@
     <dt><a href="api/openlibrary/data/dump.html#module-openlibrary.data.dump">openlibrary.data.dump (module)</a></dt>
     <dt><a href="api/openlibrary/data/sitemap.html#module-openlibrary.data.sitemap">openlibrary.data.sitemap (module)</a></dt>
     <dt><a href="api/openlibrary/data/solr.html#module-openlibrary.data.solr">openlibrary.data.solr (module)</a></dt>
+    <dt><a href="api/openlibrary/i18n/index.html#module-openlibrary.i18n">openlibrary.i18n (module)</a></dt>
 </dl></td>
   <td style="width: 33%" valign="top"><dl>
-    <dt><a href="api/openlibrary/i18n/index.html#module-openlibrary.i18n">openlibrary.i18n (module)</a></dt>
     <dt><a href="api/openlibrary/mocks/index.html#module-openlibrary.mocks">openlibrary.mocks (module)</a></dt>
     <dt><a href="api/openlibrary/mocks/mock_couchdb.html#module-openlibrary.mocks.mock_couchdb">openlibrary.mocks.mock_couchdb (module)</a></dt>
     <dt><a href="api/openlibrary/mocks/mock_infobase.html#module-openlibrary.mocks.mock_infobase">openlibrary.mocks.mock_infobase (module)</a></dt>
@@ -1953,6 +1955,7 @@
     <dt><a href="api/openlibrary/plugins/openlibrary/home.html#module-openlibrary.plugins.openlibrary.home">openlibrary.plugins.openlibrary.home (module)</a></dt>
     <dt><a href="api/openlibrary/plugins/openlibrary/infobase_hook.html#module-openlibrary.plugins.openlibrary.infobase_hook">openlibrary.plugins.openlibrary.infobase_hook (module)</a></dt>
     <dt><a href="api/openlibrary/plugins/openlibrary/inlibrary.html#module-openlibrary.plugins.openlibrary.inlibrary">openlibrary.plugins.openlibrary.inlibrary (module)</a></dt>
+    <dt><a href="api/openlibrary/plugins/openlibrary/libraries.html#module-openlibrary.plugins.openlibrary.libraries">openlibrary.plugins.openlibrary.libraries (module)</a></dt>
     <dt><a href="api/openlibrary/plugins/openlibrary/lists.html#module-openlibrary.plugins.openlibrary.lists">openlibrary.plugins.openlibrary.lists (module)</a></dt>
     <dt><a href="api/openlibrary/plugins/openlibrary/processors.html#module-openlibrary.plugins.openlibrary.processors">openlibrary.plugins.openlibrary.processors (module)</a></dt>
     <dt><a href="api/openlibrary/plugins/openlibrary/readbooks.html#module-openlibrary.plugins.openlibrary.readbooks">openlibrary.plugins.openlibrary.readbooks (module)</a></dt>
@@ -2268,7 +2271,7 @@
   </dl></dd>
     <dt><a href="api/openlibrary/plugins/inside/code.html#openlibrary.plugins.inside.code.read_from_archive">read_from_archive() (in module openlibrary.plugins.inside.code)</a></dt>
     <dt><a href="api/openlibrary/coverstore/coverlib.html#openlibrary.coverstore.coverlib.read_image">read_image() (in module openlibrary.coverstore.coverlib)</a></dt>
-    <dt><a href="api/openlibrary/plugins/worksearch/code.html#openlibrary.plugins.worksearch.code.read_isbn">read_isbn() (in module openlibrary.plugins.worksearch.code)</a></dt>
+    <dt><a href="api/openlibrary/utils/index.html#openlibrary.utils.read_isbn">read_isbn() (in module openlibrary.utils)</a></dt>
     <dt><a href="api/openlibrary/data/dump.html#openlibrary.data.dump.read_tsv">read_tsv() (in module openlibrary.data.dump)</a></dt>
     <dt><a href="api/openlibrary/plugins/upstream/acs4.html#openlibrary.plugins.upstream.acs4.read_xml">read_xml() (in module openlibrary.plugins.upstream.acs4)</a></dt>
     <dt><a href="api/openlibrary/core/processors/readableurls.html#openlibrary.core.processors.readableurls.ReadableUrlProcessor">ReadableUrlProcessor (class in openlibrary.core.processors.readableurls)</a></dt>
@@ -2314,9 +2317,9 @@
     <dt><a href="api/openlibrary/utils/schema.html#openlibrary.utils.schema.register_datatype">register_datatype() (in module openlibrary.utils.schema)</a></dt>
     <dt><a href="api/infogami/utils/delegate.html#infogami.utils.delegate.register_exception">register_exception() (in module infogami.utils.delegate)</a></dt>
     <dt><a href="api/infogami/utils/features.html#infogami.utils.features.register_filter">register_filter() (in module infogami.utils.features)</a></dt>
-    <dt><a href="api/openlibrary/core/models.html#openlibrary.core.models.register_models">register_models() (in module openlibrary.core.models)</a></dt>
 </dl></td>
   <td style="width: 33%" valign="top"><dl>
+    <dt><a href="api/openlibrary/core/models.html#openlibrary.core.models.register_models">register_models() (in module openlibrary.core.models)</a></dt>
     <dt><a href="api/infogami/core/code.html#infogami.core.code.register_preferences">register_preferences() (in module infogami.core.code)</a></dt>
     <dt><a href="api/openlibrary/core/schema.html#openlibrary.core.schema.register_schema">register_schema() (in module openlibrary.core.schema)</a></dt>
     <dt><a href="api/infogami/infobase/client.html#infogami.infobase.client.register_thing_class">register_thing_class() (in module infogami.infobase.client)</a></dt>
@@ -2416,7 +2419,6 @@
       <dt><a href="api/openlibrary/core/setup_commands.html#openlibrary.core.setup_commands.TestCommand.run">(openlibrary.core.setup_commands.TestCommand method)</a></dt>
   </dl></dd>
     <dt><a href="api/infogami/index.html#infogami.run_action">run_action() (in module infogami)</a></dt>
-    <dt><a href="api/openlibrary/admin/stats.html#openlibrary.admin.stats.run_gathering_functions">run_gathering_functions() (in module openlibrary.admin.stats)</a></dt>
     <dt><a href="api/openlibrary/plugins/worksearch/code.html#openlibrary.plugins.worksearch.code.run_solr_query">run_solr_query() (in module openlibrary.plugins.worksearch.code)</a></dt>
     <dt><a href="api/infogami/infobase/readquery.html#infogami.infobase.readquery.run_things_query">run_things_query() (in module infogami.infobase.readquery)</a></dt>
     <dt><a href="api/openlibrary/coverstore/server.html#openlibrary.coverstore.server.runfcgi">runfcgi() (in module openlibrary.coverstore.server)</a></dt>
@@ -2570,6 +2572,7 @@
       <dt><a href="api/openlibrary/plugins/openlibrary/borrow_home.html#openlibrary.plugins.openlibrary.borrow_home.setup">(in module openlibrary.plugins.openlibrary.borrow_home)</a></dt>
       <dt><a href="api/openlibrary/plugins/openlibrary/home.html#openlibrary.plugins.openlibrary.home.setup">(in module openlibrary.plugins.openlibrary.home)</a></dt>
       <dt><a href="api/openlibrary/plugins/openlibrary/inlibrary.html#openlibrary.plugins.openlibrary.inlibrary.setup">(in module openlibrary.plugins.openlibrary.inlibrary)</a></dt>
+      <dt><a href="api/openlibrary/plugins/openlibrary/libraries.html#openlibrary.plugins.openlibrary.libraries.setup">(in module openlibrary.plugins.openlibrary.libraries)</a></dt>
       <dt><a href="api/openlibrary/plugins/openlibrary/lists.html#openlibrary.plugins.openlibrary.lists.setup">(in module openlibrary.plugins.openlibrary.lists)</a></dt>
       <dt><a href="api/openlibrary/plugins/upstream/addbook.html#openlibrary.plugins.upstream.addbook.setup">(in module openlibrary.plugins.upstream.addbook)</a></dt>
       <dt><a href="api/openlibrary/plugins/upstream/covers.html#openlibrary.plugins.upstream.covers.setup">(in module openlibrary.plugins.upstream.covers)</a></dt>
@@ -2580,9 +2583,9 @@
   </dl></dd>
     <dt><a href="api/openlibrary/data/db.html#openlibrary.data.db.setup_database">setup_database() (in module openlibrary.data.db)</a></dt>
     <dt><a href="api/openlibrary/data/db.html#openlibrary.data.db.setup_memcache">setup_memcache() (in module openlibrary.data.db)</a></dt>
-    <dt><a href="api/infogami/infobase/server.html#infogami.infobase.server.setup_remoteip">setup_remoteip() (in module infogami.infobase.server)</a></dt>
 </dl></td>
   <td style="width: 33%" valign="top"><dl>
+    <dt><a href="api/infogami/infobase/server.html#infogami.infobase.server.setup_remoteip">setup_remoteip() (in module infogami.infobase.server)</a></dt>
     <dt><a href="api/infogami/index.html#infogami.shell">shell() (in module infogami)</a></dt>
     <dt><a href="api/openlibrary/core/setup_commands.html#openlibrary.core.setup_commands.ShellCommand">ShellCommand (class in openlibrary.core.setup_commands)</a></dt>
     <dt><a href="api/openlibrary/utils/httpserver.html#openlibrary.utils.httpserver.Respose.should_return">should_return() (openlibrary.utils.httpserver.Respose method)</a></dt>
@@ -2660,7 +2663,6 @@
   </dl></dd>
     <dt><a href="api/infogami/infobase/server.html#infogami.infobase.server.store">store (class in infogami.infobase.server)</a></dt>
     <dt><a href="api/infogami/utils/macro.html#infogami.utils.macro.MacroPattern.store">store() (infogami.utils.macro.MacroPattern method)</a></dt>
-    <dt><a href="api/openlibrary/admin/stats.html#openlibrary.admin.stats.store_data">store_data() (in module openlibrary.admin.stats)</a></dt>
     <dt><a href="api/infogami/infobase/server.html#infogami.infobase.server.store_special">store_special (class in infogami.infobase.server)</a></dt>
     <dt><a href="api/infogami/infobase/_dbstore/store.html#infogami.infobase._dbstore.store.StoreIndexer">StoreIndexer (class in infogami.infobase._dbstore.store)</a></dt>
     <dt><a href="api/infogami/infobase/client.html#infogami.infobase.client.storify">storify() (in module infogami.infobase.client)</a></dt>
@@ -3062,7 +3064,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Feb 18, 2011.
+      Last updated on Feb 19, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>
