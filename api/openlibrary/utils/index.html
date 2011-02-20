@@ -79,6 +79,17 @@
 <span id="documentation"></span><h2>Documentation<a class="headerlink" href="#module-openlibrary.utils" title="Permalink to this headline">¶</a></h2>
 <p>Generic utilities</p>
 <dl class="function">
+<dt id="openlibrary.utils.finddict">
+<tt class="descclassname">openlibrary.utils.</tt><tt class="descname">finddict</tt><big>(</big><em>dicts</em>, <em>**filters</em><big>)</big><a class="headerlink" href="#openlibrary.utils.finddict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find a dictionary that matches given filter conditions.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">dicts</span> <span class="o">=</span> <span class="p">[{</span><span class="s">&quot;x&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&quot;y&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="s">&quot;x&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&quot;y&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">finddict</span><span class="p">(</span><span class="n">dicts</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">{&#39;x&#39;: 1, &#39;y&#39;: 2}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
 <dt id="openlibrary.utils.read_isbn">
 <tt class="descclassname">openlibrary.utils.</tt><tt class="descname">read_isbn</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#openlibrary.utils.read_isbn" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -166,7 +177,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Feb 19, 2011.
+      Last updated on Feb 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>
