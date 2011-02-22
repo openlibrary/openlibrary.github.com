@@ -9,6 +9,7 @@ Submodules
    :maxdepth: 1
 
    mock_couchdb.rst
+   mock_ia.rst
    mock_infobase.rst
    mock_memcache.rst
 

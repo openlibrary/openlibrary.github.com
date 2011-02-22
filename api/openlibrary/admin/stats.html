@@ -55,8 +55,55 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="stats">
-<h1>stats<a class="headerlink" href="#stats" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-openlibrary.admin.stats">
+<span id="stats"></span><h1>stats<a class="headerlink" href="#module-openlibrary.admin.stats" title="Permalink to this headline">¶</a></h1>
+<p>Script to read out data from thingdb and put it in couch so that it
+can be queried by the /admin pages on openlibrary</p>
+<dl class="exception">
+<dt id="openlibrary.admin.stats.InvalidType">
+<em class="property">exception </em><tt class="descclassname">openlibrary.admin.stats.</tt><tt class="descname">InvalidType</tt><a class="headerlink" href="#openlibrary.admin.stats.InvalidType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.TypeError</span></tt></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.admin.stats.connect_to_couch">
+<tt class="descclassname">openlibrary.admin.stats.</tt><tt class="descname">connect_to_couch</tt><big>(</big><em>config_file</em><big>)</big><a class="headerlink" href="#openlibrary.admin.stats.connect_to_couch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connects to the couch databases</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.admin.stats.connect_to_pg">
+<tt class="descclassname">openlibrary.admin.stats.</tt><tt class="descname">connect_to_pg</tt><big>(</big><em>config_file</em><big>)</big><a class="headerlink" href="#openlibrary.admin.stats.connect_to_pg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connects to the postgres database specified in the dictionary
+<cite>config</cite>. Needs a top level key <cite>db_parameters</cite> and under that
+<cite>database</cite> (or <cite>db</cite>) at the least. If <cite>user</cite> and <cite>host</cite> are
+provided, they&#8217;re used as well.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.admin.stats.get_config_info">
+<tt class="descclassname">openlibrary.admin.stats.</tt><tt class="descname">get_config_info</tt><big>(</big><em>infobase_config</em><big>)</big><a class="headerlink" href="#openlibrary.admin.stats.get_config_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses the config file(s) to get back all the necessary pieces of data.</p>
+<p>Add extra parameters here and change the point of calling.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.admin.stats.main">
+<tt class="descclassname">openlibrary.admin.stats.</tt><tt class="descname">main</tt><big>(</big><em>infobase_config</em>, <em>openlibrary_config</em>, <em>coverstore_config</em>, <em>ndays=1</em><big>)</big><a class="headerlink" href="#openlibrary.admin.stats.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.admin.stats.run_gathering_functions">
+<tt class="descclassname">openlibrary.admin.stats.</tt><tt class="descname">run_gathering_functions</tt><big>(</big><em>infobase_db</em>, <em>coverstore_db</em>, <em>seeds_db</em>, <em>editions_db</em>, <em>works_db</em>, <em>admin_db</em>, <em>start</em>, <em>end</em>, <em>logroot</em>, <em>prefix</em>, <em>key_prefix=None</em><big>)</big><a class="headerlink" href="#openlibrary.admin.stats.run_gathering_functions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs all the data gathering functions with the given prefix
+inside the numbers module</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.admin.stats.store_data">
+<tt class="descclassname">openlibrary.admin.stats.</tt><tt class="descname">store_data</tt><big>(</big><em>db</em>, <em>data</em>, <em>date</em><big>)</big><a class="headerlink" href="#openlibrary.admin.stats.store_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 
@@ -119,7 +166,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Feb 21, 2011.
+      Last updated on Feb 22, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>
