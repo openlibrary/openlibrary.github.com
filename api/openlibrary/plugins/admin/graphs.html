@@ -1,0 +1,201 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>graphs &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="admin" href="index.html" />
+    <link rel="next" title="inspect_thing" href="inspect_thing.html" />
+    <link rel="prev" title="code" href="code.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="inspect_thing.html" title="inspect_thing"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="code.html" title="code"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">admin</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.plugins.admin.graphs">
+<span id="graphs"></span><h1>graphs<a class="headerlink" href="#module-openlibrary.plugins.admin.graphs" title="Permalink to this headline">¶</a></h1>
+<p>Utilities for rendering Graphite graphs.</p>
+<dl class="class">
+<dt id="openlibrary.plugins.admin.graphs.GraphiteGraph">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.admin.graphs.</tt><tt class="descname">GraphiteGraph</tt><a class="headerlink" href="#openlibrary.plugins.admin.graphs.GraphiteGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Representation of Graphite graph.</p>
+<p>Usage:</p>
+<blockquote>
+<div>g = GraphiteGraph()
+g.add(&#8220;stats.timers.ol.pageload.all.mean&#8221;).apply(&#8220;movingAverage&#8221;, 20).alias(&#8220;all&#8221;)
+print g.render()</div></blockquote>
+<p>In templates:</p>
+<blockquote>
+<div>$ g = GraphiteGraph()
+$g.add(&#8220;stats.timers.ol.pageload.all.mean&#8221;).apply(&#8220;movingAverage&#8221;, 20).alias(&#8220;all&#8221;)
+$:g.render()</div></blockquote>
+<dl class="method">
+<dt id="openlibrary.plugins.admin.graphs.GraphiteGraph.add">
+<tt class="descname">add</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.graphs.GraphiteGraph.add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.admin.graphs.GraphiteGraph.get_queryparams">
+<tt class="descname">get_queryparams</tt><big>(</big><em>**options</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.graphs.GraphiteGraph.get_queryparams" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns query params to be passed to the image URL for rendering this graph.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.admin.graphs.GraphiteGraph.render">
+<tt class="descname">render</tt><big>(</big><em>**options</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.graphs.GraphiteGraph.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renders the graphs as an img tag.</p>
+<p>Usage in templates:</p>
+<blockquote>
+<div>$:g.render(yLimit=100, width=300, height=400)</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.admin.graphs.Series">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.admin.graphs.</tt><tt class="descname">Series</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.graphs.Series" title="Permalink to this definition">¶</a></dt>
+<dd><p>One series in the GraphiteGraph.</p>
+<dl class="method">
+<dt id="openlibrary.plugins.admin.graphs.Series.alias">
+<tt class="descname">alias</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.graphs.Series.alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shorthand for calling s.apply(&#8220;alias&#8221;, name)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.admin.graphs.Series.apply">
+<tt class="descname">apply</tt><big>(</big><em>funcname</em>, <em>*args</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.graphs.Series.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies a function to this series.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">Returns self</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.admin.graphs.get_graphite_base_url">
+<tt class="descclassname">openlibrary.plugins.admin.graphs.</tt><tt class="descname">get_graphite_base_url</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.graphs.get_graphite_base_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.admin.graphs.setup">
+<tt class="descclassname">openlibrary.plugins.admin.graphs.</tt><tt class="descname">setup</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.graphs.setup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../../index.html">
+              <img class="logo" src="../../../../_static/logo_OL-lg.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="code.html"
+                        title="previous chapter">code</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="inspect_thing.html"
+                        title="next chapter">inspect_thing</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/api/openlibrary/plugins/admin/graphs.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="inspect_thing.html" title="inspect_thing"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="code.html" title="code"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >admin</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Internet Archive.
+      Last updated on Dec 20, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

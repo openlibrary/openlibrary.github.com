@@ -1,0 +1,5 @@
+
+opds
+====
+
+.. automodule:: openlibrary.plugins.openlibrary.opds

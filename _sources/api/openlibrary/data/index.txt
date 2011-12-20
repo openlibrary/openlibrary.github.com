@@ -10,6 +10,7 @@ Submodules
 
    db.rst
    dump.rst
+   mapreduce.rst
    sitemap.rst
    solr.rst
 

@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
     <link rel="up" title="mocks" href="index.html" />
-    <link rel="next" title="plugins" href="../plugins/index.html" />
+    <link rel="next" title="mock_ol" href="mock_ol.html" />
     <link rel="prev" title="mock_infobase" href="mock_infobase.html" /> 
   </head>
   <body>
@@ -38,7 +38,7 @@
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../plugins/index.html" title="plugins"
+          <a href="mock_ol.html" title="mock_ol"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="mock_infobase.html" title="mock_infobase"
@@ -55,8 +55,41 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="mock-memcache">
-<h1>mock_memcache<a class="headerlink" href="#mock-memcache" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-openlibrary.mocks.mock_memcache">
+<span id="mock-memcache"></span><h1>mock_memcache<a class="headerlink" href="#module-openlibrary.mocks.mock_memcache" title="Permalink to this headline">¶</a></h1>
+<p>Library to mock memcache functionality.</p>
+<dl class="class">
+<dt id="openlibrary.mocks.mock_memcache.Client">
+<em class="property">class </em><tt class="descclassname">openlibrary.mocks.mock_memcache.</tt><tt class="descname">Client</tt><big>(</big><em>servers=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#openlibrary.mocks.mock_memcache.Client" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mock memcache client.</p>
+<dl class="method">
+<dt id="openlibrary.mocks.mock_memcache.Client.add">
+<tt class="descname">add</tt><big>(</big><em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#openlibrary.mocks.mock_memcache.Client.add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.mocks.mock_memcache.Client.delete">
+<tt class="descname">delete</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.mocks.mock_memcache.Client.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.mocks.mock_memcache.Client.get">
+<tt class="descname">get</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.mocks.mock_memcache.Client.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.mocks.mock_memcache.Client.set">
+<tt class="descname">set</tt><big>(</big><em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#openlibrary.mocks.mock_memcache.Client.set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.mocks.mock_memcache.pytest_funcarg__mock_memcache">
+<tt class="descclassname">openlibrary.mocks.mock_memcache.</tt><tt class="descname">pytest_funcarg__mock_memcache</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#openlibrary.mocks.mock_memcache.pytest_funcarg__mock_memcache" title="Permalink to this definition">¶</a></dt>
+<dd><p>This patches all the existing memcache connections to use mock memcache instance.</p>
+</dd></dl>
+
 </div>
 
 
@@ -72,8 +105,8 @@
   <p class="topless"><a href="mock_infobase.html"
                         title="previous chapter">mock_infobase</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../plugins/index.html"
-                        title="next chapter">plugins</a></p>
+  <p class="topless"><a href="mock_ol.html"
+                        title="next chapter">mock_ol</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../_sources/api/openlibrary/mocks/mock_memcache.txt"
@@ -106,7 +139,7 @@
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../plugins/index.html" title="plugins"
+          <a href="mock_ol.html" title="mock_ol"
              >next</a> |</li>
         <li class="right" >
           <a href="mock_infobase.html" title="mock_infobase"
@@ -119,7 +152,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Mar 11, 2011.
+      Last updated on Dec 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

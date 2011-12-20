@@ -1,0 +1,180 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>git &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="theme" href="index.html" />
+    <link rel="next" title="upstream" href="../upstream/index.html" />
+    <link rel="prev" title="code" href="code.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../upstream/index.html" title="upstream"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="code.html" title="code"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">theme</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.plugins.theme.git">
+<span id="git"></span><h1>git<a class="headerlink" href="#module-openlibrary.plugins.theme.git" title="Permalink to this headline">¶</a></h1>
+<dl class="exception">
+<dt id="openlibrary.plugins.theme.git.CommandError">
+<em class="property">exception </em><tt class="descclassname">openlibrary.plugins.theme.git.</tt><tt class="descname">CommandError</tt><big>(</big><em>status</em>, <em>message</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.theme.git.CommandError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></tt></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.theme.git.Git">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.theme.git.</tt><tt class="descname">Git</tt><a class="headerlink" href="#openlibrary.plugins.theme.git.Git" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simple interface to git.
+Expects that the working directory is the root of git repository.</p>
+<dl class="method">
+<dt id="openlibrary.plugins.theme.git.Git.add_file">
+<tt class="descname">add_file</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.theme.git.Git.add_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an empty file to the repository.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.theme.git.Git.commit">
+<tt class="descname">commit</tt><big>(</big><em>files</em>, <em>author</em>, <em>message</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.theme.git.Git.commit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.theme.git.Git.diff">
+<tt class="descname">diff</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.theme.git.Git.diff" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.theme.git.Git.modified">
+<tt class="descname">modified</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.theme.git.Git.modified" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.theme.git.Git.push">
+<tt class="descname">push</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.theme.git.Git.push" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.theme.git.Git.status">
+<tt class="descname">status</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.theme.git.Git.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the list of modified files.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.theme.git.Git.system">
+<tt class="descname">system</tt><big>(</big><em>cmd</em>, <em>input=None</em>, <em>check_status=True</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.theme.git.Git.system" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes the command returns the stdout.</p>
+<p>Raises CommandError on non-zero status unless check_status is set to False.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../../index.html">
+              <img class="logo" src="../../../../_static/logo_OL-lg.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="code.html"
+                        title="previous chapter">code</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../upstream/index.html"
+                        title="next chapter">upstream</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/api/openlibrary/plugins/theme/git.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../upstream/index.html" title="upstream"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="code.html" title="code"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >theme</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Internet Archive.
+      Last updated on Dec 20, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

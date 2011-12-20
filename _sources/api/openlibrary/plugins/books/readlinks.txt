@@ -1,0 +1,5 @@
+
+readlinks
+=========
+
+.. automodule:: openlibrary.plugins.books.readlinks

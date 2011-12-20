@@ -59,18 +59,6 @@
 <span id="ol-infobase"></span><h1>ol_infobase<a class="headerlink" href="#module-openlibrary.plugins.ol_infobase" title="Permalink to this headline">¶</a></h1>
 <p>Open Library plugin for infobase.</p>
 <dl class="class">
-<dt id="openlibrary.plugins.ol_infobase.Indexer">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.ol_infobase.</tt><tt class="descname">Indexer</tt><a class="headerlink" href="#openlibrary.plugins.ol_infobase.Indexer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="../../infogami/infobase/_dbstore/indexer.html#infogami.infobase._dbstore.indexer.Indexer" title="infogami.infobase._dbstore.indexer.Indexer"><tt class="xref py py-class docutils literal"><span class="pre">infogami.infobase._dbstore.indexer.Indexer</span></tt></a></p>
-<p>Overwrite default indexer to reduce the str index for editions.</p>
-<dl class="method">
-<dt id="openlibrary.plugins.ol_infobase.Indexer.compute_index">
-<tt class="descname">compute_index</tt><big>(</big><em>doc</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.ol_infobase.Indexer.compute_index" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
 <dt id="openlibrary.plugins.ol_infobase.MemcacheInvalidater">
 <em class="property">class </em><tt class="descclassname">openlibrary.plugins.ol_infobase.</tt><tt class="descname">MemcacheInvalidater</tt><a class="headerlink" href="#openlibrary.plugins.ol_infobase.MemcacheInvalidater" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
@@ -109,6 +97,46 @@
 <dt id="openlibrary.plugins.ol_infobase.MemcachedDict">
 <tt class="descclassname">openlibrary.plugins.ol_infobase.</tt><tt class="descname">MemcachedDict</tt><big>(</big><em>servers=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#openlibrary.plugins.ol_infobase.MemcachedDict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cache implementation with OL customized memcache client.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.ol_infobase.OLIndexer">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.ol_infobase.</tt><tt class="descname">OLIndexer</tt><a class="headerlink" href="#openlibrary.plugins.ol_infobase.OLIndexer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../infogami/infobase/_dbstore/indexer.html#infogami.infobase._dbstore.indexer.Indexer" title="infogami.infobase._dbstore.indexer.Indexer"><tt class="xref py py-class docutils literal"><span class="pre">infogami.infobase._dbstore.indexer.Indexer</span></tt></a></p>
+<p>OL custom indexer to index normalized_title etc.</p>
+<dl class="method">
+<dt id="openlibrary.plugins.ol_infobase.OLIndexer.compute_index">
+<tt class="descname">compute_index</tt><big>(</big><em>doc</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.ol_infobase.OLIndexer.compute_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.ol_infobase.OLIndexer.expand_isbns">
+<tt class="descname">expand_isbns</tt><big>(</big><em>isbns</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.ol_infobase.OLIndexer.expand_isbns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Expands the list of isbns by adding ISBN-10 for ISBN-13 and vice-verse.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.ol_infobase.OLIndexer.get_type">
+<tt class="descname">get_type</tt><big>(</big><em>doc</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.ol_infobase.OLIndexer.get_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.ol_infobase.OLIndexer.normalize_edition_title">
+<tt class="descname">normalize_edition_title</tt><big>(</big><em>title</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.ol_infobase.OLIndexer.normalize_edition_title" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.ol_infobase.OLIndexer.normalize_isbn">
+<tt class="descname">normalize_isbn</tt><big>(</big><em>isbn</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.ol_infobase.OLIndexer.normalize_isbn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.ol_infobase.OLIndexer.process_edition_doc">
+<tt class="descname">process_edition_doc</tt><big>(</big><em>doc</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.ol_infobase.OLIndexer.process_edition_doc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process edition doc to add computed fields used for import.</p>
+<p>Make the computed field names end with an underscore to avoid conflicting with regular fields.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -215,6 +243,12 @@
 
 </dd></dl>
 
+<dl class="function">
+<dt id="openlibrary.plugins.ol_infobase.notify_celery">
+<tt class="descclassname">openlibrary.plugins.ol_infobase.</tt><tt class="descname">notify_celery</tt><big>(</big><em>event</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.ol_infobase.notify_celery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called on infobase events to notify celery for on every edit.</p>
+</dd></dl>
+
 <dl class="class">
 <dt id="openlibrary.plugins.ol_infobase.olid_to_key">
 <em class="property">class </em><tt class="descclassname">openlibrary.plugins.ol_infobase.</tt><tt class="descname">olid_to_key</tt><a class="headerlink" href="#openlibrary.plugins.ol_infobase.olid_to_key" title="Permalink to this definition">¶</a></dt>
@@ -230,6 +264,16 @@
 <tt class="descclassname">openlibrary.plugins.ol_infobase.</tt><tt class="descname">process_json</tt><big>(</big><em>key</em>, <em>json</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.ol_infobase.process_json" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="class">
+<dt id="openlibrary.plugins.ol_infobase.reload_config">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.ol_infobase.</tt><tt class="descname">reload_config</tt><a class="headerlink" href="#openlibrary.plugins.ol_infobase.reload_config" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.plugins.ol_infobase.reload_config.POST">
+<tt class="descname">POST</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.ol_infobase.reload_config.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <dl class="function">
 <dt id="openlibrary.plugins.ol_infobase.safeint">
 <tt class="descclassname">openlibrary.plugins.ol_infobase.</tt><tt class="descname">safeint</tt><big>(</big><em>value</em>, <em>default=0</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.ol_infobase.safeint" title="Permalink to this definition">¶</a></dt>
@@ -239,6 +283,11 @@
 <dl class="function">
 <dt id="openlibrary.plugins.ol_infobase.save_error">
 <tt class="descclassname">openlibrary.plugins.ol_infobase.</tt><tt class="descname">save_error</tt><big>(</big><em>dir</em>, <em>prefix</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.ol_infobase.save_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.ol_infobase.setup_logging">
+<tt class="descclassname">openlibrary.plugins.ol_infobase.</tt><tt class="descname">setup_logging</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.ol_infobase.setup_logging" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="class">
@@ -348,7 +397,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Mar 11, 2011.
+      Last updated on Dec 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

@@ -97,6 +97,11 @@
 <dt id="infogami.infobase.client.ClientException">
 <em class="property">exception </em><tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">ClientException</tt><big>(</big><em>status</em>, <em>msg</em>, <em>json=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.ClientException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></tt></p>
+<dl class="method">
+<dt id="infogami.infobase.client.ClientException.get_data">
+<tt class="descname">get_data</tt><big>(</big><big>)</big><a class="headerlink" href="#infogami.infobase.client.ClientException.get_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -114,7 +119,7 @@
 
 <dl class="method">
 <dt id="infogami.infobase.client.Connection.request">
-<tt class="descname">request</tt><big>(</big><em>path</em>, <em>method='GET'</em>, <em>data=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Connection.request" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">request</tt><big>(</big><em>sitename</em>, <em>path</em>, <em>method='GET'</em>, <em>data=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Connection.request" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -203,6 +208,11 @@ for i in range(10):</p>
 <dt id="infogami.infobase.client.Site">
 <em class="property">class </em><tt class="descclassname">infogami.infobase.client.</tt><tt class="descname">Site</tt><big>(</big><em>conn</em>, <em>sitename</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
+<dt id="infogami.infobase.client.Site.activate_account">
+<tt class="descname">activate_account</tt><big>(</big><em>username</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.activate_account" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="infogami.infobase.client.Site.can_write">
 <tt class="descname">can_write</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.can_write" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -225,6 +235,12 @@ for i in range(10):</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="infogami.infobase.client.Site.find_account">
+<tt class="descname">find_account</tt><big>(</big><em>username=None</em>, <em>email=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.find_account" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds account by username or email.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="infogami.infobase.client.Site.find_user_by_email">
 <tt class="descname">find_user_by_email</tt><big>(</big><em>email</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.find_user_by_email" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -241,8 +257,9 @@ for i in range(10):</p>
 
 <dl class="method">
 <dt id="infogami.infobase.client.Site.get_many">
-<tt class="descname">get_many</tt><big>(</big><em>keys</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.get_many" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<tt class="descname">get_many</tt><big>(</big><em>keys</em>, <em>raw=False</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.get_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>When raw=True, the raw data is returned instead of objects.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="infogami.infobase.client.Site.get_reset_code">
@@ -307,6 +324,12 @@ This should be called after logging in as admin.</p>
 <dt id="infogami.infobase.client.Site.things">
 <tt class="descname">things</tt><big>(</big><em>query</em>, <em>details=False</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.things" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.client.Site.update_account">
+<tt class="descname">update_account</tt><big>(</big><em>username</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.client.Site.update_account" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates an account.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="infogami.infobase.client.Site.update_user">
@@ -556,7 +579,7 @@ Is there any way to do this in stdlib?</p>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Mar 11, 2011.
+      Last updated on Dec 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

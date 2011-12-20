@@ -1,0 +1,176 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>import_edition_builder &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="importapi" href="index.html" />
+    <link rel="next" title="import_opds" href="import_opds.html" />
+    <link rel="prev" title="code" href="code.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="import_opds.html" title="import_opds"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="code.html" title="code"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">importapi</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.plugins.importapi.import_edition_builder">
+<span id="import-edition-builder"></span><h1>import_edition_builder<a class="headerlink" href="#module-openlibrary.plugins.importapi.import_edition_builder" title="Permalink to this headline">¶</a></h1>
+<p>Create a edition dict that can be passed to catalog.add_book.load()</p>
+<p>This class encapsulates the logic of creating edition dicts.</p>
+<p>You can use add(key) to add a new key to the edition dict. This class
+will take care of whether it should be a string or a list. For example,
+you can use add(&#8216;subject&#8217;) to add an entry to the &#8216;subjects&#8217; list.</p>
+<p>This class also takes care of creating complex types, such as authors.
+For example, you can add an author using add(&#8216;author&#8217;, &#8216;Mark Twain&#8217;) and
+we will create {&#8216;personal_name&#8217;: ..., &#8216;name&#8217;: ..., &#8216;entity_type&#8217;: &#8216;person&#8217;} 
+which is stored as a list of authors in the edition dict.</p>
+<p>A sample dict looks like one of these:
+{&#8216;edition_name&#8217;: u&#8216;3rd ed.&#8217;, &#8216;pagination&#8217;: u&#8217;xii, 444 p.&#8217;, &#8216;title&#8217;: u&#8217;A course of pure mathematics&#8217;, &#8216;publishers&#8217;: [u&#8217;At the University Press&#8217;], &#8216;number_of_pages&#8217;: 444, &#8216;languages&#8217;: [&#8216;eng&#8217;], &#8216;publish_date&#8217;: &#8216;1921&#8217;, &#8216;location&#8217;: [u&#8217;GLAD&#8217;, u&#8217;GLAD&#8217;], &#8216;authors&#8217;: [{&#8216;birth_date&#8217;: u&#8216;1877&#8217;, &#8216;personal_name&#8217;: u&#8217;Hardy, G. H.&#8217;, &#8216;death_date&#8217;: u&#8216;1947&#8217;, &#8216;name&#8217;: u&#8217;Hardy, G. H.&#8217;, &#8216;entity_type&#8217;: &#8216;person&#8217;}], &#8216;by_statement&#8217;: u&#8217;by G.H. Hardy&#8217;, &#8216;publish_places&#8217;: [u&#8217;Cambridge&#8217;], &#8216;publish_country&#8217;: &#8216;enk&#8217;}
+{&#8216;publishers&#8217;: [u&#8217;Ace Books&#8217;], &#8216;pagination&#8217;: u&#8216;271 p. ;&#8217;, &#8216;title&#8217;: u&#8217;Neuromancer&#8217;, &#8216;lccn&#8217;: [u&#8216;91174394&#8217;], &#8216;notes&#8217;: u&#8217;Hugo award book, 1985; Nebula award ; Philip K. Dick award&#8217;, &#8216;number_of_pages&#8217;: 271, &#8216;isbn_13&#8217;: [u&#8216;9780441569595&#8217;], &#8216;languages&#8217;: [&#8216;eng&#8217;], &#8216;dewey_decimal_class&#8217;: [u&#8216;813/.54&#8217;], &#8216;lc_classifications&#8217;: [u&#8217;PS3557.I2264 N48 1984&#8217;, u&#8217;PR9199.3.G53 N49 1984&#8217;], &#8216;publish_date&#8217;: &#8216;1984&#8217;, &#8216;publish_country&#8217;: &#8216;nyu&#8217;, &#8216;authors&#8217;: [{&#8216;birth_date&#8217;: u&#8216;1948&#8217;, &#8216;personal_name&#8217;: u&#8217;Gibson, William&#8217;, &#8216;name&#8217;: u&#8217;Gibson, William&#8217;, &#8216;entity_type&#8217;: &#8216;person&#8217;}], &#8216;by_statement&#8217;: u&#8217;William Gibson&#8217;, &#8216;oclc_numbers&#8217;: [&#8216;24379880&#8217;], &#8216;publish_places&#8217;: [u&#8217;New York&#8217;], &#8216;isbn_10&#8217;: [u&#8216;0441569595&#8217;]}
+{&#8216;publishers&#8217;: [u&#8217;Grosset &amp; Dunlap&#8217;], &#8216;pagination&#8217;: u&#8216;156 p.&#8217;, &#8216;title&#8217;: u&#8217;Great trains of all time&#8217;, &#8216;lccn&#8217;: [u&#8216;62051844&#8217;], &#8216;number_of_pages&#8217;: 156, &#8216;languages&#8217;: [&#8216;eng&#8217;], &#8216;dewey_decimal_class&#8217;: [u&#8216;625.2&#8217;], &#8216;lc_classifications&#8217;: [u&#8217;TF147 .H8&#8217;], &#8216;publish_date&#8217;: &#8216;1962&#8217;, &#8216;publish_country&#8217;: &#8216;nyu&#8217;, &#8216;authors&#8217;: [{&#8216;birth_date&#8217;: u&#8216;1894&#8217;, &#8216;personal_name&#8217;: u&#8217;Hubbard, Freeman H.&#8217;, &#8216;name&#8217;: u&#8217;Hubbard, Freeman H.&#8217;, &#8216;entity_type&#8217;: &#8216;person&#8217;}], &#8216;by_statement&#8217;: u&#8217;Illustrated by Herb Mott&#8217;, &#8216;oclc_numbers&#8217;: [u&#8216;1413013&#8217;], &#8216;publish_places&#8217;: [u&#8217;New York&#8217;]}</p>
+<dl class="class">
+<dt id="openlibrary.plugins.importapi.import_edition_builder.import_edition_builder">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.importapi.import_edition_builder.</tt><tt class="descname">import_edition_builder</tt><big>(</big><em>init_dict={}</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.import_edition_builder.import_edition_builder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.plugins.importapi.import_edition_builder.import_edition_builder.add">
+<tt class="descname">add</tt><big>(</big><em>key</em>, <em>val</em>, <em>restrict_keys=True</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.import_edition_builder.import_edition_builder.add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.importapi.import_edition_builder.import_edition_builder.add_author">
+<tt class="descname">add_author</tt><big>(</big><em>key</em>, <em>val</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.import_edition_builder.import_edition_builder.add_author" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.importapi.import_edition_builder.import_edition_builder.add_illustrator">
+<tt class="descname">add_illustrator</tt><big>(</big><em>key</em>, <em>val</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.import_edition_builder.import_edition_builder.add_illustrator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.importapi.import_edition_builder.import_edition_builder.add_list">
+<tt class="descname">add_list</tt><big>(</big><em>key</em>, <em>val</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.import_edition_builder.import_edition_builder.add_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.importapi.import_edition_builder.import_edition_builder.add_string">
+<tt class="descname">add_string</tt><big>(</big><em>key</em>, <em>val</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.import_edition_builder.import_edition_builder.add_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.importapi.import_edition_builder.import_edition_builder.get_dict">
+<tt class="descname">get_dict</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.import_edition_builder.import_edition_builder.get_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../../index.html">
+              <img class="logo" src="../../../../_static/logo_OL-lg.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="code.html"
+                        title="previous chapter">code</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="import_opds.html"
+                        title="next chapter">import_opds</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/api/openlibrary/plugins/importapi/import_edition_builder.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="import_opds.html" title="import_opds"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="code.html" title="code"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >importapi</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Internet Archive.
+      Last updated on Dec 20, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

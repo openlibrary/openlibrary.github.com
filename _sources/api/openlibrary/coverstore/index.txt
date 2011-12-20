@@ -16,6 +16,7 @@ Submodules
    disk.rst
    imagecache.rst
    oldb.rst
+   ratelimit.rst
    schema.rst
    server.rst
    utils.rst

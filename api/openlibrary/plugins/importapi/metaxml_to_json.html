@@ -1,0 +1,148 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>metaxml_to_json &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="importapi" href="index.html" />
+    <link rel="next" title="inside" href="../inside/index.html" />
+    <link rel="prev" title="import_rdf" href="import_rdf.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../inside/index.html" title="inside"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="import_rdf.html" title="import_rdf"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">importapi</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.plugins.importapi.metaxml_to_json">
+<span id="metaxml-to-json"></span><h1>metaxml_to_json<a class="headerlink" href="#module-openlibrary.plugins.importapi.metaxml_to_json" title="Permalink to this headline">¶</a></h1>
+<p>This example uses the import_edition_builder class to convert 
+an IA meta.xml into a json object that the Import API can consume.</p>
+<p>usage:
+&gt; python metaxml_to_json.py romanceonthreele00hafnrich_meta.xml 
+{&#8220;publishers&#8221;: [&#8220;New York : Bloomsbury&#8221;], &#8220;description&#8221;: &#8220;Includes bibliographical references (p. [243]-247) and index&#8221;, &#8220;title&#8221;: &#8220;A romance on three legs : Glenn Gould&#8217;s obsessive quest for the perfect piano&#8221;, &#8220;isbn_10&#8221;: [&#8220;1596915250&#8221;], &#8220;isbn_13&#8221;: [&#8220;9781596915251&#8221;], &#8220;languages&#8221;: [&#8220;eng&#8221;], &#8220;subjects&#8221;: [&#8220;Lending library&#8221;, &#8220;protected DAISY&#8221;, &#8220;Accessible book&#8221;, &#8220;Gould, Glenn, 1932-1982&#8221;, &#8220;Steinway piano&#8221;], &#8220;publish_date&#8221;: &#8220;2009&#8221;, &#8220;authors&#8221;: [{&#8220;entity_type&#8221;: &#8220;person&#8221;, &#8220;name&#8221;: &#8220;Hafner, Katie&#8221;, &#8220;personal_name&#8221;: &#8220;Hafner, Katie&#8221;}], &#8220;ocaid&#8221;: &#8220;romanceonthreele00hafnrich&#8221;}</p>
+<dl class="function">
+<dt id="openlibrary.plugins.importapi.metaxml_to_json.metaxml_to_edition_dict">
+<tt class="descclassname">openlibrary.plugins.importapi.metaxml_to_json.</tt><tt class="descname">metaxml_to_edition_dict</tt><big>(</big><em>root</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.metaxml_to_json.metaxml_to_edition_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.importapi.metaxml_to_json.parse_collection">
+<tt class="descclassname">openlibrary.plugins.importapi.metaxml_to_json.</tt><tt class="descname">parse_collection</tt><big>(</big><em>collection</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.metaxml_to_json.parse_collection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.importapi.metaxml_to_json.parse_isbn">
+<tt class="descclassname">openlibrary.plugins.importapi.metaxml_to_json.</tt><tt class="descname">parse_isbn</tt><big>(</big><em>isbn</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.metaxml_to_json.parse_isbn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../../index.html">
+              <img class="logo" src="../../../../_static/logo_OL-lg.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="import_rdf.html"
+                        title="previous chapter">import_rdf</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../inside/index.html"
+                        title="next chapter">inside</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/api/openlibrary/plugins/importapi/metaxml_to_json.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../inside/index.html" title="inside"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="import_rdf.html" title="import_rdf"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >importapi</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Internet Archive.
+      Last updated on Dec 20, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

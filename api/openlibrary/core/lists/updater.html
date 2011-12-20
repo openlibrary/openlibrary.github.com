@@ -158,13 +158,15 @@ the associated work docs from works db.</p>
 
 <dl class="method">
 <dt id="openlibrary.core.lists.updater.Updater.process_changeset">
-<tt class="descname">process_changeset</tt><big>(</big><em>changeset</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.Updater.process_changeset" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">process_changeset</tt><big>(</big><em>changeset</em>, <em>update_seeds=False</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.Updater.process_changeset" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="openlibrary.core.lists.updater.Updater.process_changesets">
-<tt class="descname">process_changesets</tt><big>(</big><em>changesets</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.Updater.process_changesets" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<tt class="descname">process_changesets</tt><big>(</big><em>changesets</em>, <em>update_seeds=False</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.updater.Updater.process_changesets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the lists databases for given changesets.</p>
+<p>Seeds are updated in the seeds db if update_seeds is True, otherwise they are marked for later update.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="openlibrary.core.lists.updater.Updater.update_pending_seeds">
@@ -305,7 +307,7 @@ edition is updated.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Mar 11, 2011.
+      Last updated on Dec 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

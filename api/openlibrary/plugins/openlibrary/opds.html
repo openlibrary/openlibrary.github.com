@@ -1,0 +1,196 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>opds &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="openlibrary" href="index.html" />
+    <link rel="next" title="processors" href="processors.html" />
+    <link rel="prev" title="lists" href="lists.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="processors.html" title="processors"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="lists.html" title="lists"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">openlibrary</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.plugins.openlibrary.opds">
+<span id="opds"></span><h1>opds<a class="headerlink" href="#module-openlibrary.plugins.openlibrary.opds" title="Permalink to this headline">¶</a></h1>
+<p>OPDS helper class.
+A lightweight version of github.com/internetarchive/bookserver</p>
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.opds.OPDS">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.opds.</tt><tt class="descname">OPDS</tt><big>(</big><em>root_name='feed'</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.opds.OPDS" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.plugins.openlibrary.opds.OPDS.add">
+<tt class="descname">add</tt><big>(</big><em>name</em>, <em>value</em>, <em>attrs={}</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.opds.OPDS.add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.opds.OPDS.add_author">
+<tt class="descname">add_author</tt><big>(</big><em>name</em>, <em>uri=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.opds.OPDS.add_author" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.opds.OPDS.add_list">
+<tt class="descname">add_list</tt><big>(</big><em>name</em>, <em>values</em>, <em>prefix=''</em>, <em>attrs={}</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.opds.OPDS.add_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.opds.OPDS.create_rel_link">
+<tt class="descname">create_rel_link</tt><big>(</big><em>parent</em>, <em>rel</em>, <em>absurl</em>, <em>type='application/atom+xml'</em>, <em>title=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.opds.OPDS.create_rel_link" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.opds.OPDS.create_root">
+<tt class="descname">create_root</tt><big>(</big><em>root_name</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.opds.OPDS.create_root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.opds.OPDS.create_text_element">
+<tt class="descname">create_text_element</tt><big>(</big><em>parent</em>, <em>name</em>, <em>value</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.opds.OPDS.create_text_element" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.opds.OPDS.to_string">
+<tt class="descname">to_string</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.opds.OPDS.to_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.opds.OPDSEntry">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.opds.</tt><tt class="descname">OPDSEntry</tt><big>(</big><em>book</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.opds.OPDSEntry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.openlibrary.opds.OPDS" title="openlibrary.plugins.openlibrary.opds.OPDS"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.openlibrary.opds.OPDS</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.opds.OPDSEntry.add_acquisition_links">
+<tt class="descname">add_acquisition_links</tt><big>(</big><em>book</em>, <em>collection</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.opds.OPDSEntry.add_acquisition_links" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.opds.OPDSEntry.add_category">
+<tt class="descname">add_category</tt><big>(</big><em>term</em>, <em>label</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.opds.OPDSEntry.add_category" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.opds.OPDSEntry.add_indirect_acq">
+<tt class="descname">add_indirect_acq</tt><big>(</big><em>parent</em>, <em>type</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.opds.OPDSEntry.add_indirect_acq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.opds.OPDSEntry.add_rel_links">
+<tt class="descname">add_rel_links</tt><big>(</big><em>book</em>, <em>work</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.opds.OPDSEntry.add_rel_links" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../../index.html">
+              <img class="logo" src="../../../../_static/logo_OL-lg.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="lists.html"
+                        title="previous chapter">lists</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="processors.html"
+                        title="next chapter">processors</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/api/openlibrary/plugins/openlibrary/opds.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="processors.html" title="processors"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="lists.html" title="lists"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >openlibrary</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Internet Archive.
+      Last updated on Dec 20, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

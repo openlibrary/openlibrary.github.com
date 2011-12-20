@@ -1,0 +1,5 @@
+
+msgbroker
+=========
+
+.. automodule:: openlibrary.core.msgbroker

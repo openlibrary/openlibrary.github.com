@@ -1,0 +1,5 @@
+
+services
+========
+
+.. automodule:: openlibrary.plugins.admin.services

@@ -25,7 +25,7 @@
     <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
     <link rel="up" title="core" href="index.html" />
     <link rel="next" title="ia" href="ia.html" />
-    <link rel="prev" title="formats" href="formats.html" /> 
+    <link rel="prev" title="geoip" href="geoip.html" /> 
   </head>
   <body>
     <div class="related">
@@ -41,7 +41,7 @@
           <a href="ia.html" title="ia"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="formats.html" title="formats"
+          <a href="geoip.html" title="geoip"
              accesskey="P">previous</a> |</li>
         <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
           <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
@@ -67,7 +67,7 @@
 
 <dl class="function">
 <dt id="openlibrary.core.helpers.json_encode">
-<tt class="descclassname">openlibrary.core.helpers.</tt><tt class="descname">json_encode</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#openlibrary.core.helpers.json_encode" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">openlibrary.core.helpers.</tt><tt class="descname">json_encode</tt><big>(</big><em>d</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.core.helpers.json_encode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as simplejson.dumps.</p>
 </dd></dl>
 
@@ -82,7 +82,7 @@ care to make that work.</p>
 
 <dl class="function">
 <dt id="openlibrary.core.helpers.datestr">
-<tt class="descclassname">openlibrary.core.helpers.</tt><tt class="descname">datestr</tt><big>(</big><em>then</em>, <em>now=None</em>, <em>lang=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.helpers.datestr" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">openlibrary.core.helpers.</tt><tt class="descname">datestr</tt><big>(</big><em>then</em>, <em>now=None</em>, <em>lang=None</em>, <em>relative=True</em><big>)</big><a class="headerlink" href="#openlibrary.core.helpers.datestr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Internationalized version of web.datestr.</p>
 </dd></dl>
 
@@ -140,6 +140,18 @@ be found in <a class="reference external" href="http://www.ctan.org/tex-archive/
 </dd></dl>
 
 <dl class="function">
+<dt id="openlibrary.core.helpers.percentage">
+<tt class="descclassname">openlibrary.core.helpers.</tt><tt class="descname">percentage</tt><big>(</big><em>value</em>, <em>total</em><big>)</big><a class="headerlink" href="#openlibrary.core.helpers.percentage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes percentage.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">percentage</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="go">10.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">percentage</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
 <dt id="openlibrary.core.helpers.parse_datetime">
 <tt class="descclassname">openlibrary.core.helpers.</tt><tt class="descname">parse_datetime</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#openlibrary.core.helpers.parse_datetime" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates datetime object from isoformat.</p>
@@ -168,8 +180,8 @@ be found in <a class="reference external" href="http://www.ctan.org/tex-archive/
               <img class="logo" src="../../../_static/logo_OL-lg.png" alt="Logo"/>
             </a></p>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="formats.html"
-                        title="previous chapter">formats</a></p>
+  <p class="topless"><a href="geoip.html"
+                        title="previous chapter">geoip</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="ia.html"
                         title="next chapter">ia</a></p>
@@ -208,7 +220,7 @@ be found in <a class="reference external" href="http://www.ctan.org/tex-archive/
           <a href="ia.html" title="ia"
              >next</a> |</li>
         <li class="right" >
-          <a href="formats.html" title="formats"
+          <a href="geoip.html" title="geoip"
              >previous</a> |</li>
         <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
           <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
@@ -218,7 +230,7 @@ be found in <a class="reference external" href="http://www.ctan.org/tex-archive/
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Mar 11, 2011.
+      Last updated on Dec 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

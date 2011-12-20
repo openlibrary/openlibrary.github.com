@@ -1,0 +1,5 @@
+
+publishers
+==========
+
+.. automodule:: openlibrary.plugins.worksearch.publishers

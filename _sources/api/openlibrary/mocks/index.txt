@@ -12,6 +12,7 @@ Submodules
    mock_ia.rst
    mock_infobase.rst
    mock_memcache.rst
+   mock_ol.rst
 
 Documentation
 -------------

@@ -8,6 +8,7 @@ Submodules
 .. toctree::
    :maxdepth: 1
 
+   accounts/index.rst
    admin/index.rst
    api.rst
    config.rst
@@ -17,7 +18,9 @@ Submodules
    data/index.rst
    i18n/index.rst
    mocks/index.rst
+   olbase/index.rst
    plugins/index.rst
+   tasks.rst
    utils/index.rst
 
 Documentation

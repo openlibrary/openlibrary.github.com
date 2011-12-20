@@ -1,0 +1,233 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>subjects &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="worksearch" href="index.html" />
+    <link rel="next" title="tasks" href="../../tasks.html" />
+    <link rel="prev" title="searchapi" href="searchapi.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../tasks.html" title="tasks"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="searchapi.html" title="searchapi"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">worksearch</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.plugins.worksearch.subjects">
+<span id="subjects"></span><h1>subjects<a class="headerlink" href="#module-openlibrary.plugins.worksearch.subjects" title="Permalink to this headline">¶</a></h1>
+<p>Subject pages.</p>
+<dl class="class">
+<dt id="openlibrary.plugins.worksearch.subjects.SubjectEngine">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.worksearch.subjects.</tt><tt class="descname">SubjectEngine</tt><a class="headerlink" href="#openlibrary.plugins.worksearch.subjects.SubjectEngine" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.plugins.worksearch.subjects.SubjectEngine.facet_wrapper">
+<tt class="descname">facet_wrapper</tt><big>(</big><em>facet</em>, <em>value</em>, <em>count</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.worksearch.subjects.SubjectEngine.facet_wrapper" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.worksearch.subjects.SubjectEngine.get_ebook_count">
+<tt class="descname">get_ebook_count</tt><big>(</big><em>name</em>, <em>value</em>, <em>publish_year</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.worksearch.subjects.SubjectEngine.get_ebook_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.worksearch.subjects.SubjectEngine.get_meta">
+<tt class="descname">get_meta</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.worksearch.subjects.SubjectEngine.get_meta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.worksearch.subjects.SubjectEngine.get_subject">
+<tt class="descname">get_subject</tt><big>(</big><em>key</em>, <em>details=False</em>, <em>offset=0</em>, <em>limit=12</em>, <em>sort='first_publish_year desc'</em>, <em>**filters</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.worksearch.subjects.SubjectEngine.get_subject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.worksearch.subjects.SubjectEngine.make_query">
+<tt class="descname">make_query</tt><big>(</big><em>key</em>, <em>filters</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.worksearch.subjects.SubjectEngine.make_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.worksearch.subjects.SubjectEngine.normalize_key">
+<tt class="descname">normalize_key</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.worksearch.subjects.SubjectEngine.normalize_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.worksearch.subjects.SubjectEngine.parse_key">
+<tt class="descname">parse_key</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.worksearch.subjects.SubjectEngine.parse_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns prefix and path from the key.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.worksearch.subjects.SubjectEngine.query_optons_for_details">
+<tt class="descname">query_optons_for_details</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.worksearch.subjects.SubjectEngine.query_optons_for_details" title="Permalink to this definition">¶</a></dt>
+<dd><p>Additional query options to be added when details=True.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.worksearch.subjects.get_subject">
+<tt class="descclassname">openlibrary.plugins.worksearch.subjects.</tt><tt class="descname">get_subject</tt><big>(</big><em>key</em>, <em>details=False</em>, <em>offset=0</em>, <em>sort='editions'</em>, <em>limit=12</em>, <em>**filters</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.worksearch.subjects.get_subject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns data related to a subject.</p>
+<p>By default, it returns a storage object with key, name, work_count and works.
+The offset and limit arguments are used to get the works.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">get_subject</span><span class="p">(</span><span class="s">&quot;/subjects/Love&quot;</span><span class="p">)</span> 
+<span class="go">{</span>
+<span class="go">    &quot;key&quot;: &quot;/subjects/Love&quot;, </span>
+<span class="go">    &quot;name&quot;: &quot;Love&quot;,</span>
+<span class="go">    &quot;work_count&quot;: 5129, </span>
+<span class="go">    &quot;works&quot;: [...]</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>When details=True, facets and ebook_count are additionally added to the result.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">get_subject</span><span class="p">(</span><span class="s">&quot;/subjects/Love&quot;</span><span class="p">,</span> <span class="n">details</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> 
+<span class="go">{</span>
+<span class="go">    &quot;key&quot;: &quot;/subjects/Love&quot;, </span>
+<span class="go">    &quot;name&quot;: &quot;Love&quot;,</span>
+<span class="go">    &quot;work_count&quot;: 5129, </span>
+<span class="go">    &quot;works&quot;: [...],</span>
+<span class="go">    &quot;ebook_count&quot;: 94, </span>
+<span class="go">    &quot;authors&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;count&quot;: 11, </span>
+<span class="go">            &quot;name&quot;: &quot;Plato.&quot;, </span>
+<span class="go">            &quot;key&quot;: &quot;/authors/OL12823A&quot;</span>
+<span class="go">        }, </span>
+<span class="go">        ...</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;subjects&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;count&quot;: 1168,</span>
+<span class="go">            &quot;name&quot;: &quot;Religious aspects&quot;, </span>
+<span class="go">            &quot;key&quot;: &quot;/subjects/religious aspects&quot;</span>
+<span class="go">        }, </span>
+<span class="go">        ...</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;times&quot;: [...],</span>
+<span class="go">    &quot;places&quot;: [...],</span>
+<span class="go">    &quot;people&quot;: [...],</span>
+<span class="go">    &quot;publishing_history&quot;: [[1492, 1], [1516, 1], ...],</span>
+<span class="go">    &quot;publishers&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;count&quot;: 57, </span>
+<span class="go">            &quot;name&quot;: &quot;Sine nomine&quot;        </span>
+<span class="go">        },</span>
+<span class="go">        ...</span>
+<span class="go">    ]</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Optional arguments limit and offset can be passed to limit the number of works returned and starting offset.</p>
+<p>Optional arguments has_fulltext and published_in can be passed to filter the results.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../../index.html">
+              <img class="logo" src="../../../../_static/logo_OL-lg.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="searchapi.html"
+                        title="previous chapter">searchapi</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../tasks.html"
+                        title="next chapter">tasks</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/api/openlibrary/plugins/worksearch/subjects.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../tasks.html" title="tasks"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="searchapi.html" title="searchapi"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >worksearch</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Internet Archive.
+      Last updated on Dec 20, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

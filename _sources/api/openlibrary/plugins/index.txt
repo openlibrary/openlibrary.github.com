@@ -10,6 +10,7 @@ Submodules
 
    admin/index.rst
    books/index.rst
+   importapi/index.rst
    inside/index.rst
    mobile/index.rst
    ol_infobase.rst
@@ -17,6 +18,7 @@ Submodules
    openlibrary/index.rst
    scod/index.rst
    search/index.rst
+   theme/index.rst
    upstream/index.rst
    worksearch/index.rst
 

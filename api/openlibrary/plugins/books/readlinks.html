@@ -1,0 +1,198 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>readlinks &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="books" href="index.html" />
+    <link rel="next" title="importapi" href="../importapi/index.html" />
+    <link rel="prev" title="dynlinks" href="dynlinks.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../importapi/index.html" title="importapi"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="dynlinks.html" title="dynlinks"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">books</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.plugins.books.readlinks">
+<span id="readlinks"></span><h1>readlinks<a class="headerlink" href="#module-openlibrary.plugins.books.readlinks" title="Permalink to this headline">¶</a></h1>
+<p>&#8216;Read&#8217; api implementation.  This is modeled after the HathiTrust
+Bibliographic API, but also includes information about loans and other
+editions of the same work that might be available.</p>
+<dl class="class">
+<dt id="openlibrary.plugins.books.readlinks.ReadProcessor">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.books.readlinks.</tt><tt class="descname">ReadProcessor</tt><big>(</big><em>options</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.readlinks.ReadProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.plugins.books.readlinks.ReadProcessor.get_inlibrary">
+<tt class="descname">get_inlibrary</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.readlinks.ReadProcessor.get_inlibrary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.books.readlinks.ReadProcessor.get_item_status">
+<tt class="descname">get_item_status</tt><big>(</big><em>ekey</em>, <em>collections</em>, <em>subjects</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.readlinks.ReadProcessor.get_item_status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.books.readlinks.ReadProcessor.get_readitem">
+<tt class="descname">get_readitem</tt><big>(</big><em>iaid</em>, <em>orig_iaid</em>, <em>orig_ekey</em>, <em>wkey</em>, <em>status</em>, <em>publish_date</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.readlinks.ReadProcessor.get_readitem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.books.readlinks.ReadProcessor.make_record">
+<tt class="descname">make_record</tt><big>(</big><em>bib_keys</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.readlinks.ReadProcessor.make_record" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.books.readlinks.ReadProcessor.process">
+<tt class="descname">process</tt><big>(</big><em>req</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.readlinks.ReadProcessor.process" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.readlinks.get_eids_for_wids">
+<tt class="descclassname">openlibrary.plugins.books.readlinks.</tt><tt class="descname">get_eids_for_wids</tt><big>(</big><em>wids</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.readlinks.get_eids_for_wids" title="Permalink to this definition">¶</a></dt>
+<dd><p>To support testing by passing in a list of work-ids - map each to
+it&#8217;s first edition ID</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.readlinks.get_solr_edition_records">
+<tt class="descclassname">openlibrary.plugins.books.readlinks.</tt><tt class="descname">get_solr_edition_records</tt><big>(</big><em>iaids</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.readlinks.get_solr_edition_records" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.readlinks.get_work_iaids">
+<tt class="descclassname">openlibrary.plugins.books.readlinks.</tt><tt class="descname">get_work_iaids</tt><big>(</big><em>wkey</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.readlinks.get_work_iaids" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.readlinks.get_works_iaids">
+<tt class="descclassname">openlibrary.plugins.books.readlinks.</tt><tt class="descname">get_works_iaids</tt><big>(</big><em>wkeys</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.readlinks.get_works_iaids" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.readlinks.key_to_olid">
+<tt class="descclassname">openlibrary.plugins.books.readlinks.</tt><tt class="descname">key_to_olid</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.readlinks.key_to_olid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.readlinks.ol_query">
+<tt class="descclassname">openlibrary.plugins.books.readlinks.</tt><tt class="descname">ol_query</tt><big>(</big><em>name</em>, <em>value</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.readlinks.ol_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.books.readlinks.readlinks">
+<tt class="descclassname">openlibrary.plugins.books.readlinks.</tt><tt class="descname">readlinks</tt><big>(</big><em>req</em>, <em>options</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.readlinks.readlinks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../../index.html">
+              <img class="logo" src="../../../../_static/logo_OL-lg.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="dynlinks.html"
+                        title="previous chapter">dynlinks</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../importapi/index.html"
+                        title="next chapter">importapi</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/api/openlibrary/plugins/books/readlinks.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../importapi/index.html" title="importapi"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="dynlinks.html" title="dynlinks"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >books</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Internet Archive.
+      Last updated on Dec 20, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

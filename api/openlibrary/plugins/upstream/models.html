@@ -108,6 +108,12 @@
 <tt class="descname">get_photos</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Author.get_photos" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.Author.get_work_count">
+<tt class="descname">get_work_count</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Author.get_work_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of works by this author.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -356,6 +362,17 @@ This is like checking if this book is on the shelf.</p>
 </dd></dl>
 
 <dl class="class">
+<dt id="openlibrary.plugins.upstream.models.NewAccountChangeset">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.models.</tt><tt class="descname">NewAccountChangeset</tt><big>(</big><em>site</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.NewAccountChangeset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.upstream.models.Changeset" title="openlibrary.plugins.upstream.models.Changeset"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.upstream.models.Changeset</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.models.NewAccountChangeset.get_user">
+<tt class="descname">get_user</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.NewAccountChangeset.get_user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="openlibrary.plugins.upstream.models.Subject">
 <em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.models.</tt><tt class="descname">Subject</tt><big>(</big><em>site</em>, <em>key</em>, <em>data=None</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.Subject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../../../infogami/infobase/client.html#infogami.infobase.client.Thing" title="infogami.infobase.client.Thing"><tt class="xref py py-class docutils literal"><span class="pre">infogami.infobase.client.Thing</span></tt></a></p>
@@ -473,13 +490,13 @@ This is like checking if this book is on the shelf.</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="openlibrary.plugins.upstream.models.User.get_email">
-<tt class="descname">get_email</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.User.get_email" title="Permalink to this definition">¶</a></dt>
+<dt id="openlibrary.plugins.upstream.models.User.get_loan_count">
+<tt class="descname">get_loan_count</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.User.get_loan_count" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="openlibrary.plugins.upstream.models.User.get_loan_count">
-<tt class="descname">get_loan_count</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.User.get_loan_count" title="Permalink to this definition">¶</a></dt>
+<dt id="openlibrary.plugins.upstream.models.User.get_loans">
+<tt class="descname">get_loans</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.models.User.get_loans" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -637,7 +654,7 @@ This is like checking if this book is on the shelf.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Mar 11, 2011.
+      Last updated on Dec 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

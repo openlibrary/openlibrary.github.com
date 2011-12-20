@@ -1,0 +1,5 @@
+
+celery_couchdb
+==============
+
+.. automodule:: openlibrary.core.celery_couchdb

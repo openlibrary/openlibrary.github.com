@@ -9,7 +9,11 @@ Submodules
    :maxdepth: 1
 
    code.rst
+   languages.rst
+   publishers.rst
    search.rst
+   searchapi.rst
+   subjects.rst
 
 Documentation
 -------------

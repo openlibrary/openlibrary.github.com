@@ -1,0 +1,198 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>fetchmail &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="core" href="index.html" />
+    <link rel="next" title="formats" href="formats.html" />
+    <link rel="prev" title="couch" href="couch.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="formats.html" title="formats"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="couch.html" title="couch"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">core</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.core.fetchmail">
+<span id="fetchmail"></span><h1>fetchmail<a class="headerlink" href="#module-openlibrary.core.fetchmail" title="Permalink to this headline">¶</a></h1>
+<dl class="exception">
+<dt id="openlibrary.core.fetchmail.Error">
+<em class="property">exception </em><tt class="descclassname">openlibrary.core.fetchmail.</tt><tt class="descname">Error</tt><a class="headerlink" href="#openlibrary.core.fetchmail.Error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></tt></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.fetchmail.connect_to_admindb">
+<tt class="descclassname">openlibrary.core.fetchmail.</tt><tt class="descname">connect_to_admindb</tt><big>(</big><em>config</em><big>)</big><a class="headerlink" href="#openlibrary.core.fetchmail.connect_to_admindb" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.fetchmail.fetch_and_update">
+<tt class="descclassname">openlibrary.core.fetchmail.</tt><tt class="descname">fetch_and_update</tt><big>(</big><em>imap_conn</em>, <em>db_conn=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.fetchmail.fetch_and_update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.fetchmail.fetchmail">
+<tt class="descclassname">openlibrary.core.fetchmail.</tt><tt class="descname">fetchmail</tt><big>(</big><em>config</em><big>)</big><a class="headerlink" href="#openlibrary.core.fetchmail.fetchmail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.fetchmail.get_casenote">
+<tt class="descclassname">openlibrary.core.fetchmail.</tt><tt class="descname">get_casenote</tt><big>(</big><em>message</em><big>)</big><a class="headerlink" href="#openlibrary.core.fetchmail.get_casenote" title="Permalink to this definition">¶</a></dt>
+<dd><p>Try to extract the casenote out of the message</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.fetchmail.get_new_emails">
+<tt class="descclassname">openlibrary.core.fetchmail.</tt><tt class="descname">get_new_emails</tt><big>(</big><em>conn</em><big>)</big><a class="headerlink" href="#openlibrary.core.fetchmail.get_new_emails" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.fetchmail.imap_mark_for_deletion">
+<tt class="descclassname">openlibrary.core.fetchmail.</tt><tt class="descname">imap_mark_for_deletion</tt><big>(</big><em>imap_conn</em>, <em>messageid</em><big>)</big><a class="headerlink" href="#openlibrary.core.fetchmail.imap_mark_for_deletion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.fetchmail.imap_move_to_folder">
+<tt class="descclassname">openlibrary.core.fetchmail.</tt><tt class="descname">imap_move_to_folder</tt><big>(</big><em>imap_conn</em>, <em>messageid</em>, <em>mailboxname</em><big>)</big><a class="headerlink" href="#openlibrary.core.fetchmail.imap_move_to_folder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.fetchmail.imap_remove_delete_flag">
+<tt class="descclassname">openlibrary.core.fetchmail.</tt><tt class="descname">imap_remove_delete_flag</tt><big>(</big><em>imap_conn</em>, <em>messageid</em><big>)</big><a class="headerlink" href="#openlibrary.core.fetchmail.imap_remove_delete_flag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.fetchmail.imap_reset_to_unseen">
+<tt class="descclassname">openlibrary.core.fetchmail.</tt><tt class="descname">imap_reset_to_unseen</tt><big>(</big><em>imap_conn</em>, <em>messageid</em><big>)</big><a class="headerlink" href="#openlibrary.core.fetchmail.imap_reset_to_unseen" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.fetchmail.main">
+<tt class="descclassname">openlibrary.core.fetchmail.</tt><tt class="descname">main</tt><big>(</big><em>ol_config_file</em><big>)</big><a class="headerlink" href="#openlibrary.core.fetchmail.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.fetchmail.parse_imap_response">
+<tt class="descclassname">openlibrary.core.fetchmail.</tt><tt class="descname">parse_imap_response</tt><big>(</big><em>response</em><big>)</big><a class="headerlink" href="#openlibrary.core.fetchmail.parse_imap_response" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.fetchmail.set_up_imap_connection">
+<tt class="descclassname">openlibrary.core.fetchmail.</tt><tt class="descname">set_up_imap_connection</tt><big>(</big><em>config_file</em>, <em>ol_config</em><big>)</big><a class="headerlink" href="#openlibrary.core.fetchmail.set_up_imap_connection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.fetchmail.update_support_db">
+<tt class="descclassname">openlibrary.core.fetchmail.</tt><tt class="descname">update_support_db</tt><big>(</big><em>author</em>, <em>message</em>, <em>case</em><big>)</big><a class="headerlink" href="#openlibrary.core.fetchmail.update_support_db" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo_OL-lg.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="couch.html"
+                        title="previous chapter">couch</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="formats.html"
+                        title="next chapter">formats</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/openlibrary/core/fetchmail.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="formats.html" title="formats"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="couch.html" title="couch"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >core</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Internet Archive.
+      Last updated on Dec 20, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

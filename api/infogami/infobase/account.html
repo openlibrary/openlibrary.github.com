@@ -61,6 +61,11 @@
 <dt id="infogami.infobase.account.AccountManager">
 <em class="property">class </em><tt class="descclassname">infogami.infobase.account.</tt><tt class="descname">AccountManager</tt><big>(</big><em>site</em>, <em>secret_key</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
+<dt id="infogami.infobase.account.AccountManager.activate">
+<tt class="descname">activate</tt><big>(</big><em>username</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.activate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="infogami.infobase.account.AccountManager.assert_email">
 <tt class="descname">assert_email</tt><big>(</big><em>email</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.assert_email" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -86,8 +91,19 @@
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="infogami.infobase.account.AccountManager.find_account">
+<tt class="descname">find_account</tt><big>(</big><em>email=None</em>, <em>username=None</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.find_account" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="infogami.infobase.account.AccountManager.find_user_by_email">
 <tt class="descname">find_user_by_email</tt><big>(</big><em>email</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.find_user_by_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns key of the user with given email.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.account.AccountManager.generate_hash">
+<tt class="descname">generate_hash</tt><big>(</big><em>raw_password</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.generate_hash" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -115,11 +131,22 @@
 <dl class="method">
 <dt id="infogami.infobase.account.AccountManager.login">
 <tt class="descname">login</tt><big>(</big><em>username</em>, <em>password</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.login" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns &#8220;ok&#8221; on success and an error code on failure.</p>
+<dl class="docutils">
+<dt>Error code can be one of:</dt>
+<dd><ul class="first last simple">
+<li>account_bad_password</li>
+<li>account_not_found</li>
+<li>account_not_verified</li>
+<li>account_not_active</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="method">
 <dt id="infogami.infobase.account.AccountManager.register">
-<tt class="descname">register</tt><big>(</big><em>username</em>, <em>email</em>, <em>password</em>, <em>data</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.register" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">register</tt><big>(</big><em>username</em>, <em>email</em>, <em>password</em>, <em>data</em>, <em>_activate=False</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.register" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -138,6 +165,17 @@
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="infogami.infobase.account.AccountManager.store_account_info">
+<tt class="descname">store_account_info</tt><big>(</big><em>username</em>, <em>email</em>, <em>enc_password</em>, <em>data</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.store_account_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store account info in the store so that the account can be created after verifying the email.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.account.AccountManager.update">
+<tt class="descname">update</tt><big>(</big><em>username</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="infogami.infobase.account.AccountManager.update_user">
 <tt class="descname">update_user</tt><big>(</big><em>old_password</em>, <em>new_password</em>, <em>email</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.update_user" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -151,6 +189,12 @@
 <dt id="infogami.infobase.account.AccountManager.update_user_details">
 <tt class="descname">update_user_details</tt><big>(</big><em>username</em>, <em>**params</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.update_user_details" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update user details like email, active, bot, verified.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase.account.AccountManager.verify_password">
+<tt class="descname">verify_password</tt><big>(</big><em>raw_password</em>, <em>enc_password</em><big>)</big><a class="headerlink" href="#infogami.infobase.account.AccountManager.verify_password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verifies if the raw_password and encrypted password match.</p>
 </dd></dl>
 
 </dd></dl>
@@ -233,7 +277,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Mar 11, 2011.
+      Last updated on Dec 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

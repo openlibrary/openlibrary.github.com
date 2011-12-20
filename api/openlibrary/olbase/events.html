@@ -1,0 +1,216 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>events &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="olbase" href="index.html" />
+    <link rel="next" title="plugins" href="../plugins/index.html" />
+    <link rel="prev" title="olbase" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../plugins/index.html" title="plugins"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="olbase"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">olbase</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.olbase.events">
+<span id="events"></span><h1>events<a class="headerlink" href="#module-openlibrary.olbase.events" title="Permalink to this headline">¶</a></h1>
+<p>Infobase event hooks for Open Library.</p>
+<p>Triggers and handles various events from Infobase. All the events are triggered using eventer.</p>
+<p>List of events:</p>
+<blockquote>
+<div><ul class="simple">
+<li>infobase.all: Triggered for any change in Infobase. The infobase event object is passed as argument.</li>
+<li>infobase.edit: Triggered for edits. Changeset is passed as argument.</li>
+</ul>
+</div></blockquote>
+<dl class="class">
+<dt id="openlibrary.olbase.events.MemcacheInvalidater">
+<em class="property">class </em><tt class="descclassname">openlibrary.olbase.events.</tt><tt class="descname">MemcacheInvalidater</tt><a class="headerlink" href="#openlibrary.olbase.events.MemcacheInvalidater" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to find keys to invalidate from memcache on edit.</p>
+<dl class="method">
+<dt id="openlibrary.olbase.events.MemcacheInvalidater.find_data">
+<tt class="descname">find_data</tt><big>(</big><em>changeset</em><big>)</big><a class="headerlink" href="#openlibrary.olbase.events.MemcacheInvalidater.find_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the data entries effected by this change.</p>
+<p>The data entry stores the history, lists and edition_count of a page.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.olbase.events.MemcacheInvalidater.find_edition_counts">
+<tt class="descname">find_edition_counts</tt><big>(</big><em>changeset</em><big>)</big><a class="headerlink" href="#openlibrary.olbase.events.MemcacheInvalidater.find_edition_counts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the edition_count entries effected by this change.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.olbase.events.MemcacheInvalidater.find_edition_counts_for_doc">
+<tt class="descname">find_edition_counts_for_doc</tt><big>(</big><em>doc</em><big>)</big><a class="headerlink" href="#openlibrary.olbase.events.MemcacheInvalidater.find_edition_counts_for_doc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the memcache keys to be invalided for edition_counts effected by editing this doc.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.olbase.events.MemcacheInvalidater.find_keys">
+<tt class="descname">find_keys</tt><big>(</big><em>changeset</em><big>)</big><a class="headerlink" href="#openlibrary.olbase.events.MemcacheInvalidater.find_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns keys for the effected entries by this change.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.olbase.events.MemcacheInvalidater.find_libraries">
+<tt class="descname">find_libraries</tt><big>(</big><em>changeset</em><big>)</big><a class="headerlink" href="#openlibrary.olbase.events.MemcacheInvalidater.find_libraries" title="Permalink to this definition">¶</a></dt>
+<dd><p>When any of the library page is changed, invalidate all library entries.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.olbase.events.MemcacheInvalidater.find_lists">
+<tt class="descname">find_lists</tt><big>(</big><em>changeset</em><big>)</big><a class="headerlink" href="#openlibrary.olbase.events.MemcacheInvalidater.find_lists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the list entires effected by this change.</p>
+<p>When a list is modified, the data of the user and the data of each
+seed are invalidated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.olbase.events.MemcacheInvalidater.seed_to_key">
+<tt class="descname">seed_to_key</tt><big>(</big><em>seed</em><big>)</big><a class="headerlink" href="#openlibrary.olbase.events.MemcacheInvalidater.seed_to_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts seed to key.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">seed_to_key</span><span class="p">({</span><span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;/books/OL1M&quot;</span><span class="p">})</span>
+<span class="go">&quot;/books/OL1M&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seed_to_key</span><span class="p">(</span><span class="s">&quot;subject:love&quot;</span><span class="p">)</span>
+<span class="go">&quot;/subjects/love&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seed_to_key</span><span class="p">(</span><span class="s">&quot;place:san_francisco&quot;</span><span class="p">)</span>
+<span class="go">&quot;/subjects/place:san_francisco&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.olbase.events.invalidate_memcache">
+<tt class="descclassname">openlibrary.olbase.events.</tt><tt class="descname">invalidate_memcache</tt><big>(</big><em>changeset</em><big>)</big><a class="headerlink" href="#openlibrary.olbase.events.invalidate_memcache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invalidate memcache entries effected by this change.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.olbase.events.setup">
+<tt class="descclassname">openlibrary.olbase.events.</tt><tt class="descname">setup</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.olbase.events.setup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.olbase.events.setup_event_listener">
+<tt class="descclassname">openlibrary.olbase.events.</tt><tt class="descname">setup_event_listener</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.olbase.events.setup_event_listener" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.olbase.events.trigger_subevents">
+<tt class="descclassname">openlibrary.olbase.events.</tt><tt class="descname">trigger_subevents</tt><big>(</big><em>event</em><big>)</big><a class="headerlink" href="#openlibrary.olbase.events.trigger_subevents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trigger infobase.edit event for edits.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo_OL-lg.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">olbase</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../plugins/index.html"
+                        title="next chapter">plugins</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/openlibrary/olbase/events.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../plugins/index.html" title="plugins"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="olbase"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >olbase</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Internet Archive.
+      Last updated on Dec 20, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

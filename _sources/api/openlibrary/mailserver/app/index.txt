@@ -1,0 +1,17 @@
+
+app
+===
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   handlers/index.rst
+   model/index.rst
+
+Documentation
+-------------
+
+.. automodule:: openlibrary.mailserver.app

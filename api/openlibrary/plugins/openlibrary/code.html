@@ -56,8 +56,344 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="code">
-<h1>code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-openlibrary.plugins.openlibrary.code">
+<span id="code"></span><h1>code<a class="headerlink" href="#module-openlibrary.plugins.openlibrary.code" title="Permalink to this headline">¶</a></h1>
+<p>Open Library Plugin.</p>
+<dl class="exception">
+<dt id="openlibrary.plugins.openlibrary.code.BadRequest">
+<em class="property">exception </em><tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">BadRequest</tt><big>(</big><em>msg=''</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.BadRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">web.webapi.HTTPError</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="openlibrary.plugins.openlibrary.code.Forbidden">
+<em class="property">exception </em><tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">Forbidden</tt><big>(</big><em>msg=''</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.Forbidden" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">web.webapi.HTTPError</span></tt></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.code.addauthor">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">addauthor</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.addauthor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.code.addauthor.POST">
+<tt class="descname">POST</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.addauthor.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.code.addbook">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">addbook</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.addbook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.code.addbook.GET">
+<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.addbook.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.code.addbook.POST">
+<tt class="descname">POST</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.addbook.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.code.backdoor">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">backdoor</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.backdoor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.code.backdoor.GET">
+<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.backdoor.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.code.blurb">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">blurb</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.blurb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.code.blurb.GET">
+<tt class="descname">GET</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.blurb.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.code.bookpage">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">bookpage</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.bookpage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.code.bookpage.GET">
+<tt class="descname">GET</tt><big>(</big><em>key</em>, <em>value</em>, <em>suffix</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.bookpage.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.code.bookreader">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">bookreader</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.bookreader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.code.bookreader.GET">
+<tt class="descname">GET</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.bookreader.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.code.can_write">
+<tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">can_write</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.can_write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.code.change_cover">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">change_cover</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.change_cover" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.mode" title="infogami.utils.app.mode"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.mode</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.code.change_cover.GET">
+<tt class="descname">GET</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.change_cover.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.code.change_ext">
+<tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">change_ext</tt><big>(</big><em>filename</em>, <em>ext</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.change_ext" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.code.changequery">
+<tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">changequery</tt><big>(</big><em>query=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.changequery" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.code.clonebook">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">clonebook</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.clonebook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.code.clonebook.GET">
+<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.clonebook.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.code.flipbook">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">flipbook</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.flipbook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.code.flipbook.GET">
+<tt class="descname">GET</tt><big>(</big><em>identifier</em>, <em>leaf</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.flipbook.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.code.get_cover_id">
+<tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">get_cover_id</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.get_cover_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.code.get_pages">
+<tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">get_pages</tt><big>(</big><em>type</em>, <em>processor</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.get_pages" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.code.get_property_type">
+<tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">get_property_type</tt><big>(</big><em>type</em>, <em>name</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.get_property_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.code.get_recent_changes">
+<tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">get_recent_changes</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.get_recent_changes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.code.health">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">health</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.health" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.code.health.GET">
+<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.health.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.code.hooks">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">hooks</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.hooks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/infobase/client.html#infogami.infobase.client.hook" title="infogami.infobase.client.hook"><tt class="xref py py-class docutils literal"><span class="pre">infogami.infobase.client.hook</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.code.hooks.before_new_version">
+<tt class="descname">before_new_version</tt><big>(</big><em>page</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.hooks.before_new_version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.code.internalerror">
+<tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">internalerror</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.internalerror" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.code.invalidate">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">invalidate</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.invalidate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.code.invalidate.POST">
+<tt class="descname">POST</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.invalidate.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.code.marcxml">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">marcxml</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.marcxml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.mode" title="infogami.utils.app.mode"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.mode</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.code.marcxml.GET">
+<tt class="descname">GET</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.marcxml.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.code.memory">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">memory</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.memory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.code.memory.GET">
+<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.memory.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.code.most_recent_change">
+<tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">most_recent_change</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.most_recent_change" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.code.new">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">new</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.new" title="Permalink to this definition">¶</a></dt>
+<dd><p>API to create new author/edition/work/publisher/series.</p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.code.new.POST">
+<tt class="descname">POST</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.new.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.code.new.prepare_query">
+<tt class="descname">prepare_query</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.new.prepare_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add key to query and returns the key.
+If query is a list multiple queries are returned.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.code.new.verify_types">
+<tt class="descname">verify_types</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.new.verify_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.code.opds">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">opds</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.opds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.mode" title="infogami.utils.app.mode"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.mode</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.code.opds.GET">
+<tt class="descname">GET</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.opds.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.code.rdf">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">rdf</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.rdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.mode" title="infogami.utils.app.mode"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.mode</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.code.rdf.GET">
+<tt class="descname">GET</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.rdf.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.code.robotstxt">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">robotstxt</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.robotstxt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.code.robotstxt.GET">
+<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.robotstxt.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.code.sampledump">
+<tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">sampledump</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.sampledump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a dump of objects from OL database for creating a sample database.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.code.sampleload">
+<tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">sampleload</tt><big>(</big><em>filename='sampledump.txt.gz'</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.sampleload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.code.save">
+<tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">save</tt><big>(</big><em>filename</em>, <em>text</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.code.save_error">
+<tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">save_error</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.save_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.code.search">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">search</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.code.search.GET">
+<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.search.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.code.setup">
+<tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">setup</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.setup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.code.setup_invalidation_processor">
+<tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">setup_invalidation_processor</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.setup_invalidation_processor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.code.setup_logging">
+<tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">setup_logging</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.setup_logging" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.code.setup_template_globals">
+<tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">setup_template_globals</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.setup_template_globals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.code.thumbnail">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">thumbnail</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.thumbnail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.code.wget">
+<tt class="descclassname">openlibrary.plugins.openlibrary.code.</tt><tt class="descname">wget</tt><big>(</big><em>url</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.code.wget" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 
@@ -121,7 +457,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Mar 11, 2011.
+      Last updated on Dec 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

@@ -55,8 +55,23 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="mock-ia">
-<h1>mock_ia<a class="headerlink" href="#mock-ia" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-openlibrary.mocks.mock_ia">
+<span id="mock-ia"></span><h1>mock_ia<a class="headerlink" href="#module-openlibrary.mocks.mock_ia" title="Permalink to this headline">¶</a></h1>
+<p>Mock of openlibrary.core.ia module.</p>
+<dl class="function">
+<dt id="openlibrary.mocks.mock_ia.pytest_funcarg__mock_ia">
+<tt class="descclassname">openlibrary.mocks.mock_ia.</tt><tt class="descname">pytest_funcarg__mock_ia</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#openlibrary.mocks.mock_ia.pytest_funcarg__mock_ia" title="Permalink to this definition">¶</a></dt>
+<dd><p>py.test funcarg to mock openlibrary.core.ia module.</p>
+<p>from openlibrary.core import ia</p>
+<dl class="docutils">
+<dt>def test_ia(mock_ia):</dt>
+<dd><p class="first">assert ia.get_meta_xml(&#8220;foo&#8221;) == {}</p>
+<p class="last">mock_ia.set_meta_xml(&#8220;foo&#8221;, {&#8220;collection&#8221;: [&#8220;a&#8221;, &#8220;b&#8221;]})
+assert ia.get_meta_xml(&#8220;foo&#8221;) == {&#8220;collection&#8221;: [&#8220;a&#8221;, &#8220;b&#8221;]}</p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 
 
@@ -119,7 +134,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Mar 11, 2011.
+      Last updated on Dec 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

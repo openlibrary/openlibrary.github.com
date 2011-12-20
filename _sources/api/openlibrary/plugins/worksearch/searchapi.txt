@@ -1,0 +1,5 @@
+
+searchapi
+=========
+
+.. automodule:: openlibrary.plugins.worksearch.searchapi

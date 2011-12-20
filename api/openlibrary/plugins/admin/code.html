@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
     <link rel="up" title="admin" href="index.html" />
-    <link rel="next" title="mem" href="mem.html" />
+    <link rel="next" title="graphs" href="graphs.html" />
     <link rel="prev" title="admin" href="index.html" /> 
   </head>
   <body>
@@ -38,7 +38,7 @@
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="mem.html" title="mem"
+          <a href="graphs.html" title="graphs"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="admin"
@@ -59,16 +59,6 @@
   <div class="section" id="module-openlibrary.plugins.admin.code">
 <span id="code"></span><h1>code<a class="headerlink" href="#module-openlibrary.plugins.admin.code" title="Permalink to this headline">¶</a></h1>
 <p>Plugin to provide admin interface.</p>
-<dl class="class">
-<dt id="openlibrary.plugins.admin.code.IPAddress">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.admin.code.</tt><tt class="descname">IPAddress</tt><big>(</big><em>ip</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.IPAddress" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="openlibrary.plugins.admin.code.IPAddress.get_edit_history">
-<tt class="descname">get_edit_history</tt><big>(</big><em>limit=10</em>, <em>offset=0</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.IPAddress.get_edit_history" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
 <dl class="class">
 <dt id="openlibrary.plugins.admin.code.admin">
 <em class="property">class </em><tt class="descclassname">openlibrary.plugins.admin.code.</tt><tt class="descname">admin</tt><a class="headerlink" href="#openlibrary.plugins.admin.code.admin" title="Permalink to this definition">¶</a></dt>
@@ -134,6 +124,11 @@
 <tt class="descname">POST</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.block.POST" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="openlibrary.plugins.admin.code.block.block_ips">
+<tt class="descname">block_ips</tt><big>(</big><em>ips</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.block.block_ips" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="function">
@@ -145,6 +140,32 @@
 <dt id="openlibrary.plugins.admin.code.daterange">
 <tt class="descclassname">openlibrary.plugins.admin.code.</tt><tt class="descname">daterange</tt><big>(</big><em>date</em>, <em>*slice</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.daterange" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.admin.code.deploy">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.admin.code.</tt><tt class="descname">deploy</tt><a class="headerlink" href="#openlibrary.plugins.admin.code.deploy" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.plugins.admin.code.deploy.GET">
+<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.deploy.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.admin.code.deploy.POST">
+<tt class="descname">POST</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.deploy.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.admin.code.deploy.fab">
+<tt class="descname">fab</tt><big>(</big><em>tasks</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.deploy.fab" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.admin.code.deploy.system">
+<tt class="descname">system</tt><big>(</big><em>cmd</em>, <em>input=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.deploy.system" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes the command returns the stdout.</p>
+</dd></dl>
+
+</dd></dl>
 
 <dl class="function">
 <dt id="openlibrary.plugins.admin.code.get_admin_stats">
@@ -174,6 +195,26 @@ index page</p>
 </dd></dl>
 
 <dl class="class">
+<dt id="openlibrary.plugins.admin.code.inspect">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.admin.code.</tt><tt class="descname">inspect</tt><a class="headerlink" href="#openlibrary.plugins.admin.code.inspect" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.plugins.admin.code.inspect.GET">
+<tt class="descname">GET</tt><big>(</big><em>section</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.inspect.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.admin.code.inspect.GET_memcache">
+<tt class="descname">GET_memcache</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.inspect.GET_memcache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.admin.code.inspect.GET_store">
+<tt class="descname">GET_store</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.inspect.GET_store" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="openlibrary.plugins.admin.code.ipaddress">
 <em class="property">class </em><tt class="descclassname">openlibrary.plugins.admin.code.</tt><tt class="descname">ipaddress</tt><a class="headerlink" href="#openlibrary.plugins.admin.code.ipaddress" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
@@ -189,6 +230,26 @@ index page</p>
 <dd><dl class="method">
 <dt id="openlibrary.plugins.admin.code.ipaddress_view.GET">
 <tt class="descname">GET</tt><big>(</big><em>ip</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.ipaddress_view.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.admin.code.ipaddress_view.POST">
+<tt class="descname">POST</tt><big>(</big><em>ip</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.ipaddress_view.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.admin.code.ipaddress_view.block">
+<tt class="descname">block</tt><big>(</big><em>ip</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.ipaddress_view.block" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.admin.code.ipaddress_view.get_doc">
+<tt class="descname">get_doc</tt><big>(</big><em>key</em>, <em>revision</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.ipaddress_view.get_doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.admin.code.ipaddress_view.revert">
+<tt class="descname">revert</tt><big>(</big><em>changeset_ids</em>, <em>comment</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.ipaddress_view.revert" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -236,6 +297,31 @@ index page</p>
 <tt class="descname">GET</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.people_view.GET" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="openlibrary.plugins.admin.code.people_view.POST">
+<tt class="descname">POST</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.people_view.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.admin.code.people_view.POST_activate_account">
+<tt class="descname">POST_activate_account</tt><big>(</big><em>user</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.people_view.POST_activate_account" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.admin.code.people_view.POST_resend_link">
+<tt class="descname">POST_resend_link</tt><big>(</big><em>user</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.people_view.POST_resend_link" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.admin.code.people_view.POST_update_email">
+<tt class="descname">POST_update_email</tt><big>(</big><em>account</em>, <em>i</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.people_view.POST_update_email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.admin.code.people_view.POST_update_password">
+<tt class="descname">POST_update_password</tt><big>(</big><em>account</em>, <em>i</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.people_view.POST_update_password" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="function">
@@ -262,6 +348,17 @@ index page</p>
 <dt id="openlibrary.plugins.admin.code.render_template">
 <tt class="descclassname">openlibrary.plugins.admin.code.</tt><tt class="descname">render_template</tt><big>(</big><em>name</em>, <em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.render_template" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.admin.code.service_status">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.admin.code.</tt><tt class="descname">service_status</tt><a class="headerlink" href="#openlibrary.plugins.admin.code.service_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="method">
+<dt id="openlibrary.plugins.admin.code.service_status.GET">
+<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.admin.code.service_status.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
 
 <dl class="function">
 <dt id="openlibrary.plugins.admin.code.setup">
@@ -309,8 +406,8 @@ index page</p>
   <p class="topless"><a href="index.html"
                         title="previous chapter">admin</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="mem.html"
-                        title="next chapter">mem</a></p>
+  <p class="topless"><a href="graphs.html"
+                        title="next chapter">graphs</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../../_sources/api/openlibrary/plugins/admin/code.txt"
@@ -343,7 +440,7 @@ index page</p>
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="mem.html" title="mem"
+          <a href="graphs.html" title="graphs"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="admin"
@@ -357,7 +454,7 @@ index page</p>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Mar 11, 2011.
+      Last updated on Dec 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

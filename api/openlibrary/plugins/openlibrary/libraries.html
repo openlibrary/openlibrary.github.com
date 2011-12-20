@@ -60,12 +60,156 @@
 <span id="libraries"></span><h1>libraries<a class="headerlink" href="#module-openlibrary.plugins.openlibrary.libraries" title="Permalink to this headline">¶</a></h1>
 <p>Controller for /libraries.</p>
 <dl class="class">
+<dt id="openlibrary.plugins.openlibrary.libraries.LoanStats">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.libraries.</tt><tt class="descname">LoanStats</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.LoanStats" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.LoanStats.date2millis">
+<tt class="descname">date2millis</tt><big>(</big><em>year</em>, <em>month=1</em>, <em>day=1</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.LoanStats.date2millis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.LoanStats.date2timestamp">
+<tt class="descname">date2timestamp</tt><big>(</big><em>year</em>, <em>month=1</em>, <em>day=1</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.LoanStats.date2timestamp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.LoanStats.get_active_loans_of_libraries">
+<tt class="descname">get_active_loans_of_libraries</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.LoanStats.get_active_loans_of_libraries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns count of current active loans per library as a dictionary.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.LoanStats.get_average_duration_per_day">
+<tt class="descname">get_average_duration_per_day</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.LoanStats.get_average_duration_per_day" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns average duration per day.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.LoanStats.get_average_duration_per_month">
+<tt class="descname">get_average_duration_per_month</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.LoanStats.get_average_duration_per_month" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns (date-in-millis, duration-in-days) for each day with duration averaged per month.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.LoanStats.get_loan_duration_frequency">
+<tt class="descname">get_loan_duration_frequency</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.LoanStats.get_loan_duration_frequency" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.LoanStats.get_loans_per_book">
+<tt class="descname">get_loans_per_book</tt><big>(</big><em>key=''</em>, <em>limit=1</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.LoanStats.get_loans_per_book" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the distribution of #loans/book.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.LoanStats.get_loans_per_day">
+<tt class="descname">get_loans_per_day</tt><big>(</big><em>resource_type='total'</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.LoanStats.get_loans_per_day" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.LoanStats.get_loans_per_library">
+<tt class="descname">get_loans_per_library</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.LoanStats.get_loans_per_library" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.LoanStats.get_loans_per_user">
+<tt class="descname">get_loans_per_user</tt><big>(</big><em>key=''</em>, <em>limit=1</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.LoanStats.get_loans_per_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the distribution of #loans/user.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.LoanStats.get_popular_books">
+<tt class="descname">get_popular_books</tt><big>(</big><em>limit=10</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.LoanStats.get_popular_books" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.LoanStats.get_summary">
+<tt class="descname">get_summary</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.LoanStats.get_summary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.LoanStats.percent">
+<tt class="descname">percent</tt><big>(</big><em>value</em>, <em>total</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.LoanStats.percent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.LoanStats.view">
+<tt class="descname">view</tt><big>(</big><em>viewname</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.LoanStats.view" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.libraries.get_active_loans_of_libraries">
+<tt class="descclassname">openlibrary.plugins.openlibrary.libraries.</tt><tt class="descname">get_active_loans_of_libraries</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.get_active_loans_of_libraries" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.libraries.get_library_branches">
+<tt class="descclassname">openlibrary.plugins.openlibrary.libraries.</tt><tt class="descname">get_library_branches</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.get_library_branches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns library branches grouped by first letter.</p>
+</dd></dl>
+
+<dl class="class">
 <dt id="openlibrary.plugins.openlibrary.libraries.libraries">
 <em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.libraries.</tt><tt class="descname">libraries</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.libraries" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
 <dl class="method">
 <dt id="openlibrary.plugins.openlibrary.libraries.libraries.GET">
 <tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.libraries.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.libraries.get_branches">
+<tt class="descname">get_branches</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.libraries.get_branches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.libraries.libraries_dashboard">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.libraries.</tt><tt class="descname">libraries_dashboard</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.libraries_dashboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.libraries_dashboard.GET">
+<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.libraries_dashboard.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.libraries_dashboard.get_pending_libraries">
+<tt class="descname">get_pending_libraries</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.libraries_dashboard.get_pending_libraries" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.libraries.libraries_notes">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.libraries.</tt><tt class="descname">libraries_notes</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.libraries_notes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.libraries_notes.POST">
+<tt class="descname">POST</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.libraries_notes.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.libraries.libraries_register">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.libraries.</tt><tt class="descname">libraries_register</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.libraries_register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.libraries_register.GET">
+<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.libraries_register.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.libraries_register.POST">
+<tt class="descname">POST</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.libraries_register.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.libraries_register.sendmail">
+<tt class="descname">sendmail</tt><big>(</big><em>to</em>, <em>msg</em>, <em>cc=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.libraries_register.sendmail" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -82,9 +226,53 @@
 </dd></dl>
 
 <dl class="function">
+<dt id="openlibrary.plugins.openlibrary.libraries.on_loan_completed">
+<tt class="descclassname">openlibrary.plugins.openlibrary.libraries.</tt><tt class="descname">on_loan_completed</tt><big>(</big><em>loan</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.on_loan_completed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Marks the loan as completed in the admin stats database.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.libraries.on_loan_created">
+<tt class="descclassname">openlibrary.plugins.openlibrary.libraries.</tt><tt class="descname">on_loan_created</tt><big>(</big><em>loan</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.on_loan_created" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the loan info to the admin stats database.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.libraries.pending_libraries">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.libraries.</tt><tt class="descname">pending_libraries</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.pending_libraries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.pending_libraries.GET">
+<tt class="descname">GET</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.pending_libraries.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.pending_libraries.POST">
+<tt class="descname">POST</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.pending_libraries.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.pending_libraries.generate_key">
+<tt class="descname">generate_key</tt><big>(</big><em>doc</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.pending_libraries.generate_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
 <dt id="openlibrary.plugins.openlibrary.libraries.setup">
 <tt class="descclassname">openlibrary.plugins.openlibrary.libraries.</tt><tt class="descname">setup</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.setup" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.libraries.stats">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.libraries.</tt><tt class="descname">stats</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.libraries.stats.GET">
+<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.libraries.stats.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
 
 </div>
 
@@ -149,7 +337,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Mar 11, 2011.
+      Last updated on Dec 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

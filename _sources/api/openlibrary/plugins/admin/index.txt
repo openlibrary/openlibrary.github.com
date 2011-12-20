@@ -9,8 +9,13 @@ Submodules
    :maxdepth: 1
 
    code.rst
+   graphs.rst
+   inspect_thing.rst
    mem.rst
    memory.rst
+   services.rst
+   support.rst
+   tasks.rst
 
 Documentation
 -------------

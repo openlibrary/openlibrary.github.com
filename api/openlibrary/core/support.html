@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>support &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="core" href="index.html" />
+    <link rel="next" title="task" href="task.html" />
+    <link rel="prev" title="stats" href="stats.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="task.html" title="task"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="stats.html" title="stats"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">core</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.core.support">
+<span id="support"></span><h1>support<a class="headerlink" href="#module-openlibrary.core.support" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="openlibrary.core.support.Case">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.support.</tt><tt class="descname">Case</tt><big>(</big><em>id=None</em>, <em>**values</em><big>)</big><a class="headerlink" href="#openlibrary.core.support.Case" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">couchdb.mapping.Document</span></tt></p>
+<dl class="method">
+<dt id="openlibrary.core.support.Case.add_worklog_entry">
+<tt class="descname">add_worklog_entry</tt><big>(</big><em>by</em>, <em>text</em><big>)</big><a class="headerlink" href="#openlibrary.core.support.Case.add_worklog_entry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="openlibrary.core.support.Case.all">
+<em class="property">classmethod </em><tt class="descname">all</tt><big>(</big><em>db</em>, <em>typ='all'</em>, <em>sort='status'</em>, <em>desc='false'</em>, <em>staleok=False</em><big>)</big><a class="headerlink" href="#openlibrary.core.support.Case.all" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.core.support.Case.assignee">
+<tt class="descname">assignee</tt><a class="headerlink" href="#openlibrary.core.support.Case.assignee" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mapping field for string values.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.core.support.Case.caseid">
+<tt class="descname">caseid</tt><a class="headerlink" href="#openlibrary.core.support.Case.caseid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.core.support.Case.caseno">
+<tt class="descname">caseno</tt><a class="headerlink" href="#openlibrary.core.support.Case.caseno" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns case number</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.support.Case.change_status">
+<tt class="descname">change_status</tt><big>(</big><em>new_status</em>, <em>by</em><big>)</big><a class="headerlink" href="#openlibrary.core.support.Case.change_status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.core.support.Case.created">
+<tt class="descname">created</tt><a class="headerlink" href="#openlibrary.core.support.Case.created" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mapping field for storing date/time values.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">field</span> <span class="o">=</span> <span class="n">DateTimeField</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">field</span><span class="o">.</span><span class="n">_to_python</span><span class="p">(</span><span class="s">&#39;2007-04-01T15:30:00Z&#39;</span><span class="p">)</span>
+<span class="go">datetime.datetime(2007, 4, 1, 15, 30)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">field</span><span class="o">.</span><span class="n">_to_json</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2007</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9876</span><span class="p">))</span>
+<span class="go">&#39;2007-04-01T15:30:00Z&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">field</span><span class="o">.</span><span class="n">_to_json</span><span class="p">(</span><span class="n">date</span><span class="p">(</span><span class="mi">2007</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="go">&#39;2007-04-01T00:00:00Z&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.core.support.Case.creator_email">
+<tt class="descname">creator_email</tt><a class="headerlink" href="#openlibrary.core.support.Case.creator_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mapping field for string values.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.core.support.Case.creator_name">
+<tt class="descname">creator_name</tt><a class="headerlink" href="#openlibrary.core.support.Case.creator_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mapping field for string values.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.core.support.Case.creator_useragent">
+<tt class="descname">creator_useragent</tt><a class="headerlink" href="#openlibrary.core.support.Case.creator_useragent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mapping field for string values.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.core.support.Case.creator_username">
+<tt class="descname">creator_username</tt><a class="headerlink" href="#openlibrary.core.support.Case.creator_username" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mapping field for string values.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.core.support.Case.description">
+<tt class="descname">description</tt><a class="headerlink" href="#openlibrary.core.support.Case.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mapping field for string values.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.core.support.Case.history">
+<tt class="descname">history</tt><a class="headerlink" href="#openlibrary.core.support.Case.history" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field type for sequences of other fields.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">couchdb</span> <span class="kn">import</span> <span class="n">Server</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">server</span> <span class="o">=</span> <span class="n">Server</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">db</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s">&#39;python-tests&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">title</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="n">content</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="n">pubdate</span> <span class="o">=</span> <span class="n">DateTimeField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">comments</span> <span class="o">=</span> <span class="n">ListField</span><span class="p">(</span><span class="n">DictField</span><span class="p">(</span><span class="n">Mapping</span><span class="o">.</span><span class="n">build</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="n">author</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">(),</span>
+<span class="gp">... </span>        <span class="n">content</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">(),</span>
+<span class="gp">... </span>        <span class="n">time</span> <span class="o">=</span> <span class="n">DateTimeField</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="p">)))</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">post</span> <span class="o">=</span> <span class="n">Post</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">&#39;Foo bar&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">post</span><span class="o">.</span><span class="n">comments</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="s">&#39;myself&#39;</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s">&#39;Bla bla&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                     <span class="n">time</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">post</span><span class="o">.</span><span class="n">comments</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">post</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">db</span><span class="p">)</span> 
+<span class="go">&lt;Post ...&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">post</span> <span class="o">=</span> <span class="n">Post</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">post</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">comment</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="n">comments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">comment</span><span class="p">[</span><span class="s">&#39;author&#39;</span><span class="p">]</span>
+<span class="go">&#39;myself&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">comment</span><span class="p">[</span><span class="s">&#39;content&#39;</span><span class="p">]</span>
+<span class="go">&#39;Bla bla&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">comment</span><span class="p">[</span><span class="s">&#39;time&#39;</span><span class="p">]</span> 
+<span class="go">&#39;...T...Z&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">server</span><span class="p">[</span><span class="s">&#39;python-tests&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.core.support.Case.last_modified">
+<tt class="descname">last_modified</tt><a class="headerlink" href="#openlibrary.core.support.Case.last_modified" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="openlibrary.core.support.Case.load">
+<em class="property">classmethod </em><tt class="descname">load</tt><big>(</big><em>db</em>, <em>id</em><big>)</big><a class="headerlink" href="#openlibrary.core.support.Case.load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="openlibrary.core.support.Case.new">
+<em class="property">classmethod </em><tt class="descname">new</tt><big>(</big><em>**kargs</em><big>)</big><a class="headerlink" href="#openlibrary.core.support.Case.new" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.support.Case.reassign">
+<tt class="descname">reassign</tt><big>(</big><em>new_assignee</em>, <em>by</em>, <em>text=''</em><big>)</big><a class="headerlink" href="#openlibrary.core.support.Case.reassign" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.core.support.Case.status">
+<tt class="descname">status</tt><a class="headerlink" href="#openlibrary.core.support.Case.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mapping field for string values.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.support.Case.store">
+<tt class="descname">store</tt><big>(</big><em>db</em><big>)</big><a class="headerlink" href="#openlibrary.core.support.Case.store" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.core.support.Case.subject">
+<tt class="descname">subject</tt><a class="headerlink" href="#openlibrary.core.support.Case.subject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mapping field for string values.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.core.support.Case.type">
+<tt class="descname">type</tt><a class="headerlink" href="#openlibrary.core.support.Case.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mapping field for string values.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.core.support.Case.url">
+<tt class="descname">url</tt><a class="headerlink" href="#openlibrary.core.support.Case.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mapping field for string values.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="openlibrary.core.support.DatabaseConnectionError">
+<em class="property">exception </em><tt class="descclassname">openlibrary.core.support.</tt><tt class="descname">DatabaseConnectionError</tt><a class="headerlink" href="#openlibrary.core.support.DatabaseConnectionError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="openlibrary.core.support.InvalidCase">
+<em class="property">exception </em><tt class="descclassname">openlibrary.core.support.</tt><tt class="descname">InvalidCase</tt><a class="headerlink" href="#openlibrary.core.support.InvalidCase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.KeyError</span></tt></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.core.support.Support">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.support.</tt><tt class="descname">Support</tt><big>(</big><em>db=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.support.Support" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="method">
+<dt id="openlibrary.core.support.Support.create_case">
+<tt class="descname">create_case</tt><big>(</big><em>creator_name</em>, <em>creator_email</em>, <em>creator_useragent</em>, <em>creator_username</em>, <em>subject</em>, <em>description</em>, <em>assignee</em>, <em>url=''</em><big>)</big><a class="headerlink" href="#openlibrary.core.support.Support.create_case" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a support case with the given parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.support.Support.get_all_cases">
+<tt class="descname">get_all_cases</tt><big>(</big><em>typ='all'</em>, <em>summarise=False</em>, <em>sortby='lastmodified'</em>, <em>user=False</em>, <em>desc='false'</em>, <em>staleok=False</em><big>)</big><a class="headerlink" href="#openlibrary.core.support.Support.get_all_cases" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all the cases in the system</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.support.Support.get_case">
+<tt class="descname">get_case</tt><big>(</big><em>caseid</em><big>)</big><a class="headerlink" href="#openlibrary.core.support.Support.get_case" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the case with the given id</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo_OL-lg.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="stats.html"
+                        title="previous chapter">stats</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="task.html"
+                        title="next chapter">task</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/openlibrary/core/support.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="task.html" title="task"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="stats.html" title="stats"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >core</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Internet Archive.
+      Last updated on Dec 20, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

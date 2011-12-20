@@ -56,8 +56,117 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="code">
-<h1>code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-openlibrary.plugins.upstream.code">
+<span id="code"></span><h1>code<a class="headerlink" href="#module-openlibrary.plugins.upstream.code" title="Permalink to this headline">¶</a></h1>
+<p>Upstream customizations.</p>
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.code.DynamicDocument">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.code.</tt><tt class="descname">DynamicDocument</tt><big>(</big><em>root</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.code.DynamicDocument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dynamic document is created by concatinating various rawtext documents in the DB.
+Used to generate combined js/css using multiple js/css files in the system.</p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.code.DynamicDocument.get_text">
+<tt class="descname">get_text</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.code.DynamicDocument.get_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns text of the combined documents</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.code.DynamicDocument.md5">
+<tt class="descname">md5</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.code.DynamicDocument.md5" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns md5 checksum of the combined documents</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.code.DynamicDocument.update">
+<tt class="descname">update</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.code.DynamicDocument.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.plugins.upstream.code.all_css">
+<tt class="descclassname">openlibrary.plugins.upstream.code.</tt><tt class="descname">all_css</tt><a class="headerlink" href="#openlibrary.plugins.upstream.code.all_css" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">page</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.plugins.upstream.code.all_js">
+<tt class="descclassname">openlibrary.plugins.upstream.code.</tt><tt class="descname">all_js</tt><a class="headerlink" href="#openlibrary.plugins.upstream.code.all_js" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">page</span></tt></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.code.change_cover">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.code.</tt><tt class="descname">change_cover</tt><a class="headerlink" href="#openlibrary.plugins.upstream.code.change_cover" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.code.change_cover.GET">
+<tt class="descname">GET</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.code.change_cover.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.code.change_photo">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.code.</tt><tt class="descname">change_photo</tt><a class="headerlink" href="#openlibrary.plugins.upstream.code.change_photo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.upstream.code.change_cover" title="openlibrary.plugins.upstream.code.change_cover"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.upstream.code.change_cover</span></tt></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.code.create_dynamic_document">
+<tt class="descclassname">openlibrary.plugins.upstream.code.</tt><tt class="descname">create_dynamic_document</tt><big>(</big><em>url</em>, <em>prefix</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.code.create_dynamic_document" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a handler for <cite>url</cite> for servering combined js/css for <cite>prefix/*</cite> pages</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.code.get_document">
+<tt class="descclassname">openlibrary.plugins.upstream.code.</tt><tt class="descname">get_document</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.code.get_document" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.code.reload">
+<tt class="descclassname">openlibrary.plugins.upstream.code.</tt><tt class="descname">reload</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.code.reload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reload all.css and all.js</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.code.revert">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.code.</tt><tt class="descname">revert</tt><a class="headerlink" href="#openlibrary.plugins.upstream.code.revert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.mode" title="infogami.utils.app.mode"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.mode</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.code.revert.GET">
+<tt class="descname">GET</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.code.revert.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.code.revert.POST">
+<tt class="descname">POST</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.code.revert.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.code.setup">
+<tt class="descclassname">openlibrary.plugins.upstream.code.</tt><tt class="descname">setup</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.code.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setup for upstream plugin</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.code.setup_jquery_urls">
+<tt class="descclassname">openlibrary.plugins.upstream.code.</tt><tt class="descname">setup_jquery_urls</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.code.setup_jquery_urls" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.code.static">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.code.</tt><tt class="descname">static</tt><a class="headerlink" href="#openlibrary.plugins.upstream.code.static" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.code.static.GET">
+<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.code.static.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -121,7 +230,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Mar 11, 2011.
+      Last updated on Dec 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

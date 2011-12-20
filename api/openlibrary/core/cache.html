@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
     <link rel="up" title="core" href="index.html" />
-    <link rel="next" title="connections" href="connections.html" />
+    <link rel="next" title="celery_couchdb" href="celery_couchdb.html" />
     <link rel="prev" title="admin" href="admin.html" /> 
   </head>
   <body>
@@ -38,7 +38,7 @@
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="connections.html" title="connections"
+          <a href="celery_couchdb.html" title="celery_couchdb"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="admin.html" title="admin"
@@ -58,6 +58,260 @@
   <div class="section" id="module-openlibrary.core.cache">
 <span id="cache"></span><h1>cache<a class="headerlink" href="#module-openlibrary.core.cache" title="Permalink to this headline">¶</a></h1>
 <p>Caching utilities.</p>
+<dl class="function">
+<dt id="openlibrary.core.cache.cached_property">
+<tt class="descclassname">openlibrary.core.cache.</tt><tt class="descname">cached_property</tt><big>(</big><em>getter</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.cached_property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator like <cite>property</cite>, but the value is computed on first call and cached.</p>
+<p>class Foo:</p>
+<blockquote>
+<div><p>&#64;cached_property
+def memcache_client(self):</p>
+<blockquote>
+<div>...</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.core.cache.Cache">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.cache.</tt><tt class="descname">Cache</tt><a class="headerlink" href="#openlibrary.core.cache.Cache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Cache interface.</p>
+<dl class="method">
+<dt id="openlibrary.core.cache.Cache.add">
+<tt class="descname">add</tt><big>(</big><em>key</em>, <em>value</em>, <em>expires=0</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.Cache.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new entry in the cache. Nothing is done if there is already an entry with the same key.</p>
+<p>Returns True if a new entry is added to the cache.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.cache.Cache.delete">
+<tt class="descname">delete</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.Cache.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes an entry from the cache. No error is raised if there is no entry in present in the cache with that key.</p>
+<p>Returns True if the key is deleted.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.cache.Cache.get">
+<tt class="descname">get</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.Cache.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value for given key. Returns None if that key is not present in the cache.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.cache.Cache.set">
+<tt class="descname">set</tt><big>(</big><em>key</em>, <em>value</em>, <em>expires=0</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.Cache.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a value in the cache. 
+If expires is non-zero, the cache may delete that entry from the cache after expiry.
+The implementation can choose to ignore the expires argument.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.core.cache.MemoryCache">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.cache.</tt><tt class="descname">MemoryCache</tt><a class="headerlink" href="#openlibrary.core.cache.MemoryCache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.core.cache.Cache" title="openlibrary.core.cache.Cache"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.core.cache.Cache</span></tt></a></p>
+<p>Cache implementation in memory.</p>
+<dl class="method">
+<dt id="openlibrary.core.cache.MemoryCache.add">
+<tt class="descname">add</tt><big>(</big><em>key</em>, <em>value</em>, <em>expires=0</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.MemoryCache.add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.cache.MemoryCache.clear">
+<tt class="descname">clear</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.cache.MemoryCache.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.cache.MemoryCache.delete">
+<tt class="descname">delete</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.MemoryCache.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.cache.MemoryCache.get">
+<tt class="descname">get</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.MemoryCache.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.cache.MemoryCache.set">
+<tt class="descname">set</tt><big>(</big><em>key</em>, <em>value</em>, <em>expires=0</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.MemoryCache.set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.core.cache.MemcacheCache">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.cache.</tt><tt class="descname">MemcacheCache</tt><a class="headerlink" href="#openlibrary.core.cache.MemcacheCache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.core.cache.Cache" title="openlibrary.core.cache.Cache"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.core.cache.Cache</span></tt></a></p>
+<p>Cache implementation using memcache.</p>
+<p>The values are json-encoded before adding to memcache and json-decoded on get.</p>
+<p>Expects that the memcache servers are specified in web.config.memcache_servers.</p>
+<dl class="method">
+<dt id="openlibrary.core.cache.MemcacheCache.add">
+<tt class="descname">add</tt><big>(</big><em>key</em>, <em>value</em>, <em>expires=0</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.MemcacheCache.add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.cache.MemcacheCache.delete">
+<tt class="descname">delete</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.MemcacheCache.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.cache.MemcacheCache.get">
+<tt class="descname">get</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.MemcacheCache.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.core.cache.MemcacheCache.memcache">
+<tt class="descname">memcache</tt><a class="headerlink" href="#openlibrary.core.cache.MemcacheCache.memcache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.cache.MemcacheCache.set">
+<tt class="descname">set</tt><big>(</big><em>key</em>, <em>value</em>, <em>expires=0</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.MemcacheCache.set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.core.cache.RequestCache">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.cache.</tt><tt class="descname">RequestCache</tt><a class="headerlink" href="#openlibrary.core.cache.RequestCache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.core.cache.Cache" title="openlibrary.core.cache.Cache"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.core.cache.Cache</span></tt></a></p>
+<p>Request-Local cache.</p>
+<p>The values are cached only in the context of the current request.</p>
+<dl class="method">
+<dt id="openlibrary.core.cache.RequestCache.add">
+<tt class="descname">add</tt><big>(</big><em>key</em>, <em>value</em>, <em>expires=0</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.RequestCache.add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.core.cache.RequestCache.d">
+<tt class="descname">d</tt><a class="headerlink" href="#openlibrary.core.cache.RequestCache.d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.cache.RequestCache.delete">
+<tt class="descname">delete</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.RequestCache.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.cache.RequestCache.get">
+<tt class="descname">get</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.RequestCache.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.cache.RequestCache.set">
+<tt class="descname">set</tt><big>(</big><em>key</em>, <em>value</em>, <em>expires=0</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.RequestCache.set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.core.cache.memoize">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.cache.</tt><tt class="descname">memoize</tt><big>(</big><em>engine='memory'</em>, <em>key=None</em>, <em>expires=0</em>, <em>background=False</em>, <em>cacheable=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.memoize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Memoize decorator to cache results in various cache engines.</p>
+<p>Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@cache.memoize</span><span class="p">(</span><span class="n">engine</span><span class="o">=</span><span class="s">&quot;memcache&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">some_func</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Arguments:</p>
+<div class="highlight-python"><pre>* engine:</pre>
+</div>
+<blockquote>
+<div><dl class="docutils">
+<dt>Engine to store the results. Available options are:    </dt>
+<dd><ul class="first last simple">
+<li>memory: stores the result in memory.</li>
+<li>memcache: stores the result in memcached.</li>
+<li>request: stores the result only in the context of the current request.</li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+<ul>
+<li><dl class="first docutils">
+<dt>key:</dt>
+<dd><p class="first last">key to be used in the cache. If this is a string, arguments are append
+to it before making the cache-key. If this is a function, it&#8217;s
+return-value is used as cache-key and this function is called with the
+arguments. If not specified, the default value is computed using the
+function name and module name.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>expires:</dt>
+<dd><p class="first last">The amount of time in seconds the value should be cached. Pass expires=0 to cache indefinitely.
+(Not yet implemented)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>background:</dt>
+<dd><p class="first last">Indicates that the value must be recomputed in the background after
+the timeout. Until the new value is ready, the function continue to
+return the same old value.
+(not yet implemented)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>cacheable:</dt>
+<dd><p class="first last">Function to determine if the returned value is cacheable. Sometimes it
+is desirable to not cache return values generated due to error
+conditions. The cacheable function is called with (key, value) as
+arguments.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Advanced Usage:</p>
+<p>Sometimes, it is desirable to store results of related functions in the
+same cache entry to reduce memory usage. It can be achieved by making the
+<tt class="docutils literal"><span class="pre">key</span></tt> function return a tuple of two values. (Not Implemented yet)</p>
+<blockquote>
+<div><p>&#64;cache.memoize(engine=&#8221;memcache&#8221;, key=lambda page: (page.key, &#8220;history&#8221;))
+def get_history(page):</p>
+<blockquote>
+<div>pass</div></blockquote>
+<p>&#64;cache.memoize(engine=&#8221;memory&#8221;, key=lambda key: (key, &#8220;doc&#8221;))
+def get_page(key):</p>
+<blockquote>
+<div>pass</div></blockquote>
+</div></blockquote>
+<dl class="method">
+<dt id="openlibrary.core.cache.memoize.cache_get">
+<tt class="descname">cache_get</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.memoize.cache_get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads value of a key from the cache.</p>
+<p>When key is a string, this is equvivalant to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">return</span> <span class="n">cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>When key is a 2-tuple, this is equvivalant to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span> <span class="o">=</span> <span class="n">key</span>
+<span class="k">return</span> <span class="n">cache</span><span class="p">[</span><span class="n">k0</span><span class="p">][</span><span class="n">k1</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.cache.memoize.cache_set">
+<tt class="descname">cache_set</tt><big>(</big><em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.memoize.cache_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a key to a given value in the cache.</p>
+<p>When key is a string, this is equvivalant to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</pre></div>
+</div>
+<p>When key is a 2-tuple, this is equvivalant to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span> <span class="o">=</span> <span class="n">key</span>
+<span class="n">cache</span><span class="p">[</span><span class="n">k0</span><span class="p">][</span><span class="n">k1</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="class">
 <dt id="openlibrary.core.cache.memcache_memoize">
 <em class="property">class </em><tt class="descclassname">openlibrary.core.cache.</tt><tt class="descname">memcache_memoize</tt><big>(</big><em>f</em>, <em>key_prefix=None</em>, <em>timeout=60</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.memcache_memoize" title="Permalink to this definition">¶</a></dt>
@@ -117,9 +371,14 @@ value is used while the update is in progress.</p>
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="openlibrary.core.cache.memcache_memoize.memcache_delete">
+<tt class="descname">memcache_delete</tt><big>(</big><em>args</em>, <em>kw</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.memcache_memoize.memcache_delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="openlibrary.core.cache.memcache_memoize.memcache_get">
 <tt class="descname">memcache_get</tt><big>(</big><em>args</em>, <em>kw</em><big>)</big><a class="headerlink" href="#openlibrary.core.cache.memcache_memoize.memcache_get" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reads the value from memcahe. Key is computed from the arguments.</p>
+<dd><p>Reads the value from memcache. Key is computed from the arguments.</p>
 <p>Returns (value, time) when the value is available, None otherwise.</p>
 </dd></dl>
 
@@ -159,8 +418,8 @@ value is used while the update is in progress.</p>
   <p class="topless"><a href="admin.html"
                         title="previous chapter">admin</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="connections.html"
-                        title="next chapter">connections</a></p>
+  <p class="topless"><a href="celery_couchdb.html"
+                        title="next chapter">celery_couchdb</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../_sources/api/openlibrary/core/cache.txt"
@@ -193,7 +452,7 @@ value is used while the update is in progress.</p>
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="connections.html" title="connections"
+          <a href="celery_couchdb.html" title="celery_couchdb"
              >next</a> |</li>
         <li class="right" >
           <a href="admin.html" title="admin"
@@ -206,7 +465,7 @@ value is used while the update is in progress.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Mar 11, 2011.
+      Last updated on Dec 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

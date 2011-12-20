@@ -1,0 +1,5 @@
+
+git
+===
+
+.. automodule:: openlibrary.plugins.theme.git

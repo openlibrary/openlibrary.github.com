@@ -1,0 +1,5 @@
+
+events
+======
+
+.. automodule:: openlibrary.plugins.openlibrary.events

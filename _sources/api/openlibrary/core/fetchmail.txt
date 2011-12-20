@@ -1,0 +1,5 @@
+
+fetchmail
+=========
+
+.. automodule:: openlibrary.core.fetchmail

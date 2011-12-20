@@ -1,0 +1,17 @@
+
+theme
+=====
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   code.rst
+   git.rst
+
+Documentation
+-------------
+
+.. automodule:: openlibrary.plugins.theme

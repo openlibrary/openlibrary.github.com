@@ -1,0 +1,154 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>task &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="core" href="index.html" />
+    <link rel="next" title="coverstore" href="../coverstore/index.html" />
+    <link rel="prev" title="support" href="support.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../coverstore/index.html" title="coverstore"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="support.html" title="support"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">core</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.core.task">
+<span id="task"></span><h1>task<a class="headerlink" href="#module-openlibrary.core.task" title="Permalink to this headline">¶</a></h1>
+<p>Utilities that interface with celery for the openlibrary application.</p>
+<dl class="exception">
+<dt id="openlibrary.core.task.ExceptionWrapper">
+<em class="property">exception </em><tt class="descclassname">openlibrary.core.task.</tt><tt class="descname">ExceptionWrapper</tt><big>(</big><em>exception</em>, <em>extra_info</em><big>)</big><a class="headerlink" href="#openlibrary.core.task.ExceptionWrapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></tt></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.task.create_patched_delay">
+<tt class="descclassname">openlibrary.core.task.</tt><tt class="descname">create_patched_delay</tt><big>(</big><em>original_fn</em><big>)</big><a class="headerlink" href="#openlibrary.core.task.create_patched_delay" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a patched version of delay that we can use to
+monkeypatch the actual one</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.task.oltask">
+<tt class="descclassname">openlibrary.core.task.</tt><tt class="descname">oltask</tt><big>(</big><em>fn</em><big>)</big><a class="headerlink" href="#openlibrary.core.task.oltask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Openlibrary specific decorator for celery tasks that records
+some extra information in the database which we use for
+tracking</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.task.set_task_data">
+<tt class="descclassname">openlibrary.core.task.</tt><tt class="descname">set_task_data</tt><big>(</big><em>**kargs</em><big>)</big><a class="headerlink" href="#openlibrary.core.task.set_task_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a global task data that can be used in the the tombstone</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo_OL-lg.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="support.html"
+                        title="previous chapter">support</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../coverstore/index.html"
+                        title="next chapter">coverstore</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/openlibrary/core/task.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../coverstore/index.html" title="coverstore"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="support.html" title="support"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >core</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Internet Archive.
+      Last updated on Dec 20, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+
+mapreduce
+=========
+
+.. automodule:: openlibrary.data.mapreduce

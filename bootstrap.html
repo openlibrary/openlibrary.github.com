@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="openlibrary v2.0 documentation" href="index.html" />
-    <link rel="next" title="Working with dev instance" href="working.html" />
+    <link rel="next" title="Getting Started with Development" href="dev/index.html" />
     <link rel="prev" title="Welcome" href="index.html" /> 
   </head>
   <body>
@@ -37,7 +37,7 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="working.html" title="Working with dev instance"
+          <a href="dev/index.html" title="Getting Started with Development"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Welcome"
@@ -53,8 +53,9 @@
             
   <div class="section" id="setting-up-a-dev-instance">
 <span id="bootstrap"></span><h1>Setting up a dev instance<a class="headerlink" href="#setting-up-a-dev-instance" title="Permalink to this headline">¶</a></h1>
-<p>Setting up an Open Library dev instance requires installing third-party
-software and running many services.</p>
+<p>Setting up an Open Library dev instance requires installing some third-party
+software and python modules. This document will step you though the
+installation process.</p>
 <div class="section" id="supported-platforms">
 <h2>Supported Platforms<a class="headerlink" href="#supported-platforms" title="Permalink to this headline">¶</a></h2>
 <p>The Open Library dev instance has been tested on the following platforms.</p>
@@ -67,10 +68,10 @@ software and running many services.</p>
 </div>
 <div class="section" id="getting-the-source">
 <h2>Getting the source<a class="headerlink" href="#getting-the-source" title="Permalink to this headline">¶</a></h2>
-<p>Open Library uses <tt class="docutils literal"><span class="pre">git</span></tt> for version control and the <a class="reference external" href="http://github.com/openlibrary/openlibrary">code repository</a> is
+<p>Open Library uses <tt class="docutils literal"><span class="pre">git</span></tt> for version control and the <a class="reference external" href="https://github.com/internetarchive/openlibrary">code repository</a> is
 hosted on github.</p>
 <p>You can get the source code from there using:</p>
-<div class="highlight-python"><pre>$ git clone git://github.com/openlibrary/openlibrary.git
+<div class="highlight-python"><pre>$ git clone git://github.com/internetarchive/openlibrary.git
 $ cd openlibrary</pre>
 </div>
 <p>This will create a directory called openlibrary with the entire
@@ -86,48 +87,72 @@ codebase checked out.</p>
 <h2>Installing dependencies<a class="headerlink" href="#installing-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>Open Library depends a lot of third-party programs.</p>
 <p>To install all the dependencies:</p>
-<div class="highlight-python"><pre>$ sudo python setup.py install_dependencies</pre>
+<div class="highlight-python"><pre>$ sudo ./scripts/install_dependencies.sh</pre>
 </div>
 <p>Note that this is run as root.</p>
 <p>See <a class="reference internal" href="appendices/dependencies.html"><em>Dependencies</em></a> for the list of dependencies.</p>
 </div>
-<div class="section" id="running-the-install-script">
-<h2>Running the install script<a class="headerlink" href="#running-the-install-script" title="Permalink to this headline">¶</a></h2>
-<p>The installation is driven by the <tt class="docutils literal"><span class="pre">conf/install.ini</span></tt> config
-file. Edit it if you need customize the installation process.</p>
-<p>Now you&#8217;re ready to go. Run the setuptools <tt class="docutils literal"><span class="pre">bootstrap</span></tt> command to do
-the everything.:</p>
-<div class="highlight-python"><pre>$ python setup.py bootstrap</pre>
+<div class="section" id="setting-up-the-dev-instance">
+<h2>Setting up the dev instance<a class="headerlink" href="#setting-up-the-dev-instance" title="Permalink to this headline">¶</a></h2>
+<p>Once all the dependencies are installed the dev instance can be setup by running:</p>
+<div class="highlight-python"><pre>$ make bootstrap</pre>
 </div>
-<p>The bootstrap command creates a virtualenv, installs all necessary
-python packages, installs vendor software and initializes the OL
-databases. A detailed log is written to <tt class="docutils literal"><span class="pre">var/log/install.log</span></tt> and
-info and errors are reported to stdout and stderr respectively.</p>
+<p>This will do the following tasks, each of which can be invoked independenetly using make.</p>
+<ul class="simple">
+<li>create virtualenv (<tt class="docutils literal"><span class="pre">make</span> <span class="pre">venv</span></tt>)</li>
+<li>install solr (<tt class="docutils literal"><span class="pre">make</span> <span class="pre">install_solr</span></tt>)</li>
+<li>setup coverstore (<tt class="docutils literal"><span class="pre">make</span> <span class="pre">setup_coverstore</span></tt>)</li>
+<li>setup openlibrary webapp (<tt class="docutils literal"><span class="pre">make</span> <span class="pre">setup_ol</span></tt>)</li>
+</ul>
 </div>
-<div class="section" id="verify-the-installation">
-<h2>Verify the installation<a class="headerlink" href="#verify-the-installation" title="Permalink to this headline">¶</a></h2>
-<p><em>TDB</em> (insert notes on how to run smoke tests here).</p>
+<div class="section" id="destroying-the-dev-instance">
+<h2>Destroying the dev instance<a class="headerlink" href="#destroying-the-dev-instance" title="Permalink to this headline">¶</a></h2>
+<p>You want to destroy the current dev instance to build a new one, you can do it using:</p>
+<div class="highlight-python"><pre>$ make destroy</pre>
 </div>
-<div class="section" id="using-the-dev-instance">
-<h2>Using the dev instance<a class="headerlink" href="#using-the-dev-instance" title="Permalink to this headline">¶</a></h2>
-<p>Once in the installation is done, running dev instance is very simple.:</p>
-<div class="highlight-python"><pre>$ python setup.py start</pre>
 </div>
-<p>This starts all the OL services using <a class="reference external" href="http://supervisord.org/">supervisord</a>.</p>
-<p>Once the services are started, Open Library dev instance will be available at:</p>
-<p><a class="reference external" href="http://0.0.0.0:8080/">http://0.0.0.0:8080/</a></p>
-<p>Logs of the running services will be available in <tt class="docutils literal"><span class="pre">var/log/</span></tt>.</p>
+<div class="section" id="running-the-dev-instance">
+<h2>Running the dev instance<a class="headerlink" href="#running-the-dev-instance" title="Permalink to this headline">¶</a></h2>
+<p>Running the dev instance requires running 2 services. Solr is run the background as daemon and the the ol webapp is run in the foreground.</p>
+<p>The Solr processes can be started and stopped using <cite>solr.sh</cite> script.:</p>
+<div class="highlight-python"><pre>$ ./scripts/solr.sh start
+Starting Solr
+Done. Output is logged to var/log/solr.log.
+
+$ ./scripts/solr.sh status
+Solr running with pid 97208.
+
+$ ./scripts/solr.sh stop
+Stopping Solr
+Done
+
+$ ./scripts/solr.sh status
+Solr is not running</pre>
+</div>
+<p>The OL webapp can be started as:</p>
+<div class="highlight-python"><pre>$ make run</pre>
+</div>
+<p>Make sure Solr is running before starting the webapp.</p>
+<p>Once the webapp is started, the website can be accessed at <a class="reference external" href="http://0.0.0.0:8080/">http://0.0.0.0:8080/</a>.</p>
 </div>
 <div class="section" id="loading-sample-data">
 <h2>Loading sample data<a class="headerlink" href="#loading-sample-data" title="Permalink to this headline">¶</a></h2>
-<p>Loading sample data is not yet implemented.</p>
+<p>Use the <cite>copydocs.py</cite> script to load sample records from openlibrary.org website.:</p>
+<div class="highlight-python"><pre>$ make load_sample_data</pre>
 </div>
-<div class="section" id="updating-an-existing-dev-instance">
-<h2>Updating an existing dev instance<a class="headerlink" href="#updating-an-existing-dev-instance" title="Permalink to this headline">¶</a></h2>
-<p>Like any other software, the dev instance keeps changing with time.</p>
-<p>To update an existing dev instance to latest version, run:</p>
-<div class="highlight-python"><pre>$ python setup.py bootstrap --update</pre>
+<p>Make sure both Solr and the webapp are running before running this.</p>
+<p>Restart the webapp to see the books on homepage.</p>
 </div>
+<div class="section" id="known-issues">
+<h2>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h2>
+<p>It is known that the following issues.</p>
+<ul class="simple">
+<li>Stats on the home page is not working</li>
+<li>/admin is failing</li>
+<li>/libraries/stats is failing</li>
+<li>Lists are not working</li>
+<li>subject search not working</li>
+</ul>
 </div>
 </div>
 
@@ -146,11 +171,11 @@ info and errors are reported to stdout and stderr respectively.</p>
 <li><a class="reference internal" href="#supported-platforms">Supported Platforms</a></li>
 <li><a class="reference internal" href="#getting-the-source">Getting the source</a></li>
 <li><a class="reference internal" href="#installing-dependencies">Installing dependencies</a></li>
-<li><a class="reference internal" href="#running-the-install-script">Running the install script</a></li>
-<li><a class="reference internal" href="#verify-the-installation">Verify the installation</a></li>
-<li><a class="reference internal" href="#using-the-dev-instance">Using the dev instance</a></li>
+<li><a class="reference internal" href="#setting-up-the-dev-instance">Setting up the dev instance</a></li>
+<li><a class="reference internal" href="#destroying-the-dev-instance">Destroying the dev instance</a></li>
+<li><a class="reference internal" href="#running-the-dev-instance">Running the dev instance</a></li>
 <li><a class="reference internal" href="#loading-sample-data">Loading sample data</a></li>
-<li><a class="reference internal" href="#updating-an-existing-dev-instance">Updating an existing dev instance</a></li>
+<li><a class="reference internal" href="#known-issues">Known Issues</a></li>
 </ul>
 </li>
 </ul>
@@ -159,8 +184,8 @@ info and errors are reported to stdout and stderr respectively.</p>
   <p class="topless"><a href="index.html"
                         title="previous chapter">Welcome</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="working.html"
-                        title="next chapter">Working with dev instance</a></p>
+  <p class="topless"><a href="dev/index.html"
+                        title="next chapter">Getting Started with Development</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/bootstrap.txt"
@@ -193,7 +218,7 @@ info and errors are reported to stdout and stderr respectively.</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="working.html" title="Working with dev instance"
+          <a href="dev/index.html" title="Getting Started with Development"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Welcome"
@@ -203,7 +228,7 @@ info and errors are reported to stdout and stderr respectively.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Mar 11, 2011.
+      Last updated on Dec 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

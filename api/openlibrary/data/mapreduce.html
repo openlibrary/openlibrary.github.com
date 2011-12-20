@@ -1,0 +1,210 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>mapreduce &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="data" href="index.html" />
+    <link rel="next" title="sitemap" href="sitemap.html" />
+    <link rel="prev" title="dump" href="dump.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="sitemap.html" title="sitemap"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="dump.html" title="dump"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">data</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.data.mapreduce">
+<span id="mapreduce"></span><h1>mapreduce<a class="headerlink" href="#module-openlibrary.data.mapreduce" title="Permalink to this headline">¶</a></h1>
+<p>Simple library to process large datasets using map-reduce.</p>
+<p>This works as follows:</p>
+<ul class="simple">
+<li>Takes an iterator of key-value pairs as input</li>
+<li>Applies the map function for each key-value pair. The map function does the
+required processing to yield zero or more key-value pairs.</li>
+<li>The result of map are stored in the disk in to multiple files based on the 
+hash of the key. This makes sure the all the entries with same key goes to 
+the same file.</li>
+<li>Each of the file is sorted on key to group all the values of a key and the
+reduce function is applied for each key and its values.</li>
+<li>The reduced key, value pairs are returned as an iterator.</li>
+</ul>
+<dl class="class">
+<dt id="openlibrary.data.mapreduce.Disk">
+<em class="property">class </em><tt class="descclassname">openlibrary.data.mapreduce.</tt><tt class="descname">Disk</tt><big>(</big><em>dir</em>, <em>prefix='shard'</em>, <em>filecount=100</em>, <em>hashfunc=None</em>, <em>mode='r'</em><big>)</big><a class="headerlink" href="#openlibrary.data.mapreduce.Disk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Map Reduce Disk to manage key values.</p>
+<p>The data is stored over multiple files based on the key. All records with same key will fall in the same file.</p>
+<dl class="method">
+<dt id="openlibrary.data.mapreduce.Disk.close">
+<tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.data.mapreduce.Disk.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.data.mapreduce.Disk.openfile">
+<tt class="descname">openfile</tt><big>(</big><em>index</em>, <em>mode</em><big>)</big><a class="headerlink" href="#openlibrary.data.mapreduce.Disk.openfile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.data.mapreduce.Disk.read_semisorted">
+<tt class="descname">read_semisorted</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.data.mapreduce.Disk.read_semisorted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sorts each file in the disk and returns an iterator over the key-values in each file.</p>
+<p>All the values with same key will come together as each file is sorted, but there is no guaranty on the global order of keys.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.data.mapreduce.Disk.write">
+<tt class="descname">write</tt><big>(</big><em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#openlibrary.data.mapreduce.Disk.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.data.mapreduce.Task">
+<em class="property">class </em><tt class="descclassname">openlibrary.data.mapreduce.</tt><tt class="descname">Task</tt><big>(</big><em>tmpdir='mapreduce'</em>, <em>filecount=100</em>, <em>hashfunc=None</em><big>)</big><a class="headerlink" href="#openlibrary.data.mapreduce.Task" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstraction of a map-reduce task.</p>
+<p>Each task should extend this class and implement map and reduce functions.</p>
+<dl class="method">
+<dt id="openlibrary.data.mapreduce.Task.map">
+<tt class="descname">map</tt><big>(</big><em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#openlibrary.data.mapreduce.Task.map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to map given key-value pair into zero or more key-value pairs.</p>
+<p>The implementation should yield the key-value pairs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.data.mapreduce.Task.map_all">
+<tt class="descname">map_all</tt><big>(</big><em>records</em>, <em>disk</em><big>)</big><a class="headerlink" href="#openlibrary.data.mapreduce.Task.map_all" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.data.mapreduce.Task.process">
+<tt class="descname">process</tt><big>(</big><em>records</em><big>)</big><a class="headerlink" href="#openlibrary.data.mapreduce.Task.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes key-value pairs, applies map-reduce and returns the resultant key-value pairs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.data.mapreduce.Task.read">
+<tt class="descname">read</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.data.mapreduce.Task.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.data.mapreduce.Task.reduce">
+<tt class="descname">reduce</tt><big>(</big><em>key</em>, <em>values</em><big>)</big><a class="headerlink" href="#openlibrary.data.mapreduce.Task.reduce" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to reduce given values.</p>
+<p>The implementation should return a key-value pair, with the reduced value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.data.mapreduce.Task.reduce_all">
+<tt class="descname">reduce_all</tt><big>(</big><em>records</em><big>)</big><a class="headerlink" href="#openlibrary.data.mapreduce.Task.reduce_all" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo_OL-lg.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="dump.html"
+                        title="previous chapter">dump</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="sitemap.html"
+                        title="next chapter">sitemap</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/openlibrary/data/mapreduce.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="sitemap.html" title="sitemap"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="dump.html" title="dump"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >data</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Internet Archive.
+      Last updated on Dec 20, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

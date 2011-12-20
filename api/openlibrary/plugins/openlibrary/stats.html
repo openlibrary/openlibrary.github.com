@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
     <link rel="up" title="openlibrary" href="index.html" />
-    <link rel="next" title="utils" href="utils.html" />
+    <link rel="next" title="status" href="status.html" />
     <link rel="prev" title="showmarc" href="showmarc.html" /> 
   </head>
   <body>
@@ -38,7 +38,7 @@
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="utils.html" title="utils"
+          <a href="status.html" title="status"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="showmarc.html" title="showmarc"
@@ -60,6 +60,13 @@
 <span id="stats"></span><h1>stats<a class="headerlink" href="#module-openlibrary.plugins.openlibrary.stats" title="Permalink to this headline">¶</a></h1>
 <p>Hooks for collecting performance stats.</p>
 <dl class="function">
+<dt id="openlibrary.plugins.openlibrary.stats.evaluate_and_store_stat">
+<tt class="descclassname">openlibrary.plugins.openlibrary.stats.</tt><tt class="descname">evaluate_and_store_stat</tt><big>(</big><em>name</em>, <em>stat</em>, <em>summary</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.stats.evaluate_and_store_stat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluates whether the given statistic is to be recorded and if
+so, records it.</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="openlibrary.plugins.openlibrary.stats.format_stats">
 <tt class="descclassname">openlibrary.plugins.openlibrary.stats.</tt><tt class="descname">format_stats</tt><big>(</big><em>stats</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.stats.format_stats" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -72,10 +79,30 @@
 </dd></dl>
 
 <dl class="function">
+<dt id="openlibrary.plugins.openlibrary.stats.register_filter">
+<tt class="descclassname">openlibrary.plugins.openlibrary.stats.</tt><tt class="descname">register_filter</tt><big>(</big><em>name</em>, <em>function</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.stats.register_filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.stats.setup">
+<tt class="descclassname">openlibrary.plugins.openlibrary.stats.</tt><tt class="descname">setup</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.stats.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is called from the main application startup
+routine to set things up. Right now, it just initialises the stats
+filters</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="openlibrary.plugins.openlibrary.stats.stats_hook">
 <tt class="descclassname">openlibrary.plugins.openlibrary.stats.</tt><tt class="descname">stats_hook</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.stats.stats_hook" title="Permalink to this definition">¶</a></dt>
 <dd><p>web.py unload hook to add X-OL-Stats header.</p>
 <p>This info can be written to lighttpd access log for collecting</p>
+<p>Also, send stats to graphite using statsd</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.stats.update_all_stats">
+<tt class="descclassname">openlibrary.plugins.openlibrary.stats.</tt><tt class="descname">update_all_stats</tt><big>(</big><em>stats_summary</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.stats.update_all_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run through the filters and record requested items in graphite</p>
 </dd></dl>
 
 </div>
@@ -93,8 +120,8 @@
   <p class="topless"><a href="showmarc.html"
                         title="previous chapter">showmarc</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="utils.html"
-                        title="next chapter">utils</a></p>
+  <p class="topless"><a href="status.html"
+                        title="next chapter">status</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../../_sources/api/openlibrary/plugins/openlibrary/stats.txt"
@@ -127,7 +154,7 @@
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="utils.html" title="utils"
+          <a href="status.html" title="status"
              >next</a> |</li>
         <li class="right" >
           <a href="showmarc.html" title="showmarc"
@@ -141,7 +168,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Mar 11, 2011.
+      Last updated on Dec 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

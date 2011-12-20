@@ -132,6 +132,43 @@ Digital Editions to open or the link for the BookReader.</p>
 <tt class="descname">GET</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.borrow.borrow_admin.GET" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.borrow.borrow_admin.POST">
+<tt class="descname">POST</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.borrow.borrow_admin.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.borrow.borrow_admin_no_update">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.borrow.</tt><tt class="descname">borrow_admin_no_update</tt><a class="headerlink" href="#openlibrary.plugins.upstream.borrow.borrow_admin_no_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.borrow.borrow_admin_no_update.GET">
+<tt class="descname">GET</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.borrow.borrow_admin_no_update.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.borrow.borrow_admin_no_update.POST">
+<tt class="descname">POST</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.borrow.borrow_admin_no_update.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.borrow.borrow_receive_notification">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.borrow.</tt><tt class="descname">borrow_receive_notification</tt><a class="headerlink" href="#openlibrary.plugins.upstream.borrow.borrow_receive_notification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.borrow.borrow_receive_notification.GET">
+<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.borrow.borrow_receive_notification.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.borrow.borrow_receive_notification.POST">
+<tt class="descname">POST</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.borrow.borrow_receive_notification.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -165,6 +202,11 @@ Digital Editions to open or the link for the BookReader.</p>
 <dl class="function">
 <dt id="openlibrary.plugins.upstream.borrow.datetime_from_utc_timestamp">
 <tt class="descclassname">openlibrary.plugins.upstream.borrow.</tt><tt class="descname">datetime_from_utc_timestamp</tt><big>(</big><em>seconds</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.borrow.datetime_from_utc_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.borrow.delete_loan">
+<tt class="descclassname">openlibrary.plugins.upstream.borrow.</tt><tt class="descname">delete_loan</tt><big>(</big><em>loan_key</em>, <em>loan=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.borrow.delete_loan" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -276,7 +318,7 @@ via the Book Status Server (BSS)</p>
 
 <dl class="function">
 <dt id="openlibrary.plugins.upstream.borrow.make_bookreader_auth_link">
-<tt class="descclassname">openlibrary.plugins.upstream.borrow.</tt><tt class="descname">make_bookreader_auth_link</tt><big>(</big><em>loan_key</em>, <em>item_id</em>, <em>book_path</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.borrow.make_bookreader_auth_link" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">openlibrary.plugins.upstream.borrow.</tt><tt class="descname">make_bookreader_auth_link</tt><big>(</big><em>loan_key</em>, <em>item_id</em>, <em>book_path</em>, <em>ol_host</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.borrow.make_bookreader_auth_link" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a link to BookReaderAuth.php that starts the BookReader with the information to initiate reading
 a borrowed book</p>
 </dd></dl>
@@ -287,6 +329,16 @@ a borrowed book</p>
 <dd><p>Make a key that allows a client to access the item on archive.org for the number of
 seconds from now.</p>
 </dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.borrow.on_loan_delete">
+<tt class="descclassname">openlibrary.plugins.upstream.borrow.</tt><tt class="descname">on_loan_delete</tt><big>(</big><em>loan</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.borrow.on_loan_delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.upstream.borrow.on_loan_update">
+<tt class="descclassname">openlibrary.plugins.upstream.borrow.</tt><tt class="descname">on_loan_update</tt><big>(</big><em>loan</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.borrow.on_loan_update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="openlibrary.plugins.upstream.borrow.overdrive_id">
@@ -394,7 +446,7 @@ user holds a current loan for the edition.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Mar 11, 2011.
+      Last updated on Dec 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

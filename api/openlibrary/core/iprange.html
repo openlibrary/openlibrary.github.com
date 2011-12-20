@@ -1,0 +1,188 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>iprange &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="core" href="index.html" />
+    <link rel="next" title="lists" href="lists/index.html" />
+    <link rel="prev" title="inlibrary" href="inlibrary.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="lists/index.html" title="lists"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="inlibrary.html" title="inlibrary"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">core</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.core.iprange">
+<span id="iprange"></span><h1>iprange<a class="headerlink" href="#module-openlibrary.core.iprange" title="Permalink to this headline">¶</a></h1>
+<p>Tools to parse ip ranges.</p>
+<dl class="class">
+<dt id="openlibrary.core.iprange.IPDict">
+<em class="property">class </em><tt class="descclassname">openlibrary.core.iprange.</tt><tt class="descname">IPDict</tt><a class="headerlink" href="#openlibrary.core.iprange.IPDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Efficient dictionary of IP ranges to values.</p>
+<p>IP ranges can be added by calling <a class="reference internal" href="#openlibrary.core.iprange.IPDict.add_ip_range" title="openlibrary.core.iprange.IPDict.add_ip_range"><tt class="xref py py-meth docutils literal"><span class="pre">add_ip_range()</span></tt></a>. And values can be accessed by IP.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ipmap</span> <span class="o">=</span> <span class="n">IPRangeMap</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ipmap</span><span class="o">.</span><span class="n">add_ip_range</span><span class="p">(</span><span class="s">&quot;1.2.3.0/8&quot;</span><span class="p">,</span> <span class="s">&quot;foo&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ipmap</span><span class="p">[</span><span class="s">&#39;1.2.3.4&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;foo&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ipmap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;1.2.3.4&#39;</span><span class="p">)</span>
+<span class="go">&#39;foo&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ipmap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;1.2.5.5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="openlibrary.core.iprange.IPDict.add_ip_range">
+<tt class="descname">add_ip_range</tt><big>(</big><em>ip_range</em>, <em>value</em><big>)</big><a class="headerlink" href="#openlibrary.core.iprange.IPDict.add_ip_range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an entry to this map.</p>
+<p>ip_range can be in the following forms:</p>
+<blockquote>
+<div>&#8220;1.2.3.4&#8221;
+&#8220;1.2.3.0/8&#8221;
+(&#8220;1.2.3.4&#8221;, &#8220;1.2.3.44&#8221;)</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.iprange.IPDict.add_ip_range_text">
+<tt class="descname">add_ip_range_text</tt><big>(</big><em>ip_range_text</em>, <em>value</em><big>)</big><a class="headerlink" href="#openlibrary.core.iprange.IPDict.add_ip_range_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds all ip_ranges from the givem multi-line text and associate
+each one of them with given value.</p>
+<p>See <a class="reference internal" href="#openlibrary.core.iprange.parse_ip_ranges" title="openlibrary.core.iprange.parse_ip_ranges"><tt class="xref py py-func docutils literal"><span class="pre">parse_ip_ranges()</span></tt></a> for the supported formats in the text.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.core.iprange.IPDict.get">
+<tt class="descname">get</tt><big>(</big><em>ip</em>, <em>default=None</em><big>)</big><a class="headerlink" href="#openlibrary.core.iprange.IPDict.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.iprange.find_bad_ip_ranges">
+<tt class="descclassname">openlibrary.core.iprange.</tt><tt class="descname">find_bad_ip_ranges</tt><big>(</big><em>text</em><big>)</big><a class="headerlink" href="#openlibrary.core.iprange.find_bad_ip_ranges" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns bad ip-ranges in the given text.</p>
+<p>Lines which don&#8217;t match the supported IP range formats are considered bad.    
+See <a class="reference internal" href="#openlibrary.core.iprange.parse_ip_ranges" title="openlibrary.core.iprange.parse_ip_ranges"><tt class="xref py py-func docutils literal"><span class="pre">parse_ip_ranges()</span></tt></a> for the list of supported ip-range formats.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.iprange.parse_ip_ranges">
+<tt class="descclassname">openlibrary.core.iprange.</tt><tt class="descname">parse_ip_ranges</tt><big>(</big><em>text</em><big>)</big><a class="headerlink" href="#openlibrary.core.iprange.parse_ip_ranges" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses IP ranges in various formats from a multi-line text and returns them in standard representation.</p>
+<p>Text after # is considered as comment. Comments and empty lines are ignored.</p>
+<p>Supported formats:</p>
+<p>&#8220;1.2.3.4&#8221; -&gt; &#8220;1.2.3.4&#8221;
+&#8220;1.2.3 - 4.*&#8221; -&gt; (&#8220;1.2.3.0&#8221;, &#8220;1.2.4.255&#8221;)
+&#8220;1.2.3.4-10&#8221; -&gt; (&#8220;1.2.3.4&#8221;, &#8220;1.2.3.10&#8221;)
+&#8220;1.2.3.4 - 2.3.4.5&#8221; -&gt; (&#8220;1.2.3.4&#8221;, &#8220;2.3.4.5&#8221;)
+&#8220;1.2.*.* &#8220;-&gt; &#8220;1.2.0.0/16&#8221;</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo_OL-lg.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="inlibrary.html"
+                        title="previous chapter">inlibrary</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="lists/index.html"
+                        title="next chapter">lists</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/openlibrary/core/iprange.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="lists/index.html" title="lists"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="inlibrary.html" title="inlibrary"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >core</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Internet Archive.
+      Last updated on Dec 20, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

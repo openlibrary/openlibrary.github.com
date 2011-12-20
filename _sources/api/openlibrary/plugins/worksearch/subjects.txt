@@ -1,0 +1,5 @@
+
+subjects
+========
+
+.. automodule:: openlibrary.plugins.worksearch.subjects

@@ -103,7 +103,7 @@ The indexer decides the list of (name, value) pairs to index.</p>
 
 <dl class="method">
 <dt id="infogami.infobase._dbstore.store.Store.delete">
-<tt class="descname">delete</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#infogami.infobase._dbstore.store.Store.delete" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">delete</tt><big>(</big><em>key</em>, <em>rev=None</em><big>)</big><a class="headerlink" href="#infogami.infobase._dbstore.store.Store.delete" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -139,13 +139,19 @@ The indexer decides the list of (name, value) pairs to index.</p>
 
 <dl class="method">
 <dt id="infogami.infobase._dbstore.store.Store.put">
-<tt class="descname">put</tt><big>(</big><em>key</em>, <em>data</em><big>)</big><a class="headerlink" href="#infogami.infobase._dbstore.store.Store.put" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">put</tt><big>(</big><em>key</em>, <em>doc</em><big>)</big><a class="headerlink" href="#infogami.infobase._dbstore.store.Store.put" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="infogami.infobase._dbstore.store.Store.put_json">
 <tt class="descname">put_json</tt><big>(</big><em>key</em>, <em>json</em><big>)</big><a class="headerlink" href="#infogami.infobase._dbstore.store.Store.put_json" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="method">
+<dt id="infogami.infobase._dbstore.store.Store.put_many">
+<tt class="descname">put_many</tt><big>(</big><em>docs</em><big>)</big><a class="headerlink" href="#infogami.infobase._dbstore.store.Store.put_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores multiple docs in a single transaction.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="infogami.infobase._dbstore.store.Store.query">
@@ -262,7 +268,7 @@ All the documents are returned when the type is None.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Mar 11, 2011.
+      Last updated on Dec 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

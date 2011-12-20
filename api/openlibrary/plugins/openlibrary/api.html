@@ -1,0 +1,166 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>api &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="openlibrary" href="index.html" />
+    <link rel="next" title="borrow_home" href="borrow_home.html" />
+    <link rel="prev" title="openlibrary" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="borrow_home.html" title="borrow_home"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="openlibrary"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">openlibrary</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.plugins.openlibrary.api">
+<span id="api"></span><h1>api<a class="headerlink" href="#module-openlibrary.plugins.openlibrary.api" title="Permalink to this headline">¶</a></h1>
+<p>API stuff.</p>
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.api.author_works">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.api.</tt><tt class="descname">author_works</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.api.author_works" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.api.author_works.GET">
+<tt class="descname">GET</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.api.author_works.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.api.author_works.get_works_data">
+<tt class="descname">get_works_data</tt><big>(</big><em>author</em>, <em>limit</em>, <em>offset</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.api.author_works.get_works_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.api.setup">
+<tt class="descclassname">openlibrary.plugins.openlibrary.api.</tt><tt class="descname">setup</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.api.setup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.api.work_editions">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.api.</tt><tt class="descname">work_editions</tt><a class="headerlink" href="#openlibrary.plugins.openlibrary.api.work_editions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.api.work_editions.GET">
+<tt class="descname">GET</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.api.work_editions.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.api.work_editions.get_editions_data">
+<tt class="descname">get_editions_data</tt><big>(</big><em>work</em>, <em>limit</em>, <em>offset</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.api.work_editions.get_editions_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../../index.html">
+              <img class="logo" src="../../../../_static/logo_OL-lg.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">openlibrary</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="borrow_home.html"
+                        title="next chapter">borrow_home</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/api/openlibrary/plugins/openlibrary/api.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="borrow_home.html" title="borrow_home"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="openlibrary"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >openlibrary</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Internet Archive.
+      Last updated on Dec 20, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

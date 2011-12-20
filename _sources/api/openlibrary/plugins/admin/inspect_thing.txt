@@ -1,0 +1,5 @@
+
+inspect_thing
+=============
+
+.. automodule:: openlibrary.plugins.admin.inspect_thing

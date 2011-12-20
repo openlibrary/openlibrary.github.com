@@ -8,19 +8,26 @@ Submodules
 .. toctree::
    :maxdepth: 1
 
+   api.rst
    borrow_home.rst
    code.rst
    connection.rst
+   dev_instance.rst
+   events.rst
+   filters.rst
    home.rst
    infobase_hook.rst
    inlibrary.rst
    libraries.rst
    lists.rst
+   opds.rst
    processors.rst
    readbooks.rst
    schema.rst
    showmarc.rst
    stats.rst
+   status.rst
+   support.rst
    utils.rst
 
 Documentation

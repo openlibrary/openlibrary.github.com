@@ -73,6 +73,16 @@
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="openlibrary.core.lists.model.ListMixin.get_all_editions">
+<tt class="descname">get_all_editions</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.ListMixin.get_all_editions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all the editions of this list in arbitrary order.</p>
+<p>The return value is an iterator over all the edtions. Each entry is a dictionary.
+(Compare the difference with get_editions.)</p>
+<p>This works even for lists with too many seeds as it doesn&#8217;t try to
+return editions in the order of last-modified.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="openlibrary.core.lists.model.ListMixin.get_couchdb_docs">
 <tt class="descname">get_couchdb_docs</tt><big>(</big><em>db</em>, <em>keys</em><big>)</big><a class="headerlink" href="#openlibrary.core.lists.model.ListMixin.get_couchdb_docs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -371,7 +381,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Mar 11, 2011.
+      Last updated on Dec 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

@@ -10,22 +10,30 @@ Submodules
 
    admin.rst
    cache.rst
+   celery_couchdb.rst
    connections.rst
    couch.rst
+   fetchmail.rst
    formats.rst
+   geoip.rst
    helpers.rst
    ia.rst
    init.rst
    inlibrary.rst
+   iprange.rst
    lists/index.rst
    middleware.rst
    minicron.rst
    models.rst
+   msgbroker.rst
    olmarkdown.rst
    processors/index.rst
    schema.rst
    seq.rst
    setup_commands.rst
+   stats.rst
+   support.rst
+   task.rst
 
 Documentation
 -------------

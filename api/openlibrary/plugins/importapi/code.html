@@ -1,0 +1,266 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>code &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="importapi" href="index.html" />
+    <link rel="next" title="import_edition_builder" href="import_edition_builder.html" />
+    <link rel="prev" title="importapi" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="import_edition_builder.html" title="import_edition_builder"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="importapi"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">importapi</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.plugins.importapi.code">
+<span id="code"></span><h1>code<a class="headerlink" href="#module-openlibrary.plugins.importapi.code" title="Permalink to this headline">¶</a></h1>
+<p>Open Library Import API</p>
+<dl class="function">
+<dt id="openlibrary.plugins.importapi.code.basicauth">
+<tt class="descclassname">openlibrary.plugins.importapi.code.</tt><tt class="descname">basicauth</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.code.basicauth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.importapi.code.get_next_count">
+<tt class="descclassname">openlibrary.plugins.importapi.code.</tt><tt class="descname">get_next_count</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.code.get_next_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.importapi.code.http_basic_auth">
+<tt class="descclassname">openlibrary.plugins.importapi.code.</tt><tt class="descname">http_basic_auth</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.code.http_basic_auth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.importapi.code.ils_cover_upload">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.importapi.code.</tt><tt class="descname">ils_cover_upload</tt><a class="headerlink" href="#openlibrary.plugins.importapi.code.ils_cover_upload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cover Upload API for Koha.</p>
+<p>Request Format: Following input fields with enctype multipart/form-data</p>
+<blockquote>
+<div><ul class="simple">
+<li>authorization: base64 of username:password</li>
+<li>olid: Key of the edition. e.g. OL12345M</li>
+<li>file: file</li>
+<li>redirect_url: URL to redirect after upload</li>
+</ul>
+</div></blockquote>
+<p>On Success: Redirect to redirect_url?status=ok</p>
+<p>On Failure: Redirect to redirect_url?status=error&amp;reason=bad+olid</p>
+<dl class="method">
+<dt id="openlibrary.plugins.importapi.code.ils_cover_upload.POST">
+<tt class="descname">POST</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.code.ils_cover_upload.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.importapi.code.ils_cover_upload.build_url">
+<tt class="descname">build_url</tt><big>(</big><em>url</em>, <em>**params</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.code.ils_cover_upload.build_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.importapi.code.ils_search">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.importapi.code.</tt><tt class="descname">ils_search</tt><a class="headerlink" href="#openlibrary.plugins.importapi.code.ils_search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search and Import API to use in Koha.</p>
+<p>When a new catalog record is added to Koha, it makes a request with all
+the metadata to find if OL has a matching record. OL returns the OLID of
+the matching record if exists, if not it creates a new record and returns
+the new OLID.</p>
+<p>Request Format:</p>
+<blockquote>
+<div><p>POST /api/ils_search
+Content-type: application/json
+Authorization: Basic base64-of-username:password</p>
+<dl class="docutils">
+<dt>{</dt>
+<dd>&#8220;title&#8221;: &#8220;&#8221;,
+&#8220;author&#8221;: &#8220;&#8221;,
+&#8220;isbn&#8221;: ...,
+&#8220;publisher&#8221;: &#8221;...&#8221;,
+&#8220;publish_year&#8221;: &#8221;...&#8221;,
+&#8220;isbn&#8221;: [...],
+&#8220;lccn&#8221;: [...],</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>Response Format:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>{</dt>
+<dd><p class="first">&#8216;status&#8217;: &#8216;found | notfound | created&#8217;,
+&#8216;olid&#8217;: &#8216;OL12345M&#8217;,
+&#8216;key&#8217;: &#8216;/books/OL12345M&#8217;,
+&#8216;cover&#8217;: {</p>
+<blockquote class="last">
+<div>&#8216;small&#8217;: &#8216;<a class="reference external" href="http://covers.openlibrary.org/b/12345-S.jpg">http://covers.openlibrary.org/b/12345-S.jpg</a>&#8216;,
+&#8216;medium&#8217;: &#8216;<a class="reference external" href="http://covers.openlibrary.org/b/12345-M.jpg">http://covers.openlibrary.org/b/12345-M.jpg</a>&#8216;,
+&#8216;large&#8217;: &#8216;<a class="reference external" href="http://covers.openlibrary.org/b/12345-L.jpg">http://covers.openlibrary.org/b/12345-L.jpg</a>&#8216;,</div></blockquote>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>When authorization header is not provided and match is not found,
+status=&#8217;notfound&#8217; is returned instead of creating a new record.</p>
+<dl class="method">
+<dt id="openlibrary.plugins.importapi.code.ils_search.POST">
+<tt class="descname">POST</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.code.ils_search.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.importapi.code.ils_search.format_result">
+<tt class="descname">format_result</tt><big>(</big><em>doc</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.code.ils_search.format_result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.importapi.code.ils_search.prepare_data">
+<tt class="descname">prepare_data</tt><big>(</big><em>rawdata</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.code.ils_search.prepare_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.importapi.code.ils_search.search">
+<tt class="descname">search</tt><big>(</big><em>record</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.code.ils_search.search" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.importapi.code.importapi">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.importapi.code.</tt><tt class="descname">importapi</tt><a class="headerlink" href="#openlibrary.plugins.importapi.code.importapi" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="openlibrary.plugins.importapi.code.importapi.GET">
+<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.code.importapi.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.importapi.code.importapi.POST">
+<tt class="descname">POST</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.code.importapi.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.importapi.code.parse_data">
+<tt class="descclassname">openlibrary.plugins.importapi.code.</tt><tt class="descname">parse_data</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.code.parse_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.importapi.code.parse_meta_headers">
+<tt class="descclassname">openlibrary.plugins.importapi.code.</tt><tt class="descname">parse_meta_headers</tt><big>(</big><em>edition_builder</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.code.parse_meta_headers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.importapi.code.queue_s3_upload">
+<tt class="descclassname">openlibrary.plugins.importapi.code.</tt><tt class="descname">queue_s3_upload</tt><big>(</big><em>data</em>, <em>format</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.importapi.code.queue_s3_upload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../../index.html">
+              <img class="logo" src="../../../../_static/logo_OL-lg.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">importapi</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="import_edition_builder.html"
+                        title="next chapter">import_edition_builder</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/api/openlibrary/plugins/importapi/code.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="import_edition_builder.html" title="import_edition_builder"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="importapi"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="../index.html" >plugins</a> &raquo;</li>
+          <li><a href="index.html" >importapi</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Internet Archive.
+      Last updated on Dec 20, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

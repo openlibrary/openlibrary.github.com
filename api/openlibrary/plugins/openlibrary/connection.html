@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
     <link rel="up" title="openlibrary" href="index.html" />
-    <link rel="next" title="home" href="home.html" />
+    <link rel="next" title="dev_instance" href="dev_instance.html" />
     <link rel="prev" title="code" href="code.html" /> 
   </head>
   <body>
@@ -38,7 +38,7 @@
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="home.html" title="home"
+          <a href="dev_instance.html" title="dev_instance"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="code.html" title="code"
@@ -63,6 +63,11 @@
 <dt id="openlibrary.plugins.openlibrary.connection.ConnectionMiddleware">
 <em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.connection.</tt><tt class="descname">ConnectionMiddleware</tt><big>(</big><em>conn</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.ConnectionMiddleware" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.account_request">
+<tt class="descname">account_request</tt><big>(</big><em>sitename</em>, <em>path</em>, <em>method='GET'</em>, <em>data=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.account_request" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.get">
 <tt class="descname">get</tt><big>(</big><em>sitename</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.get" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -98,8 +103,50 @@
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.store_delete">
+<tt class="descname">store_delete</tt><big>(</big><em>sitename</em>, <em>path</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.store_delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.store_get">
+<tt class="descname">store_get</tt><big>(</big><em>sitename</em>, <em>path</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.store_get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.store_put">
+<tt class="descname">store_put</tt><big>(</big><em>sitename</em>, <em>path</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.store_put" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.write">
 <tt class="descname">write</tt><big>(</big><em>sitename</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.ConnectionMiddleware.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.openlibrary.connection.HybridConnection">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.connection.</tt><tt class="descname">HybridConnection</tt><big>(</big><em>reader</em>, <em>writer</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.HybridConnection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../infogami/infobase/client.html#infogami.infobase.client.Connection" title="infogami.infobase.client.Connection"><tt class="xref py py-class docutils literal"><span class="pre">infogami.infobase.client.Connection</span></tt></a></p>
+<p>Infobase connection made of both local and remote connections.</p>
+<p>The local connection is used for reads and the remote connection is used for writes.</p>
+<p>Some services in the OL infrastructure depends of the log written by the
+writer, so remote connection is used, which takes care of writing logs. By
+using a local connection for reads improves the performance by cutting
+down the overhead of http calls present in case of remote connections.</p>
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.HybridConnection.get_auth_token">
+<tt class="descname">get_auth_token</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.HybridConnection.get_auth_token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.HybridConnection.request">
+<tt class="descname">request</tt><big>(</big><em>sitename</em>, <em>path</em>, <em>method='GET'</em>, <em>data=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.HybridConnection.request" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.HybridConnection.set_auth_token">
+<tt class="descname">set_auth_token</tt><big>(</big><em>token</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.HybridConnection.set_auth_token" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -146,6 +193,11 @@
 <em class="property">class </em><tt class="descclassname">openlibrary.plugins.openlibrary.connection.</tt><tt class="descname">MemcacheMiddleware</tt><big>(</big><em>conn</em>, <em>memcache_servers</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MemcacheMiddleware" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.openlibrary.connection.ConnectionMiddleware" title="openlibrary.plugins.openlibrary.connection.ConnectionMiddleware"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.openlibrary.connection.ConnectionMiddleware</span></tt></a></p>
 <dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.account_request">
+<tt class="descname">account_request</tt><big>(</big><em>sitename</em>, <em>path</em>, <em>method='GET'</em>, <em>data=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.account_request" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.get">
 <tt class="descname">get</tt><big>(</big><em>sitename</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.get" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -160,6 +212,46 @@
 <tt class="descname">get_memcache</tt><big>(</big><em>memcache_servers</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.get_memcache" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.mc_add">
+<tt class="descname">mc_add</tt><big>(</big><em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.mc_add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.mc_delete">
+<tt class="descname">mc_delete</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.mc_delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.mc_get">
+<tt class="descname">mc_get</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.mc_get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.mc_set">
+<tt class="descname">mc_set</tt><big>(</big><em>key</em>, <em>value</em>, <em>time=0</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.mc_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.mc_set_multi">
+<tt class="descname">mc_set_multi</tt><big>(</big><em>mapping</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.mc_set_multi" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.store_delete">
+<tt class="descname">store_delete</tt><big>(</big><em>sitename</em>, <em>key</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.store_delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.store_get">
+<tt class="descname">store_get</tt><big>(</big><em>sitename</em>, <em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.store_get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.store_put">
+<tt class="descname">store_put</tt><big>(</big><em>sitename</em>, <em>key</em>, <em>data</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MemcacheMiddleware.store_put" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -171,6 +263,14 @@
 <dt id="openlibrary.plugins.openlibrary.connection.MigrationMiddleware.exists">
 <tt class="descname">exists</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MigrationMiddleware.exists" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.openlibrary.connection.MigrationMiddleware.fix_broken_redirect">
+<tt class="descname">fix_broken_redirect</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.MigrationMiddleware.fix_broken_redirect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Some work/edition records references to redirected author records
+and that is making save fail.</p>
+<p>This is a hack to work-around that isse.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="openlibrary.plugins.openlibrary.connection.MigrationMiddleware.fix_doc">
@@ -195,6 +295,21 @@
 <dd><p>Create a connection to Open Library infobase server.</p>
 </dd></dl>
 
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.connection.create_hybrid_connection">
+<tt class="descclassname">openlibrary.plugins.openlibrary.connection.</tt><tt class="descname">create_hybrid_connection</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.create_hybrid_connection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.connection.create_local_connection">
+<tt class="descclassname">openlibrary.plugins.openlibrary.connection.</tt><tt class="descname">create_local_connection</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.create_local_connection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.plugins.openlibrary.connection.create_remote_connection">
+<tt class="descclassname">openlibrary.plugins.openlibrary.connection.</tt><tt class="descname">create_remote_connection</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.openlibrary.connection.create_remote_connection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 
@@ -210,8 +325,8 @@
   <p class="topless"><a href="code.html"
                         title="previous chapter">code</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="home.html"
-                        title="next chapter">home</a></p>
+  <p class="topless"><a href="dev_instance.html"
+                        title="next chapter">dev_instance</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../../_sources/api/openlibrary/plugins/openlibrary/connection.txt"
@@ -244,7 +359,7 @@
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="home.html" title="home"
+          <a href="dev_instance.html" title="dev_instance"
              >next</a> |</li>
         <li class="right" >
           <a href="code.html" title="code"
@@ -258,7 +373,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Mar 11, 2011.
+      Last updated on Dec 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

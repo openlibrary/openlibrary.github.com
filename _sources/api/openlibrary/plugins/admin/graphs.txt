@@ -1,0 +1,5 @@
+
+graphs
+======
+
+.. automodule:: openlibrary.plugins.admin.graphs

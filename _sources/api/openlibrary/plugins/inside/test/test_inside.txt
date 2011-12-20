@@ -1,0 +1,5 @@
+
+test_inside
+===========
+
+.. automodule:: openlibrary.plugins.inside.test.test_inside

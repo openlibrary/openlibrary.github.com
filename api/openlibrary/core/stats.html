@@ -1,0 +1,146 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>stats &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="core" href="index.html" />
+    <link rel="next" title="support" href="support.html" />
+    <link rel="prev" title="setup_commands" href="setup_commands.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="support.html" title="support"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="setup_commands.html" title="setup_commands"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">core</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.core.stats">
+<span id="stats"></span><h1>stats<a class="headerlink" href="#module-openlibrary.core.stats" title="Permalink to this headline">¶</a></h1>
+<p>StatsD client to be used in the application to log various metrics</p>
+<p>Based on the code in <a class="reference external" href="http://www.monkinetic.com/2011/02/statsd.html">http://www.monkinetic.com/2011/02/statsd.html</a> (pystatsd client)</p>
+<dl class="function">
+<dt id="openlibrary.core.stats.create_stats_client">
+<tt class="descclassname">openlibrary.core.stats.</tt><tt class="descname">create_stats_client</tt><big>(</big><em>cfg=&lt;module 'infogami.config' from '/tmp/sphinx-docs/openlibrary/infogami/config.py'&gt;</em><big>)</big><a class="headerlink" href="#openlibrary.core.stats.create_stats_client" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the client which can be used for logging statistics</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.stats.increment">
+<tt class="descclassname">openlibrary.core.stats.</tt><tt class="descname">increment</tt><big>(</big><em>key</em>, <em>n=1</em><big>)</big><a class="headerlink" href="#openlibrary.core.stats.increment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Increments the value of <tt class="docutils literal"><span class="pre">key</span></tt> by <tt class="docutils literal"><span class="pre">n</span></tt></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.core.stats.put">
+<tt class="descclassname">openlibrary.core.stats.</tt><tt class="descname">put</tt><big>(</big><em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#openlibrary.core.stats.put" title="Permalink to this definition">¶</a></dt>
+<dd><p>Records this <tt class="docutils literal"><span class="pre">value</span></tt> with the given <tt class="docutils literal"><span class="pre">key</span></tt>. It is stored as a millisecond count</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo_OL-lg.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="setup_commands.html"
+                        title="previous chapter">setup_commands</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="support.html"
+                        title="next chapter">support</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/openlibrary/core/stats.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="support.html" title="support"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="setup_commands.html" title="setup_commands"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >core</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Internet Archive.
+      Last updated on Dec 20, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

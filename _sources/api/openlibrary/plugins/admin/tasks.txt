@@ -1,0 +1,5 @@
+
+tasks
+=====
+
+.. automodule:: openlibrary.plugins.admin.tasks

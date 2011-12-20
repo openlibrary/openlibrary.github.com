@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <link rel="top" title="openlibrary v2.0 documentation" href="../../../../index.html" />
     <link rel="up" title="books" href="index.html" />
-    <link rel="next" title="inside" href="../inside/index.html" />
+    <link rel="next" title="readlinks" href="readlinks.html" />
     <link rel="prev" title="code" href="code.html" /> 
   </head>
   <body>
@@ -38,7 +38,7 @@
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../inside/index.html" title="inside"
+          <a href="readlinks.html" title="readlinks"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="code.html" title="code"
@@ -177,13 +177,13 @@ Should be called only after initializing self.authors and self.works.</p>
 <dt id="openlibrary.plugins.books.dynlinks.split_key">
 <tt class="descclassname">openlibrary.plugins.books.dynlinks.</tt><tt class="descname">split_key</tt><big>(</big><em>bib_key</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.books.dynlinks.split_key" title="Permalink to this definition">¶</a></dt>
 <dd><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">split_key</span><span class="p">(</span><span class="s">&#39;1234567890&#39;</span><span class="p">)</span>
-<span class="go">(&#39;isbn_10&#39;, &#39;1234567890&#39;)</span>
+<span class="go">(&#39;isbn_&#39;, &#39;1234567890&#39;)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">split_key</span><span class="p">(</span><span class="s">&#39;ISBN:1234567890&#39;</span><span class="p">)</span>
-<span class="go">(&#39;isbn_10&#39;, &#39;1234567890&#39;)</span>
+<span class="go">(&#39;isbn_&#39;, &#39;1234567890&#39;)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">split_key</span><span class="p">(</span><span class="s">&#39;ISBN1234567890&#39;</span><span class="p">)</span>
-<span class="go">(&#39;isbn_10&#39;, &#39;1234567890&#39;)</span>
+<span class="go">(&#39;isbn_&#39;, &#39;1234567890&#39;)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">split_key</span><span class="p">(</span><span class="s">&#39;ISBN1234567890123&#39;</span><span class="p">)</span>
-<span class="go">(&#39;isbn_13&#39;, &#39;1234567890123&#39;)</span>
+<span class="go">(&#39;isbn_&#39;, &#39;1234567890123&#39;)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">split_key</span><span class="p">(</span><span class="s">&#39;LCCNsa 64009056&#39;</span><span class="p">)</span>
 <span class="go">(&#39;lccn&#39;, &#39;sa 64009056&#39;)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">split_key</span><span class="p">(</span><span class="s">&#39;badkey&#39;</span><span class="p">)</span>
@@ -222,8 +222,8 @@ Should be called only after initializing self.authors and self.works.</p>
   <p class="topless"><a href="code.html"
                         title="previous chapter">code</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../inside/index.html"
-                        title="next chapter">inside</a></p>
+  <p class="topless"><a href="readlinks.html"
+                        title="next chapter">readlinks</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../../_sources/api/openlibrary/plugins/books/dynlinks.txt"
@@ -256,7 +256,7 @@ Should be called only after initializing self.authors and self.works.</p>
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../inside/index.html" title="inside"
+          <a href="readlinks.html" title="readlinks"
              >next</a> |</li>
         <li class="right" >
           <a href="code.html" title="code"
@@ -270,7 +270,7 @@ Should be called only after initializing self.authors and self.works.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Mar 11, 2011.
+      Last updated on Dec 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

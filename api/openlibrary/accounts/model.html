@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>model &mdash; openlibrary v2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="openlibrary v2.0 documentation" href="../../../index.html" />
+    <link rel="up" title="accounts" href="index.html" />
+    <link rel="next" title="admin" href="../admin/index.html" />
+    <link rel="prev" title="accounts" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../admin/index.html" title="admin"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="accounts"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">accounts</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-openlibrary.accounts.model">
+<span id="model"></span><h1>model<a class="headerlink" href="#module-openlibrary.accounts.model" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="openlibrary.accounts.model.Account">
+<em class="property">class </em><tt class="descclassname">openlibrary.accounts.model.</tt><tt class="descname">Account</tt><a class="headerlink" href="#openlibrary.accounts.model.Account" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">web.utils.Storage</span></tt></p>
+<dl class="method">
+<dt id="openlibrary.accounts.model.Account.activate">
+<tt class="descname">activate</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.Account.activate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.accounts.model.Account.activated_on">
+<tt class="descname">activated_on</tt><a class="headerlink" href="#openlibrary.accounts.model.Account.activated_on" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.accounts.model.Account.creation_time">
+<tt class="descname">creation_time</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.Account.creation_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.accounts.model.Account.displayname">
+<tt class="descname">displayname</tt><a class="headerlink" href="#openlibrary.accounts.model.Account.displayname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.accounts.model.Account.get_activation_link">
+<tt class="descname">get_activation_link</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.Account.get_activation_link" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.accounts.model.Account.get_cases">
+<tt class="descname">get_cases</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.Account.get_cases" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all support cases filed by this user.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.accounts.model.Account.get_creation_info">
+<tt class="descname">get_creation_info</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.Account.get_creation_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.accounts.model.Account.get_edit_count">
+<tt class="descname">get_edit_count</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.Account.get_edit_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.accounts.model.Account.get_links">
+<tt class="descname">get_links</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.Account.get_links" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all the verification links present in the database.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.accounts.model.Account.get_password_reset_link">
+<tt class="descname">get_password_reset_link</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.Account.get_password_reset_link" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.accounts.model.Account.get_user">
+<tt class="descname">get_user</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.Account.get_user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.accounts.model.Account.last_login">
+<tt class="descname">last_login</tt><a class="headerlink" href="#openlibrary.accounts.model.Account.last_login" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the last_login time of the user, if available.</p>
+<p>The <cite>last_login</cite> will not be available for accounts, who haven&#8217;t
+been logged in after this feature is added.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.accounts.model.Account.login">
+<tt class="descname">login</tt><big>(</big><em>password</em><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.Account.login" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tries to login with the given password and returns the status.</p>
+<p>The return value can be one of the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li>ok</li>
+<li>account_not_vefified</li>
+<li>account_not_found</li>
+<li>account_incorrect_password</li>
+</ul>
+</div></blockquote>
+<p>If the login is successful, the <cite>last_login</cite> time is updated.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.accounts.model.Account.registered_on">
+<tt class="descname">registered_on</tt><a class="headerlink" href="#openlibrary.accounts.model.Account.registered_on" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the registration time.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.accounts.model.Account.send_verification_email">
+<tt class="descname">send_verification_email</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.Account.send_verification_email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.accounts.model.Account.update_email">
+<tt class="descname">update_email</tt><big>(</big><em>email</em><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.Account.update_email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.accounts.model.Account.update_password">
+<tt class="descname">update_password</tt><big>(</big><em>new_password</em><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.Account.update_password" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="openlibrary.accounts.model.Account.username">
+<tt class="descname">username</tt><a class="headerlink" href="#openlibrary.accounts.model.Account.username" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.accounts.model.Account.verify_password">
+<tt class="descname">verify_password</tt><big>(</big><em>password</em><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.Account.verify_password" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.accounts.model.Link">
+<em class="property">class </em><tt class="descclassname">openlibrary.accounts.model.</tt><tt class="descname">Link</tt><a class="headerlink" href="#openlibrary.accounts.model.Link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">web.utils.Storage</span></tt></p>
+<dl class="method">
+<dt id="openlibrary.accounts.model.Link.delete">
+<tt class="descname">delete</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.Link.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.accounts.model.Link.get_creation_time">
+<tt class="descname">get_creation_time</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.Link.get_creation_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.accounts.model.Link.get_expiration_time">
+<tt class="descname">get_expiration_time</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.Link.get_expiration_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.accounts.model.create_link_doc">
+<tt class="descclassname">openlibrary.accounts.model.</tt><tt class="descname">create_link_doc</tt><big>(</big><em>key</em>, <em>username</em>, <em>email</em><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.create_link_doc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates doc required for generating verification link email.</p>
+<p>The doc contains username, email and a generated code.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.accounts.model.generate_hash">
+<tt class="descclassname">openlibrary.accounts.model.</tt><tt class="descname">generate_hash</tt><big>(</big><em>secret_key</em>, <em>text</em>, <em>salt=None</em><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.generate_hash" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.accounts.model.generate_uuid">
+<tt class="descclassname">openlibrary.accounts.model.</tt><tt class="descname">generate_uuid</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.generate_uuid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.accounts.model.get_secret_key">
+<tt class="descclassname">openlibrary.accounts.model.</tt><tt class="descname">get_secret_key</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.get_secret_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.accounts.model.send_verification_email">
+<tt class="descclassname">openlibrary.accounts.model.</tt><tt class="descname">send_verification_email</tt><big>(</big><em>username</em>, <em>email</em><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.send_verification_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends account verification email.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.accounts.model.sendmail">
+<tt class="descclassname">openlibrary.accounts.model.</tt><tt class="descname">sendmail</tt><big>(</big><em>to</em>, <em>msg</em>, <em>cc=None</em><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.sendmail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.accounts.model.verify_hash">
+<tt class="descclassname">openlibrary.accounts.model.</tt><tt class="descname">verify_hash</tt><big>(</big><em>secret_key</em>, <em>text</em>, <em>hash</em><big>)</big><a class="headerlink" href="#openlibrary.accounts.model.verify_hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verifies if the hash is generated</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo_OL-lg.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">accounts</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../admin/index.html"
+                        title="next chapter">admin</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/openlibrary/accounts/model.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../admin/index.html" title="admin"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="accounts"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">openlibrary v2.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >API Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >openlibrary</a> &raquo;</li>
+          <li><a href="index.html" >accounts</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Internet Archive.
+      Last updated on Dec 20, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

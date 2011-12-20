@@ -62,6 +62,7 @@
 <dt id="openlibrary.plugins.upstream.account.account">
 <em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.account.</tt><tt class="descname">account</tt><a class="headerlink" href="#openlibrary.plugins.upstream.account.account" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<p>Account preferences.</p>
 <dl class="method">
 <dt id="openlibrary.plugins.upstream.account.account.GET">
 <tt class="descname">GET</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account.GET" title="Permalink to this definition">¶</a></dt>
@@ -73,6 +74,8 @@
 <dt id="openlibrary.plugins.upstream.account.account_create">
 <em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.account.</tt><tt class="descname">account_create</tt><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<p>New account creation.</p>
+<p>Account will in the pending state until the email is activated.</p>
 <dl class="method">
 <dt id="openlibrary.plugins.upstream.account.account_create.GET">
 <tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_create.GET" title="Permalink to this definition">¶</a></dt>
@@ -86,25 +89,10 @@
 </dd></dl>
 
 <dl class="class">
-<dt id="openlibrary.plugins.upstream.account.account_delete">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.account.</tt><tt class="descname">account_delete</tt><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_delete" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.account.account_delete.GET">
-<tt class="descname">GET</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_delete.GET" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.account.account_delete.POST">
-<tt class="descname">POST</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_delete.POST" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
 <dt id="openlibrary.plugins.upstream.account.account_email">
 <em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.account.</tt><tt class="descname">account_email</tt><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_email" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<p>Change email.</p>
 <dl class="method">
 <dt id="openlibrary.plugins.upstream.account.account_email.GET">
 <tt class="descname">GET</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_email.GET" title="Permalink to this definition">¶</a></dt>
@@ -128,7 +116,28 @@
 <dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
 <dl class="method">
 <dt id="openlibrary.plugins.upstream.account.account_email_verify.GET">
-<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_email_verify.GET" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">GET</tt><big>(</big><em>code</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_email_verify.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.account.account_email_verify.bad_link">
+<tt class="descname">bad_link</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_email_verify.bad_link" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.account.account_email_verify.update_email">
+<tt class="descname">update_email</tt><big>(</big><em>username</em>, <em>email</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_email_verify.update_email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.account.account_email_verify_old">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.account.</tt><tt class="descname">account_email_verify_old</tt><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_email_verify_old" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.upstream.account.account_email_verify" title="openlibrary.plugins.upstream.account.account_email_verify"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.upstream.account.account_email_verify</span></tt></a></p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.account.account_email_verify_old.GET">
+<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_email_verify_old.GET" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -148,6 +157,13 @@
 <dt id="openlibrary.plugins.upstream.account.account_login">
 <em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.account.</tt><tt class="descname">account_login</tt><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_login" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<p>Account login.</p>
+<p>Login can fail because of the following reasons:</p>
+<ul class="simple">
+<li>account_not_found: Error message is displayed.</li>
+<li>account_bad_password: Error message is displayed with a link to reset password.</li>
+<li>account_not_verified: Error page is dispalyed with button to &#8220;resend verification email&#8221;.</li>
+</ul>
 <dl class="method">
 <dt id="openlibrary.plugins.upstream.account.account_login.GET">
 <tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_login.GET" title="Permalink to this definition">¶</a></dt>
@@ -156,6 +172,21 @@
 <dl class="method">
 <dt id="openlibrary.plugins.upstream.account.account_login.POST">
 <tt class="descname">POST</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_login.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.account.account_login.POST_login">
+<tt class="descname">POST_login</tt><big>(</big><em>i</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_login.POST_login" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.account.account_login.POST_resend_verification_email">
+<tt class="descname">POST_resend_verification_email</tt><big>(</big><em>i</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_login.POST_resend_verification_email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.account.account_login.error">
+<tt class="descname">error</tt><big>(</big><em>name</em>, <em>i</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_login.error" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -201,6 +232,11 @@
 <tt class="descname">POST</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_password.POST" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.account.account_password.try_login">
+<tt class="descname">try_login</tt><big>(</big><em>username</em>, <em>password</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_password.try_login" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -225,12 +261,12 @@
 <dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
 <dl class="method">
 <dt id="openlibrary.plugins.upstream.account.account_password_reset.GET">
-<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_password_reset.GET" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">GET</tt><big>(</big><em>code</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_password_reset.GET" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="openlibrary.plugins.upstream.account.account_password_reset.POST">
-<tt class="descname">POST</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_password_reset.POST" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">POST</tt><big>(</big><em>code</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_password_reset.POST" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -239,9 +275,29 @@
 <dt id="openlibrary.plugins.upstream.account.account_verify">
 <em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.account.</tt><tt class="descname">account_verify</tt><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_verify" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
+<p>Verify user account.</p>
 <dl class="method">
 <dt id="openlibrary.plugins.upstream.account.account_verify.GET">
-<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_verify.GET" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">GET</tt><big>(</big><em>code</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_verify.GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.account.account_verify.POST">
+<tt class="descname">POST</tt><big>(</big><em>code=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_verify.POST" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called to regenerate account verification code.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="openlibrary.plugins.upstream.account.account_verify_old">
+<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.account.</tt><tt class="descname">account_verify_old</tt><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_verify_old" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#openlibrary.plugins.upstream.account.account_verify" title="openlibrary.plugins.upstream.account.account_verify"><tt class="xref py py-class docutils literal"><span class="pre">openlibrary.plugins.upstream.account.account_verify</span></tt></a></p>
+<p>Old account verification code.</p>
+<p>This takes username, email and code as url parameters. The new one takes just the code as part of the url.</p>
+<dl class="method">
+<dt id="openlibrary.plugins.upstream.account.account_verify_old.GET">
+<tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.account_verify_old.GET" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -253,40 +309,14 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="openlibrary.plugins.upstream.account.get_secret_key">
-<tt class="descclassname">openlibrary.plugins.upstream.account.</tt><tt class="descname">get_secret_key</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.get_secret_key" title="Permalink to this definition">¶</a></dt>
+<dt id="openlibrary.plugins.upstream.account.send_email_change_email">
+<tt class="descclassname">openlibrary.plugins.upstream.account.</tt><tt class="descname">send_email_change_email</tt><big>(</big><em>username</em>, <em>email</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.send_email_change_email" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="openlibrary.plugins.upstream.account.get_user_code">
-<tt class="descclassname">openlibrary.plugins.upstream.account.</tt><tt class="descname">get_user_code</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.get_user_code" title="Permalink to this definition">¶</a></dt>
+<dt id="openlibrary.plugins.upstream.account.send_forgot_password_email">
+<tt class="descclassname">openlibrary.plugins.upstream.account.</tt><tt class="descname">send_forgot_password_email</tt><big>(</big><em>username</em>, <em>email</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.send_forgot_password_email" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.plugins.upstream.account.get_user_email">
-<tt class="descclassname">openlibrary.plugins.upstream.account.</tt><tt class="descname">get_user_email</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.get_user_email" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.plugins.upstream.account.reset_password">
-<tt class="descclassname">openlibrary.plugins.upstream.account.</tt><tt class="descname">reset_password</tt><big>(</big><em>*a</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.reset_password" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="openlibrary.plugins.upstream.account.sendmail">
-<tt class="descclassname">openlibrary.plugins.upstream.account.</tt><tt class="descname">sendmail</tt><big>(</big><em>to</em>, <em>msg</em>, <em>cc=None</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.sendmail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="class">
-<dt id="openlibrary.plugins.upstream.account.user_preferences">
-<em class="property">class </em><tt class="descclassname">openlibrary.plugins.upstream.account.</tt><tt class="descname">user_preferences</tt><a class="headerlink" href="#openlibrary.plugins.upstream.account.user_preferences" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="../../../infogami/utils/app.html#infogami.utils.app.page" title="infogami.utils.app.page"><tt class="xref py py-class docutils literal"><span class="pre">infogami.utils.app.page</span></tt></a></p>
-<dl class="method">
-<dt id="openlibrary.plugins.upstream.account.user_preferences.GET">
-<tt class="descname">GET</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#openlibrary.plugins.upstream.account.user_preferences.GET" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
 
 </div>
 
@@ -351,7 +381,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Mar 11, 2011.
+      Last updated on Dec 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>

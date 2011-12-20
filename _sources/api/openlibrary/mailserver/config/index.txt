@@ -1,0 +1,18 @@
+
+config
+======
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   boot.rst
+   settings.rst
+   testing.rst
+
+Documentation
+-------------
+
+.. automodule:: openlibrary.mailserver.config

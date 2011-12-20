@@ -65,6 +65,27 @@
 <tt class="descname">GET</tt><big>(</big><em>category</em>, <em>key</em>, <em>value</em>, <em>size</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.code.cover.GET" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="openlibrary.coverstore.code.cover.get_details">
+<tt class="descname">get_details</tt><big>(</big><em>coverid</em>, <em>size=''</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.code.cover.get_details" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.code.cover.get_tar_filename">
+<tt class="descname">get_tar_filename</tt><big>(</big><em>coverid</em>, <em>size</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.code.cover.get_tar_filename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns tarfile:offset:size for given coverid.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.code.cover.query">
+<tt class="descname">query</tt><big>(</big><em>category</em>, <em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.code.cover.query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="openlibrary.coverstore.code.cover.ratelimit_query">
+<tt class="descname">ratelimit_query</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.code.cover.ratelimit_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -88,10 +109,25 @@
 </dd></dl>
 
 <dl class="function">
+<dt id="openlibrary.coverstore.code.find_coverid_from_couch">
+<tt class="descclassname">openlibrary.coverstore.code.</tt><tt class="descname">find_coverid_from_couch</tt><big>(</big><em>db</em>, <em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.code.find_coverid_from_couch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.code.get_couch_database">
+<tt class="descclassname">openlibrary.coverstore.code.</tt><tt class="descname">get_couch_database</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.coverstore.code.get_couch_database" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="openlibrary.coverstore.code.get_cover_id">
 <tt class="descclassname">openlibrary.coverstore.code.</tt><tt class="descname">get_cover_id</tt><big>(</big><em>olkeys</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.code.get_cover_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the first cover from the list of ol keys.</p>
 </dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.code.get_tarindex_path">
+<tt class="descclassname">openlibrary.coverstore.code.</tt><tt class="descname">get_tarindex_path</tt><big>(</big><em>index</em>, <em>size</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.code.get_tarindex_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="class">
 <dt id="openlibrary.coverstore.code.index">
@@ -101,6 +137,12 @@
 <tt class="descname">GET</tt><big>(</big><big>)</big><a class="headerlink" href="#openlibrary.coverstore.code.index.GET" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+</dd></dl>
+
+<dl class="function">
+<dt id="openlibrary.coverstore.code.parse_tarindex">
+<tt class="descclassname">openlibrary.coverstore.code.</tt><tt class="descname">parse_tarindex</tt><big>(</big><em>file</em><big>)</big><a class="headerlink" href="#openlibrary.coverstore.code.parse_tarindex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes tarindex file as file objects and returns array of offsets and array of sizes. The size of the returned arrays will be 10000.</p>
 </dd></dl>
 
 <dl class="class">
@@ -211,7 +253,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2006-2011, Internet Archive.
-      Last updated on Mar 11, 2011.
+      Last updated on Dec 20, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>
